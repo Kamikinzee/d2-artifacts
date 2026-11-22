@@ -1,0 +1,911 @@
+<title>God Roll Codex</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: armory index — sticky type rail + PvP/PvE switch, each weapon type lists its frames as roll cards with six perk slots */
+:root{
+  --bg:#eef0f2; --panel:#ffffff; --ink:#15191e; --muted:#5b6470; --line:#d5dae0; --accent:#b8621b;
+  --chip:#f2f4f6; --pvp:#c2443a; --pve:#2f7fd1;
+  --display:"Saira Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101318; --panel:#171b21; --ink:#e7eaee; --muted:#9aa3ae; --line:#2a3039; --accent:#e08a3f;
+  --chip:#1f242c; --pvp:#ec6b60; --pve:#5aa3ef; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101318; --panel:#171b21; --ink:#e7eaee; --muted:#9aa3ae; --line:#2a3039; --accent:#e08a3f;
+  --chip:#1f242c; --pvp:#ec6b60; --pve:#5aa3ef; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1150px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+header h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,6vw,54px);line-height:1;margin:0;text-transform:uppercase;letter-spacing:.01em}
+header p{color:var(--muted);max-width:72ch;margin:10px 0 0}
+.meta{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:6px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px 8px;border-bottom:1px solid var(--line);margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:8px 14px;align-items:center}
+.modes{display:flex;gap:6px;grid-row:span 2;align-self:start}
+.modes button{font-family:var(--display);font-size:18px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:4px;cursor:pointer}
+.modes button[aria-pressed="true"][data-mode="pvp"]{background:var(--pvp);border-color:var(--pvp);color:#fff}
+.modes button[aria-pressed="true"][data-mode="pve"]{background:var(--pve);border-color:var(--pve);color:#fff}
+.navrow{display:flex;align-items:center;gap:8px;min-width:0}
+.navrow .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);flex:none;width:52px}
+.types{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;min-width:0;padding-block:2px;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 24px),transparent);padding-right:24px}
+.types::-webkit-scrollbar{display:none}
+.types a{flex:none;white-space:nowrap;font-family:var(--mono);font-size:12px;color:var(--ink);text-decoration:none;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+.types a:hover{border-color:var(--modec)}
+.types a[aria-current="true"]{background:var(--modec);border-color:var(--modec);color:#fff}
+@media (max-width:640px){.bar{grid-template-columns:1fr}.modes{grid-row:auto}.navrow .lbl{width:44px}}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.note{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 16px;margin:18px 0;color:var(--muted);font-size:14px}
+.note b{color:var(--ink)}
+section.type{margin-top:28px;scroll-margin-top:var(--barh,120px)}
+section.type h2{font-family:var(--display);font-weight:700;font-size:30px;text-transform:uppercase;letter-spacing:.02em;margin:0 0 4px}
+section.type .tnote{color:var(--muted);margin:0 0 12px;max-width:80ch}
+.frames{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.frame{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--modec);border-radius:6px;padding:12px 14px;min-width:0}
+.fh{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.fh h3{font-family:var(--display);font-size:21px;font-weight:600;margin:0;text-transform:uppercase;letter-spacing:.03em}
+.rpm{font-family:var(--mono);font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.role{color:var(--muted);font-size:13px;margin:2px 0 8px}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:3px 10px;margin:0}
+dt{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+dd{margin:0;min-width:0;font-size:14px}
+dd .alt{color:var(--muted)}
+.pool{margin-top:8px;border-top:1px solid var(--line);padding-top:6px;font-size:13px;color:var(--muted)}
+.pool summary{cursor:pointer;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.pool p{margin:4px 0}
+.pool b{color:var(--ink)}
+footer{color:var(--muted);font-size:13px;margin-top:32px}
+footer a{color:var(--accent)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.poolh{margin:22px 0 10px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--modec)}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>God Roll Codex</h1>
+    <p>Ideal rolls for every weapon type by intrinsic frame, plus the actual perk pools of Trials, Iron Banner, Renegades and dungeon guns: barrel, magazine, both traits, masterwork, origin and mod. Switch between PvP and PvE at the top. Jump by loot source or by weapon type.</p>
+    <div class="meta">Sandbox: Monument of Triumph (9.7.0) · Updated Nov 2026</div>
+  </header>
+
+  <div class="bar">
+    <div class="modes" role="group" aria-label="Mode">
+      <button id="m-pvp" data-mode="pvp" aria-pressed="true">PvP</button>
+      <button id="m-pve" data-mode="pve" aria-pressed="false">PvE</button>
+    </div>
+    <div class="navrow"><span class="lbl">Source</span><nav class="types" id="srcnav" aria-label="Loot sources"></nav></div>
+    <div class="navrow"><span class="lbl">Type</span><nav class="types" id="types" aria-label="Weapon types"></nav></div>
+  </div>
+
+  <div class="note" id="note"></div>
+  <main id="codex"></main>
+
+  <footer>
+    These are consensus picks for each archetype, not rolls for one specific gun. Each weapon has its own perk pool, so check it on light.gg and take the highest-listed perk it can roll in each column. The first pick is the god roll and the grey picks after it are fine substitutes.<br>
+    Sources: <a href="https://www.blueberries.gg/weapons/destiny-2-best-pvp-weapons/" target="_blank" rel="noopener">Blueberries PvP weapons</a> · <a href="https://www.blueberries.gg/weapons/horrors-least-god-rolls/" target="_blank" rel="noopener">Horror's Least</a> · <a href="https://www.blueberries.gg/weapons/gnawing-hunger-god-rolls/" target="_blank" rel="noopener">Gnawing Hunger</a> · <a href="https://www.blueberries.gg/weapons/matador-64-god-rolls/" target="_blank" rel="noopener">Matador 64</a> · <a href="https://www.blueberries.gg/weapons/felwinters-lie-god-rolls/" target="_blank" rel="noopener">Felwinter's Lie</a> · <a href="https://www.blueberries.gg/weapons/mint-retrograde-god-rolls/" target="_blank" rel="noopener">Mint Retrograde</a> · <a href="https://www.blueberries.gg/weapons/the-hothead-god-rolls/" target="_blank" rel="noopener">Hothead</a> · <a href="https://wowvendor.com/media/destiny-2/best-pvp-perks-tier-list/" target="_blank" rel="noopener">WoWVendor PvP perks</a>
+  </footer>
+</div>
+
+<script>
+// Each roll: [barrel, magazine, trait1, trait2, masterwork, mod]. "A / B" = A is the pick, B the substitute.
+const NOTES = {
+  pvp: "<b>PvP:</b> range and stability win duels. Masterwork range unless the frame already hits its range cap. Use Counterbalance Stock for horizontal bounce, Targeting Adjuster on controller once recoil is under control, Spec mods no longer exist on weapons.",
+  pve: "<b>PvE:</b> take a damage trait (Kill Clip, Frenzy, Bait and Switch, Incandescent, Voltshot) plus an ammo or add-clear trait. Masterwork reload or handling. Spec mods (Major Spec and Boss Spec) are gone from weapon mod sockets now, so Backup Mag is the default PvE mod. Use Quick Access Sling on heavies you swap to often."
+};
+
+const TYPES = [
+ {id:"hc", name:"Hand Cannons", tnote:"In PvP, range decides whether you kill in two shots or three. Precision frames are the most forgiving on controller.", frames:[
+  ["Aggressive","120 RPM","Highest damage per shot, slow. Kills in 2 headshots + 1 body.",
+   ["Corkscrew Rifling / Hammer-Forged","Accurized Rounds","Slideshot / Moving Target","Opening Shot / Kill Clip","Range","Counterbalance Stock / Targeting Adjuster"],
+   ["Arrowhead Brake","Tactical Mag / Ricochet Rounds","Rapid Hit / Firefly","Explosive Payload / Incandescent","Reload Speed","Backup Mag"]],
+  ["Adaptive","140 RPM","The meta PvP frame. Spare Rations and Rose are both adaptives.",
+   ["Corkscrew Rifling / Smallbore","Accurized Rounds","Slideshot / Perpetual Motion","Opening Shot / Eye of the Storm / Kill Clip","Range","Targeting Adjuster / Counterbalance Stock"],
+   ["Arrowhead Brake / Fluted Barrel","Tactical Mag","Firefly / Demolitionist","Explosive Payload / Incandescent / Voltshot","Reload Speed","Backup Mag"]],
+  ["Lightweight","150 RPM","More mobility, a bit less damage.",
+   ["Corkscrew Rifling","Accurized Rounds","Moving Target / Slideshot","Kill Clip / Opening Shot","Range","Targeting Adjuster"],
+   ["Arrowhead Brake","Tactical Mag","Rapid Hit / Demolitionist","Destabilizing Rounds / Incandescent","Reload Speed","Backup Mag"]],
+  ["Precision","180 RPM","Lowest recoil and the most consistent kill time. The easiest to land on controller.",
+   ["Smallbore / Hammer-Forged","Accurized Rounds / Ricochet Rounds","Moving Target / Keep Away","Headseeker / Kill Clip","Range","Counterbalance Stock"],
+   ["Arrowhead Brake","Tactical Mag","Rapid Hit / Firefly","Voltshot / Incandescent / Frenzy","Reload Speed","Backup Mag"]]
+ ]},
+ {id:"pulse", name:"Pulse Rifles", tnote:"Burst weapons. In PvP, stability keeps every bullet of the burst on target.", frames:[
+  ["High-Impact","340 RPM","3-burst, heavy hitting. Strong in Trials on open maps.",
+   ["Arrowhead Brake / Hammer-Forged","Accurized Rounds","Keep Away / Headseeker","Kill Clip / Rangefinder","Range","Counterbalance Stock"],
+   ["Arrowhead Brake","Tactical Mag","Rapid Hit / Demolitionist","Incandescent / Destabilizing Rounds","Reload Speed","Backup Mag"]],
+  ["Adaptive","390 RPM","Balanced all-rounder.",
+   ["Arrowhead Brake / Corkscrew Rifling","Accurized Rounds","Tap the Trigger / Moving Target","Headseeker / Kill Clip","Range","Counterbalance Stock / Targeting Adjuster"],
+   ["Fluted Barrel","Tactical Mag","Demolitionist / Subsistence","Voltshot / Incandescent","Handling","Backup Mag"]],
+  ["Lightweight","450 RPM","Mobility frame. Good for aggressive play.",
+   ["Arrowhead Brake","Accurized Rounds / Ricochet Rounds","Perpetual Motion / Moving Target","Kill Clip / Headseeker","Range","Targeting Adjuster"],
+   ["Fluted Barrel","Tactical Mag","Rapid Hit","Frenzy / Jolting Feedback","Handling","Backup Mag"]],
+  ["Rapid-Fire","540 RPM","Horror's Least frame. Fast bursts that need stability.",
+   ["Arrowhead Brake","Accurized Rounds","Zen Moment / Heating Up","Kill Clip / Rampage / Perpetual Motion","Range","Counterbalance Stock"],
+   ["Fluted Barrel","Tactical Mag","Supercharged Magazine / Trickle Charge / Overflow","Jolting Feedback / Frenzy / Rolling Storm","Handling","Backup Mag"]]
+ ]},
+ {id:"auto", name:"Auto Rifles", tnote:"Sustained fire. Autos gain more from aim assist than any other type, which makes them strong picks on controller.", frames:[
+  ["High-Impact","360 RPM","Hardest hitting, slowest. Wins duels at long auto range.",
+   ["Arrowhead Brake / Smallbore","Ricochet Rounds / Accurized Rounds","Tap the Trigger / Moving Target","Target Lock / Kill Clip","Stability","Counterbalance Stock"],
+   ["Fluted Barrel","Flared Magwell / Extended Mag","Repulsor Brace / Demolitionist","Destabilizing Rounds / Rampage / Master of Arms","Reload Speed","Backup Mag"]],
+  ["Adaptive","450 RPM","Gnawing Hunger frame. The default all-rounder.",
+   ["Smallbore","Ricochet Rounds","Tap the Trigger / Withering Gaze","Dynamic Sway Reduction / Master of Arms","Stability","Counterbalance Stock"],
+   ["Fluted Barrel","Flared Magwell","Repulsor Brace / Demolitionist","Destabilizing Rounds / Rampage","Reload Speed","Backup Mag"]],
+  ["Precision","450 RPM","Very little recoil, rewards crits.",
+   ["Arrowhead Brake","Accurized Rounds","Moving Target / Keep Away","Target Lock / Kill Clip","Range","Targeting Adjuster"],
+   ["Arrowhead Brake","Extended Mag","Subsistence / Threat Detector","Incandescent / Voltshot","Reload Speed","Backup Mag"]],
+  ["Rapid-Fire","600 RPM","Melts at close range but falls off fast.",
+   ["Arrowhead Brake / Corkscrew Rifling","Ricochet Rounds","Tap the Trigger / Perpetual Motion","Target Lock / Rangefinder","Range","Counterbalance Stock"],
+   ["Arrowhead Brake","Extended Mag","Subsistence","Target Lock / Incandescent / Hatchling","Stability","Backup Mag"]],
+  ["Support","450 RPM","Hitting allies heals them. PvE support niche.",
+   ["Arrowhead Brake","Ricochet Rounds","Tap the Trigger","Target Lock","Stability","Counterbalance Stock"],
+   ["Arrowhead Brake","Extended Mag","Subsistence","Incandescent / Voltshot","Stability","Backup Mag"]]
+ ]},
+ {id:"scout", name:"Scout Rifles", tnote:"Long-range lane holders. In PvP, Explosive Payload adds flinch and isn't hurt by damage falloff.", frames:[
+  ["High-Impact","150 RPM","Two-shot crit potential with buffs. The slowest frame.",
+   ["Arrowhead Brake / Hammer-Forged","Accurized Rounds","Moving Target / Keep Away","Explosive Payload / Kill Clip","Range","Targeting Adjuster"],
+   ["Arrowhead Brake","Tactical Mag","Rapid Hit / Firefly","Explosive Payload / Incandescent","Reload Speed","Backup Mag"]],
+  ["Lightweight","180 RPM","Mobility scout.",
+   ["Arrowhead Brake","Accurized Rounds","Moving Target / Fragile Focus","Explosive Payload / Headseeker","Range","Icarus Grip / Targeting Adjuster"],
+   ["Arrowhead Brake","Appended Mag","Rapid Hit / Demolitionist","Jolting Feedback / Voltshot","Reload Speed","Backup Mag"]],
+  ["Precision","200 RPM","The common scout frame. Steady and accurate.",
+   ["Smallbore / Hammer-Forged","Accurized Rounds","Keep Away / Moving Target","Explosive Payload / Rangefinder","Range","Counterbalance Stock"],
+   ["Arrowhead Brake","Tactical Mag","Rapid Hit / Subsistence","Incandescent / Explosive Payload","Reload Speed","Backup Mag"]],
+  ["Rapid-Fire","260 RPM","Fastest scout. A good PvE add-clear frame.",
+   ["Arrowhead Brake","Ricochet Rounds","Moving Target","Kill Clip / Headseeker","Range","Targeting Adjuster"],
+   ["Fluted Barrel","Tactical Mag","Subsistence / Demolitionist","Incandescent / Voltshot / Frenzy","Reload Speed","Backup Mag"]]
+ ]},
+ {id:"smg", name:"SMGs", tnote:"Close-range primaries. In PvP, range on these is what lets them beat shotguns out past shotgun range.", frames:[
+  ["Aggressive","750 RPM","Best kill time and range. The PvP pick.",
+   ["Arrowhead Brake / Corkscrew Rifling","Accurized Rounds / Ricochet Rounds","Tap the Trigger / Moving Target","Target Lock / Kill Clip","Range","Counterbalance Stock"],
+   ["Arrowhead Brake","Extended Mag","Subsistence / Threat Detector","Incandescent / Voltshot / Frenzy","Reload Speed","Backup Mag"]],
+  ["Lightweight","900 RPM","High fire rate, very mobile.",
+   ["Arrowhead Brake","Ricochet Rounds","Perpetual Motion / Dynamic Sway Reduction","Target Lock / Surrounded","Range","Targeting Adjuster"],
+   ["Arrowhead Brake","Extended Mag","Repulsor Brace / Demolitionist","Destabilizing Rounds / Target Lock","Stability","Backup Mag"]],
+  ["Precision","600 RPM","Low recoil, a slow SMG.",
+   ["Smallbore","Accurized Rounds","Moving Target / Tap the Trigger","Kill Clip / Swashbuckler","Range","Counterbalance Stock"],
+   ["Arrowhead Brake","Tactical Mag","Subsistence","Incandescent / Frenzy","Reload Speed","Backup Mag"]]
+ ]},
+ {id:"sidearm", name:"Sidearms", tnote:"Very fast to swap to. Use them as backup in close fights.", frames:[
+  ["Adaptive Burst","491 RPM","Two-burst, strong up close.",
+   ["Arrowhead Brake","Accurized Rounds","Moving Target / Perpetual Motion","Kill Clip / Headseeker","Range","Targeting Adjuster"],
+   ["Arrowhead Brake","Tactical Mag","Subsistence / Demolitionist","Incandescent / Voltshot","Handling","Backup Mag"]],
+  ["Precision","300 RPM","Semi-auto, the most range.",
+   ["Corkscrew Rifling","Accurized Rounds","Slideshot / Moving Target","Kill Clip / Swashbuckler","Range","Counterbalance Stock"],
+   ["Arrowhead Brake","Tactical Mag","Rapid Hit","Golden Tricorn / Incandescent","Reload Speed","Backup Mag"]],
+  ["Rapid-Fire","450 RPM","Spray and pray, close range only.",
+   ["Arrowhead Brake","Ricochet Rounds","Perpetual Motion","Target Lock / Kill Clip","Range","Targeting Adjuster"],
+   ["Arrowhead Brake","Extended Mag","Subsistence","Frenzy / Voltshot","Reload Speed","Backup Mag"]]
+ ]},
+ {id:"bow", name:"Bows", tnote:"Primary ammo with a draw time. They hit hard, but you can't miss.", frames:[
+  ["Lightweight","~580 ms draw","Faster draw, lower damage.",
+   ["Elastic String / Polymer String","Carbon Arrow Shaft / Compact Arrow Shaft","Archer's Tempo / Moving Target","Opening Shot / Hip-Fire Grip","Draw Time / Handling","Targeting Adjuster"],
+   ["Fiberglass String","Carbon Arrow Shaft","Archer's Tempo / Rapid Hit","Explosive Head / Incandescent / Voltshot","Draw Time","Backup Mag"]],
+  ["Precision","~612 ms draw","Slower draw, one-shot headshot potential in PvP.",
+   ["Polymer String","Compact Arrow Shaft","Archer's Tempo / Slideshot","Opening Shot / Headseeker","Draw Time","Targeting Adjuster"],
+   ["Fiberglass String","Straight Fletching","Archer's Tempo / Firefly","Explosive Head / Successful Warm-Up","Draw Time","Backup Mag"]]
+ ]},
+ {id:"shotgun", name:"Shotguns", tnote:"Pellet shotguns live and die by range. Slug shotguns need precision hits.", frames:[
+  ["Aggressive","55 RPM","Big spread, one-shots up close.",
+   ["Full Choke / Rifled Barrel","Accurized Rounds / Light Mag","Slideshot / Threat Detector","Opening Shot / Elemental Capacitor","Range","Quick Access Sling"],
+   ["Barrel Shroud","Assault Mag","Lead from Gold / Auto-Loading Holster","Trench Barrel / One-Two Punch","Reload Speed","Backup Mag"]],
+  ["Precision","65 RPM","Tight spread, the PvP standard. Matador 64 and Felwinter's Lie are precision frames.",
+   ["Smallbore / Smoothbore / Rifled Barrel","Accurized Rounds / Light Mag","Perpetual Motion / Threat Detector / Slideshot","Opening Shot / Killing Wind / Iron Reach","Range","Quick Access Sling / Freehand Grip"],
+   ["Full Choke","Assault Mag","Lead from Gold / Threat Detector","Swashbuckler / One-Two Punch / Golden Tricorn","Reload Speed","Backup Mag"]],
+  ["Lightweight","140 RPM","Fires faster but usually needs two shots.",
+   ["Full Choke","Accurized Rounds","Slideshot / Threat Detector","Opening Shot","Range","Quick Access Sling"],
+   ["Barrel Shroud","Tactical Mag","Auto-Loading Holster / Pugilist","Trench Barrel / Bait and Switch","Reload Speed","Backup Mag"]],
+  ["Rapid-Fire","140 RPM","Big magazine, add-clear frame.",
+   ["Full Choke","Accurized Rounds","Threat Detector","Opening Shot","Range","Quick Access Sling"],
+   ["Barrel Shroud","Assault Mag","Auto-Loading Holster / Lead from Gold","Trench Barrel / Golden Tricorn","Reload Speed","Backup Mag"]],
+  ["Pinpoint Slug","~65 RPM","Single slug that rewards crits. The Inquisitor is one.",
+   ["Corkscrew Rifling / Smallbore","Accurized Rounds / Light Mag","Slideshot / Moving Target / Snapshot Sights","Opening Shot / Rangefinder","Range / Handling","Targeting Adjuster"],
+   ["Corkscrew Rifling","Tactical Mag","Lead from Gold / Auto-Loading Holster","Bait and Switch / Recombination / Vorpal Weapon","Reload Speed","Backup Mag"]]
+ ]},
+ {id:"sniper", name:"Sniper Rifles", tnote:"In PvP, aim-down-sights speed and handling are everything. In PvE, damage perks and reserves matter.", frames:[
+  ["Aggressive","72 RPM","Highest damage, the main PvE boss-damage frame.",
+   ["Fluted Barrel","Accurized Rounds","Snapshot Sights / Quickdraw","Opening Shot / Box Breathing","Handling","Targeting Adjuster"],
+   ["Fluted Barrel","Flared Magwell / Appended Mag","Triple Tap / Fourth Time's the Charm","Bait and Switch / Firing Line / Vorpal Weapon","Reload Speed","Backup Mag"]],
+  ["Adaptive","90 RPM","The PvP all-rounder.",
+   ["Fluted Barrel / Arrowhead Brake","Accurized Rounds / Tactical Mag","Snapshot Sights / Moving Target","Opening Shot / Kill Clip","Handling","Targeting Adjuster"],
+   ["Fluted Barrel","Appended Mag","Triple Tap / Envious Assassin","Firing Line / Precision Instrument / Explosive Head","Reload Speed","Backup Mag"]],
+  ["Rapid-Fire","140 RPM","Lower damage per shot. For add clear and Champions.",
+   ["Fluted Barrel","Tactical Mag","Snapshot Sights / Rapid Hit","Box Breathing","Handling","Targeting Adjuster"],
+   ["Arrowhead Brake","Appended Mag","Rapid Hit / Fourth Time's the Charm","Explosive Head / Incandescent","Reload Speed","Backup Mag"]]
+ ]},
+ {id:"fusion", name:"Fusion Rifles", tnote:"Charge-time weapons. Range is the PvP stat. In PvE, legendary fusions are add-clear and Champion tools.", frames:[
+  ["High-Impact","1000 ms charge","Longest charge, highest damage.",
+   ["Arrowhead Brake / Corkscrew Rifling","Accelerated Coils","Under Pressure / Moving Target","Rangefinder / Opening Shot","Range","Targeting Adjuster"],
+   ["Arrowhead Brake","Liquid Coils","Reservoir Burst / Auto-Loading Holster","Controlled Burst / Vorpal Weapon","Charge Time","Backup Mag"]],
+  ["Adaptive","860 ms charge","Balanced.",
+   ["Arrowhead Brake","Accelerated Coils / Projection Fuse","Under Pressure / Perpetual Motion","Rangefinder / Kill Clip","Range","Counterbalance Stock"],
+   ["Fluted Barrel","Liquid Coils","Reservoir Burst / Under Pressure","Controlled Burst / Bait and Switch","Charge Time","Backup Mag"]],
+  ["Rapid-Fire","660 ms charge","Fastest charge, best for aggressive play.",
+   ["Arrowhead Brake / Fluted Barrel","Accelerated Coils","Moving Target / Perpetual Motion","Kill Clip / Rangefinder","Range","Targeting Adjuster"],
+   ["Arrowhead Brake","Accelerated Coils","Auto-Loading Holster","Chain Reaction / Controlled Burst","Reload Speed","Backup Mag"]],
+  ["Precision","740 ms charge","Tight bolt spread.",
+   ["Corkscrew Rifling","Accelerated Coils","Under Pressure","Rangefinder","Range","Counterbalance Stock"],
+   ["Fluted Barrel","Liquid Coils","Reservoir Burst","Controlled Burst","Charge Time","Backup Mag"]]
+ ]},
+ {id:"sgl", name:"Special Grenade Launchers", tnote:"Breech launchers in the special slot. Most of their value is in PvE.", frames:[
+  ["Lightweight","90 RPM","Fast handling, single shot.",
+   ["Quick Launch / Hard Launch","Blinding Grenades / High-Explosive Ordnance","Auto-Loading Holster / Slideshot","Opening Shot / Rangefinder","Velocity","Quick Access Sling"],
+   ["Quick Launch / Volatile Launch","Spike Grenades / High-Explosive Ordnance","Auto-Loading Holster / Demolitionist","Chain Reaction / Incandescent / Voltshot","Reload Speed","Backup Mag"]],
+  ["Wave Frame","90 RPM","Fires a ground wave. Great for PvE add clear.",
+   ["Quick Launch","Blinding Grenades","Auto-Loading Holster","Opening Shot","Handling","Quick Access Sling"],
+   ["Quick Launch","High-Explosive Ordnance","Envious Assassin / Demolitionist","Chain Reaction / Incandescent","Reload Speed","Backup Mag"]],
+  ["Double Fire / Area Denial","72 RPM","Two shots or lingering damage zones.",
+   ["Quick Launch","Blinding Grenades","Slideshot","Opening Shot","Velocity","Quick Access Sling"],
+   ["Quick Launch","Extended Mag / Spike Grenades","Field Prep / Hatchling","Master of Arms / Frenzy","Handling","Backup Mag"]]
+ ]},
+ {id:"hgl", name:"Heavy Grenade Launchers", tnote:"Drum launchers. Boss damage and add clear in PvE. Mostly irrelevant in PvP.", frames:[
+  ["Rapid-Fire","150 RPM","Big magazine, the sustained-damage frame.",
+   ["Quick Launch","Spike Grenades","Auto-Loading Holster","Chain Reaction","Velocity","Quick Access Sling"],
+   ["Quick Launch / Volatile Launch","Spike Grenades / High-Explosive Ordnance","Envious Assassin / Cascade Point / Field Prep","Bait and Switch / Explosive Light / Frenzy","Reload Speed","Backup Mag"]],
+  ["Adaptive / Compressed Wave","120 RPM","Burst or wave variants.",
+   ["Quick Launch","Spike Grenades","Field Prep","Chain Reaction","Blast Radius","Quick Access Sling"],
+   ["Quick Launch","Spike Grenades","Envious Assassin / Field Prep","Bait and Switch / Explosive Light","Reload Speed","Backup Mag"]]
+ ]},
+ {id:"rocket", name:"Rocket Launchers", tnote:"Burst boss damage. In PvP, use Tracking plus Blast Radius for picks and area denial.", frames:[
+  ["Precision","15 RPM","Self-tracking rocket. Hothead and Bad Omens are precision frames.",
+   ["Quick Launch / Volatile Launch","Tracking Module / Impact Casing","Danger Zone / Field Prep","Cluster Bomb / Proximity Detonation","Blast Radius / Velocity","Quick Access Sling"],
+   ["Quick Launch","Impact Casing","Envious Arsenal / Reconstruction","Aggregate Charge / Bait and Switch / Bipod","Velocity","Backup Mag"]],
+  ["Adaptive","20 RPM","Balanced damage and handling.",
+   ["Quick Launch","Tracking Module","Field Prep / Auto-Loading Holster","Cluster Bomb","Blast Radius","Quick Access Sling"],
+   ["Quick Launch / Volatile Launch","Impact Casing / Alloy Casing","Reconstruction / Envious Assassin","Bait and Switch / Explosive Light / Frenzy","Reload Speed","Backup Mag"]],
+  ["High-Impact / Aggressive","15 RPM","Highest single-shot damage.",
+   ["Volatile Launch","Impact Casing","Danger Zone","Proximity Detonation","Blast Radius","Quick Access Sling"],
+   ["Quick Launch","Impact Casing","Reconstruction / Envious Assassin","Explosive Light / Bait and Switch","Velocity","Backup Mag"]]
+ ]},
+ {id:"mg", name:"Machine Guns", tnote:"Heavy primaries. PvE add clear, plus sustained boss damage with the right perks.", frames:[
+  ["Rapid-Fire","900 RPM","Huge magazine, add-clear frame.",
+   ["Arrowhead Brake","Ricochet Rounds","Tap the Trigger","Target Lock","Stability","Counterbalance Stock"],
+   ["Arrowhead Brake / Fluted Barrel","Extended Mag / Ricochet Rounds","Subsistence / Ambitious Assassin / Feeding Frenzy","Target Lock / Incandescent / Voltshot / Frenzy","Reload Speed","Backup Mag"]],
+  ["Adaptive","450 RPM","Balanced, a common boss-damage frame.",
+   ["Arrowhead Brake","Ricochet Rounds","Moving Target","Target Lock / Kill Clip","Stability","Counterbalance Stock"],
+   ["Arrowhead Brake","Extended Mag","Envious Assassin / Ambitious Assassin","Bait and Switch / Target Lock","Reload Speed","Backup Mag"]],
+  ["High-Impact","360 RPM","Hardest-hitting MG.",
+   ["Arrowhead Brake","Ricochet Rounds","Moving Target","Kill Clip","Stability","Counterbalance Stock"],
+   ["Arrowhead Brake","Extended Mag","Envious Assassin / Feeding Frenzy","Bait and Switch / Frenzy","Reload Speed","Backup Mag"]]
+ ]},
+ {id:"sword", name:"Swords", tnote:"Heavy melee. Guard type and Relentless Strikes or Surrounded set your damage. PvE focused.", frames:[
+  ["Vortex","Heavy attack spin","Spin attack, multi-target.",
+   ["Jagged Edge","Swordmaster's Guard","Tireless Blade","Whirlwind Blade","Impact","—"],
+   ["Jagged Edge / Tempered Edge","Swordmaster's Guard / Enduring Guard","Relentless Strikes / Energy Transfer","Surrounded / Whirlwind Blade / Chain Reaction","Impact","Backup Mag"]],
+  ["Caster","Heavy attack projectile","Ranged heavy attack.",
+   ["Jagged Edge","Swordmaster's Guard","Tireless Blade","Eager Edge","Impact","—"],
+   ["Tempered Edge","Swordmaster's Guard","Energy Transfer / Relentless Strikes","Surrounded / Chain Reaction","Impact","Backup Mag"]],
+  ["Lightweight / Aggressive","Light attack / uppercut","Fast swings, or a big uppercut heavy attack.",
+   ["Jagged Edge","Enduring Guard","Tireless Blade","Eager Edge","Impact","—"],
+   ["Jagged Edge","Swordmaster's Guard","Relentless Strikes","Surrounded / Whirlwind Blade","Impact","Backup Mag"]]
+ ]},
+ {id:"glaive", name:"Glaives", tnote:"Melee and projectile hybrids with a shield. PvE focused.", frames:[
+  ["Adaptive","Balanced","Standard projectile and melee balance.",
+   ["Fluted Haft","Light Mag","Slideshot / Moving Target","Opening Shot","Handling","Quick Access Sling"],
+   ["Fluted Haft","Extended Mag","Close to Melee / Demolitionist","Incandescent / Voltshot / Frenzy","Reload Speed","Backup Mag"]],
+  ["Rapid-Fire / Aggressive","Fast projectile or hard hitting","The rapid-fire frame fires faster. The aggressive frame hits harder per projectile.",
+   ["Fluted Haft","Light Mag","Moving Target","Opening Shot","Handling","Quick Access Sling"],
+   ["Fluted Haft","Extended Mag","Close to Melee / Demolitionist","Destabilizing Rounds / Frenzy","Reload Speed","Backup Mag"]]
+ ]}
+];
+
+// Trials of Osiris weapons: their own perk pools. roll arrays = [barrel, mag, t1, t2, mw, origin, mod]
+const TRIALS = [
+ {n:"Igneous Hammer",t:"Hand Cannon · Aggressive · Solar",src:"Lighthouse pool",tier:"S PvP / B PvE",
+  pvp:["Smallbore","Ricochet Rounds","Rapid Hit / Slideshot / Moving Target","Opening Shot / Precision Instrument / Adagio","Range","Roar of Battle","Counterbalance Stock"],
+  pve:["Fluted Barrel","Flared Magwell","Firefly / Heal Clip","Incandescent / Frenzy / Desperate Measures","Handling","Roar of Battle","Backup Mag"],
+  p1:"Firefly, Heal Clip, Rapid Hit, Slideshot, Moving Target, Lone Wolf, Keep Away",p2:"Incandescent, Frenzy, Desperate Measures, Opening Shot, Precision Instrument, Adagio, Eye of the Storm",o:"Fleet Footed, Roar of Battle"},
+ {n:"The Messenger",t:"Pulse Rifle · High-Impact · Kinetic",src:"Lighthouse pool",tier:"Strong PvP",
+  pvp:["Arrowhead Brake","Ricochet Rounds","Rapid Hit","Desperado / Headseeker","Stability / Range","Alacrity","Counterbalance Stock"],
+  pve:["Arrowhead Brake","Appended Mag","Rapid Hit","Kinetic Tremors / Kill Clip","Stability / Handling","Wild Card","Backup Mag"],
+  p1:"Perpetual Motion, Rapid Hit, Outlaw, Under-Over, Moving Target, Offhand Strike, Discord",p2:"Kill Clip, Desperado, Kinetic Tremors, Headseeker, Harmony, Encore, Keep Away",o:"Alacrity, One Quiet Moment, Wild Card"},
+ {n:"The Summoner",t:"Auto Rifle · Adaptive · Solar",src:"Lighthouse pool",tier:"A PvP / A PvE",
+  pvp:["Hammer-Forged Rifling","Ricochet Rounds","Zen Moment / Dynamic Sway Reduction","Kill Clip / Onslaught","Range","Alacrity","Counterbalance Stock"],
+  pve:["Hammer-Forged Rifling","Extended Mag","Heal Clip / Overflow","Incandescent / Golden Tricorn","Stability","Wild Card","Backup Mag"],
+  p1:"Overflow, Perpetual Motion, Dynamic Sway Reduction, Subsistence, Zen Moment, Elemental Capacitor, Heal Clip",p2:"Rampage, Golden Tricorn, Onslaught, Kill Clip, Tap the Trigger, Target Lock, Incandescent",o:"Alacrity, One Quiet Moment, Wild Card"},
+ {n:"Shayura's Wrath",t:"SMG · Void",src:"Lighthouse pool",tier:"Strong PvP",
+  pvp:["Hammer-Forged Rifling","Ricochet Rounds","Dynamic Sway Reduction / Zen Moment","Kill Clip / Tap the Trigger","Range","One Quiet Moment","Counterbalance Stock"],
+  pve:["Fluted Barrel","Flared Magwell","Repulsor Brace","Destabilizing Rounds","Reload Speed","Alacrity","Backup Mag"],
+  p1:"Repulsor Brace, Dynamic Sway Reduction, Killing Wind, Keep Away, Zen Moment, Strategist, Discord",p2:"Tap the Trigger, Kill Clip, Destabilizing Rounds, Cascade Point, Harmony, Target Lock, High-Impact Reserves",o:"Alacrity, One Quiet Moment, Nadir Focus"},
+ {n:"The Inquisitor",t:"Shotgun · Pinpoint Slug · Arc",src:"Lighthouse pool",tier:"A PvP / C PvE",
+  pvp:["Smallbore","Accurized Rounds","Lone Wolf / Threat Detector","Closing Time / Opening Shot","Range","One Quiet Moment","Targeting Adjuster"],
+  pve:["Fluted Barrel","Assault Mag","Envious Assassin","Bait and Switch / Cascade Point","Handling","One Quiet Moment","Backup Mag"],
+  p1:"Envious Assassin, Lone Wolf, Offhand Strike, Loose Change, Perpetual Motion, Slideshot, Threat Detector",p2:"Bait and Switch, Closing Time, Cascade Point, Fragile Focus, Rolling Storm, Opening Shot, Precision Instrument",o:"Alacrity, One Quiet Moment, Suros Synergy"},
+ {n:"Astral Horizon",t:"Shotgun · Aggressive · Kinetic",src:"Week 1 pool",tier:"A PvP / C PvE",
+  pvp:["Smoothbore","Accurized Rounds","Slideshot / Threat Detector","Opening Shot / Closing Time","Range","Fleet Footed","Quick Access Sling"],
+  pve:["Barrel Shroud","Assault Mag","Stopping Power / Threat Detector / Lead from Gold","One-Two Punch / Vorpal Weapon","Handling","Roar of Battle","Backup Mag"],
+  p1:"Lead from Gold, Barrel Constrictor, Slideshot, Snapshot Sights, Stopping Power, Threat Detector, Pugilist",p2:"Bewildering Burst, One-Two Punch, Opening Shot, Proximity Power, Closing Time, All-Star, Vorpal Weapon",o:"Fleet Footed, Roar of Battle, Wild Card"},
+ {n:"Aisha's Embrace",t:"Scout Rifle · Rapid-Fire · Void",src:"Week 1 pool",tier:"Strong PvP",
+  pvp:["Polygonal Rifling","Steady Rounds","Rapid Hit / Eye of the Storm","Precision Instrument","Stability","Roar of Battle","Targeting Adjuster"],
+  pve:["Fluted Barrel","Flared Magwell","Demoralize / Rapid Hit / Shoot to Loot","Destabilizing Rounds / Withering Gaze","Reload Speed","Roar of Battle","Backup Mag"],
+  p1:"Encore, Eye of the Storm, Rapid Hit, Shoot to Loot, Demoralize, Vorpal Weapon",p2:"Adagio, Withering Gaze, Desperate Measures, Destabilizing Rounds, Sword Logic, Kill Clip, Precision Instrument",o:"Fleet Footed, Roar of Battle"},
+ {n:"Unwavering Duty",t:"Machine Gun · Adaptive · Solar",src:"Week 2 pool",tier:"B PvP / A PvE",
+  pvp:["Arrowhead Brake","Ricochet Rounds","Dynamic Sway Reduction","Tap the Trigger / Killing Tally","Range","Fleet Footed","Counterbalance Stock"],
+  pve:["Smallbore","Appended Mag","Incandescent / Rampage / Subsistence","Killing Tally / Onslaught","Stability / Reload Speed","Roar of Battle","Backup Mag"],
+  p1:"Auto-Loading Holster, Incandescent, Dynamic Sway Reduction, Envious Assassin, Fourth Time's the Charm, Rampage, Subsistence",p2:"Cascade Point, Bait and Switch, Burning Ambition, Killing Tally, Onslaught, Tap the Trigger, Target Lock",o:"Fleet Footed, Roar of Battle, Suros Synergy"},
+ {n:"Eye of Sol",t:"Sniper Rifle · Adaptive · Kinetic",src:"Week 3 pool",tier:"S PvP",
+  pvp:["Fluted Barrel","Ricochet Rounds","Moving Target / Perpetual Motion","Opening Shot / Keep Away / Snapshot Sights","Stability / Handling","One Quiet Moment","Targeting Adjuster"],
+  pve:["Fluted Barrel","Appended Mag","Air Trigger / Perpetual Motion","Precision Instrument / Vorpal Weapon / Firing Line","Handling","Wild Card","Backup Mag"],
+  p1:"Air Trigger, Fragile Focus, Moving Target, No Distractions, Perpetual Motion, Slickdraw, Shot Swap",p2:"Firing Line, Snapshot Sights, Opening Shot, Vorpal Weapon, Precision Instrument, Keep Away, Deconstruct",o:"Alacrity, One Quiet Moment, Wild Card"},
+ {n:"The Martlet",t:"Pulse Rifle · Lightweight · Void",src:"Week 3 pool",tier:"S PvP",
+  pvp:["Hammer-Forged Rifling","Accurized Rounds","Keep Away / Headseeker","Kill Clip / Zen Moment","Range / Reload Speed","Roar of Battle","Counterbalance Stock"],
+  pve:["Fluted Barrel","Flared Magwell","Repulsor Brace / Firefly","Destabilizing Rounds / Withering Gaze","Reload Speed","Fleet Footed","Backup Mag"],
+  p1:"Headseeker, Repulsor Brace, Firefly, Lone Wolf, Perpetual Motion, Keep Away, Loose Change",p2:"Destabilizing Rounds, Sword Logic, Desperate Measures, Withering Gaze, Kill Clip, Desperado, Zen Moment",o:"Fleet Footed, Roar of Battle"}
+,{n:"Corundum Hammer",t:"Hand Cannon · Adaptive · Strand",src:"Week 1 pool",tier:"S PvP / A PvE",
+ pvp:["Smallbore","Accurized Rounds","Slideshot / Fragile Focus","Opening Shot / Explosive Payload","Stability","Roar of Battle","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Firefly / Slice","Sword Logic / Explosive Payload","Reload Speed","Fleet Footed","Backup Mag"],
+ p1:"Slideshot, Lone Wolf, Shoot to Loot, Fragile Focus, Slice, Reconstruction, Firefly",p2:"Keep Away, Explosive Payload, Opening Shot, Precision Instrument, Tear, Sword Logic, Elemental Honing",o:"Fleet Footed, Roar of Battle"}
+,{n:"The Scholar",t:"Scout Rifle · High-Impact · Strand",src:"Week 1 pool",tier:"A PvP / B PvE",
+ pvp:["Arrowhead Brake","Ricochet Rounds","Slideways / Opening Shot","Snapshot Sights / Precision Instrument","Stability","Fleet Footed","Counterbalance Stock"],
+ pve:["Fluted Barrel","Appended Mag","Slice / Firefly","Hatchling / Explosive Payload","Reload Speed","Roar of Battle","Backup Mag"],
+ p1:"Slideways, Opening Shot, Slice, Keep Away, Lone Wolf, Shoot to Loot, Firefly",p2:"Snapshot Sights, No Distractions, Precision Instrument, Explosive Payload, Kill Clip, Tear, Hatchling",o:"Fleet Footed, Roar of Battle, Wild Card"}
+,{n:"Forgiveness",t:"Sidearm · Heavy Burst · Arc",src:"Week 1 pool",tier:"A PvP / B PvE",
+ pvp:["Smallbore","Ricochet Rounds","Zen Moment / Lone Wolf","Headseeker / Kill Clip","Range","Fleet Footed","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Voltshot / Demolitionist","Surrounded / Desperate Measures","Handling","Roar of Battle","Backup Mag"],
+ p1:"Voltshot, Demolitionist, Lone Wolf, Offhand Strike, Proximity Power, Tap the Trigger, Zen Moment",p2:"Adrenaline Junkie, Headseeker, Desperate Measures, Kill Clip, Precision Instrument, Surrounded, Loose Change",o:"Fleet Footed, Roar of Battle"}
+,{n:"Exile's Curse",t:"Fusion Rifle · High-Impact · Solar",src:"Week 1 pool",tier:"A PvP / B PvE",
+ pvp:["Arrowhead Brake","Projection Fuse","Slideshot / Under Pressure","Closing Time / Kickstart","Range","Fleet Footed","Counterbalance Stock"],
+ pve:["Fluted Barrel","Liquid Coils","Heal Clip / Killing Wind","Incandescent / High-Impact Reserves","Charge Time","Roar of Battle","Backup Mag"],
+ p1:"Killing Wind, Slideshot, Quickdraw, Offhand Strike, Heal Clip, Lone Wolf, Under Pressure",p2:"High-Impact Reserves, Backup Plan, Vorpal Weapon, Kickstart, Incandescent, Closing Time, Tap the Trigger",o:"Fleet Footed, Roar of Battle, Wild Card"}
+,{n:"Sola's Scar",t:"Sword · Caster · Solar",src:"Week 1 pool",tier:"C PvP / A PvE",
+ pvp:["Tempered Edge","Burst Guard","Eager Edge","Whirlwind Blade / Vorpal Weapon","Impact","Fleet Footed","Quick Access Sling"],
+ pve:["Hungry Edge / Jagged Edge","Balanced Guard","Relentless Strikes / Eager Edge","Chain Reaction / Vorpal Weapon","Impact","Roar of Battle","Backup Mag"],
+ p1:"Energy Transfer, Relentless Strikes, Tireless Blade, Eager Edge, Demolitionist, Flash Counter, Duelist's Trance",p2:"Chain Reaction, Vorpal Weapon, Whirlwind Blade, Elemental Honing, Assassin's Blade, Redirection, Frenzy",o:"Fleet Footed, Roar of Battle"}
+,{n:"The Immortal",t:"SMG · Aggressive · Strand",src:"Week 2 pool",tier:"S PvP / B PvE",
+ pvp:["Smallbore","Ricochet Rounds","Rangefinder / Dynamic Sway Reduction","Target Lock / Kill Clip","Range","Roar of Battle","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Attrition Orbs / Hatchling","Target Lock / Demolitionist","Reload Speed","Field-Tested","Backup Mag"],
+ p1:"Slice, Dynamic Sway Reduction, Threat Detector, Keep Away, Rangefinder, Hatchling, Attrition Orbs",p2:"Target Lock, Kill Clip, Lone Wolf, Demolitionist, Master of Arms, Transcendent Moment, Elemental Honing",o:"Fleet Footed, Roar of Battle, Field-Tested"}
+,{n:"Aisha's Care",t:"Pulse Rifle · Heavy Burst · Strand",src:"Week 2 pool",tier:"A PvP / B PvE",
+ pvp:["Arrowhead Brake","Ricochet Rounds","Zen Moment / Keep Away","Headseeker / Moving Target","Stability","Fleet Footed","Targeting Adjuster"],
+ pve:["Arrowhead Brake","Flared Magwell","Slice / Encore","Hatchling / Desperado","Reload Speed","Omolon Fluid Dynamics","Backup Mag"],
+ p1:"Slice, Encore, Under Pressure, Keep Away, Zen Moment, Lone Wolf, Rapid Hit",p2:"Hatchling, Desperado, Kill Clip, Moving Target, Headseeker, Elemental Honing, Sword Logic",o:"Fleet Footed, Roar of Battle, Omolon Fluid Dynamics"}
+,{n:"Keen Thistle",t:"Sniper Rifle · Aggressive · Solar",src:"Week 2 pool",tier:"A PvP / B PvE",
+ pvp:["Fluted Barrel","Steady Rounds","Snapshot Sights / Lone Wolf","Opening Shot / Closing Time","Handling","One Quiet Moment / Alacrity","Freehand Grip"],
+ pve:["Fluted Barrel / Arrowhead Brake","Appended Mag","Envious Arsenal / Triple Tap","Bait and Switch / Fourth Time's the Charm","Handling","Alacrity / One Quiet Moment","Backup Mag"],
+ p1:"Snapshot Sights, Lone Wolf, Incandescent, Triple Tap, Slickdraw, Under Pressure, Envious Arsenal",p2:"Opening Shot, Moving Target, Closing Time, Vorpal Weapon, Discord, Bait and Switch, Fourth Time's the Charm",o:"Alacrity, One Quiet Moment, Häkke Breach Armaments"}
+,{n:"Burden of Guilt",t:"Fusion Rifle · Adaptive · Stasis",src:"Week 2 pool",tier:"A PvP / A PvE",
+ pvp:["Arrowhead Brake","Projection Fuse","Under Pressure","Closing Time / Kickstart","Range","Fleet Footed","Counterbalance Stock"],
+ pve:["Arrowhead Brake","Liquid Coils","Envious Arsenal / Ambitious Assassin","Chill Clip / Controlled Burst","Charge Time","Roar of Battle","Backup Mag"],
+ p1:"Under Pressure, Rimestealer, Lone Wolf, Perpetual Motion, Envious Arsenal, Ambitious Assassin, Eye of the Storm",p2:"Closing Time, Chill Clip, High-Impact Reserves, Crystalline Corpsebloom, Kickstart, Controlled Burst, Aggregate Charge",o:"Fleet Footed, Roar of Battle"}
+,{n:"Cataphract GL3",t:"Heavy Grenade Launcher · Adaptive · Strand",src:"Week 2 pool",tier:"B PvP / A PvE",
+ pvp:["Quick Launch","High-Velocity Rounds","Impulse Amplifier / Quickdraw","Explosive Light","Velocity","Fleet Footed","Quick Access Sling"],
+ pve:["Quick Launch","Spike Grenades","Envious Arsenal / Auto-Loading Holster","Bait and Switch / Chain Reaction","Handling","Omolon Fluid Dynamics","Backup Mag"],
+ p1:"Envious Assassin, Auto-Loading Holster, Envious Arsenal, Impulse Amplifier, Quickdraw, Blast Distributor, Lead From Light",p2:"Bait and Switch, Explosive Light, Chain Reaction, Full Court, Vorpal Weapon, Demolitionist, Impromptu Ammunition",o:"Fleet Footed, Roar of Battle, Omolon Fluid Dynamics"}
+,{n:"Willful Hamartia",t:"Linear Fusion · Adaptive Burst · Arc",src:"Week 2 pool",tier:"B PvP / A PvE",
+ pvp:["Arrowhead Brake","Projection Fuse","Tap the Trigger / Lone Wolf","Kickstart / Headseeker","Range / Stability","Fleet Footed","Targeting Adjuster"],
+ pve:["Arrowhead Brake","Accelerated Coils","High-Impact Reserves / Envious Assassin","Precision Instrument / Bait and Switch","Reload Speed","Roar of Battle","Backup Mag"],
+ p1:"Lone Wolf, Tap the Trigger, Envious Assassin, Rapid Hit, Slideways, Successful Warm-Up, High-Impact Reserves",p2:"Headseeker, Kickstart, Bait and Switch, Precision Instrument, Reservoir Burst, Offhand Strike, Jolting Feedback",o:"Fleet Footed, Roar of Battle, Wild Card"}
+,{n:"Exalted Truth",t:"Hand Cannon · Adaptive · Void",src:"Week 3 pool",tier:"S PvP / B PvE",
+ pvp:["Smallbore","Accurized Rounds","Slideshot / Keep Away","Precision Instrument / Opening Shot","Range","One Quiet Moment / Alacrity","Targeting Adjuster"],
+ pve:["Fluted Barrel","Tactical Mag","Destabilizing Rounds","One for All / Repulsor Brace","Handling / Reload Speed","Alacrity / One Quiet Moment","Backup Mag"],
+ p1:"Lone Wolf, Slideshot, Destabilizing Rounds, Keep Away, Zen Moment, Withering Gaze, Moving Target",p2:"Precision Instrument, Magnificent Howl, Eye of the Storm, Opening Shot, Repulsor Brace, Demoralize, One for All",o:"Alacrity, Suros Synergy, One Quiet Moment"}
+,{n:"Aureus Neutralizer",t:"Hand Cannon · Spread Shot · Kinetic",src:"Week 3 pool",tier:"A PvP / C PvE",
+ pvp:["Smallbore / Corkscrew Rifling","Accurized Rounds","Lone Wolf / Threat Detector","Opening Shot / Closing Time","Range","Fleet Footed","Targeting Adjuster"],
+ pve:["Barrel Shroud","Appended Mag","Vorpal Weapon / Grave Robber","One-Two Punch / Trench Barrel","Handling","Roar of Battle","Backup Mag"],
+ p1:"Barrel Constrictor, Grave Robber, Lone Wolf, Threat Detector, Threat Remover, Proximity Power, Vorpal Weapon",p2:"Adagio, Cascade Point, Closing Time, Desperate Measures, One-Two Punch, Trench Barrel, Opening Shot",o:"Fleet Footed, Roar of Battle, Häkke Breach Armaments"}
+,{n:"Auric Disabler",t:"Auto Rifle · Precision · Strand",src:"Week 3 pool",tier:"A PvP / A PvE",
+ pvp:["Arrowhead Brake / Corkscrew Rifling","Ricochet Rounds","Dynamic Sway Reduction / Zen Moment","Target Lock / Tap the Trigger","Range","Omolon Fluid Dynamics","Targeting Adjuster"],
+ pve:["Fluted Barrel / Corkscrew Rifling","Flared Magwell","Dragonfly / Hatchling","Desperate Measures / Tear","Reload Speed","Roar of Battle","Backup Mag"],
+ p1:"Gutshot Straight, Dragonfly, Dynamic Sway Reduction, Hatchling, Lone Wolf, Slice, Zen Moment",p2:"Desperate Measures, Kill Clip, Onslaught, Sword Logic, Tap the Trigger, Target Lock, Tear",o:"Fleet Footed, Roar of Battle, Omolon Fluid Dynamics"}
+,{n:"Everburning Glitz",t:"Auto Rifle · Rapid-Fire · Kinetic",src:"Week 3 pool",tier:"B PvP / A PvE",
+ pvp:["Extended Barrel","Ricochet Rounds","Dynamic Sway Reduction / Transcendent Moment","Tap the Trigger / Zen Moment","Range","Roar of Battle","Targeting Adjuster"],
+ pve:["Fluted Barrel","Extended Mag","Attrition Orbs / Bewildering Burst","Kinetic Tremors / One for All","Reload Speed","Roar of Battle","Backup Mag"],
+ p1:"Attrition Orbs, Lone Wolf, Subsistence, Dynamic Sway Reduction, Transcendent Moment, Bewildering Burst, To the Pain",p2:"Elemental Honing, Kinetic Tremors, Tap the Trigger, Ancillary Ordinance, One for All, Zen Moment, Eye of the Storm",o:"Fleet Footed, Roar of Battle"}
+,{n:"Tomorrow's Answer",t:"Rocket Launcher · High-Impact · Void",src:"Week 3 pool",tier:"B PvP / A PvE",
+ pvp:["Quick Launch","High-Velocity Rounds","Impulse Amplifier / Tracking Module","Chain Reaction / Cluster Bomb","Handling","Fleet Footed","Quick Access Sling"],
+ pve:["Quick Launch","Impact Casing","Envious Arsenal / Withering Gaze","Bait and Switch / Cluster Bomb","Velocity / Handling","Fleet Footed / Roar of Battle","Backup Mag"],
+ p1:"Withering Gaze, Envious Assassin, Impulse Amplifier, Envious Arsenal, Tracking Module, Reconstruction, Air Trigger",p2:"Bait and Switch, Chain Reaction, Cluster Bomb, Explosive Light, Bipod, Clown Cartridge, Reaper's Tithe",o:"Fleet Footed, Roar of Battle, Wild Card"}
+];
+const POOLS=["Lighthouse pool","Week 1 pool","Week 2 pool","Week 3 pool"];
+const IRONBANNER = [
+{n:"Crimil's Dagger",t:"Hand Cannon · Aggressive · Kinetic",src:"Playlist drop",tier:"A PvP / C PvE",
+ pvp:["Smallbore","Accurized Rounds","Opening Shot / Slideshot","Rangefinder / Snapshot Sights","Range","Skulking Wolf","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Firefly","Explosive Payload / Precision Instrument","Reload Speed","Skulking Wolf","Backup Mag"],
+ p1:"Firefly, Opening Shot, Lone Wolf, Keep Away, Slideshot, Moving Target, Slideways",p2:"Snapshot Sights, Rangefinder, Eye of the Storm, Kill Clip, Precision Instrument, Adagio, Explosive Payload",o:"Skulking Wolf, Häkke Breach Armaments"},
+{n:"Felwinter's Lie",t:"Shotgun · Aggressive · Solar",src:"Playlist drop",tier:"S PvP / C PvE",
+ pvp:["Rifled Barrel","Accurized Rounds","Slideshot / Slickdraw","Iron Reach / Opening Shot","Range","Skulking Wolf","Quick Access Sling"],
+ pve:["Smallbore","Assault Mag","Cascade Point","Trench Barrel","Handling","Skulking Wolf","Backup Mag"],
+ p1:"Slideshot, Slickdraw, Lone Wolf, Threat Detector, Dual Loader, Heal Clip, Cascade Point",p2:"Opening Shot, Iron Reach, Closing Time, One-Two Punch, Trench Barrel, Incandescent, Bait and Switch",o:"Skulking Wolf"},
+{n:"Multimach CCX",t:"SMG · Lightweight · Kinetic",src:"Playlist drop",tier:"A PvP / S PvE",
+ pvp:["Hammer-Forged Rifling","Accurized Rounds","Dynamic Sway Reduction / Moving Target","Kill Clip / Tap the Trigger","Range","Skulking Wolf","Targeting Adjuster"],
+ pve:["Corkscrew Rifling","Flared Magwell","Attrition Orbs / Bewildering Burst","Kinetic Tremors","Reload Speed","Field-Tested","Backup Mag"],
+ p1:"Moving Target, Dynamic Sway Reduction, Rangefinder, Killing Wind, Stopping Power, Bewildering Burst, Attrition Orbs",p2:"Target Lock, Kinetic Tremors, Kill Clip, Iron Reach, All-Star, Master of Arms, Tap the Trigger",o:"Skulking Wolf, Field-Tested"},
+{n:"The Forward Path",t:"Auto Rifle · Adaptive · Strand",src:"Playlist drop",tier:"A PvP / B PvE",
+ pvp:["Smallbore","Accurized Rounds","Zen Moment / Dynamic Sway Reduction","Iron Grip / Onslaught","Range","Skulking Wolf","Targeting Adjuster"],
+ pve:["Fluted Barrel","Tactical Mag","Demolitionist / Slice","Onslaught / Hatchling","Reload Speed","Skulking Wolf","Backup Mag"],
+ p1:"Demolitionist, Slice, Subsistence, Dynamic Sway Reduction, Zen Moment, Feeding Frenzy, Fourth Time's the Charm",p2:"Onslaught, Hatchling, Tear, Iron Grip, Tap the Trigger, Swashbuckler, Multikill Clip",o:"Skulking Wolf"},
+{n:"Lethal Abundance",t:"Auto Rifle · High-Impact · Strand",src:"Playlist drop",tier:"A PvP / B PvE",
+ pvp:["Chambered Compensator","Accurized Rounds","Zen Moment / Dynamic Sway Reduction","Tap the Trigger / Target Lock","Stability","Skulking Wolf","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Enlightened Action / Slice","Hatchling / One for All","Handling","Skulking Wolf","Backup Mag"],
+ p1:"Rewind Rounds, Enlightened Action, Zen Moment, Tear, Slice, Keep Away, Dynamic Sway Reduction",p2:"Desperate Measures, Tap the Trigger, One for All, Rampage, Hatchling, Onslaught, Target Lock",o:"Skulking Wolf"},
+{n:"Point of the Stag",t:"Combat Bow · Precision · Arc",src:"Playlist drop",tier:"A PvP / A PvE",
+ pvp:["Polymer String","Fiberglass Arrow Shaft","Archer's Tempo / No Distractions","Swashbuckler / Vorpal Weapon","Accuracy","Skulking Wolf","Targeting Adjuster"],
+ pve:["Elastic String","Fiberglass Arrow Shaft","Archer's Tempo / Dragonfly","Precision Instrument / Voltshot","Draw Time","Skulking Wolf / Wild Card","Backup Mag"],
+ p1:"No Distractions, Rangefinder, Archer's Tempo, Strategist, Dragonfly, Hip-Fire Grip, Successful Warm-Up",p2:"Vorpal Weapon, Swashbuckler, Precision Instrument, Voltshot, Explosive Head, Archer's Gambit, Butterfly",o:"Skulking Wolf, Wild Card"},
+{n:"The Time-Worn Spire",t:"Pulse Rifle · Rapid-Fire · Stasis",src:"Playlist drop",tier:"B PvP / A PvE",
+ pvp:["Arrowhead Brake","Ricochet Rounds","Lone Wolf / Moving Target","Headseeker / Kill Clip","Range","Skulking Wolf","Targeting Adjuster"],
+ pve:["Arrowhead Brake","Flared Magwell","Firefly / Subsistence","Crystalline Corpsebloom / Headstone","Handling","Skulking Wolf","Backup Mag"],
+ p1:"Firefly, Subsistence, Under Pressure, Moving Target, Feeding Frenzy, Zen Moment, Lone Wolf",p2:"Rampage, Headstone, Crystalline Corpsebloom, Elemental Honing, Iron Gaze, Headseeker, Kill Clip",o:"Skulking Wolf"},
+{n:"Gunnora's Axe",t:"Shotgun · Pinpoint Slug · Arc",src:"Playlist drop",tier:"B PvP / B PvE",
+ pvp:["Arrowhead Brake","Ricochet Rounds","Lone Wolf / Slideshot","Opening Shot / Closing Time","Handling","Skulking Wolf","Quick Access Sling"],
+ pve:["Smallbore","Appended Mag","Threat Detector / Heal Clip","Precision Instrument / Cascade Point","Stability","Suros Energy","Backup Mag"],
+ p1:"Moving Target, Threat Detector, Heal Clip, Lone Wolf, Slideshot, Offhand Strike, Perpetual Motion",p2:"Opening Shot, Iron Reach, Incandescent, Cascade Point, Precision Instrument, Kill Clip, Closing Time",o:"Skulking Wolf, Suros Energy"},
+{n:"Occluded Finality",t:"Sniper Rifle · Aggressive · Arc",src:"Playlist drop",tier:"B PvP / B PvE",
+ pvp:["Fluted Barrel","Ricochet Rounds","Snapshot Sights / Lone Wolf","Opening Shot / Closing Time","Handling","Skulking Wolf","Icarus Grip"],
+ pve:["Fluted Barrel","Extended Mag","Triple Tap / Rewind Rounds","Aggregate Charge / Precision Instrument","Handling","Skulking Wolf","Backup Mag"],
+ p1:"Snapshot Sights, Lone Wolf, Rangefinder, Triple Tap, No Distractions, Rewind Rounds, Moving Target",p2:"Opening Shot, Vorpal Weapon, Closing Time, Aggregate Charge, Mulligan, Elemental Honing, Precision Instrument",o:"Skulking Wolf"},
+{n:"Pressurized Precision",t:"Fusion Rifle · Adaptive · Strand",src:"Playlist drop",tier:"A PvP / B PvE",
+ pvp:["Arrowhead Brake","Accelerated Coils","Discord / Firmly Planted","High-Impact Reserves / Rangefinder","Charge Time","Skulking Wolf","Counterbalance Stock"],
+ pve:["Arrowhead Brake","Accelerated Coils","Discord / Perpetual Motion","Hatchling / Vorpal Weapon","Charge Time","Skulking Wolf","Backup Mag"],
+ p1:"Firmly Planted, Auto-Loading Holster, Moving Target, Perpetual Motion, Discord, Under Pressure, Lone Wolf",p2:"High-Impact Reserves, Rangefinder, Eye of the Storm, Vorpal Weapon, Hatchling, Closing Time, Kickstart",o:"Skulking Wolf"},
+{n:"The Wizened Rebuke",t:"Fusion Rifle · High-Impact · Arc",src:"Playlist drop",tier:"C PvP / A PvE",
+ pvp:["Arrowhead Brake","Projection Fuse","Under Pressure / Discord","Closing Time / Successful Warm-Up","Stability","Skulking Wolf","Counterbalance Stock"],
+ pve:["Arrowhead Brake","Accelerated Coils","Overflow / Discord","Controlled Burst / Reservoir Burst","Charge Time","Skulking Wolf","Backup Mag"],
+ p1:"Iron Grip, Under Pressure, Offhand Strike, Lone Wolf, Rangefinder, Discord, Overflow",p2:"Backup Plan, Successful Warm-Up, High-Impact Reserves, Voltshot, Closing Time, Controlled Burst, Reservoir Burst",o:"Skulking Wolf"},
+{n:"Roar of the Bear",t:"Rocket Launcher · High-Impact · Solar",src:"Playlist drop",tier:"A PvP / S PvE",
+ pvp:["Quick Launch","High-Velocity Rounds","Impulse Amplifier / Tracking Module","Cluster Bomb / Vorpal Weapon","Velocity","Skulking Wolf","Quick Access Sling"],
+ pve:["Quick Launch","Impact Casing","Explosive Light / Reconstruction","Reaper's Tithe / Bipod","Velocity","Skulking Wolf","Backup Mag"],
+ p1:"Tracking Module, Demolitionist, Impulse Amplifier, Auto-Loading Holster, Envious Assassin, Reconstruction, Explosive Light",p2:"Incandescent, Vorpal Weapon, Chain Reaction, Cluster Bomb, Bipod, Clown Cartridge, Reaper's Tithe",o:"Skulking Wolf"},
+{n:"Frontier's Cry",t:"Hand Cannon · Precision · Solar",src:"Saladin focus",tier:"A PvP / C PvE",
+ pvp:["Hammer-Forged Rifling","Accurized Rounds","Rapid Hit / Tunnel Vision","Iron Reach / Adagio","Range","Skulking Wolf","Targeting Adjuster"],
+ pve:["Fluted Barrel","Tactical Mag","Rapid Hit / Adaptive Munitions","Kill Clip / One for All","Reload Speed","Skulking Wolf","Backup Mag"],
+ p1:"Rapid Hit, Tunnel Vision, Steady Hands, Adaptive Munitions, Compulsive Reloader, Stats for All",p2:"Adagio, Iron Reach, Iron Grip, One for All, Kill Clip, Eye of the Storm",o:"Skulking Wolf"},
+{n:"Finite Impactor",t:"Hand Cannon · Adaptive · Solar",src:"Saladin focus",tier:"B PvP / B PvE",
+ pvp:["Hammer-Forged Rifling","Ricochet Rounds","Fragile Focus / Slideways","Precision Instrument / Magnificent Howl","Range","Suros Synergy","Targeting Adjuster"],
+ pve:["Fluted Barrel","Appended Mag","Heal Clip / Iron Grip","Burning Ambition / Precision Instrument","Reload Speed","Suros Synergy","Backup Mag"],
+ p1:"Iron Grip, Heal Clip, Fragile Focus, Slideways, Elemental Capacitor, Enlightened Action, Killing Wind",p2:"Iron Reach, Precision Instrument, Burning Ambition, Magnificent Howl, Rapid Hit, Moving Target, Heating Up",o:"Skulking Wolf, Suros Synergy"},
+{n:"Claws of the Wolf",t:"Pulse Rifle · Rapid-Fire · Void",src:"Saladin focus",tier:"A PvP / B PvE",
+ pvp:["Hammer-Forged Rifling","Ricochet Rounds","Headseeker / To the Pain","Kill Clip / Zen Moment","Range","Skulking Wolf","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Repulsor Brace / Headseeker","Destabilizing Rounds / Attrition Orbs","Reload Speed","Skulking Wolf","Backup Mag"],
+ p1:"Headseeker, Repulsor Brace, To the Pain, Elemental Capacitor, Snapshot Sights, Perpetual Motion",p2:"Rampage, Kill Clip, Destabilizing Rounds, Disruption Break, Attrition Orbs, Zen Moment",o:"Skulking Wolf"},
+{n:"Jorum's Claw",t:"Pulse Rifle · Adaptive · Solar",src:"Saladin focus",tier:"B PvP / C PvE",
+ pvp:["Arrowhead Brake","Ricochet Rounds","Moving Target / Encore","Kill Clip / Headseeker","Range","Skulking Wolf","Targeting Adjuster"],
+ pve:["Smallbore","Flared Magwell","Outlaw / Iron Grip","Incandescent / Kill Clip","Reload Speed","Suros Synergy","Backup Mag"],
+ p1:"Iron Grip, Moving Target, Gutshot Straight, Outlaw, Encore, Offhand Strike",p2:"Headseeker, Kill Clip, Iron Reach, Frenzy, Golden Tricorn, Incandescent",o:"Skulking Wolf, Suros Synergy"},
+{n:"Reghusk's Pledge",t:"Auto Rifle · Rapid-Fire · Void",src:"Saladin focus",tier:"B PvP / A PvE",
+ pvp:["Arrowhead Brake","Accurized Rounds","Dynamic Sway Reduction / Demoralize","Target Lock / Kill Clip","Range","Skulking Wolf","Targeting Adjuster"],
+ pve:["Fluted Barrel","Appended Mag","Destabilizing Rounds / Rewind Rounds","Repulsor Brace / Golden Tricorn","Reload Speed","Skulking Wolf","Backup Mag"],
+ p1:"Destabilizing Rounds, Demoralize, Rewind Rounds, Dynamic Sway Reduction, Built to Blast, Impromptu Ammunition, Proximity Power",p2:"Repulsor Brace, Attrition Orbs, Golden Tricorn, Kill Clip, Swashbuckler, Target Lock, Zen Moment",o:"Skulking Wolf"},
+{n:"The Hero's Burden",t:"SMG · Adaptive · Void",src:"Saladin focus",tier:"B PvP / B PvE",
+ pvp:["Smallbore","Accurized Rounds","Zen Moment / Moving Target","Kill Clip / Iron Reach","Range","Skulking Wolf","Counterbalance Stock"],
+ pve:["Fluted Barrel","Appended Mag","Feeding Frenzy / Under Pressure","Destabilizing Rounds / Kill Clip","Reload Speed","Skulking Wolf","Backup Mag"],
+ p1:"Zen Moment, Fragile Focus, Tunnel Vision, Feeding Frenzy, Moving Target, Under Pressure",p2:"Kill Clip, Iron Reach, Iron Grip, Destabilizing Rounds, Gutshot Straight, Dynamic Sway Reduction",o:"Skulking Wolf"},
+{n:"Allied Demand",t:"Sidearm · Adaptive · Kinetic",src:"Saladin focus",tier:"B PvP / C PvE",
+ pvp:["Hammer-Forged Rifling","Ricochet Rounds","Rangefinder / Rapid Hit","Iron Reach / Eye of the Storm","Range","Skulking Wolf","Targeting Adjuster"],
+ pve:["Smallbore","Tactical Mag","Subsistence / Auto-Loading Holster","Frenzy / Multikill Clip","Reload Speed","Field-Tested","Backup Mag"],
+ p1:"Auto-Loading Holster, Rangefinder, Rapid Hit, Subsistence, Air Assault, Well-Rounded",p2:"Under-Over, Gutshot Straight, Iron Reach, Frenzy, Multikill Clip, Eye of the Storm",o:"Skulking Wolf, Field-Tested"},
+{n:"Peacebond",t:"Sidearm · Adaptive Burst · Stasis",src:"Saladin focus",tier:"B PvP / A PvE",
+ pvp:["Extended Barrel","Accurized Rounds","Moving Target / Zen Moment","Headseeker / Desperado","Range","Skulking Wolf","Targeting Adjuster"],
+ pve:["Fluted Barrel","Tactical Mag","Headstone / Subsistence","Rimestealer / Frenzy","Reload Speed","Skulking Wolf","Backup Mag"],
+ p1:"Headstone, Moving Target, Lone Wolf, Rangefinder, Subsistence, Zen Moment",p2:"Rimestealer, Desperate Measures, Headseeker, Desperado, Frenzy, Kill Clip",o:"Skulking Wolf"},
+{n:"Riiswalker",t:"Shotgun · Lightweight · Kinetic",src:"Saladin focus",tier:"A PvP / C PvE",
+ pvp:["Smallbore","Accurized Rounds","Slideshot / Slickdraw","Opening Shot / Iron Reach","Range","Skulking Wolf","Quick Access Sling"],
+ pve:["Rifled Barrel","Assault Mag","Threat Remover / Surplus","Vorpal Weapon / Adagio","Reload Speed","Skulking Wolf","Backup Mag"],
+ p1:"Surplus, Slickdraw, Slideshot, Threat Remover, Discord, Killing Wind",p2:"Harmony, Adagio, Vorpal Weapon, Iron Reach, Fragile Focus, Opening Shot",o:"Skulking Wolf"},
+{n:"Bite of the Fox",t:"Sniper Rifle · Aggressive · Kinetic",src:"Saladin focus",tier:"A PvP / C PvE",
+ pvp:["Fluted Barrel","Accurized Rounds","Snapshot Sights / Slickdraw","Opening Shot / Moving Target","Handling","Skulking Wolf","Targeting Adjuster"],
+ pve:["Fluted Barrel","Tactical Mag","Firmly Planted / Envious Assassin","Explosive Payload / Vorpal Weapon","Reload Speed","Skulking Wolf","Backup Mag"],
+ p1:"Envious Assassin, Firmly Planted, No Distractions, Rapid Hit, Slickdraw, Snapshot Sights",p2:"Explosive Payload, Iron Gaze, Moving Target, Opening Shot, Under-Over, Vorpal Weapon",o:"Skulking Wolf"},
+{n:"Tinasha's Mastery",t:"Sidearm · Rocket-Assisted · Stasis",src:"Saladin focus",tier:"D PvP / A PvE",
+ pvp:["Hard Launch","High-Velocity Rounds","Impulse Amplifier / Enlightened Action","Frenzy / One for All","Velocity","Skulking Wolf","Quick Access Sling"],
+ pve:["Quick Launch","Tactical Mag","Air Trigger / Loose Change","Chill Clip / Desperate Measures","Velocity","Skulking Wolf","Backup Mag"],
+ p1:"Air Trigger, Offhand Strike, Deconstruct, Enlightened Action, Impulse Amplifier, Loose Change, Reverberation",p2:"Adagio, Bait and Switch, Chill Clip, Desperate Measures, Frenzy, One for All, Surrounded",o:"Skulking Wolf"},
+{n:"Tusk of the Boar",t:"Special Grenade Launcher · Wave · Strand",src:"Saladin focus",tier:"C PvP / A PvE",
+ pvp:["Quick Launch","High-Velocity Rounds","Pulse Monitor / Slice","Deconstruct / Swashbuckler","Velocity","Field-Tested","Quick Access Sling"],
+ pve:["Quick Launch","High-Velocity Rounds","Slideways / Slice","Chain Reaction / Hatchling","Velocity","Field-Tested","Backup Mag"],
+ p1:"Envious Assassin, Enlightened Action, Grave Robber, Slice, Slideways, Pulse Monitor",p2:"Chain Reaction, Hatchling, Bait and Switch, Swashbuckler, Vorpal Weapon, Deconstruct",o:"Skulking Wolf, Field-Tested"},
+{n:"Archon's Thunder",t:"Machine Gun · High-Impact · Stasis",src:"Saladin focus",tier:"C PvP / A PvE",
+ pvp:["Polygonal Rifling","Steady Rounds","Dynamic Sway Reduction / Air Trigger","Tap the Trigger / Onslaught","Stability","Skulking Wolf","Backup Mag"],
+ pve:["Fluted Barrel","Tactical Mag","Rimestealer / Enlightened Action","Headstone / Killing Tally","Handling","Skulking Wolf","Backup Mag"],
+ p1:"Air Trigger, Enlightened Action, Dynamic Sway Reduction, Envious Assassin, Fourth Time's the Charm, Rimestealer, High-Impact Reserves",p2:"Desperate Measures, Onslaught, Headstone, Killing Tally, Tap the Trigger, Target Lock, Rewind Rounds",o:"Skulking Wolf"}
+];
+const IBPOOLS=["Playlist drop","Saladin focus"];
+const RENEGADES = [
+{n:"M-17 \"Fast Talker\"",t:"SMG · Balanced Heat · Stasis",src:"Destination",tier:"A PvP / S PvE",
+ pvp:["Hammer-Forged Rifling","Projection Fuse","Delicate Tuning / Dynamic Sway Reduction","Target Lock / Tap the Trigger","Range","Air-Cooled Core","Enhanced Range"],
+ pve:["Fluted Barrel","Light Heatsink","Attrition Orbs / Demolitionist","Crystalline Corpsebloom / Master of Arms","Cooling Efficiency","Accelerated Assault","Enhanced Heat Generated"],
+ p1:"Attrition Orbs, Dynamic Sway Reduction, Demolitionist, Delicate Tuning, Stats for All, Cooling Baubles, Killing Wind",p2:"Target Lock, Sword Logic, Crystalline Corpsebloom, Kill Clip, Tap the Trigger, Master of Arms, Thermal Atomization",o:"Air-Cooled Core, Accelerated Assault"},
+{n:"Modified B-7 Pistol",t:"Hand Cannon · Dynamic Heat · Stasis",src:"Destination",tier:"B PvP / A PvE",
+ pvp:["Smallbore","Projection Fuse","Keep Away / Delicate Tuning","Opening Shot / Eye of the Storm","Range","Air-Cooled Core","Enhanced Range"],
+ pve:["Corkscrew Rifling","Light Heatsink","Rimestealer / Firefly","Crystalline Corpsebloom / Headstone","Cooling Efficiency","Air-Cooled Core","Enhanced Heat Generated"],
+ p1:"Cooling Baubles, Rapid Hit, Keep Away, Rimestealer, Firefly, Demolitionist, Delicate Tuning",p2:"Headstone, Adagio, Eye of the Storm, Opening Shot, Crystalline Corpsebloom, Built to Blast, Thermal Atomization",o:"Air-Cooled Core"},
+{n:"Uncivil Discourse",t:"Hand Cannon · Dynamic Heat · Arc",src:"Destination",tier:"A PvP / S PvE",
+ pvp:["Arrowhead Brake","Projection Fuse","Keep Away","Precision Instrument / Opening Shot","Range","Air-Cooled Core","Enhanced Range"],
+ pve:["Fluted Barrel","Ionized Heatsink","Air Trigger / Cooling Baubles","Precision Instrument / Frenzy","Cooling Efficiency","Accelerated Assault","Enhanced Heat Generated"],
+ p1:"Outlaw, Air Trigger, Keep Away, Lone Wolf, Cooling Baubles, Quickdraw, Delicate Tuning",p2:"Offhand Strike, Jolting Feedback, Frenzy, Desperate Measures, Precision Instrument, Opening Shot, Thermal Atomization",o:"Air-Cooled Core, Accelerated Assault"},
+{n:"All or Nothing",t:"Pulse Rifle · Dynamic Heat · Strand",src:"Destination",tier:"A PvP / A PvE",
+ pvp:["Arrowhead Brake","Tactical Heatsink","Keep Away / Zen Moment","Headseeker / Kill Clip","Range","Air-Cooled Core","Enhanced Range"],
+ pve:["Fluted Barrel","Light Heatsink","Firefly / Slice","Tear / Thermal Atomization","Handling","Accelerated Assault","Enhanced Heat Generated"],
+ p1:"Firefly, Cooling Baubles, Slice, Delicate Tuning, Zen Moment, Perpetual Motion, Keep Away",p2:"Tear, Desperado, Kill Clip, Sword Logic, Headseeker, Hatchling, Thermal Atomization",o:"Air-Cooled Core, Accelerated Assault"},
+{n:"Compact Defender",t:"Sidearm · Dynamic Heat · Void",src:"Destination",tier:"B PvP / A PvE",
+ pvp:["Smallbore","Particle Repeater","Rangefinder / Delicate Tuning","Kill Clip / Desperate Measures","Range","Air-Cooled Core","Enhanced Range"],
+ pve:["Fluted Barrel","Ionized Heatsink","Destabilizing Rounds / Cooling Baubles","Repulsor Brace / Thermal Atomization","Cooling Efficiency","Accelerated Assault","Enhanced Heat Generated"],
+ p1:"Delicate Tuning, Rangefinder, Proximity Power, Hip-Fire Grip, Built to Blast, Destabilizing Rounds, Cooling Baubles",p2:"Thermal Atomization, Repulsor Brace, Precision Instrument, Swashbuckler, Kill Clip, Frenzy, Desperate Measures",o:"Accelerated Assault, Air-Cooled Core"},
+{n:"Refurbished A499",t:"Sniper Rifle · Disruption · Kinetic (Heavy)",src:"Destination",tier:"B PvP / S PvE",
+ pvp:["Fluted Barrel","Accurized Rounds / Steady Rounds","Snapshot Sights / Lone Wolf","Mulligan","Handling","Air-Cooled Core","Targeting Adjuster"],
+ pve:["Arrowhead Brake","Flared Magwell","Bewildering Burst / Snapshot Sights","Aggregate Charge / Auto-Loading Holster","Reload Speed / Handling","Air-Cooled Core","Enhanced Reload"],
+ p1:"No Distractions, Moving Target, Lone Wolf, Snapshot Sights, Outlaw, Gutshot Straight, Bewildering Burst",p2:"Ambitious Assassin, Auto-Loading Holster, Aggregate Charge, Box Breathing, Ancillary Ordnance, Mulligan, Envious Assassin",o:"Air-Cooled Core"},
+{n:"Duty Bound",t:"Auto Rifle · Adaptive · Kinetic",src:"Portal",tier:"B PvP / B PvE",
+ pvp:["Arrowhead Brake","Accurized Rounds","Stopping Power / Zen Moment","Rampage / Dynamic Sway Reduction","Range","Vanguard Determination","Counterbalance Stock"],
+ pve:["Fluted Barrel","Flared Magwell","Fourth Time's the Charm / Bewildering Burst","Triple Tap / Onslaught","Stability","Problem Solver","Backup Mag"],
+ p1:"Enlightened Action, Zen Moment, Fourth Time's the Charm, Bewildering Burst, Stopping Power, Lone Wolf",p2:"All-Star, Triple Tap, Rampage, Onslaught, Dynamic Sway Reduction, Adhesive Ordnance",o:"Problem Solver, Vanguard Determination"},
+{n:"Something Something",t:"Sniper Rifle · Aggressive · Kinetic",src:"Portal",tier:"B PvP / C PvE",
+ pvp:["Arrowhead Brake","Accurized Rounds","Snapshot Sights / No Distractions","Box Breathing / Redirection","Handling","Vanguard Determination","Targeting Adjuster"],
+ pve:["Fluted Barrel","Tactical Mag","Triple Tap / Bewildering Burst","Kinetic Tremors / Adhesive Ordnance","Reload Speed","Accelerated Assault","Backup Mag"],
+ p1:"No Distractions, Triple Tap, Snapshot Sights, Bewildering Burst, Stopping Power, Discord",p2:"Elemental Honing, Adhesive Ordnance, Box Breathing, Kinetic Tremors, Redirection, All-Star",o:"Accelerated Assault, Vanguard Determination"},
+{n:"Evening SI4",t:"Sidearm · Adaptive Burst · Solar",src:"Portal",tier:"C PvP / B PvE",
+ pvp:["Arrowhead Brake","Accurized Rounds","Lone Wolf / Proximity Power","Headseeker / Desperate Measures","Range","Vanguard Determination","Counterbalance Stock"],
+ pve:["Corkscrew Rifling / Fluted Barrel","Flared Magwell / Tactical Mag","Heal Clip / Proximity Power","Incandescent / Burning Ambition","Handling","Accelerated Assault","Backup Mag"],
+ p1:"Proximity Power, Lone Wolf, Heal Clip, Offhand Strike, Impromptu Ammunition, Subsistence",p2:"Collective Pugilism, Sword Logic, Burning Ambition, Headseeker, Desperate Measures, Incandescent",o:"Accelerated Assault, Vanguard Determination, Omolon Fluid Dynamics (varies by version)"},
+{n:"Psi Aeterna IV",t:"Pulse Rifle · Micro-Missile · Arc (Special)",src:"Portal",tier:"D PvP / A PvE",
+ pvp:["Smart Drift Control","High-Velocity Rounds","Eddy Current / Stats for All","Adrenaline Junkie / One for All","Handling","Accelerated Assault","Targeting Adjuster"],
+ pve:["Quick Launch","Appended Mag","Trickle Charge / Blast Distributor","Elemental Honing / Jolting Feedback","Handling","Vanguard Determination / Accelerated Assault","Backup Mag"],
+ p1:"Blast Distributor, Eddy Current, Beacon Rounds, Stats for All, Reverberation, Trickle Charge",p2:"Collective Pugilism, Elemental Honing, Jolting Feedback, One for All, Rolling Storm, Adrenaline Junkie",o:"Accelerated Assault, Vanguard Determination, Wild Card"},
+{n:"Nox Sidereal IV",t:"Fusion Rifle · Aggressive · Stasis",src:"Portal",tier:"D PvP / C PvE",
+ pvp:["Arrowhead Brake","Accelerated Coils","Stats for All","Frenzy","Range","Wild Card","Targeting Adjuster"],
+ pve:["Fluted Barrel","Accelerated Coils","Clown Cartridge / Demolitionist","Reservoir Burst / Crystalline Corpsebloom","Charge Time","Wild Card","Backup Mag"],
+ p1:"Clown Cartridge, Ambitious Assassin, Proximity Power, Shot Swap, Stats for All, Demolitionist",p2:"Frenzy, Crystalline Corpsebloom, Master of Arms, Discord, Reservoir Burst, Adrenaline Junkie",o:"Accelerated Assault, Vanguard Determination, Wild Card"},
+{n:"Voltaic Shade",t:"Scout Rifle · Balanced Heat · Arc",src:"Equilibrium dungeon",tier:"A PvP / A PvE",
+ pvp:["Arrowhead Brake","Tactical Heatsink","Delicate Tuning / Keep Away","Precision Instrument / Frenzy","Range","Imperial Allegiance","Counterbalance Stock"],
+ pve:["Fluted Barrel","Overclocked Heatsink","Jolting Feedback / Trickle Charge","Meganeura / Voltshot","Cooling Efficiency","Imperial Allegiance","Backup Mag"],
+ p1:"Cooling Baubles, Delicate Tuning, Jolting Feedback, Trickle Charge, Rapid Hit, Shoot to Loot, Keep Away",p2:"Thermal Atomization, Voltshot, Rolling Storm, Frenzy, Precision Instrument, Desperate Measures, Meganeura",o:"Imperial Allegiance"},
+{n:"High Tyrant",t:"Pulse Rifle · Balanced Heat · Void",src:"Equilibrium dungeon",tier:"A PvP / B PvE",
+ pvp:["Arrowhead Brake","Projection Fuse","Rapid Hit / Delicate Tuning","Headseeker / Master of Arms","Range","Imperial Allegiance","Counterbalance Stock"],
+ pve:["Fluted Barrel","Light Heatsink","Destabilizing Rounds / Repulsor Brace","Demoralize / Meganeura","Cooling Efficiency","Imperial Allegiance","Backup Mag"],
+ p1:"Cooling Baubles, Delicate Tuning, Destabilizing Rounds, Repulsor Brace, Loose Change, Rapid Hit, Demolitionist",p2:"Thermal Atomization, Master of Arms, Headseeker, Frenzy, Withering Gaze, Demoralize, Meganeura",o:"Imperial Allegiance"},
+{n:"Zealous Ideal",t:"Auto Rifle · Balanced Heat · Solar",src:"Equilibrium dungeon",tier:"B PvP / B PvE",
+ pvp:["Chambered Compensator","Projection Fuse","Delicate Tuning / Dynamic Sway Reduction","Tap the Trigger / Onslaught","Range","Imperial Allegiance","Counterbalance Stock"],
+ pve:["Fluted Barrel","Overclocked Heatsink","Heal Clip / Attrition Orbs","Incandescent / Onslaught","Cooling Efficiency","Imperial Allegiance","Backup Mag"],
+ p1:"Cooling Baubles, Delicate Tuning, Heal Clip, Zen Moment, Gutshot Straight, Attrition Orbs, Dynamic Sway Reduction",p2:"Thermal Atomization, Onslaught, Adagio, One for All, Tap the Trigger, Burning Ambition, Incandescent",o:"Imperial Allegiance"},
+{n:"Conspiracy Honed",t:"Sniper Rifle · Dynamic Heat · Stasis",src:"Equilibrium dungeon",tier:"B PvP / B PvE",
+ pvp:["Arrowhead Brake","Projection Fuse","Lone Wolf / Snapshot Sights","Opening Shot / Moving Target","Handling","Imperial Allegiance","Targeting Adjuster"],
+ pve:["Fluted Barrel","Overclocked Heatsink","Vorpal Weapon / Cooling Baubles","Bait and Switch / Firing Line","Cooling Efficiency","Imperial Allegiance","Backup Mag"],
+ p1:"Headstone, Delicate Tuning, Cooling Baubles, Lone Wolf, Vorpal Weapon, Snapshot Sights, Enlightened Action",p2:"Thermal Atomization, Firefly, Bait and Switch, Box Breathing, Opening Shot, Firing Line, Moving Target",o:"Imperial Allegiance"},
+{n:"Bitter End",t:"Machine Gun · Balanced Heat · Arc",src:"Equilibrium dungeon",tier:"C PvP / A PvE",
+ pvp:["Smallbore","Projection Fuse","Delicate Tuning / Hip-Fire Grip","Killing Tally / Frenzy","Range","Imperial Allegiance","Targeting Adjuster"],
+ pve:["Fluted Barrel","Light Heatsink","Attrition Orbs / Trickle Charge","Jolting Feedback / Killing Tally","Cooling Efficiency","Imperial Allegiance","Backup Mag"],
+ p1:"Cooling Baubles, Delicate Tuning, Attrition Orbs, Trickle Charge, Gutshot Straight, Eddy Current, Hip-Fire Grip",p2:"Thermal Atomization, Jolting Feedback, Rolling Storm, Killing Tally, One for All, Frenzy, Offhand Strike",o:"Imperial Allegiance"},
+{n:"Sullen Claw",t:"Sword · Lightweight · Void",src:"Equilibrium dungeon",tier:"A PvP / B PvE",
+ pvp:["Honed Edge","Balanced Guard","Eager Edge / Relentless Strikes","Assassin's Blade / Counterattack","Impact","Imperial Allegiance","Backup Mag"],
+ pve:["Tempered Edge","Swordmaster's Guard","Eager Edge / Vorpal Weapon","Whirlwind Blade / Bait and Switch","Impact","Imperial Allegiance","Backup Mag"],
+ p1:"Eager Edge, Proximity Power, Vorpal Weapon, Relentless Strikes, Repulsor Brace, Flash Counter, Impromptu Ammunition",p2:"Binary Orbit, Destabilizing Rounds, Sword Logic, Bait and Switch, Whirlwind Blade, Assassin's Blade, Counterattack",o:"Imperial Allegiance"},
+{n:"Mos Athanor IV",t:"Hand Cannon · Aggressive · Void",src:"Crucible / Trials",tier:"S PvP / B PvE",
+ pvp:["Smallbore / Corkscrew Rifling","Ricochet Rounds","Lone Wolf / Slideways","Precision Instrument / Adagio","Range","Roar of Battle","Targeting Adjuster"],
+ pve:["Fluted Barrel / Arrowhead Brake","Ricochet Rounds","Destabilizing Rounds","Demoralize","Stability / Reload Speed","Wild Card","Backup Mag"],
+ p1:"Lone Wolf, Moving Target, Destabilizing Rounds, Slideways, Keep Away, Built to Blast",p2:"Demoralize, Sword Logic, Precision Instrument, Eye of the Storm, Opening Shot, Adagio",o:"Roar of Battle, Wild Card"},
+{n:"Riptide",t:"Fusion Rifle · Rapid-Fire · Stasis",src:"Crucible / Trials",tier:"S PvP / A PvE",
+ pvp:["Arrowhead Brake","Projection Fuse","Under Pressure","Closing Time","Range","Roar of Battle","Targeting Adjuster"],
+ pve:["Fluted Barrel","Enhanced Battery","Auto-Loading Holster / Overflow","Chill Clip / Controlled Burst","Charge Time / Reload Speed","Wild Card","Backup Mag"],
+ p1:"Auto-Loading Holster, Overflow, Built to Blast, Subsistence, Cornered, Under Pressure",p2:"Chill Clip, Vorpal Weapon, Crystalline Corpsebloom, Closing Time, Controlled Burst, Collective Pugilism",o:"Roar of Battle, Wild Card"},
+{n:"Peculiar Charm",t:"SMG · Aggressive Burst · Kinetic",src:"Crucible / Trials",tier:"A PvP / B PvE",
+ pvp:["Smallbore","Accurized Rounds","Rangefinder / Lone Wolf","Headseeker","Range","Hand-Laid Stock (stock)","Targeting Adjuster"],
+ pve:["Smallbore","Extended Mag","Shoot to Loot / Attrition Orbs","Kinetic Tremors / Firefly","Stability","Hand-Laid Stock (stock)","Backup Mag"],
+ p1:"Rangefinder, Attrition Orbs, Impromptu Ammunition, Rapid Hit, Stopping Power, Shoot to Loot, Lone Wolf",p2:"Firefly, Headseeker, All-Star, Kinetic Tremors, Master of Arms, Desperado, Bewildering Burst",o:"None. Has a stock column instead: Hand-Laid, Short-Action, Composite, Fitted"},
+{n:"Qua Vinctus IV",t:"Machine Gun · High-Impact · Strand",src:"Crucible / Trials",tier:"C PvP / S PvE",
+ pvp:["Arrowhead Brake","Accurized Rounds","Demolitionist","Killing Tally / Lone Wolf","Range","Roar of Battle","Targeting Adjuster"],
+ pve:["Arrowhead Brake","Tactical Mag","Hatchling / Demolitionist","Killing Tally / Meganeura","Stability","Accelerated Assault","Backup Mag"],
+ p1:"Built to Blast, Slice, Hatchling, Triple Tap, Demolitionist, Transcendent Moment",p2:"Killing Tally, Rewind Rounds, Lone Wolf, Strategist, Meganeura, Tear",o:"Roar of Battle, Wild Card, Accelerated Assault (unverified)"},
+{n:"Horror's Least",t:"Pulse Rifle · Rapid-Fire · Arc",src:"Pinnacle",tier:"A PvP / A PvE",
+ pvp:["Arrowhead Brake","Accurized Rounds","Zen Moment","Kill Clip / Perpetual Motion","Range","Vanguard Determination","Targeting Adjuster"],
+ pve:["Fluted Barrel","Tactical Mag","Supercharged Magazine / Trickle Charge","Jolting Feedback / Frenzy","Handling","Problem Solver","Backup Mag"],
+ p1:"Zen Moment, Transcendent Moment, Heating Up, Supercharged Magazine, Trickle Charge, Overflow",p2:"Kill Clip, Frenzy, Perpetual Motion, Jolting Feedback, Rampage, Rolling Storm",o:"Vanguard Determination, Problem Solver"},
+{n:"Oxygen SR3",t:"Scout Rifle · Precision · Solar",src:"Pinnacle",tier:"B PvP / A PvE",
+ pvp:["Hammer-Forged Rifling","Accurized Rounds","Rapid Hit","Box Breathing","Range","Problem Solver","Targeting Adjuster"],
+ pve:["Arrowhead Brake","Tactical Mag","Heal Clip / Shoot to Loot","Meganeura","Reload Speed","Problem Solver","Backup Mag"],
+ p1:"Stats for All, Heal Clip, Pugilist, Rapid Hit, Shoot to Loot, To the Pain",p2:"Meganeura, Collective Pugilism, Burning Ambition, Box Breathing, One for All, Binary Orbit",o:"Problem Solver, Omolon Fluid Dynamics, Vanguard Determination / Accelerated Assault (sources conflict)"},
+{n:"Sarpedon-D",t:"Hand Cannon · Spread Shot · Arc",src:"Pinnacle",tier:"B PvP / B PvE",
+ pvp:["Smoothbore","Accurized Rounds","To the Pain","Desperate Measures","Range","Vanguard Determination","Targeting Adjuster"],
+ pve:["Barrel Shroud","Appended Mag","Trickle Charge / Proximity Power","Rolling Storm / One-Two Punch","Handling","Problem Solver","Backup Mag"],
+ p1:"Impromptu Ammunition, Eddy Current, Lead from Light, Proximity Power, Trickle Charge, To the Pain",p2:"Collective Pugilism, Rolling Storm, One-Two Punch, Trench Barrel, Voltshot, Desperate Measures",o:"Problem Solver, Vanguard Determination, Häkke Breach Armaments"},
+{n:"A Good Shout",t:"Heavy Bow · High-Impact · Void",src:"Pinnacle",tier:"D PvP / B PvE",
+ pvp:["Mag-Lev Rail","Explosive Bolts","No Distractions / Built to Blast","High Ground / Box Breathing","Handling","Vanguard Determination","Quick Access Sling"],
+ pve:["Mag-Lev Rail","Explosive Bolts","Repulsor Brace / Envious Arsenal","Destabilizing Rounds / High Ground","Reload Speed","Problem Solver","Backup Mag"],
+ p1:"No Distractions, Bolt Scavenger, Built to Blast, Withering Gaze, Repulsor Brace, Envious Arsenal",p2:"Butterfly, Box Breathing, High Ground, Destabilizing Rounds, Rampage, Demoralize",o:"Problem Solver, Vanguard Determination"},
+{n:"Monody-44",t:"Fusion Rifle · High-Impact · Void",src:"Seasonal",tier:"A PvP / B PvE",
+ pvp:["Smallbore / Arrowhead Brake","Projection Fuse / Accelerated Coils","Lone Wolf / Cornered","Closing Time / Withering Gaze","Range","Suros Synergy","Targeting Adjuster"],
+ pve:["Fluted Barrel / Corkscrew Rifling","Accelerated Coils","Attrition Orbs / Discord","Controlled Burst / Destabilizing Rounds","Reload Speed","Suros Synergy","Backup Mag"],
+ p1:"Cornered, Repulsor Brace, Enlightened Action, Attrition Orbs, Subsistence, Discord, Lone Wolf",p2:"Surrounded, Closing Time, Withering Gaze, Successful Warm-Up, Controlled Burst, Destabilizing Rounds, Frenzy",o:"Suros Synergy"},
+{n:"Hawthorne's Field-Forged Shotgun",t:"Shotgun · Lightweight · Stasis",src:"Seasonal",tier:"B PvP / B PvE",
+ pvp:["Barrel Shroud","Accurized Rounds","Slideshot / Threat Detector","Closing Time / Opening Shot","Range","Field-Tested","Quick Access Sling"],
+ pve:["Smallbore","Assault Mag","Threat Detector / Grave Robber","Chill Clip / Master of Arms","Stability","Field-Tested","Backup Mag"],
+ p1:"Lead from Gold, Sleight of Hand, Slideshot, Grave Robber, Lone Wolf, Proximity Power, Threat Detector",p2:"Closing Time, Crystalline Corpsebloom, Master of Arms, Chill Clip, Discord, Binary Orbit, Opening Shot",o:"Field-Tested"},
+{n:"Motif-41",t:"Grenade Launcher · Area Denial · Solar",src:"Seasonal",tier:"D PvP / S PvE",
+ pvp:["Quick Launch","High-Velocity Rounds","Impulse Amplifier / Threat Detector","Demolitionist / Master of Arms","Handling","Suros Synergy","Quick Access Sling"],
+ pve:["Quick Launch","High-Velocity Rounds","Auto-Loading Holster / Wellspring","Incandescent / Attrition Orbs","Handling","Suros Synergy","Backup Mag"],
+ p1:"Auto-Loading Holster, Loose Change, Heal Clip, Impulse Amplifier, Wellspring, Stats for All, Threat Detector",p2:"Master of Arms, Vorpal Weapon, Demolitionist, Attrition Orbs, Reverberation, Binary Orbit, Incandescent",o:"Suros Synergy"},
+{n:"Eighty-Six",t:"Sword · Vortex · Strand",src:"Seasonal",tier:"D PvP / B PvE",
+ pvp:["Jagged Edge","Swordmaster's Guard","Tireless Blade / Flash Counter","En Garde / Chain Reaction","Impact","Bray Legacy","Backup Mag"],
+ pve:["Jagged Edge","Swordmaster's Guard","Relentless Strikes / Tireless Blade","Elemental Honing / Redirection","Impact","Bray Legacy","Backup Mag"],
+ p1:"Duelist's Trance, Sharp Harvest, Relentless Strikes, Flash Counter, Lead from Light, Tireless Blade, Slice",p2:"En Garde, Chain Reaction, Attrition Orbs, Hatchling, Binary Orbit, Redirection, Elemental Honing",o:"Bray Legacy"},
+{n:"Fimbulwinter Stitch",t:"Sidearm · Precision · Arc",src:"The Dawning",tier:"B PvP / B PvE",
+ pvp:["Corkscrew Rifling","Ricochet Rounds","Rangefinder / Lone Wolf","Precision Instrument / Kill Clip","Range","Dawning Surprise","Targeting Adjuster"],
+ pve:["Arrowhead Brake","Appended Mag / Ricochet Rounds","Supercharged Magazine / Trickle Charge","Jolting Feedback / Rolling Storm","Reload Speed / Handling","Dawning Surprise","Backup Mag"],
+ p1:"Rapid Hit, Trickle Charge, Rangefinder, Loose Change, Supercharged Magazine, Collective Pugilism, Lone Wolf",p2:"Kill Clip, Jolting Feedback, Rolling Storm, Collective Action, Precision Instrument, Redirection, Voltshot",o:"Dawning Surprise"},
+{n:"Mistral Lift",t:"Linear Fusion · Adaptive Burst · Void",src:"The Dawning",tier:"D PvP / S PvE",
+ pvp:["Fluted Barrel","Accelerated Coils","No Distractions / Withering Gaze","Precision Instrument / Rewind Rounds","Charge Time","Veist Stinger","Targeting Adjuster"],
+ pve:["Fluted Barrel","Liquid Coils / Accelerated Coils","Envious Arsenal / Reconstruction","Bait and Switch / Precision Instrument","Charge Time","Veist Stinger","Backup Mag"],
+ p1:"Built to Blast, Envious Arsenal, Firefly, Reconstruction, No Distractions, Withering Gaze, Overflow",p2:"Butterfly, Bait and Switch, Dragonfly, Precision Instrument, Destabilizing Rounds, Rewind Rounds, Reservoir Burst",o:"Dawning Surprise, Veist Stinger"},
+{n:"Permafrost",t:"Grenade Launcher · Wave · Stasis",src:"The Dawning",tier:"D PvP / A PvE",
+ pvp:["Quick Launch","High-Velocity Rounds","Impromptu Ammunition / Demolitionist","Adrenaline Junkie / One for All","Handling","Field-Tested","Quick Access Sling"],
+ pve:["Quick Launch / Volatile Launch","High-Velocity Rounds","Rimestealer / Demolitionist","Crystalline Corpsebloom / Reaper's Tithe","Handling / Reload Speed","Field-Tested","Backup Mag"],
+ p1:"Attrition Orbs, Overflow, Blast Distributor, Rimestealer, Demolitionist, Impromptu Ammunition, Lead from Gold",p2:"Desperate Measures, Crystalline Corpsebloom, One for All, Reaper's Tithe, Pugilist, Wellspring, Adrenaline Junkie",o:"Dawning Surprise, Field-Tested"}
+];
+const RPOOLS=["Destination","Portal","Equilibrium dungeon","Crucible / Trials","Pinnacle","Seasonal","The Dawning"];
+const DUNGEONS = [
+{n:"Unworthy",t:"Scout Rifle · Rapid-Fire · Arc",src:"Sundered Doctrine",tier:"B PvP / A PvE",
+ pvp:["Arrowhead Brake / Polygonal Rifling","Ricochet Rounds","Rapid Hit / Keep Away","Precision Instrument / Zen Moment","Stability","Subjugation","Targeting Adjuster"],
+ pve:["Fluted Barrel","Appended Mag","Firefly / Rolling Storm","Voltshot / Gear Shift","Handling","Subjugation","Backup Mag"],
+ p1:"Rolling Storm, Rapid Hit, Firefly, Rewind Rounds, Keep Away, Eddy Current",p2:"Gear Shift, Precision Instrument, Voltshot, Trickle Charge, Zen Moment, Frenzy",o:"Subjugation"},
+{n:"Unloved",t:"Hand Cannon · Heavy Burst · Strand",src:"Sundered Doctrine",tier:"C PvP / B PvE",
+ pvp:["Smallbore / Hammer-Forged Rifling","Ricochet Rounds / Accurized Rounds","Rapid Hit / Outlaw","Closing Time / Rampage","Range","Subjugation","Targeting Adjuster"],
+ pve:["Arrowhead Brake","Appended Mag","Dragonfly / Hatchling","Frenzy / Elemental Honing","Stability","Subjugation","Backup Mag"],
+ p1:"Outlaw, Dragonfly, Killing Wind, High-Impact Reserves, Rapid Hit, Hatchling",p2:"Closing Time, Frenzy, Rampage, Tear, Elemental Honing, Paracausal Affinity",o:"Subjugation"},
+{n:"Unvoiced",t:"Shotgun · Pinpoint Slug · Void",src:"Sundered Doctrine",tier:"A PvP / B PvE",
+ pvp:["Fluted Barrel / Rifled Barrel","Accurized Rounds","Lone Wolf / Killing Wind","Closing Time","Handling / Range","Subjugation","Quick Access Sling"],
+ pve:["Fluted Barrel","Assault Mag / Tactical Mag","Fourth Time's the Charm / Envious Arsenal","Bait and Switch / Vorpal Weapon","Handling","Subjugation","Backup Mag"],
+ p1:"Redirection, Killing Wind, Envious Arsenal, Fourth Time's the Charm, Lone Wolf, Destabilizing Rounds",p2:"Dimensional Shift, Lead from Gold, Vorpal Weapon, Bait and Switch, Closing Time, Demoralize",o:"Subjugation"},
+{n:"Unsworn",t:"Trace Rifle · Adaptive · Strand",src:"Sundered Doctrine",tier:"D PvP / B PvE",
+ pvp:["Extended Barrel","Tactical Battery","Stats for All / Rewind Rounds","Target Lock","Range","Subjugation","Targeting Adjuster"],
+ pve:["Fluted Barrel","Light Battery","Shoot to Loot / Tear","Detonator Beam / Killing Tally","Handling","Subjugation","Backup Mag"],
+ p1:"Collective Pugilism, Shoot to Loot, Subsistence, Rewind Rounds, Stats for All, Tear",p2:"Killing Tally, Target Lock, Elemental Honing, Detonator Beam, Hatchling, Chaos Reshaped",o:"Subjugation"},
+{n:"VS Pyroelectric Propellant",t:"Auto Rifle · Adaptive · Arc",src:"Vesper's Host",tier:"B PvP / B PvE",
+ pvp:["Arrowhead Brake / Hammer-Forged Rifling","Ricochet Rounds","Zen Moment / Killing Wind","Kill Clip / Tap the Trigger","Stability","Bray Legacy","Counterbalance Stock"],
+ pve:["Fluted Barrel","Flared Magwell / Tactical Mag","Eddy Current / Attrition Orbs","Jolting Feedback / Gear Shift","Reload Speed","Bray Legacy","Backup Mag"],
+ p1:"Attrition Orbs, Rewind Rounds, Zen Moment, Killing Wind, Eddy Current, Strategist",p2:"Jolting Feedback, Tap the Trigger, Target Lock, Kill Clip, Gear Shift, Onslaught",o:"Bray Legacy"},
+{n:"VS Gravitic Arrest",t:"Fusion Rifle · Adaptive · Void",src:"Vesper's Host",tier:"B PvP / B PvE",
+ pvp:["Extended Barrel","Projection Fuse","Under Pressure","Closing Time / Controlled Burst","Range","Bray Legacy","Counterbalance Stock"],
+ pve:["Fluted Barrel","Enhanced Battery / Accelerated Coils","Repulsor Brace / Demolitionist","Controlled Burst / Destabilizing Rounds","Charge Time","Bray Legacy","Backup Mag"],
+ p1:"Lead from Gold, Under Pressure, Repulsor Brace, Demolitionist, Attrition Orbs, Dimensional Shift",p2:"Withering Gaze, Closing Time, Chain Reaction, Destabilizing Rounds, Successful Warm-Up, Controlled Burst",o:"Bray Legacy"},
+{n:"VS Velocity Baton",t:"Special Grenade Launcher · Area Denial · Void",src:"Vesper's Host",tier:"D PvP / C PvE",
+ pvp:["Quick Launch","High-Velocity Rounds","Unrelenting / Demolitionist","Chain Reaction / Frenzy","Velocity","Bray Legacy","Quick Access Sling"],
+ pve:["Quick Launch","High-Velocity Rounds","Repulsor Brace / Envious Arsenal","Destabilizing Rounds / Chain Reaction","Velocity","Bray Legacy","Quick Access Sling"],
+ p1:"Repulsor Brace, Dimensional Shift, Unrelenting, Reconstruction, Demolitionist, Envious Arsenal",p2:"Destabilizing Rounds, Frenzy, Chain Reaction, Bait and Switch, Elemental Honing, Attrition Orbs",o:"Bray Legacy"},
+{n:"VS Chill Inhibitor",t:"Heavy Grenade Launcher · Rapid-Fire · Stasis",src:"Vesper's Host",tier:"D PvP / A PvE",
+ pvp:["Quick Launch","High-Velocity Rounds","Danger Zone / Chill Clip","Chain Reaction","Velocity","Bray Legacy","Quick Access Sling"],
+ pve:["Quick Launch","Spike Grenades","Envious Arsenal / Chill Clip","Bait and Switch / Aggregate Charge","Handling","Bray Legacy","Backup Mag"],
+ p1:"Cascade Point, Danger Zone, Chill Clip, Attrition Orbs, Envious Arsenal, Demolitionist",p2:"Aggregate Charge, Bait and Switch, Surrounded, Chain Reaction, Explosive Light, Elemental Honing",o:"Bray Legacy"},
+{n:"Vengeful Whisper",t:"Combat Bow · Precision · Strand",src:"Warlord's Ruin",tier:"B PvP / A PvE",
+ pvp:["Flexible String / Elastic String","Fiberglass Arrow Shaft","Archer's Tempo / Hip-Fire Grip","Successful Warm-Up / Archer's Gambit","Draw Time","Sundering","Targeting Adjuster"],
+ pve:["Elastic String","Compact Arrow Shaft / Fiberglass Arrow Shaft","Archer's Tempo / Explosive Head","Meganeura / Hatchling","Draw Time","Sundering","Targeting Adjuster"],
+ p1:"Slice, Outlaw, Tear, Hip-Fire Grip, Archer's Tempo, Explosive Head",p2:"Hatchling, Archer's Gambit, Meganeura, Precision Instrument, Successful Warm-Up, Collective Action",o:"Sundering"},
+{n:"Indebted Kindness",t:"Sidearm · Micro-Missile · Arc (Special)",src:"Warlord's Ruin",tier:"C PvP / B PvE",
+ pvp:["Quick Launch","High-Velocity Rounds","Impulse Amplifier / Air Trigger","Gear Shift / Voltshot","Velocity","Sundering","Quick Access Sling"],
+ pve:["Quick Launch","High-Explosive Ordnance / High-Velocity Rounds","Air Trigger / Impulse Amplifier","Voltshot / Chain Reaction","Velocity","Sundering","Backup Mag"],
+ p1:"Beacon Rounds, Impulse Amplifier, Deconstruct, Danger Zone, Trickle Charge, Air Trigger",p2:"Attrition Orbs, Voltshot, Surrounded, Gear Shift, Chain Reaction, Rolling Storm",o:"Sundering"},
+{n:"Naeem's Lance",t:"Sniper Rifle · Rapid-Fire · Strand",src:"Warlord's Ruin",tier:"C PvP / C PvE",
+ pvp:["Fluted Barrel / Arrowhead Brake","Accurized Rounds / Tactical Mag","Elemental Capacitor / Rewind Rounds","Opening Shot","Handling","Sundering","Targeting Adjuster"],
+ pve:["Fluted Barrel","Tactical Mag","Rewind Rounds / Hatchling","Elemental Honing / Mega Kill Clip","Stability","Sundering","Backup Mag"],
+ p1:"Hatchling, Deconstruct, Reconstruction, Rewind Rounds, Lucky Shot, Elemental Capacitor",p2:"Attrition Orbs, Mega Kill Clip, Elemental Honing, Opening Shot, Cascade Point, Precision Instrument",o:"Sundering"},
+{n:"Dragoncult Sickle",t:"Sword · Caster · Strand",src:"Warlord's Ruin",tier:"D PvP / C PvE",
+ pvp:["Honed Edge","Burst Guard","Eager Edge / Tireless Blade","Surrounded / Sword Logic","Impact","Sundering","Backup Mag"],
+ pve:["Jagged Edge","Swordmaster's Guard","Eager Edge / Tireless Blade","Surrounded / Elemental Honing","Impact","Sundering","Backup Mag"],
+ p1:"Slice, Demolitionist, Impromptu Ammunition, Hatchling, Tireless Blade, Eager Edge",p2:"Sword Logic, Attrition Orbs, Chain Reaction, Whirlwind Blade, Elemental Honing, Surrounded",o:"Sundering"},
+{n:"No Survivors",t:"SMG · Aggressive · Solar",src:"Ghosts of the Deep",tier:"A PvP / A PvE",
+ pvp:["Smallbore","Ricochet Rounds","Heal Clip / Rangefinder","Target Lock / Master of Arms","Range","Restoration Ritual","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Heal Clip / Burning Ambition","Incandescent","Reload Speed","Restoration Ritual","Backup Mag"],
+ p1:"Rewind Rounds, Heal Clip, Burning Ambition, Attrition Orbs, Rangefinder, Demolitionist",p2:"Zen Moment, Master of Arms, Collective Demolition, Target Lock, Adrenaline Junkie, Incandescent",o:"Restoration Ritual"},
+{n:"Cold Comfort",t:"Rocket Launcher · Aggressive · Stasis",src:"Ghosts of the Deep",tier:"B PvP / S PvE",
+ pvp:["Quick Launch","High-Velocity Rounds","Tracking Module / Impulse Amplifier","Explosive Light","Blast Radius","Restoration Ritual","Quick Access Sling"],
+ pve:["Quick Launch","Impact Casing","Envious Assassin / Reconstruction","Bait and Switch / Explosive Light","Handling","Restoration Ritual","Quick Access Sling"],
+ p1:"Chill Clip, Reconstruction, Impulse Amplifier, Vorpal Weapon, Envious Assassin, Tracking Module",p2:"Elemental Honing, Bipod, Reaper's Tithe, Explosive Light, Bait and Switch, Aggregate Charge",o:"Restoration Ritual"},
+{n:"New Pacific Epitaph",t:"Special Grenade Launcher · Wave · Stasis",src:"Ghosts of the Deep",tier:"C PvP / A PvE",
+ pvp:["Quick Launch","High-Velocity Rounds","Demolitionist / Air Trigger","Kill Clip","Handling","Restoration Ritual","Quick Access Sling"],
+ pve:["Quick Launch","High-Velocity Rounds","Chain Reaction / Demolitionist","Reaper's Tithe / Redirection","Velocity","Restoration Ritual","Quick Access Sling"],
+ p1:"Chain Reaction, Unrelenting, Rimestealer, Lead from Gold, Demolitionist, Air Trigger",p2:"Collective Demolition, Kill Clip, Crystalline Corpsebloom, Sword Logic, Redirection, Reaper's Tithe",o:"Restoration Ritual"},
+{n:"Greasy Luck",t:"Glaive · Rapid-Fire · Solar",src:"Ghosts of the Deep",tier:"D PvP / B PvE",
+ pvp:["Lightweight Emitter","Accurized Rounds","Heal Clip / Melee Momentum","Close to Melee / Mega Kill Clip","Handling","Restoration Ritual","Targeting Adjuster"],
+ pve:["Auxiliary Reserves","Appended Mag","Heal Clip / Chaos Reshaped","Incandescent / Mega Kill Clip","Shield Duration","Restoration Ritual","Backup Mag"],
+ p1:"Melee Momentum, Beacon Rounds, Reconstruction, Heal Clip, Chaos Reshaped, Butterfly",p2:"Unstoppable Force, Box Breathing, Chain Reaction, Mega Kill Clip, Close to Melee, Incandescent",o:"Restoration Ritual"},
+{n:"Seventh Seraph Officer Revolver",t:"Hand Cannon · Precision · Kinetic",src:"Spire of the Watcher",tier:"A PvP / B PvE",
+ pvp:["Hammer-Forged Rifling / Smallbore","Accurized Rounds","Lone Wolf","Explosive Payload / Precision Instrument","Range","Eyes Up","Targeting Adjuster"],
+ pve:["Fluted Barrel","Tactical Mag","Shoot to Loot / Reconstruction","Explosive Payload / Redirection","Reload Speed","Eyes Up","Backup Mag"],
+ p1:"Reconstruction, Fourth Time's the Charm, Ambitious Assassin, Lone Wolf, Bewildering Burst, Shoot to Loot",p2:"Redirection, Explosive Payload, All-Star, Precision Instrument, Collective Action, Adhesive Ordnance, Frenzy",o:"Eyes Up"},
+{n:"Liminal Vigil",t:"Sidearm · Heavy Burst · Stasis",src:"Spire of the Watcher",tier:"A PvP / B PvE",
+ pvp:["Smallbore","Accurized Rounds","Lone Wolf / Offhand Strike","Kill Clip / Headseeker","Range","Tex Balanced Stock","Targeting Adjuster"],
+ pve:["Fluted Barrel","Tactical Mag","Headstone / Crystalline Corpsebloom","Rimestealer / Frenzy","Reload Speed","Tex Balanced Stock","Backup Mag"],
+ p1:"Zen Moment, Headstone, Crystalline Corpsebloom, Offhand Strike, Lone Wolf, Attrition Orbs",p2:"Frenzy, Kill Clip, Rimestealer, Desperado, Rangefinder, Headseeker",o:"Tex Balanced Stock"},
+{n:"Seventh Seraph Carbine",t:"Auto Rifle · Precision · Kinetic",src:"Spire of the Watcher",tier:"B PvP / A PvE",
+ pvp:["Hammer-Forged Rifling / Smallbore","Accurized Rounds / Seraph Rounds","Dynamic Sway Reduction","Target Lock","Range","Eyes Up","Counterbalance Stock"],
+ pve:["Fluted Barrel","Tactical Mag","Reconstruction / Enlightened Action","Kinetic Tremors / Onslaught","Reload Speed","Eyes Up","Backup Mag"],
+ p1:"Reconstruction, Fourth Time's the Charm, Stopping Power, Attrition Orbs, Dynamic Sway Reduction, Ambitious Assassin, Enlightened Action",p2:"Target Lock, Onslaught, All-Star, Collective Action, Kinetic Tremors, Ancillary Ordnance, Frenzy",o:"Eyes Up"},
+{n:"Long Arm",t:"Scout Rifle · Aggressive · Arc",src:"Spire of the Watcher",tier:"B PvP / B PvE",
+ pvp:["Arrowhead Brake","Steady Rounds / Accurized Rounds","Rapid Hit / Hip-Fire Grip","Explosive Payload / Precision Instrument","Stability","Tex Balanced Stock","Targeting Adjuster"],
+ pve:["Arrowhead Brake","Appended Mag","Rapid Hit / Lucky Shot","Explosive Payload / Meganeura","Handling","Tex Balanced Stock","Backup Mag"],
+ p1:"Rapid Hit, Rolling Storm, Dual Loader, Supercharged Magazine, Hip-Fire Grip, Lucky Shot",p2:"Chaos Reshaped, Meganeura, Redirection, Precision Instrument, Gear Shift, Explosive Payload",o:"Tex Balanced Stock"},
+{n:"Terminus Horizon",t:"Machine Gun · High-Impact · Arc",src:"Spire of the Watcher",tier:"C PvP / A PvE",
+ pvp:["Smallbore","Ricochet Rounds","Feeding Frenzy","Target Lock / Precision Instrument","Stability","Tex Balanced Stock","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Reconstruction / Feeding Frenzy","Target Lock / Jolting Feedback","Handling","Tex Balanced Stock","Backup Mag"],
+ p1:"Meganeura, Supercharged Magazine, Reconstruction, Fourth Time's the Charm, Trickle Charge, Feeding Frenzy",p2:"Gear Shift, Jolting Feedback, Precision Instrument, Rolling Storm, Mega Kill Clip, Target Lock",o:"Tex Balanced Stock"},
+{n:"Wilderflight",t:"Grenade Launcher · Double Fire · Void",src:"Spire of the Watcher",tier:"C PvP / A PvE",
+ pvp:["Quick Launch","Proximity Grenades / Disorienting Grenades","Air Trigger / Auto-Loading Holster","Destabilizing Rounds","Velocity","Tex Balanced Stock","Quick Access Sling"],
+ pve:["Quick Launch","Spike Grenades","Envious Arsenal / Auto-Loading Holster","Bait and Switch / Withering Gaze","Handling","Tex Balanced Stock","Quick Access Sling"],
+ p1:"Auto-Loading Holster, Repulsor Brace, Blast Distributor, Ambitious Assassin, Envious Arsenal, Air Trigger",p2:"Destabilizing Rounds, Reaper's Tithe, Aggregate Charge, Elemental Honing, Withering Gaze, Bait and Switch",o:"Tex Balanced Stock"},
+{n:"New Purpose",t:"Pulse Rifle · High-Impact · Stasis",src:"Duality",tier:"B PvP / C PvE",
+ pvp:["Smallbore","Accurized Rounds","Zen Moment / Perpetual Motion","Headseeker / Desperado","Range","Bitterspite","Targeting Adjuster"],
+ pve:["Arrowhead Brake","Flared Magwell","Headstone / Rapid Hit","Rimestealer / Desperado","Stability","Bitterspite","Backup Mag"],
+ p1:"Headstone, Rapid Hit, Grave Robber, Zen Moment, Feeding Frenzy, Perpetual Motion",p2:"Rimestealer, Desperado, Headseeker, Meganeura, Pugilist, Swashbuckler",o:"Bitterspite"},
+{n:"Unforgiven",t:"SMG · Aggressive · Void",src:"Duality",tier:"C PvP / B PvE",
+ pvp:["Smallbore","Ricochet Rounds","Demolitionist / Ambitious Assassin","Adrenaline Junkie / Rampage","Range","Bitterspite","Counterbalance Stock"],
+ pve:["Fluted Barrel","Flared Magwell","Destabilizing Rounds / Demolitionist","Chaos Reshaped / Adrenaline Junkie","Stability","Bitterspite","Backup Mag"],
+ p1:"Destabilizing Rounds, Demolitionist, Feeding Frenzy, Ambitious Assassin, Attrition Orbs, Rewind Rounds",p2:"Repulsor Brace, Dimensional Shift, Rampage, Adrenaline Junkie, Chaos Reshaped, Desperate Measures",o:"Bitterspite"},
+{n:"The Epicurean",t:"Fusion Rifle · Precision · Void",src:"Duality",tier:"B PvP / D PvE",
+ pvp:["Arrowhead Brake","Accelerated Coils","Snapshot Sights / Quickdraw","Rangefinder / Moving Target","Charge Time","To Excess","Targeting Adjuster"],
+ pve:["Arrowhead Brake","Enhanced Battery","Surplus / Feeding Frenzy","Cornered / Repulsor Brace","Charge Time","To Excess","Backup Mag"],
+ p1:"Ensemble, Feeding Frenzy, Well-Rounded, Snapshot Sights, Quickdraw, Surplus",p2:"Cornered, Moving Target, Rangefinder, Backup Plan, Swashbuckler, Repulsor Brace",o:"To Excess (older version, may not have a tiered reissue)"},
+{n:"Lingering Dread",t:"Special Grenade Launcher · Lightweight · Stasis",src:"Duality",tier:"C PvP / A PvE",
+ pvp:["Quick Launch","Disorienting Grenades","Auto-Loading Holster / Ambitious Assassin","Chill Clip / Rampage","Handling","Bitterspite","Quick Access Sling"],
+ pve:["Quick Launch","Disorienting Grenades / Spike Grenades","Auto-Loading Holster / Demolitionist","Chill Clip / Chain Reaction","Handling","Bitterspite","Backup Mag"],
+ p1:"Subsistence, Auto-Loading Holster, Ambitious Assassin, Demolitionist, Discord, Feeding Frenzy",p2:"Blast Distributor, Bipod, Chill Clip, Collective Demolition, Chain Reaction, Rampage",o:"Bitterspite"},
+{n:"Stormchaser",t:"Linear Fusion · Adaptive Burst · Arc",src:"Duality",tier:"D PvP / A PvE",
+ pvp:["Fluted Barrel","Accelerated Coils","Auto-Loading Holster / Rapid Hit","Precision Instrument / Firing Line","Handling","Bitterspite","Quick Access Sling"],
+ pve:["Fluted Barrel","Accelerated Coils","Clown Cartridge / Supercharged Magazine","Aggregate Charge / Elemental Honing","Charge Time","Bitterspite","Backup Mag"],
+ p1:"Clown Cartridge, Auto-Loading Holster, Supercharged Magazine, Jolting Feedback, Rapid Hit, Light Touch",p2:"Firing Line, Vorpal Weapon, Gear Shift, Elemental Honing, Precision Instrument, Aggregate Charge",o:"Bitterspite"},
+{n:"Fixed Odds",t:"Machine Gun · High-Impact · Solar",src:"Duality",tier:"C PvP / B PvE",
+ pvp:["Arrowhead Brake","Accurized Rounds","Quickdraw / Under Pressure","Rangefinder / Focused Fury","Range","To Excess","Targeting Adjuster"],
+ pve:["Arrowhead Brake","Tactical Mag / Appended Mag","Feeding Frenzy / Encore","Incandescent / Killing Tally","Reload Speed","To Excess","Backup Mag"],
+ p1:"Quickdraw, No Distractions, Encore, Field Prep, Feeding Frenzy, Under Pressure",p2:"Incandescent, Focused Fury, Firing Line, Rangefinder, Rampage, Killing Tally",o:"To Excess"},
+{n:"Eyasluna",t:"Hand Cannon · Adaptive · Stasis",src:"Grasp of Avarice",tier:"S PvP / A PvE",
+ pvp:["Hammer-Forged Rifling","High-Caliber Rounds / Ricochet Rounds","Slideshot / Rangefinder","Precision Instrument / Moving Target","Range","Unburied Treasure","Counterbalance Stock"],
+ pve:["Fluted Barrel","Flared Magwell","Firefly / Meganeura","Crystalline Corpsebloom / Chaos Reshaped","Handling","Unburied Treasure","Backup Mag"],
+ p1:"Elemental Capacitor, Zen Moment, Slideshot, Firefly, Meganeura, Rangefinder",p2:"Headstone, Chaos Reshaped, Moving Target, Crystalline Corpsebloom, Collective Action, Precision Instrument",o:"Unburied Treasure"},
+{n:"Matador 64",t:"Shotgun · Precision · Arc",src:"Grasp of Avarice",tier:"A PvP / C PvE",
+ pvp:["Smallbore / Rifled Barrel","Accurized Rounds","Lone Wolf / Threat Detector","Opening Shot / Closing Time","Range","Unburied Treasure","Quick Access Sling"],
+ pve:["Smallbore","Assault Mag / Tactical Mag","Threat Detector / Lead from Gold","Swashbuckler / Gear Shift","Reload Speed","Unburied Treasure","Backup Mag"],
+ p1:"Lone Wolf, Light Touch, Slideways, Supercharged Magazine, Threat Detector, Lead from Gold",p2:"Collective Action, Closing Time, Opening Shot, One-Two Punch, Gear Shift, Swashbuckler",o:"Unburied Treasure"},
+{n:"1000 Yard Stare",t:"Sniper Rifle · Adaptive · Void",src:"Grasp of Avarice",tier:"B PvP / D PvE",
+ pvp:["Fluted Barrel","Accurized Rounds","Lone Wolf / Light Touch","Snapshot Sights / Moving Target","Handling","Unburied Treasure","Targeting Adjuster"],
+ pve:["Arrowhead Brake","Tactical Mag / Appended Mag","Vorpal Weapon / Collective Demolition","Closing Time / Mulligan","Handling","Unburied Treasure","Backup Mag"],
+ p1:"Lone Wolf, Dimensional Shift, Collective Demolition, Light Touch, Discord, Vorpal Weapon",p2:"Demoralize, Redirection, Mulligan, Closing Time, Snapshot Sights, Moving Target",o:"Unburied Treasure"},
+{n:"Hero of Ages",t:"Sword · Aggressive · Arc",src:"Grasp of Avarice",tier:"D PvP / C PvE",
+ pvp:["Hungry Edge","Swordmaster's Guard","Flash Counter / Relentless Strikes","Assassin's Blade / One for All","Impact","Unburied Treasure","Backup Mag"],
+ pve:["Honed Edge / Tempered Edge","Swordmaster's Guard","Relentless Strikes / Collective Action","Whirlwind Blade / Chain Reaction","Impact","Unburied Treasure","Backup Mag"],
+ p1:"Relentless Strikes, Sharp Harvest, Impromptu Ammunition, Flash Counter, Demolitionist, Collective Action",p2:"One for All, Jolting Feedback, Assassin's Blade, Chain Reaction, Elemental Honing, Whirlwind Blade",o:"Unburied Treasure"},
+{n:"A Sudden Death",t:"Shotgun · Aggressive · Void",src:"Prophecy",tier:"A PvP / A PvE",
+ pvp:["Smoothbore","Accurized Rounds","Slideshot / Threat Detector","Opening Shot / Closing Time","Range","Crossing Over","Quick Access Sling"],
+ pve:["Barrel Shroud","Assault Mag","Repulsor Brace / Reconstruction","Destabilizing Rounds / Trench Barrel","Reload Speed","Crossing Over","Counterbalance Stock"],
+ p1:"One-Two Punch, Slideshot, Repulsor Brace, Threat Detector, Discord, Reconstruction, Dimensional Shift",p2:"Trench Barrel, Destabilizing Rounds, Opening Shot, Closing Time, Sword Logic, Elemental Honing, Collective Action",o:"Crossing Over"},
+{n:"Judgment",t:"Hand Cannon · Adaptive · Stasis",src:"Prophecy",tier:"A PvP / C PvE",
+ pvp:["Hammer-Forged Rifling","Accurized Rounds","Lone Wolf / Keep Away","Opening Shot / Rangefinder","Range","Crossing Over","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Headstone / Demolitionist","Rimestealer / Timed Payload","Reload Speed","Crossing Over","Backup Mag"],
+ p1:"Headstone, Lone Wolf, Demolitionist, Rapid Hit, Keep Away, Crystalline Corpsebloom, Built to Blast",p2:"Timed Payload, Adrenaline Junkie, Opening Shot, Precision Instrument, Binary Orbit, Rangefinder, Rimestealer",o:"Crossing Over"},
+{n:"Adjudicator",t:"SMG · Precision · Kinetic",src:"Prophecy",tier:"A PvP / A PvE",
+ pvp:["Hammer-Forged Rifling","Accurized Rounds","Threat Detector / Perpetual Motion","Target Lock / Swashbuckler","Range","Crossing Over","Targeting Adjuster"],
+ pve:["Hammer-Forged Rifling","Flared Magwell","Subsistence / Feeding Frenzy","Onslaught / Kinetic Tremors","Range","Crossing Over","Backup Mag"],
+ p1:"Subsistence, Perpetual Motion, Feeding Frenzy, Dynamic Sway Reduction, Threat Detector, Ambitious Assassin, Attrition Orbs",p2:"Target Lock, Kinetic Tremors, Onslaught, Rampage, Frenzy, All-Star, Swashbuckler",o:"Crossing Over"},
+{n:"Relentless",t:"Pulse Rifle · High-Impact · Strand",src:"Prophecy",tier:"A PvP / B PvE",
+ pvp:["Polygonal Rifling","Ricochet Rounds","Keep Away / Rapid Hit","Headseeker / Desperado","Stability","Crossing Over","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Firefly / Tear","Elemental Honing / Hatchling","Reload Speed","Crossing Over","Backup Mag"],
+ p1:"Firefly, Tear, Slice, Rapid Hit, Keep Away, Rewind Rounds, Built to Blast",p2:"Hatchling, Elemental Honing, Headseeker, Desperado, Paracausal Affinity, Swashbuckler, Adrenaline Junkie",o:"Crossing Over"},
+{n:"Prosecutor",t:"Auto Rifle · Precision · Arc",src:"Prophecy",tier:"A PvP / A PvE",
+ pvp:["Smallbore","Ricochet Rounds","Keep Away / Enlightened Action","Target Lock / Gear Shift","Stability","Crossing Over","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Dragonfly / Eddy Current","Voltshot / Rolling Storm","Handling","Crossing Over","Backup Mag"],
+ p1:"Dragonfly, Eddy Current, Keep Away, Enlightened Action, Trickle Charge, Light Touch, Subsistence",p2:"Voltshot, Rolling Storm, Onslaught, Target Lock, Gear Shift, Sword Logic",o:"Crossing Over"},
+{n:"Darkest Before",t:"Pulse Rifle · Rapid-Fire · Solar",src:"Prophecy",tier:"B PvP / A PvE",
+ pvp:["Hammer-Forged Rifling","Ricochet Rounds","Keep Away / Light Touch","Headseeker / Kill Clip","Stability","Crossing Over","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Subsistence / Heal Clip","Incandescent / Kill Clip","Reload Speed","Crossing Over","Backup Mag"],
+ p1:"Heal Clip, Subsistence, Elemental Capacitor, Wellspring, Attrition Orbs, Light Touch, Keep Away",p2:"Incandescent, Kill Clip, Headseeker, One for All, Focused Fury, Elemental Honing, Burning Ambition",o:"Crossing Over"},
+{n:"Adamantite",t:"Auto Rifle · Support · Strand",src:"Pit of Heresy",tier:"C PvP / B PvE",
+ pvp:["Smallbore","Accurized Rounds","Pugilist / Demolitionist","Kill Clip / Desperate Measures","Range","Heretical Behavior","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Reciprocity / Physic","Circle of Life / Hatchling","Handling","Heretical Behavior","Backup Mag"],
+ p1:"Demolitionist, Pugilist, Reciprocity, Physic, Redirection, Subsistence, Impromptu Ammunition",p2:"Circle of Life, Tear, Kill Clip, Hatchling, Desperate Measures, Sword Logic, Aggregate Charge",o:"Heretical Behavior"},
+{n:"Refusal of the Call",t:"Glaive · Adaptive · Strand",src:"Pit of Heresy",tier:"C PvP / B PvE",
+ pvp:["Lightweight Emitter","Accurized Rounds","Impulse Amplifier / Slice","Mega Kill Clip / Replenishing Aegis","Handling","Heretical Behavior","Quick Access Sling"],
+ pve:["Auxiliary Reserves","Alloy Magazine","Close to Melee / Chain Reaction","Chaos Reshaped / Unstoppable Force","Reload Speed","Heretical Behavior","Backup Mag"],
+ p1:"Close to Melee, Impulse Amplifier, Discord, Slice, Chain Reaction, Grave Robber, Demolitionist",p2:"Unstoppable Force, Sword Logic, Replenishing Aegis, Aggregate Charge, Mega Kill Clip, Desperate Measures, Chaos Reshaped",o:"Heretical Behavior"},
+{n:"Psychopomp",t:"Special Grenade Launcher · Area Denial · Arc",src:"Pit of Heresy",tier:"D PvP / B PvE",
+ pvp:["Quick Launch","Proximity Grenades","Auto-Loading Holster / Demolitionist","Harmony / Gear Shift","Handling","Heretical Behavior","Quick Access Sling"],
+ pve:["Quick Launch","High-Velocity Rounds","Envious Assassin / Rolling Storm","Voltshot / Harmony","Reload Speed","Heretical Behavior","Backup Mag"],
+ p1:"Envious Assassin, Demolitionist, Rolling Storm, Ambitious Assassin, Impromptu Ammunition, Blast Distributor, Auto-Loading Holster",p2:"Voltshot, Harmony, Attrition Orbs, Sword Logic, Gear Shift, Elemental Honing, Aggregate Charge",o:"Heretical Behavior"},
+{n:"Eyes Unveiled",t:"Linear Fusion · Precision · Void",src:"Pit of Heresy",tier:"C PvP / B PvE",
+ pvp:["Polygonal Rifling","Particle Repeater","Successful Warm-Up / Overflow","Chain Reaction / Frenzy","Charge Time","Heretical Behavior","Quick Access Sling"],
+ pve:["Arrowhead Brake","Liquid Coils","Fourth Time's the Charm / Overflow","Precision Instrument / Reservoir Burst","Charge Time","Heretical Behavior","Backup Mag"],
+ p1:"Collective Demolition, Fourth Time's the Charm, Overflow, Successful Warm-Up, Demoralize, Mega Kill Clip, Butterfly",p2:"Reservoir Burst, Chain Reaction, Withering Gaze, Sword Logic, Precision Instrument, Frenzy, Elemental Honing",o:"Heretical Behavior"},
+{n:"Fractethyst",t:"Shotgun · Precision · Stasis",src:"Shattered Throne",tier:"A PvP / B PvE",
+ pvp:["Rifled Barrel","Accurized Rounds","Slideshot / Lone Wolf","Opening Shot / Closing Time","Range","Ignoble Deeds","Quick Access Sling"],
+ pve:["Barrel Shroud","Assault Mag","Envious Assassin / Lead from Gold","Trench Barrel / Chain Reaction","Reload Speed","Ignoble Deeds","Counterbalance Stock"],
+ p1:"Quickdraw, Slideshot, Lone Wolf, Envious Assassin, One-Two Punch, Lead from Gold",p2:"Opening Shot, Trench Barrel, Closing Time, Chain Reaction, Crystalline Corpsebloom, Adagio",o:"Ignoble Deeds"},
+{n:"Vulpecula",t:"Hand Cannon · Precision · Stasis",src:"Shattered Throne",tier:"A PvP / B PvE",
+ pvp:["Hammer-Forged Rifling","Accurized Rounds","Killing Wind / Outlaw","Eye of the Storm / Explosive Payload","Range","Ignoble Deeds","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Headstone / Rimestealer","Crystalline Corpsebloom / Explosive Payload","Reload Speed","Ignoble Deeds","Backup Mag"],
+ p1:"Shoot to Loot, Outlaw, Headstone, Rimestealer, Killing Wind, Subsistence",p2:"Explosive Payload, Crystalline Corpsebloom, Adagio, Eye of the Storm, Collective Action, Lead from Light",o:"Ignoble Deeds"},
+{n:"Chrysura Melo",t:"Auto Rifle · Support · Arc",src:"Shattered Throne",tier:"C PvP / B PvE",
+ pvp:["Smallbore","Ricochet Rounds","Impulse Amplifier / Trickle Charge","Frenzy / Voltshot","Stability","Ignoble Deeds","Targeting Adjuster"],
+ pve:["Fluted Barrel","Flared Magwell","Physic / Jolting Feedback","Circle of Life / Voltshot","Handling","Ignoble Deeds","Backup Mag"],
+ p1:"Physic, Ensemble, Jolting Feedback, Impulse Amplifier, Trickle Charge, Lead from Light",p2:"Circle of Life, Voltshot, Frenzy, Supercharged Magazine, Attrition Orbs, Rolling Storm",o:"Ignoble Deeds"},
+{n:"Canis Major",t:"Heavy Grenade Launcher · Rapid-Fire · Solar",src:"Shattered Throne",tier:"D PvP / B PvE",
+ pvp:["Quick Launch","High-Velocity Rounds","Impulse Amplifier / Rampage","Full Court / Chain Reaction","Handling","Ignoble Deeds","Quick Access Sling"],
+ pve:["Quick Launch","Spike Grenades","Reconstruction / Clown Cartridge","Chain Reaction / Bait and Switch","Reload Speed","Ignoble Deeds","Backup Mag"],
+ p1:"Impulse Amplifier, Clown Cartridge, Rampage, Incandescent, Reconstruction, Adagio",p2:"Chain Reaction, Full Court, Kill Clip, Aggregate Charge, Bait and Switch, Explosive Light",o:"Ignoble Deeds"}
+];
+const DPOOLS=["Sundered Doctrine","Vesper's Host","Warlord's Ruin","Ghosts of the Deep","Spire of the Watcher","Duality","Grasp of Avarice","Prophecy","Pit of Heresy","Shattered Throne"];
+const TSLOTS = ["Barrel","Magazine","Trait 1","Trait 2","Masterwork","Origin","Mod"];
+
+const SLOTS = ["Barrel","Magazine","Trait 1","Trait 2","Masterwork","Mod"];
+let mode = "pvp";
+try { const s = localStorage.getItem("codexMode"); if (s==="pvp"||s==="pve") mode = s; } catch(e){}
+
+const esc = s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = v => { const parts = v.split(" / "); return `<b>${esc(parts[0])}</b>` + (parts.length>1 ? ` <span class="alt">/ ${parts.slice(1).map(esc).join(" / ")}</span>` : ""); };
+
+const cards = list => list.map(w=>{
+          const roll = mode==="pvp" ? w.pvp : w.pve;
+          return `<article class="frame">
+            <div class="fh"><h3>${esc(w.n)}</h3><span class="rpm">${esc(w.tier)}</span></div>
+            <p class="role">${esc(w.t)} · ${esc(w.src)}</p>
+            <dl>${roll.map((v,i)=>`<dt>${TSLOTS[i]}</dt><dd>${fmt(v)}</dd>`).join("")}</dl>
+            <details class="pool"><summary>Full perk pool</summary>
+              <p><b>Column 1:</b> ${esc(w.p1)}</p><p><b>Column 2:</b> ${esc(w.p2)}</p><p><b>Origin:</b> ${esc(w.o)}</p>
+            </details>
+          </article>`;}).join("");
+function render(){
+  document.documentElement.style.setProperty("--modec", mode==="pvp" ? "var(--pvp)" : "var(--pve)");
+  document.getElementById("note").innerHTML = NOTES[mode];
+  document.querySelectorAll(".modes button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.mode===mode ? "true":"false"));
+  const nav = document.getElementById("types");
+  document.getElementById("srcnav").innerHTML = [["trials","Trials of Osiris"],["ironbanner","Iron Banner"],["renegades","Renegades"],["dungeons","Dungeons"]].map(([id,n])=>`<a href="#${id}">${n}</a>`).join("");
+  nav.innerHTML = TYPES.map(t=>`<a href="#${t.id}">${esc(t.name.replace("Special Grenade Launchers","Special GLs").replace("Heavy Grenade Launchers","Heavy GLs"))}</a>`).join("");
+  const main = document.getElementById("codex");
+  const trials = `
+    <section class="type" id="trials">
+      <h2>Trials of Osiris</h2>
+      <p class="tnote">Trials guns have their own perk pools, so the generic frame rolls further down don't apply to them. Weapons drop in weekly focus pools on a three-week cycle (Week 1, 2, 3), plus a separate Lighthouse pool for flawless runs. Attune under Inventory › Accessories before you queue. You can focus any weapon you've already unlocked at Saint-14 for one Trials engram plus Glimmer. Origins vary by gun: older Trials weapons roll Alacrity and One Quiet Moment, and newer or reissued ones roll Fleet Footed and Roar of Battle. Some also roll a foundry origin. Perk pools match the current reissues on light.gg. Mods are my picks, since no guide lists them.</p>
+      ${POOLS.map(pl=>`<h3 class="poolh">${pl.replace(" pool","")}</h3><div class="frames">
+        ${cards(TRIALS.filter(w=>w.src===pl))}
+      </div>`).join("")}
+    </section>`;
+  const ibsec = `
+    <section class="type" id="ironbanner">
+      <h2>Iron Banner</h2>
+      <p class="tnote">Iron Banner guns have their own perk pools, and the current Monument of Triumph versions all roll the Skulking Wolf origin. Some also roll Field-Tested or a foundry origin. <b>Playlist drops</b> come from matches, bounties and engrams at Saladin. <b>Saladin focus</b> guns only come from focusing at Saladin, for 1 Iron Cipher plus 15,000 Glimmer. Attune in the Iron Banner menu before you queue. Legacy guns with no tiers are left out on purpose. Mods are my picks.</p>
+      ${IBPOOLS.map(pl=>`<h3 class="poolh">${pl}</h3><div class="frames">${cards(IRONBANNER.filter(w=>w.src===pl))}</div>`).join("")}
+    </section>`;
+  const rensec = `
+    <section class="type" id="renegades">
+      <h2>Renegades</h2>
+      <p class="tnote"><b>Heat weapons</b> (Dynamic Heat and Balanced Heat frames, the Star Wars blasters) don't use ammo mags. They build heat as you fire, so the mag slot is a heatsink and the reload masterwork is Cooling Efficiency instead. Their perks (Delicate Tuning, Cooling Baubles, Thermal Atomization) work off that heat. <b>Slots:</b> Stasis and Strand go in the Kinetic slot, so M-17 Fast Talker and Modified B-7 can't pair with Corundum Hammer or Spare Rations. The Trials guns from Renegades already in the rotation (Corundum Hammer, Martlet, Cataphract, Astral Horizon, Immortal) are in the Trials section above. Exotics are left out. Most rolls follow blueberries.gg. Mods and some PvP rolls on weapons rated D in PvP are my picks.</p>
+      ${RPOOLS.map(pl=>`<h3 class="poolh">${pl}</h3><div class="frames">${cards(RENEGADES.filter(w=>w.src===pl))}</div>`).join("")}
+    </section>`;
+  const dsec = `
+    <section class="type" id="dungeons">
+      <h2>Dungeons</h2>
+      <p class="tnote">These are the current tiered versions from update 9.7.0 (Monument of Triumph). Their perk pools are different from the older versions most god-roll guides still describe, and the pools here were checked against Bungie's live item database. Each dungeon has one fixed origin trait. Equilibrium's guns are in the Renegades section above. Exotics are left out. <b>Grasp of Avarice</b> is the Matador 64 and Eyasluna farm. <b>Prophecy</b> has no exotic but drops Adjudicator, Judgment and A Sudden Death, which are all strong in PvP. Mods and most grades are my picks.</p>
+      ${DPOOLS.map(pl=>`<h3 class="poolh">${pl}</h3><div class="frames">${cards(DUNGEONS.filter(w=>w.src===pl))}</div>`).join("")}
+    </section>`;
+  main.innerHTML = trials + ibsec + rensec + dsec + TYPES.map(t=>`
+    <section class="type" id="${t.id}">
+      <h2>${esc(t.name)}</h2>
+      <p class="tnote">${esc(t.tnote)}</p>
+      <div class="frames">
+        ${t.frames.map(f=>{
+          const roll = mode==="pvp" ? f[3] : f[4];
+          return `<article class="frame">
+            <div class="fh"><h3>${esc(f[0])}</h3><span class="rpm">${esc(f[1])}</span></div>
+            <p class="role">${esc(f[2])}</p>
+            <dl>${roll.map((v,i)=>`<dt>${SLOTS[i]}</dt><dd>${fmt(v)}</dd>`).join("")}</dl>
+          </article>`;}).join("")}
+      </div>
+    </section>`).join("");
+}
+document.querySelectorAll(".modes button").forEach(b=>b.addEventListener("click",()=>{
+  mode = b.dataset.mode; try{localStorage.setItem("codexMode",mode);}catch(e){} render();
+}));
+render();
+// keep section headings clear of the sticky bar, and highlight the section you're in
+const bar=document.querySelector(".bar");
+const setBarH=()=>document.documentElement.style.setProperty("--barh",(bar.offsetHeight+12)+"px");
+setBarH(); window.addEventListener("resize",setBarH);
+let curId=null;
+function markActive(){
+  const y=bar.getBoundingClientRect().bottom+20; let id=null;
+  document.querySelectorAll("section.type").forEach(sec=>{ if(sec.getBoundingClientRect().top<=y) id=sec.id; });
+  if(id===curId) return; curId=id;
+  document.querySelectorAll(".types a").forEach(a=>{
+    const on=a.getAttribute("href")==="#"+id;
+    a.setAttribute("aria-current",on?"true":"false");
+    if(on){ const nav=a.parentElement; const l=a.offsetLeft-nav.offsetLeft; if(l<nav.scrollLeft||l+a.offsetWidth>nav.scrollLeft+nav.clientWidth-24) nav.scrollTo({left:l-8,behavior:"smooth"}); }
+  });
+}
+window.addEventListener("scroll",markActive,{passive:true}); markActive();
+document.querySelectorAll(".modes button").forEach(b=>b.addEventListener("click",()=>{curId=null;markActive();}));
+const h = location.hash.slice(1);
+if (h && document.getElementById(h)) document.getElementById(h).scrollIntoView();
+</script>

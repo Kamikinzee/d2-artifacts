@@ -1,0 +1,266 @@
+<title>Warlock Loadout Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a field-manual loadout sheet — mode switch up top, one build per stacked dossier, slots in a dense grid */
+:root{
+  --bg:#eef0f2; --panel:#ffffff; --ink:#15191e; --muted:#5b6470; --line:#d5dae0; --accent:#b8621b;
+  --arc:#2f7fd1; --void:#7b4fc4; --solar:#d4661b; --prism:#c2448f; --stasis:#3a9bb8;
+  --chip:#f2f4f6; --warn:#8a6a12; --warnbg:#fbf3dc;
+  --display:"Saira Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101318; --panel:#171b21; --ink:#e7eaee; --muted:#9aa3ae; --line:#2a3039; --accent:#e08a3f;
+  --arc:#5aa3ef; --void:#a481e6; --solar:#f08a3e; --prism:#e46bb2; --stasis:#62bfd9;
+  --chip:#1f242c; --warn:#e6c35c; --warnbg:#2a2516; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101318; --panel:#171b21; --ink:#e7eaee; --muted:#9aa3ae; --line:#2a3039; --accent:#e08a3f;
+  --arc:#5aa3ef; --void:#a481e6; --solar:#f08a3e; --prism:#e46bb2; --stasis:#62bfd9;
+  --chip:#1f242c; --warn:#e6c35c; --warnbg:#2a2516; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+header h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,6vw,54px);letter-spacing:.01em;line-height:1;margin:0;text-transform:uppercase;text-wrap:balance}
+header p{color:var(--muted);max-width:68ch;margin:10px 0 0}
+.meta{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:6px}
+.modes{display:flex;gap:8px;margin:24px 0 8px;flex-wrap:wrap}
+.modes button{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 20px;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:4px;cursor:pointer}
+.modes button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.modes button:focus-visible,.jump a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.rules{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin:16px 0;color:var(--muted);font-size:14px}
+.rules b{color:var(--ink)}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 20px}
+.jump a{font-family:var(--mono);font-size:12px;color:var(--ink);text-decoration:none;padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+.build{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--el);border-radius:6px;margin:0 0 22px;overflow:hidden}
+.bhead{padding:18px 18px 12px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;border-bottom:1px solid var(--line)}
+.bhead h2{font-family:var(--display);font-weight:700;font-size:30px;line-height:1.05;margin:0;text-transform:uppercase;letter-spacing:.02em;flex:1 1 300px}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:var(--chip);color:var(--muted)}
+.tag.el{background:var(--el);color:#fff}
+.pitch{padding:12px 18px 0;margin:0;max-width:75ch}
+.src{margin:10px 18px 0;font-size:13px;padding:8px 10px;border-radius:4px;background:var(--chip);color:var(--muted)}
+.src.partial{background:var(--warnbg);color:var(--warn)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;margin-top:14px;border-top:1px solid var(--line)}
+.sec{padding:14px 18px;border-bottom:1px solid var(--line);min-width:0}
+.grid .sec:nth-child(odd){border-right:1px solid var(--line)}
+@media (max-width:660px){.grid .sec:nth-child(odd){border-right:0}}
+.sec h3{font-family:var(--display);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--el);margin:0 0 8px}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:0}
+dt{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:2px}
+dd{margin:0;min-width:0}
+ul.plain{margin:0;padding-left:18px}
+ul.plain li{margin:2px 0}
+.wpn{border:1px solid var(--line);border-radius:4px;padding:10px 12px;margin:0 0 10px}
+.wpn:last-child{margin-bottom:0}
+.wpn .wn{font-weight:600}
+.wpn .ws{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.roll{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.roll span{font-family:var(--mono);font-size:11.5px;background:var(--chip);padding:2px 6px;border-radius:3px}
+.roll span i{font-style:normal;color:var(--muted)}
+.how{padding:14px 18px 18px}
+.how h3{font-family:var(--display);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--el);margin:0 0 6px}
+.how p{margin:0;max-width:75ch}
+.stat{font-family:var(--mono);font-size:13px}
+footer{color:var(--muted);font-size:13px;margin-top:28px}
+footer a{color:var(--accent)}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Warlock Loadout Sheet</h1>
+    <p>Seven full Warlock builds: four for Crucible and Trials (one built around automatic weapons) and three for raids and endgame PvE. Each lists the subclass, abilities, exotic, stat priority, weapons with god rolls, and armor mods slot by slot.</p>
+    <div class="meta">Sandbox: Monument of Triumph (9.7.0) · Updated Oct 2026</div>
+  </header>
+
+  <div class="modes" role="tablist" aria-label="Build mode">
+    <button id="tab-pvp" role="tab" aria-selected="true" data-mode="pvp">PvP</button>
+    <button id="tab-pve" role="tab" aria-selected="false" data-mode="pve">PvE / Raid</button>
+  </div>
+
+  <div class="rules" id="rules"></div>
+  <nav class="jump" id="jump" aria-label="Jump to build"></nav>
+  <main id="builds"></main>
+
+  <footer>
+    Stats use the Edge of Fate system (Weapons, Health, Class, Grenade, Super, Melee). Perk pools vary by weapon, so check a specific gun on light.gg before farming a roll.<br>
+    Sources: <a href="https://www.blueberries.gg/armor/destiny-2-warlock-builds/" target="_blank" rel="noopener">Blueberries Warlock builds (Aug 2026)</a> ·
+    <a href="https://boostroom.com/blog/destiny-2-best-builds-strong-pve-and-pvp-builds-for-every-class" target="_blank" rel="noopener">Boostroom builds</a> ·
+    <a href="https://lfcarry.com/guides/destiny-2-best-pve-builds" target="_blank" rel="noopener">LFCarry PvE builds</a> ·
+    <a href="https://fandomwire.com/destiny-2-monument-of-triumph-armor-tier-list/" target="_blank" rel="noopener">FandomWire armor tiers</a> ·
+    <a href="https://www.blueberries.gg/weapons/destiny-2-best-pvp-weapons/" target="_blank" rel="noopener">Blueberries PvP weapons</a>
+  </footer>
+</div>
+
+<script>
+const RULES = {
+  pvp: "<b>PvP rules:</b> artifact mods are turned off in Trials and Competitive, so none of these builds use them. Prioritize Health, then Class. Mods that improve the gunfight (Targeting, Loader, Dexterity) come before stat mods. If a piece runs out of energy, drop the stat mod first. Warlocks get the best healing in the game, so a Healing Rift is the default class ability.",
+  pve: "<b>PvE rules:</b> artifact mods and armor set bonuses both work here. Push your main ability stat to 100+ so the build loops. You can only equip one exotic weapon, so each build pairs its exotic with legendaries."
+};
+
+const SHARED_PVP_WEAPONS = {
+  ace:{slot:"Primary",name:"Ace of Spades",type:"Exotic hand cannon",roll:[["Intrinsic","Memento Mori"],["Catalyst","Firefly"]],note:"Gives you radar the whole time. Buy it from the Monument kiosk."},
+  rose:{slot:"Primary",name:"Rose",type:"Hand cannon",roll:[["Barrel","Corkscrew / Smallbore"],["Mag","Accurized Rounds"],["Trait 1","Slideshot / Perpetual Motion"],["Trait 2","Opening Shot / Kill Clip"],["MW","Range"]],note:"Competitive Crucible. Focus it at Shaxx."},
+  spare:{slot:"Primary",name:"Spare Rations",type:"Hand cannon (Stasis)",roll:[["Barrel","Corkscrew Rifling"],["Mag","Accurized Rounds"],["Trait 1","Slideshot"],["Trait 2","Eye of the Storm"],["MW","Range"]],note:"Gambit Ops. Attune, then focus at the Drifter."},
+  matador:{slot:"Special",name:"Matador 64",type:"Precision shotgun",roll:[["Barrel","Smallbore / Smoothbore"],["Mag","Accurized Rounds / Light Mag"],["Trait 1","Perpetual Motion / Threat Detector"],["Trait 2","Opening Shot / Killing Wind"],["MW","Range"]],note:"Grasp of Avarice, first boss, checkpoint farm on featured weeks."},
+  felwinter:{slot:"Special",name:"Felwinter's Lie",type:"Shotgun",roll:[["Barrel","Rifled Barrel"],["Mag","Accurized Rounds"],["Trait 1","Slideshot / Threat Detector"],["Trait 2","Iron Reach / Opening Shot"],["MW","Range"]],note:"Iron Banner only. Attune, clear event challenges, buy engrams in the reward shop."},
+  cloud:{slot:"Special",name:"Cloudstrike",type:"Exotic sniper",roll:[["Perk","Precision kills call down lightning"]],note:"Monument / Exotic kiosk."},
+  hothead:{slot:"Heavy",name:"The Hothead",type:"Rocket launcher",roll:[["Barrel","Quick Launch"],["Mag","Impact Casing"],["Trait 1","Reconstruction"],["Trait 2","Bait and Switch"],["MW","Velocity"]],note:"Heavy barely matters in PvP. Any legendary rocket works."}
+};
+
+const BUILDS = {
+ pvp: [
+  {id:"dawnblade", name:"Solar Dawnblade Ophidian", el:"Solar", color:"--solar", exotic:"Ophidian Aspect",
+   pitch:"The all-rounder. Ophidian makes every gun ready, reload and handle faster and gives your melee more range. Icarus Dash and Heat Rises let you fight from the air.",
+   src:{partial:true, text:"From guides: Ophidian Aspect on Dawnblade (Sep 2026), plus Ember of Solace, Empyrean and Benevolence. The super, jump, aspects and fourth fragment are standard Dawnblade PvP picks."},
+   kit:[["Super","Daybreak"],["Class","Healing Rift"],["Jump","Burst Glide"],["Melee","Incinerator Snap"],["Grenade","Healing Grenade"]],
+   aspects:["Heat Rises","Icarus Dash"],
+   fragments:["Ember of Solace","Ember of Empyrean","Ember of Benevolence","Ember of Torches"],
+   exoticNote:"Faster weapon ready, reload and handling on everything, plus longer melee range. No playstyle lock-in, so it works with any weapons.",
+   stats:"Health > Class > Weapons",
+   weapons:["ace","matador","hothead"],
+   mods:[["Helmet","Hand Cannon Targeting, Health stat mod"],["Arms","Hand Cannon Loader, Impact Induction"],["Chest","Unflinching Hand Cannon Aim, Concussive Dampener, Health stat mod"],["Legs","Shotgun Dexterity, Hand Cannon Dexterity, Class stat mod"],["Class item","Outreach, Class stat mod"]],
+   how:"Peek with Ace and swap to Matador when someone pushes you. Ophidian makes the swap almost instant. Throw a Healing Grenade at your feet mid-fight, or eat your grenade with Heat Rises to stay in the air and dodge shotgun rushes. Rift on cover after a trade."},
+  {id:"stormcaller", name:"Arc Stormcaller Skater", el:"Arc", color:"--arc", exotic:"Transversive Steps",
+   pitch:"The mobility build. Lightning Surge slides you through people, Arc Soul adds a turret to every fight, and Transversive Steps auto-reloads your guns and speeds up your sprint.",
+   src:{partial:true, text:"From guides: Transversive Steps for neutral play, Lightning Surge, Arc Soul, and Sparks of Resistance, Recharge and Magnitude. The super, jump, grenade and fourth fragment are standard picks."},
+   kit:[["Super","Stormtrance"],["Class","Healing Rift"],["Jump","Blink"],["Melee","Chain Lightning"],["Grenade","Pulse Grenade"]],
+   aspects:["Lightning Surge","Arc Soul"],
+   fragments:["Spark of Resistance","Spark of Recharge","Spark of Magnitude","Spark of Shock"],
+   exoticNote:"Faster sprint, and your stowed weapons reload while you sprint. You're always ready for the next fight.",
+   stats:"Health > Class > Melee",
+   weapons:["rose","felwinter","hothead"],
+   mods:[["Helmet","Hand Cannon Targeting, Health stat mod"],["Arms","Hand Cannon Loader, Momentum Transfer"],["Chest","Unflinching Hand Cannon Aim, Concussive Dampener, Health stat mod"],["Legs","Shotgun Dexterity, Hand Cannon Dexterity, Class stat mod"],["Class item","Outreach, Class stat mod"]],
+   how:"Rift for an Arc Soul before a fight, then take an angle with Rose. Close the gap with Lightning Surge (melee while sliding) and finish with Felwinter's. Blink gets you on and off angles fast, but it's not for every player, so swap to Burst Glide if it doesn't feel right."},
+  {id:"shadebinder", name:"Stasis Shadebinder Lockdown", el:"Stasis", color:"--stasis", exotic:"Osmiomancy Gloves",
+   pitch:"The control build. Two Coldsnap grenades seek players out and slow them, so anyone you engage is already crippled. It's especially strong in Trials, where slowing one player breaks their team's push.",
+   src:{partial:true, text:"From guides: Osmiomancy Gloves for Coldsnap shutdown, Iceflare Bolts, Frostpulse, and Whispers of Hedrons, Chains and Rime. The super, jump, melee and stats are standard picks."},
+   kit:[["Super","Winter's Wrath"],["Class","Healing Rift"],["Jump","Burst Glide"],["Melee","Penumbral Blast"],["Grenade","Coldsnap Grenade"]],
+   aspects:["Iceflare Bolts","Frostpulse"],
+   fragments:["Whisper of Hedrons","Whisper of Chains","Whisper of Rime"],
+   exoticNote:"Gives you two Coldsnap charges, and Coldsnap hits give back grenade energy. The grenade seeks targets and slows them.",
+   stats:"Health > Grenade > Class",
+   weapons:["spare","matador","hothead"],
+   mods:[["Helmet","Hand Cannon Targeting, Health stat mod"],["Arms","Hand Cannon Loader, Impact Induction"],["Chest","Unflinching Hand Cannon Aim, Concussive Dampener, Health stat mod"],["Legs","Shotgun Dexterity, Hand Cannon Dexterity, Grenade stat mod"],["Class item","Bomber, Class stat mod"]],
+   how:"Throw Coldsnap at whoever you're about to fight. A slowed target can't strafe or jump, so your hand cannon headshots land. Rift behind cover to fire a Frostpulse that slows anyone pushing you. Whisper of Chains reduces your damage taken while you're near frozen or slowed targets."},
+  {id:"autos", name:"Void Voidwalker Auto Anchor", el:"Void", color:"--void", exotic:"Contraverse Hold",
+   pitch:"Built around automatic weapons. Run an auto rifle and an SMG with no special ammo, and use Void grenades to weaken players so you win every sustained-fire fight. Feed the Void heals you on kills.",
+   src:{partial:true, text:"From guides: Echo of Undermining, Feed the Void, and Contraverse Hold, which is rated S-tier for Warlock. Khvostov is a top PvP primary. The rest of the kit and the auto-focused mods are standard picks."},
+   kit:[["Super","Nova Bomb: Cataclysm"],["Class","Healing Rift"],["Jump","Blink"],["Melee","Pocket Singularity"],["Grenade","Vortex Grenade"]],
+   aspects:["Feed the Void","Chaos Accelerant"],
+   fragments:["Echo of Undermining","Echo of Persistence","Echo of Instability","Echo of Starvation"],
+   exoticNote:"Reduces your damage taken while you charge a grenade, and grenade hits refund grenade energy. That means more Vortex grenades and more weakened targets.",
+   stats:"Health > Grenade > Weapons",
+   weapons:[
+    {slot:"Kinetic",name:"Khvostov 7G-0X",type:"Exotic auto rifle",roll:[["Strength","Very low recoil"],["Catalyst","Ritual activities / Exotic Orders"]],note:"The Final Shape quest: Lost Encryption Code chest at The Impasse, then the Speaker's Chamber in the Pale Heart."},
+    {slot:"Energy",name:"The Hero's Burden",type:"SMG · Adaptive · Void",roll:[["Barrel","Smallbore"],["Mag","Accurized Rounds"],["Trait 1","Zen Moment / Moving Target"],["Trait 2","Kill Clip / Iron Reach"],["MW","Range"],["Origin","Skulking Wolf"]],note:"Iron Banner, Saladin focus. Replaces M-17 Fast Talker. Fast Talker is Stasis, so it takes the Kinetic slot and can't pair with Khvostov. Alt: Shayura's Wrath (Void SMG, Trials)."},
+    "hothead"],
+   mods:[["Helmet","Auto Rifle Targeting, SMG Targeting"],["Arms","Auto Rifle Loader, Impact Induction"],["Chest","Unflinching Auto Rifle Aim, Concussive Dampener, Health stat mod"],["Legs","Auto Rifle Dexterity, SMG Dexterity, Grenade stat mod"],["Class item","Bomber, Class stat mod"]],
+   how:"The tradeoff: two primaries means no special ammo. You give up shotgun and sniper one-shots for weapons that win every mid- and close-range fight. Hit people with Vortex or Pocket Singularity first, because Echo of Undermining weakens them so they take more damage. Then beam them with Khvostov, and switch to Hero's Burden when they rush you. Feed the Void heals you between fights. On controller, autos and SMGs get the most out of aim assist."}
+ ],
+ pve: [
+  {id:"getaway", name:"Prismatic Getaway Artist", el:"Prismatic", color:"--prism", exotic:"Getaway Artist",
+   pitch:"The S-tier roaming Warlock. Getaway Artist turns your grenade into a self-sustaining Arc turret, Feed the Void heals you, and Hellion keeps damage on everything while you play.",
+   src:{partial:false, text:"From the August 2026 Blueberries build page: aspects, fragments, exotic, stats and mods. Weapons are standard picks, since the guide leaves them open."},
+   kit:[["Super","Needlestorm"],["Class","Healing Rift"],["Jump","Burst Glide"],["Melee","Arcane Needle"],["Grenade","Storm Grenade"]],
+   aspects:["Feed the Void","Hellion"],
+   fragments:["Facet of Courage","Facet of Dominance","Facet of Protection","Facet of Purpose"],
+   exoticNote:"Use your grenade to make an Arc Buddy turret that follows you and shoots enemies, and become Amplified while it's out.",
+   stats:"Grenade > Weapons > Super",
+   weapons:[
+    {slot:"Primary",name:"Legendary Arc primary",type:"Auto, pulse or SMG",roll:[["Trait 1","Demolitionist / Rapid Hit"],["Trait 2","Voltshot / Jolting Feedback"]],note:"Energy slot, since Praxic Blade takes Kinetic. If you swap to Mataiodoxia for boss DPS, put a Kinetic special back in."},
+    {slot:"Kinetic · Special",name:"Praxic Blade",type:"Exotic sword (Kinetic slot, special ammo)",roll:[["Catalysts","Echoing Blade, Upper Hand, Hyperblade"],["4th","Energy Conduit"]],note:"Fire and Ice mission (Renegades). It's a Kinetic-slot sword that uses special ammo, not a heavy, so nothing else can go in your Kinetic slot."},
+    {slot:"Heavy",name:"Bitter End",type:"Balanced Heat machine gun (Arc) · Equilibrium dungeon",roll:[["Barrel","Fluted Barrel"],["Mag","Light Heatsink"],["Trait 1","Attrition Orbs / Trickle Charge"],["Trait 2","Jolting Feedback / Killing Tally"],["MW","Cooling Efficiency"],["Mod","Backup Mag"]],note:"Arc heavy for add-clear and sustained boss damage. Alt: any Arc heavy with Bait and Switch."}],
+   alt:{note:"No Praxic Blade catalysts yet? Run this all-legendary loadout instead. Your exotic weapon slot opens up too. Mataiodoxia is still the guide's pick for raid boss damage.",weapons:[{slot:"Kinetic · Special",name:"Mint Retrograde",type:"Micro-missile pulse (Strand, special ammo)",roll:[["Barrel","Quick Launch"],["Mag","Extended Mag"],["Trait 1","Field Prep / Hatchling"],["Trait 2","Master of Arms / Frenzy"],["MW","Handling"],["Mod","Backup Mag"]],note:"Pinnacle Ops (attune first). Takes Praxic's Kinetic slot and special ammo: add clear plus champion damage."},{slot:"Energy · Primary",name:"Legendary Arc primary",type:"Prosecutor (Prophecy) or Voltaic Shade",roll:[["Trait 1","Dragonfly / Jolting Feedback"],["Trait 2","Voltshot / Rolling Storm"]],note:"Unchanged."},{slot:"Heavy",name:"Bitter End",type:"Balanced Heat machine gun (Arc)",roll:[["Barrel","Fluted Barrel"],["Mag","Light Heatsink"],["Trait 1","Attrition Orbs / Trickle Charge"],["Trait 2","Jolting Feedback / Killing Tally"],["MW","Cooling Efficiency"],["Mod","Backup Mag"]],note:"Equilibrium dungeon. Same heavy as the main loadout."}]},
+   mods:[["Helmet","Ashes to Assets, Harmonic Siphon, Ammo Finder / Scout"],["Arms","Firepower, Grenade Font, Impact Induction"],["Chest","Resistance mods matching the boss's damage type"],["Legs","Better Already, Absolution, Weapon Surge"],["Class item","Distribution, Reaper"]],
+   how:"Throw your grenade to get an Arc Buddy, then clear adds while it follows you. Hellion adds damage, and Feed the Void heals you on kills. Firepower and Grenade Font keep grenades coming back. Healing Rift and Facet of Protection are your fallback when things go bad."},
+  {id:"well", name:"Solar Well Swap Eunoia", el:"Solar", color:"--solar", exotic:"Eunoia",
+   pitch:"The raid DPS-phase support build. Drop Well of Radiance so your team can stand and fire without dying. Eunoia and Touch of Flame keep your grenades busy between phases.",
+   src:{partial:false, text:"From the August 2026 Blueberries build page: aspects, fragments, exotic, stats and mods. Weapons are left to what the team needs, so the ones here are suggestions."},
+   kit:[["Super","Well of Radiance"],["Class","Phoenix Dive"],["Jump","Burst Glide"],["Melee","Incinerator Snap"],["Grenade","Healing Grenade"]],
+   aspects:["Hellion","Touch of Flame"],
+   fragments:["Ember of Ashes","Ember of Char","Ember of Eruption","Ember of Singeing"],
+   exoticNote:"Eunoia arms for the grenade loop. Alternative: Boots of the Assembler for a pure support role. For that version, run stats Weapons > Super > Class, and mods Powerful Friends and Radiant Light on the helmet, 3x Surge on the legs, and Time Dilation on the class item.",
+   stats:"Grenade > Weapons > Super (100) > Class",
+   weapons:[
+    {slot:"Primary",name:"Legendary Solar primary",type:"Any Solar primary",roll:[["Trait 1","Demolitionist / Rapid Hit"],["Trait 2","Incandescent"]],note:"Bring whatever the team needs for the encounter."},
+    {slot:"Special",name:"Mint Retrograde",type:"Micro-missile pulse (Strand, Kinetic slot, special ammo)",roll:[["Barrel","Quick Launch"],["Mag","Extended Mag"],["Trait 1","Field Prep"],["Trait 2","Master of Arms"],["MW","Handling"]],note:"Pinnacle Ops."},
+    {slot:"Heavy",name:"The Hothead",type:"Rocket launcher",roll:[["Barrel","Quick Launch"],["Mag","Impact Casing"],["Trait 1","Envious Arsenal"],["Trait 2","Aggregate Charge / Bait and Switch"],["MW","Velocity"]],note:"Pinnacle Ops or focus at Zavala. Swap to whatever the boss needs."}],
+   mods:[["Helmet","Harmonic Siphon, Ammo Finder / Scout"],["Arms","Grenade Font, Focusing Strike"],["Chest","Resistance mods matching the boss's damage type"],["Legs","Better Already, Absolution, Weapon Surge"],["Class item","Bomber, Powerful Attraction, Reaper"]],
+   how:"Hold Well for DPS phases. Drop it on the damage plate the moment the boss is vulnerable so your team can stand still and shoot. Between phases, Touch of Flame and Eunoia keep grenades busy while Hellion adds damage. Phoenix Dive is your emergency heal."},
+  {id:"chaos", name:"Arc Infinite Chaos Reach", el:"Arc", color:"--arc", exotic:"Geomag Stabilizers",
+   pitch:"Super uptime. Geomag Stabilizers extends Chaos Reach, Ionic Sentry and Electrostatic Mind feed super energy back, and the Luminopotent set helps you cast it again and again.",
+   src:{partial:false, text:"From the August 2026 Blueberries build page: aspects, fragments, exotic, armor set, artifact, Delicate Tomb, stats and mods."},
+   kit:[["Super","Chaos Reach"],["Class","Healing Rift"],["Jump","Burst Glide"],["Melee","Chain Lightning"],["Grenade","Storm Grenade"]],
+   aspects:["Ionic Sentry","Electrostatic Mind"],
+   fragments:["Spark of Resistance","Spark of Instinct","Spark of Ions","Spark of Brilliance","Spark of Discharge"],
+   exoticNote:"Chaos Reach lasts longer, and you can cancel it to keep the leftover super energy. It tops off your super when it's nearly full and you sprint.",
+   stats:"Super > Melee > Weapons",
+   set:"Luminopotent, 4 pieces.",
+   artifact:"Tablet of Ruin: Elemental Siphon, Elemental Supercharger",
+   weapons:[
+    {slot:"Special",name:"Delicate Tomb",type:"Exotic Arc fusion rifle",roll:[["Kills","Spawn Ionic Traces"],["Charged shot","Jolts targets"]],note:"Its Ionic Traces feed your super and abilities. This is the build's exotic weapon."},
+    {slot:"Primary",name:"Legendary Kinetic primary",type:"Any Kinetic-slot primary",roll:[["Trait 1","Demolitionist / Rapid Hit"],["Trait 2","Kill Clip / Frenzy"]],note:"Delicate Tomb is an Arc Energy-slot fusion, so your primary has to go in the Kinetic slot."},
+    {slot:"Heavy",name:"Any legendary heavy",type:"Rocket or machine gun",roll:[["Trait 2","Bait and Switch / Explosive Light"]],note:"The guide leaves this slot open. Hothead is a safe default."}],
+   mods:[["Helmet","Hands-On x2, Harmonic Siphon, Ammo Finder / Scout"],["Arms","Heavy Handed x2"],["Chest","Resistance mods matching the boss's damage type"],["Legs","Better Already, Absolution x2"],["Class item","Distribution, Reaper"]],
+   how:"Fire Chaos Reach, cancel it early to save energy, and cast it again. Delicate Tomb and Ionic Sentry kills keep feeding your super between casts. In boss phases, hold it the whole time on the crit spot."}
+ ]
+};
+
+const el = (t,c,h)=>{const e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e;};
+const esc = s=>String(s).replace(/[&<>"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+
+function render(mode){
+  document.getElementById("rules").innerHTML = RULES[mode];
+  const jump = document.getElementById("jump"); jump.innerHTML="";
+  const main = document.getElementById("builds"); main.innerHTML="";
+  BUILDS[mode].forEach(b=>{
+    b.weapons = b.weapons.map(w=>typeof w==="string"?SHARED_PVP_WEAPONS[w]:w);
+    const a=el("a",null,esc(b.name)); a.href="#"+b.id; jump.appendChild(a);
+    const card=el("article","build"); card.id=b.id; card.style.setProperty("--el",`var(${b.color})`);
+    card.innerHTML = `
+      <div class="bhead"><h2>${esc(b.name)}</h2>
+        <span class="tag el">${esc(b.el)}</span><span class="tag">Exotic: ${esc(b.exotic)}</span></div>
+      <p class="pitch">${esc(b.pitch)}</p>
+      <div class="src ${b.src.partial?"partial":""}">${esc(b.src.text)}</div>`;
+    const grid=el("div","grid");
+    // Subclass
+    grid.appendChild(el("section","sec",`<h3>Subclass kit</h3><dl>${b.kit.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>`));
+    // Aspects/fragments
+    grid.appendChild(el("section","sec",`<h3>Aspects &amp; fragments</h3><dl><dt>Aspects</dt><dd>${b.aspects.map(esc).join(" · ")}</dd><dt>Fragments</dt><dd><ul class="plain">${b.fragments.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></dd></dl>`));
+    // Exotic + stats
+    let ex = `<h3>Exotic &amp; stats</h3><dl><dt>Exotic</dt><dd><b>${esc(b.exotic)}</b>: ${esc(b.exoticNote)}</dd><dt>Stats</dt><dd class="stat">${esc(b.stats)}</dd>`;
+    if(b.set) ex+=`<dt>Set</dt><dd>${esc(b.set)}</dd>`;
+    if(b.artifact) ex+=`<dt>Artifact</dt><dd>${esc(b.artifact)}</dd>`;
+    ex+="</dl>";
+    grid.appendChild(el("section","sec",ex));
+    // Mods
+    grid.appendChild(el("section","sec",`<h3>Armor mods</h3><dl>${b.mods.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>`));
+    card.appendChild(grid);
+    // Weapons full width
+    const w=el("section","sec"); w.style.borderRight="0";
+    w.innerHTML = `<h3>Weapons &amp; rolls</h3>` + b.weapons.map(x=>`
+      <div class="wpn"><div><span class="wn">${esc(x.name)}</span> <span class="ws">${esc(x.slot)} · ${esc(x.type)}</span></div>
+      <div class="roll">${x.roll.map(([k,v])=>`<span><i>${esc(k)}:</i> ${esc(v)}</span>`).join("")}</div>
+      <div class="ws" style="margin-top:6px">${esc(x.note)}</div></div>`).join("");
+    card.appendChild(w);
+    if(b.alt){ const aw=el("section","sec"); aw.style.borderRight="0"; aw.style.background="var(--chip)";
+      aw.innerHTML = `<h3>Alt weapons (no Praxic Blade)</h3><p class="ws" style="margin:0 0 10px">${esc(b.alt.note)}</p>` + b.alt.weapons.map(x=>`
+      <div class="wpn" style="background:var(--panel)"><div><span class="wn">${esc(x.name)}</span> <span class="ws">${esc(x.slot)} · ${esc(x.type)}</span></div>
+      <div class="roll">${x.roll.map(([k,v])=>`<span><i>${esc(k)}:</i> ${esc(v)}</span>`).join("")}</div>
+      <div class="ws" style="margin-top:6px">${esc(x.note)}</div></div>`).join("");
+      card.appendChild(aw); }
+    card.appendChild(el("div","how",`<h3>How it plays</h3><p>${esc(b.how)}</p>`));
+    main.appendChild(card);
+  });
+  document.querySelectorAll(".modes button").forEach(btn=>btn.setAttribute("aria-selected", btn.dataset.mode===mode ? "true":"false"));
+  try{ localStorage.setItem("warlockMode", mode); }catch(e){}
+}
+document.querySelectorAll(".modes button").forEach(btn=>btn.addEventListener("click",()=>render(btn.dataset.mode)));
+let start="pvp";
+const h=location.hash.replace("#","");
+if(h==="pve"||BUILDS.pve.some(b=>b.id===h)) start="pve";
+else { try{ const s=localStorage.getItem("warlockMode"); if(s==="pve"||s==="pvp") start=s; }catch(e){} }
+render(start);
+if(h && document.getElementById(h)) document.getElementById(h).scrollIntoView();
+</script>

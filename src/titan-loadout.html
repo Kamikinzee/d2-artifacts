@@ -1,0 +1,319 @@
+<title>Titan Loadout Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a field-manual loadout sheet — mode switch up top, one build per stacked dossier, slots in a dense grid */
+:root{
+  --bg:#eef0f2; --panel:#ffffff; --ink:#15191e; --muted:#5b6470; --line:#d5dae0; --accent:#b8621b;
+  --arc:#2f7fd1; --void:#7b4fc4; --solar:#d4661b; --prism:#c2448f; --stasis:#3a9bb8;
+  --chip:#f2f4f6; --warn:#8a6a12; --warnbg:#fbf3dc;
+  --display:"Saira Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101318; --panel:#171b21; --ink:#e7eaee; --muted:#9aa3ae; --line:#2a3039; --accent:#e08a3f;
+  --arc:#5aa3ef; --void:#a481e6; --solar:#f08a3e; --prism:#e46bb2; --stasis:#62bfd9;
+  --chip:#1f242c; --warn:#e6c35c; --warnbg:#2a2516; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101318; --panel:#171b21; --ink:#e7eaee; --muted:#9aa3ae; --line:#2a3039; --accent:#e08a3f;
+  --arc:#5aa3ef; --void:#a481e6; --solar:#f08a3e; --prism:#e46bb2; --stasis:#62bfd9;
+  --chip:#1f242c; --warn:#e6c35c; --warnbg:#2a2516; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+header h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,6vw,54px);letter-spacing:.01em;line-height:1;margin:0;text-transform:uppercase;text-wrap:balance}
+header p{color:var(--muted);max-width:68ch;margin:10px 0 0}
+.meta{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:6px}
+.modes{display:flex;gap:8px;margin:24px 0 8px;flex-wrap:wrap}
+.modes button{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 20px;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:4px;cursor:pointer}
+.modes button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.modes button:focus-visible,.jump a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.rules{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin:16px 0;color:var(--muted);font-size:14px}
+.rules b{color:var(--ink)}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 20px}
+.jump a{font-family:var(--mono);font-size:12px;color:var(--ink);text-decoration:none;padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+.build{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--el);border-radius:6px;margin:0 0 22px;overflow:hidden}
+.bhead{padding:18px 18px 12px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;border-bottom:1px solid var(--line)}
+.bhead h2{font-family:var(--display);font-weight:700;font-size:30px;line-height:1.05;margin:0;text-transform:uppercase;letter-spacing:.02em;flex:1 1 300px}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:var(--chip);color:var(--muted)}
+.tag.el{background:var(--el);color:#fff}
+.pitch{padding:12px 18px 0;margin:0;max-width:75ch}
+.src{margin:10px 18px 0;font-size:13px;padding:8px 10px;border-radius:4px;background:var(--chip);color:var(--muted)}
+.src.partial{background:var(--warnbg);color:var(--warn)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;margin-top:14px;border-top:1px solid var(--line)}
+.sec{padding:14px 18px;border-bottom:1px solid var(--line);min-width:0}
+.grid .sec:nth-child(odd){border-right:1px solid var(--line)}
+@media (max-width:660px){.grid .sec:nth-child(odd){border-right:0}}
+.sec h3{font-family:var(--display);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--el);margin:0 0 8px}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:0}
+dt{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:2px}
+dd{margin:0;min-width:0}
+ul.plain{margin:0;padding-left:18px}
+ul.plain li{margin:2px 0}
+.wpn{border:1px solid var(--line);border-radius:4px;padding:10px 12px;margin:0 0 10px}
+.wpn:last-child{margin-bottom:0}
+.wpn .wn{font-weight:600}
+.wpn .ws{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.roll{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.roll span{font-family:var(--mono);font-size:11.5px;background:var(--chip);padding:2px 6px;border-radius:3px}
+.roll span i{font-style:normal;color:var(--muted)}
+.how{padding:14px 18px 18px}
+.how h3{font-family:var(--display);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--el);margin:0 0 6px}
+.how p{margin:0;max-width:75ch}
+.stat{font-family:var(--mono);font-size:13px}
+footer{color:var(--muted);font-size:13px;margin-top:28px}
+footer a{color:var(--accent)}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Titan Loadout Sheet</h1>
+    <p>Ten full Titan builds, four for Crucible and Trials (including an all-automatic-weapons setup) and six for raids and endgame PvE, including three versions of Prismatic Stoicism. Each one lists the subclass, abilities, exotic, stat priority, weapons with god rolls, and armor mods slot by slot.</p>
+    <div class="meta">Sandbox: Monument of Triumph (9.7.0) · Updated Nov 2026</div>
+  </header>
+
+  <div class="modes" role="tablist" aria-label="Build mode">
+    <button id="tab-pvp" role="tab" aria-selected="true" data-mode="pvp">PvP</button>
+    <button id="tab-pve" role="tab" aria-selected="false" data-mode="pve">PvE / Raid</button>
+  </div>
+
+  <div class="rules" id="rules"></div>
+  <nav class="jump" id="jump" aria-label="Jump to build"></nav>
+  <main id="builds"></main>
+
+  <footer>
+    Stats use the Edge of Fate system (Weapons, Health, Class, Grenade, Super, Melee). Perk pools vary by weapon, so check a specific gun on light.gg before farming a roll.<br>
+    Sources: <a href="https://games.gg/destiny-2/guides/destiny-2-monument-of-triumph-void-titan-build-guide/" target="_blank" rel="noopener">games.gg Void Titan</a> ·
+    <a href="https://games.gg/destiny-2/guides/destiny-2-monument-of-triumph-solar-titan-build-guide/" target="_blank" rel="noopener">games.gg Solar Titan</a> ·
+    <a href="https://lfcarry.com/guides/destiny-2-best-pve-builds" target="_blank" rel="noopener">LFCarry PvE builds</a> ·
+    <a href="https://boostroom.com/blog/destiny-2-best-builds-strong-pve-and-pvp-builds-for-every-class" target="_blank" rel="noopener">Boostroom builds</a> ·
+    <a href="https://www.blueberries.gg/armor/destiny-2-titan-builds/" target="_blank" rel="noopener">Blueberries Titan</a> ·
+    <a href="https://www.blueberries.gg/weapons/destiny-2-best-pvp-weapons/" target="_blank" rel="noopener">Blueberries PvP weapons</a>
+  </footer>
+</div>
+
+<script>
+const RULES = {
+  pvp: "<b>PvP rules:</b> artifact mods are turned off in Trials and Competitive, so none of these builds use them. Prioritize Health, then Class. Mods that improve the gunfight (Targeting, Loader, Dexterity) come before stat mods. If a piece runs out of energy, drop the stat mod first.",
+  pve: "<b>PvE rules:</b> artifact perks and armor set bonuses both work here. Exotic class item perks (Stoicism) only work on Prismatic. Push your main ability stat (usually Melee) to 100+ so the build loops. You can only equip one exotic weapon, so each build pairs its exotic with legendaries."
+};
+
+const BUILDS = {
+ pvp: [
+  {id:"striker", name:"Arc Striker Duelist", el:"Arc", color:"--arc", exotic:"One-Eyed Mask",
+   pitch:"The easiest Titan to win gunfights with. Thruster lets you peek and dodge back out, One-Eyed Mask gives you an overshield after every kill, and Knockout heals you after melee kills.",
+   src:{partial:true, text:"From guides: One-Eyed Mask, Knockout and Touch of Thunder, Thruster, and the stat order. Fragments, super and grenade are the standard Striker PvP picks."},
+   kit:[["Super","Thundercrash (one-shot) or Fists of Havoc (team wipe)"],["Class","Thruster (works in the air)"],["Jump","Catapult Lift"],["Melee","Seismic Strike"],["Grenade","Pulse Grenade"]],
+   aspects:["Knockout","Touch of Thunder"],
+   fragments:["Spark of Shock","Spark of Recharge","Spark of Resistance","Spark of Feedback"],
+   exoticNote:"Marks whoever damages you. Killing that target gives you an overshield.",
+   stats:"Health > Class > Weapons",
+   weapons:[
+    {slot:"Primary",name:"Ace of Spades",type:"Exotic hand cannon",roll:[["Intrinsic","Memento Mori"],["Catalyst","Firefly"]],note:"Gives you radar the whole time, so you always know where people are. Buy it from the Monument kiosk."},
+    {slot:"Special",name:"Matador 64",type:"Precision shotgun",roll:[["Barrel","Smallbore / Smoothbore"],["Mag","Accurized Rounds / Light Mag"],["Trait 1","Perpetual Motion / Threat Detector"],["Trait 2","Opening Shot / Killing Wind"],["MW","Range"]],note:"Farm it from Grasp of Avarice, first boss, checkpoint farm on featured weeks."},
+    {slot:"Heavy",name:"The Hothead",type:"Rocket launcher",roll:[["Barrel","Quick Launch"],["Mag","Impact Casing"],["Trait 1","Reconstruction"],["Trait 2","Bait and Switch"],["MW","Velocity"]],note:"Heavy barely matters in PvP. Any legendary rocket works."}],
+   mods:[["Helmet","Hand Cannon Targeting, Health stat mod"],["Arms","Hand Cannon Loader, Impact Induction"],["Chest","Unflinching Hand Cannon Aim, Concussive Dampener, Health stat mod"],["Legs","Shotgun Dexterity, Hand Cannon Dexterity, Class stat mod"],["Class item","Outreach, Class stat mod"]],
+   how:"Hold an angle. Thruster around a corner, shoot first, and finish low-health players with Seismic Strike. Each kill on your marked target gives you an overshield, so push into the next fight while it's up. Don't chase the mark into a bad spot."},
+  {id:"sentinel", name:"Void Sentinel Anchor", el:"Void", color:"--void", exotic:"Helm of Saint-14",
+   pitch:"Built for Trials as a 3-stack. You hold lanes with Barricade and Bastion overshields, Suppressor grenades shut down enemy abilities, and Ward of Dawn wins revive fights.",
+   src:{partial:true, text:"From guides: Bastion, Offensive Bulwark, and Echoes of Leaching and Dilation. Saint-14, Suppressor, and the third fragment are the standard picks for this playstyle."},
+   kit:[["Super","Ward of Dawn (Trials) or Twilight Arsenal (6v6)"],["Class","Rally Barricade"],["Jump","Catapult Lift"],["Melee","Shield Throw"],["Grenade","Suppressor Grenade"]],
+   aspects:["Bastion","Offensive Bulwark"],
+   fragments:["Echo of Leaching","Echo of Dilation","Echo of Persistence"],
+   exoticNote:"Blinds enemies who walk through your Ward of Dawn and makes the bubble last longer. With Twilight Arsenal, use One-Eyed Mask instead.",
+   stats:"Health > Class > Grenade",
+   weapons:[
+    {slot:"Primary",name:"Spare Rations",type:"Hand cannon (Stasis)",roll:[["Barrel","Corkscrew Rifling"],["Mag","Accurized Rounds"],["Trait 1","Slideshot"],["Trait 2","Eye of the Storm"],["MW","Range"]],note:"Gambit Ops. Attune, then focus at the Drifter."},
+    {slot:"Special",name:"Felwinter's Lie",type:"Shotgun",roll:[["Barrel","Rifled Barrel"],["Mag","Accurized Rounds"],["Trait 1","Slideshot / Threat Detector"],["Trait 2","Iron Reach / Opening Shot"],["MW","Range"]],note:"Iron Banner only. Attune, clear event challenges, buy engrams in the reward shop."},
+    {slot:"Heavy",name:"Bad Omens",type:"Rocket launcher",roll:[["Barrel","Quick Launch"],["Mag","Tracking Module"],["Trait 1","Field Prep"],["Trait 2","Cluster Bomb"],["MW","Blast Radius"]],note:"Drops in the same Gambit grind as Spare Rations."}],
+   mods:[["Helmet","Hand Cannon Targeting, Health stat mod"],["Arms","Hand Cannon Loader, Momentum Transfer"],["Chest","Unflinching Hand Cannon Aim, Concussive Dampener, Health stat mod"],["Legs","Shotgun Dexterity, Hand Cannon Dexterity, Class stat mod"],["Class item","Bomber, Class stat mod"]],
+   how:"Put your Barricade on a lane and hold it with your team. Bastion keeps overshields on you, so you win evenly matched trades. Throw Suppressor at Hunters and Warlocks before they can use their abilities. Save Ward of Dawn for the final round or a clutch revive."},
+  {id:"sunbreaker", name:"Solar Sunbreaker Brawler", el:"Solar", color:"--solar", exotic:"Loreley Splendor Helm",
+   pitch:"The most forgiving PvP Titan. Fight on Sunspots, throw a Healing Grenade mid-fight, and Loreley keeps you alive when your health gets low.",
+   src:{partial:true, text:"From guides: Loreley Splendor, Sol Invictus, Roaring Flames, Ember of Solace, and Healing Grenade. The rest of the fragments and weapons are standard picks."},
+   kit:[["Super","Hammer of Sol"],["Class","Rally Barricade"],["Jump","Catapult Lift"],["Melee","Throwing Hammer"],["Grenade","Healing Grenade"]],
+   aspects:["Sol Invictus","Roaring Flames"],
+   fragments:["Ember of Solace","Ember of Torches","Ember of Benevolence"],
+   exoticNote:"Drops a healing Sunspot when you're critically wounded. It was nerfed but is still one of the best Titan exotics for 1v1s.",
+   stats:"Health > Class > Melee",
+   weapons:[
+    {slot:"Primary",name:"Rose",type:"Hand cannon",roll:[["Barrel","Corkscrew / Smallbore"],["Mag","Accurized Rounds"],["Trait 1","Slideshot / Perpetual Motion"],["Trait 2","Opening Shot / Kill Clip"],["MW","Range"]],note:"Competitive Crucible. Focus it at Shaxx."},
+    {slot:"Special",name:"Duality",type:"Exotic shotgun",roll:[["Hip-fire","Pellet spread"],["ADS","Single slug"],["Catalyst","400 kills"]],note:"Buy it from the Exotic Archive in the Tower. It's two shotguns in one slot."},
+    {slot:"Heavy",name:"The Hothead",type:"Rocket launcher",roll:[["Barrel","Quick Launch"],["Mag","Impact Casing"],["Trait 1","Reconstruction"],["Trait 2","Bait and Switch"],["MW","Velocity"]],note:"Any legendary rocket works."}],
+   mods:[["Helmet","Hand Cannon Targeting, Health stat mod"],["Arms","Hand Cannon Loader, Impact Induction"],["Chest","Unflinching Hand Cannon Aim, Concussive Dampener, Health stat mod"],["Legs","Shotgun Dexterity, Hand Cannon Dexterity, Class stat mod"],["Class item","Outreach, Melee stat mod"]],
+   how:"Pick fights where you have a Sunspot or a Barricade to fall back to. Open with Rose, finish with a Throwing Hammer, then pick it back up to reset your melee. If a fight goes long, throw a Healing Grenade at your feet."},
+  {id:"autos", name:"Stasis Behemoth Auto Anchor", el:"Stasis", color:"--stasis", exotic:"Hoarfrost-Z",
+   pitch:"Built around automatic weapons. Run an auto rifle and an SMG together, and use Stasis walls and slows to keep fights at the ranges where they win. Glacier walls block sightlines so enemies have to come into your range, and frozen or slowed players can't strafe out of your sustained fire.",
+   src:{partial:true, text:"From guides: Whisper of Chains, Glacier Grenade, and Howl of the Storm for Stasis PvP, plus Khvostov as a top-tier PvP primary. The rest of the kit and the mods are standard picks for an auto-focused setup."},
+   kit:[["Super","Glacial Quake"],["Class","Towering Barricade (becomes a Stasis wall with Hoarfrost-Z)"],["Jump","Catapult Lift"],["Melee","Shiver Strike"],["Grenade","Glacier Grenade"]],
+   aspects:["Howl of the Storm","Tectonic Harvest"],
+   fragments:["Whisper of Chains","Whisper of Impetus","Whisper of Torment","Whisper of Shards"],
+   exoticNote:"Turns your Barricade into a Stasis crystal wall. You get instant cover for a sustained-fire fight, and shattering it slows anyone nearby.",
+   stats:"Health > Class > Weapons",
+   weapons:[
+    {slot:"Kinetic",name:"Khvostov 7G-0X",type:"Exotic auto rifle",roll:[["Strength","Very low recoil"],["Catalyst","Ritual activities / Exotic Orders"]],note:"The Final Shape quest: Lost Encryption Code chest at The Impasse, then the Speaker's Chamber in the Pale Heart."},
+    {slot:"Energy",name:"The Hero's Burden",type:"SMG · Adaptive · Void",roll:[["Barrel","Smallbore"],["Mag","Accurized Rounds"],["Trait 1","Zen Moment / Moving Target"],["Trait 2","Kill Clip / Iron Reach"],["MW","Range"],["Origin","Skulking Wolf"]],note:"Iron Banner, Saladin focus. Replaces M-17 Fast Talker. Fast Talker is Stasis, so it takes the Kinetic slot and can't pair with Khvostov. Alt: Shayura's Wrath (Void SMG, Trials)."},
+    {slot:"Heavy",name:"The Hothead",type:"Rocket launcher",roll:[["Barrel","Quick Launch"],["Mag","Impact Casing"],["Trait 1","Reconstruction"],["Trait 2","Bait and Switch"],["MW","Velocity"]],note:"Any legendary rocket works."}],
+   mods:[["Helmet","Auto Rifle Targeting, SMG Targeting"],["Arms","Auto Rifle Loader, Momentum Transfer"],["Chest","Unflinching Auto Rifle Aim, Concussive Dampener, Health stat mod"],["Legs","Auto Rifle Dexterity, SMG Dexterity, Class stat mod"],["Class item","Bomber, Class stat mod"]],
+   how:"The tradeoff: two primaries means no special ammo. You give up shotgun and sniper one-shots for weapons that win every mid- and close-range trade. Throw a Glacier Grenade to cut a lane, hold behind your Hoarfrost wall, and beam people with Khvostov as they come around it. Swap to Hero's Burden when someone rushes you. Howl of the Storm freezes rushers, and Whisper of Chains reduces your damage taken while you stand next to frozen targets. On controller, autos and SMGs get the most out of aim assist."}
+ ],
+ pve: [
+  {id:"stoicism", name:"Prismatic Stoicism: Arc Slam", el:"Prismatic · Arc lean", color:"--arc", exotic:"Stoicism (Inmost Light + Synthoceps)",
+   pitch:"The S-tier Titan for Master raids and GM Ops, built around Arc. You sprint-slam with Consecration, Synthoceps boosts the hit when you're surrounded, Knockout heals you on melee kills, and Inmost Light means every ability you use speeds up the other two. Thundercrash and Pulse Grenade keep the whole kit Arc so the Arc artifact perks and Arc Siphon mods stack on top.",
+   src:{partial:true, text:"From guides: the core is Stoicism with Inmost Light and Synthoceps on Prismatic, plus Consecration and Knockout. LFCarry (Nov 2026, patch 9.7.0) rates it S-tier for Titan, and the Facets and CODA set come from Blueberries. Making it Arc-focused, plus the artifact picks and mods, are my picks. The Blueberries page is from before Monument of Triumph."},
+   kit:[["Super","Thundercrash (boss DPS) or Twilight Arsenal (team damage buff)"],["Class","Thruster"],["Jump","Catapult Lift"],["Melee","Thunderclap"],["Grenade","Pulse Grenade"]],
+   aspects:["Consecration","Knockout"],
+   fragments:["Facet of Protection (less damage while surrounded, which is when Synthoceps is active)","Facet of Balance (powered melee hits give grenade energy)","Facet of Ruin (bigger grenades)","Facet of Purpose (picking up orbs gives you a buff)","Facet of Courage (if you have a fifth slot)"],
+   exoticNote:"Stoicism is a Titan exotic class item. Spirit of Inmost Light: using an ability speeds up the energy regen of your other two abilities. Spirit of Synthoceps: more melee damage while you're surrounded. Both perks ONLY work on a Prismatic subclass. Swap to Striker, Sunbreaker or Sentinel and they turn off.",
+   stats:"Melee 150-200 > Grenade 100+ > Health 70+. Over 100, the extra Melee boosts melee damage, so keep pushing it.",
+   set:"CODA, 4 pieces (Prophecy dungeon): helmet, arms, chest and legs. Its bonuses give grenade and melee energy and damage resistance, which is exactly what this build loops on. Stoicism takes the class item slot, so the full set fits. Alternative: 2 CODA + 2 Crota's Memory (Crota's End raid), where Cursed Fist boosts melee and the 4-piece adds damage resistance.",
+   artifact:"Hunter's Journal (Prismatic, Arc, Solar and Void perks). Column 1: Elemental Siphon (orbs on rapid kills) and Press the Advantage. Column 2: Bad Amplitude (Arc), Radiant Orbs and Solar Fulmination (Consecration's slam is Solar). Column 3: Shock and Awe (Arc) and Transference (more grenade and melee damage while Transcendent). Swap Shock and Awe for Shieldcrush if you run Woven Mail, Frost Armor or a Void overshield. The picks are mine, and I couldn't confirm the current artifact slot rules, so if something won't slot, keep Transference and Elemental Siphon first.",
+   weapons:[
+    {slot:"Energy · Primary",name:"Voltaic Shade",type:"Balanced Heat scout (Arc) · Equilibrium dungeon",roll:[["Barrel","Fluted Barrel"],["Mag","Overclocked Heatsink"],["Trait 1","Jolting Feedback / Trickle Charge"],["Trait 2","Meganeura / Voltshot"],["MW","Cooling Efficiency"],["Mod","Backup Mag"]],note:"An Arc primary makes orbs and jolts for the Arc artifact perks. Alt: Prosecutor (Prophecy) or Horror's Least."},
+    {slot:"Kinetic · Special",name:"Praxic Blade",type:"Exotic sword (Kinetic slot, special ammo)",roll:[["Catalysts","Echoing Blade, Upper Hand, Hyperblade"],["4th","Energy Conduit"]],note:"Fire and Ice mission (Renegades). It's a Kinetic-slot sword that uses special ammo, not a heavy, so nothing else can go in your Kinetic slot."},
+    {slot:"Heavy",name:"Bitter End",type:"Balanced Heat machine gun (Arc) · Equilibrium dungeon",roll:[["Barrel","Fluted Barrel"],["Mag","Light Heatsink"],["Trait 1","Attrition Orbs / Trickle Charge"],["Trait 2","Jolting Feedback / Killing Tally"],["MW","Cooling Efficiency"],["Mod","Backup Mag"]],note:"Arc heavy for add-clear and sustained boss damage. Alt: any Arc heavy with Bait and Switch."}],
+   alt:{note:"No Praxic Blade catalysts yet? Run this all-legendary loadout instead. Your exotic weapon slot opens up too. If you own Thunderlord or Queenbreaker, put it in heavy instead of Bitter End.",weapons:[{slot:"Kinetic · Special",name:"Mint Retrograde",type:"Micro-missile pulse (Strand, special ammo)",roll:[["Barrel","Quick Launch"],["Mag","Extended Mag"],["Trait 1","Field Prep / Hatchling"],["Trait 2","Master of Arms / Frenzy"],["MW","Handling"],["Mod","Backup Mag"]],note:"Pinnacle Ops (attune first). Takes Praxic's Kinetic slot and special ammo: add clear plus champion damage."},{slot:"Energy · Primary",name:"Voltaic Shade",type:"Balanced Heat scout (Arc)",roll:[["Barrel","Fluted Barrel"],["Mag","Overclocked Heatsink"],["Trait 1","Jolting Feedback / Trickle Charge"],["Trait 2","Meganeura / Voltshot"],["MW","Cooling Efficiency"],["Mod","Backup Mag"]],note:"Equilibrium dungeon. Unchanged."},{slot:"Heavy",name:"Bitter End",type:"Balanced Heat machine gun (Arc)",roll:[["Barrel","Fluted Barrel"],["Mag","Light Heatsink"],["Trait 1","Attrition Orbs / Trickle Charge"],["Trait 2","Jolting Feedback / Killing Tally"],["MW","Cooling Efficiency"],["Mod","Backup Mag"]],note:"Equilibrium dungeon. Same heavy as the main loadout."}]},
+   mods:[["Helmet","Arc Siphon (Harmonic Siphon), Hands-On, Heavy Ammo Finder"],["Arms","Heavy Handed, Impact Induction, Focusing Strike"],["Chest","Melee Damage Resistance, Concussive Dampener, resistance for the activity's damage type"],["Legs","Recuperation, Absolution, Innervation"],["Class item","Time Dilation, Outreach, Powerful Attraction"]],
+   how:"Run into a group, sprint and hit melee to Consecration slam (sweep, then the second slam), and get surrounded on purpose, because that's when Synthoceps and Facet of Protection both kick in. Every slam triggers Inmost Light, so your grenade and class ability come back faster. Throw Pulse at your feet, Thruster out, and get back into Consecration. Knockout heals you on every melee kill and Heavy Handed drops orbs. On bosses, pop Thundercrash, then swap to Praxic Blade."},
+  {id:"stoicism-void", name:"Prismatic Stoicism: Void Lean", el:"Prismatic · Void lean", color:"--void", exotic:"Stoicism (Inmost Light + Synthoceps)",
+   pitch:"The same Consecration and Knockout core, aimed at team support. Twilight Arsenal gives your fireteam a damage buff, and Suppressor Grenade shuts down champions and bosses. Run this when the raid needs a support Titan more than a slammer.",
+   src:{partial:true, text:"From guides: Twilight Arsenal as the Super option for this build (Blueberries). The Void focus and the swaps from the Arc build are my picks. The Stoicism perks only work because it's still Prismatic."},
+   kit:[["Super","Twilight Arsenal"],["Class","Thruster or Rally Barricade"],["Jump","Catapult Lift"],["Melee","Thunderclap or Shield Throw"],["Grenade","Suppressor Grenade"]],
+   aspects:["Consecration","Knockout"],
+   fragments:["Facet of Protection","Facet of Balance","Facet of Ruin","Facet of Purpose"],
+   exoticNote:"Same Stoicism roll. The perks work on any element as long as the subclass is Prismatic.",
+   stats:"Melee 150+ > Super 100 > Grenade",
+   set:"CODA 4-piece, same as the Arc build. Alt: 2 CODA + 2 Eutechnology (Void Breaches from Void kills).",
+   artifact:"Hunter's Journal. Swap Bad Amplitude for Void Hegemony, and Shock and Awe for Expanding Abyss. Keep Elemental Siphon, Radiant Orbs and Transference.",
+   weapons:[
+    {slot:"Energy · Primary",name:"Any Void legendary primary",type:"High Tyrant (Void heat pulse) or Reghusk's Pledge",roll:[["Trait 1","Destabilizing Rounds / Repulsor Brace"],["Trait 2","Demoralize / Kill Clip"]],note:"Void primary for the Void artifact perks."},
+    {slot:"Kinetic · Special",name:"Praxic Blade",type:"Exotic sword (Kinetic slot, special ammo)",roll:[["Catalysts","Echoing Blade, Upper Hand, Hyperblade"],["4th","Energy Conduit"]],note:"Fire and Ice mission (Renegades). It's a Kinetic-slot sword that uses special ammo, not a heavy, so nothing else can go in your Kinetic slot."},
+    {slot:"Heavy",name:"Tomorrow's Answer",type:"High-Impact rocket (Void) · Trials",roll:[["Barrel","Quick Launch"],["Mag","Impact Casing"],["Trait 1","Envious Arsenal / Withering Gaze"],["Trait 2","Bait and Switch / Cluster Bomb"],["MW","Velocity"],["Mod","Backup Mag"]],note:"Void heavy. Alt: Bad Omens (Gambit)."}],
+   alt:{note:"No Praxic Blade catalysts yet? Run this all-legendary loadout instead. Your exotic weapon slot opens up too. Your exotic slot is free for a Void exotic heavy if you have one.",weapons:[{slot:"Kinetic · Special",name:"Mint Retrograde",type:"Micro-missile pulse (Strand, special ammo)",roll:[["Barrel","Quick Launch"],["Mag","Extended Mag"],["Trait 1","Field Prep / Hatchling"],["Trait 2","Master of Arms / Frenzy"],["MW","Handling"],["Mod","Backup Mag"]],note:"Pinnacle Ops (attune first). Takes Praxic's Kinetic slot and special ammo: add clear plus champion damage."},{slot:"Energy · Primary",name:"High Tyrant",type:"Balanced Heat pulse (Void)",roll:[["Barrel","Fluted Barrel"],["Mag","Light Heatsink"],["Trait 1","Destabilizing Rounds / Repulsor Brace"],["Trait 2","Demoralize / Meganeura"],["MW","Cooling Efficiency"],["Mod","Backup Mag"]],note:"Equilibrium dungeon."},{slot:"Heavy",name:"Tomorrow's Answer",type:"High-Impact rocket (Void)",roll:[["Barrel","Quick Launch"],["Mag","Impact Casing"],["Trait 1","Envious Arsenal / Withering Gaze"],["Trait 2","Bait and Switch / Cluster Bomb"],["MW","Velocity"],["Mod","Backup Mag"]],note:"Trials Week 3, or Bad Omens from Gambit."}]},
+   mods:[["Helmet","Void Siphon, Hands-On, Heavy Ammo Finder"],["Arms","Heavy Handed, Impact Induction, Grenade Font"],["Chest","Melee Damage Resistance, Concussive Dampener"],["Legs","Recuperation, Absolution, Void Weapon Surge"],["Class item","Time Dilation, Outreach, Bomber"]],
+   how:"Use Suppressor on overload champions and dangerous adds, slam with Consecration to clear, and save Twilight Arsenal for the DPS phase so the whole team gets the buff."},
+  {id:"stoicism-solar", name:"Prismatic Stoicism: Solar Lean", el:"Prismatic · Solar lean", color:"--solar", exotic:"Stoicism (Inmost Light + Synthoceps)",
+   pitch:"Consecration's slam is already Solar damage, so leaning Solar makes the most of it. Hammer of Sol cleans up big waves, and Solar artifact perks plus Radiant keep your damage up. It's the most forgiving version for add-heavy content.",
+   src:{partial:true, text:"My picks, built on the same guide core. The Solar focus isn't from a published build."},
+   kit:[["Super","Hammer of Sol"],["Class","Thruster"],["Jump","Catapult Lift"],["Melee","Thunderclap (best melee damage) or Hammer Strike if available on Prismatic"],["Grenade","Pulse Grenade or Solar Grenade if offered"]],
+   aspects:["Consecration","Knockout"],
+   fragments:["Facet of Protection","Facet of Purpose","Facet of Ruin","Facet of Dawn (Radiant support)"],
+   exoticNote:"Same Stoicism roll, and it still needs Prismatic.",
+   stats:"Melee 150-200 > Grenade > Health",
+   set:"CODA 4-piece. Alt: 2 CODA + 2 Lustrous (Solstice), which boosts Solar weapons when you heal.",
+   artifact:"Hunter's Journal: Elemental Siphon, Incendiary Rifle Rounds, Radiant Orbs, Solar Fulmination and Transference. Or Queensfoil Censer if you run a Solar rocket or grenade launcher.",
+   weapons:[
+    {slot:"Energy · Primary",name:"Any Solar legendary primary",type:"Zealous Ideal (Solar heat auto) or Darkest Before (Prophecy)",roll:[["Trait 1","Heal Clip / Subsistence"],["Trait 2","Incandescent"]],note:"Incandescent spreads scorch, and ignitions clear adds."},
+    {slot:"Kinetic · Special",name:"Praxic Blade",type:"Exotic sword (Kinetic slot, special ammo)",roll:[["Catalysts","Echoing Blade, Upper Hand, Hyperblade"],["4th","Energy Conduit"]],note:"Fire and Ice mission (Renegades). It's a Kinetic-slot sword that uses special ammo, not a heavy, so nothing else can go in your Kinetic slot."},
+    {slot:"Heavy",name:"Roar of the Bear",type:"High-Impact rocket (Solar) · Iron Banner",roll:[["Barrel","Quick Launch"],["Mag","Impact Casing"],["Trait 1","Explosive Light / Reconstruction"],["Trait 2","Reaper's Tithe / Bipod"],["MW","Velocity"],["Mod","Backup Mag"]],note:"Solar heavy. Alt: Hothead."}],
+   alt:{note:"No Praxic Blade catalysts yet? Run this all-legendary loadout instead. Your exotic weapon slot opens up too. Your exotic slot is free for a Solar exotic if you have one.",weapons:[{slot:"Kinetic · Special",name:"Mint Retrograde",type:"Micro-missile pulse (Strand, special ammo)",roll:[["Barrel","Quick Launch"],["Mag","Extended Mag"],["Trait 1","Field Prep / Hatchling"],["Trait 2","Master of Arms / Frenzy"],["MW","Handling"],["Mod","Backup Mag"]],note:"Pinnacle Ops (attune first). Takes Praxic's Kinetic slot and special ammo: add clear plus champion damage."},{slot:"Energy · Primary",name:"Zealous Ideal",type:"Balanced Heat auto (Solar)",roll:[["Barrel","Fluted Barrel"],["Mag","Overclocked Heatsink"],["Trait 1","Heal Clip / Attrition Orbs"],["Trait 2","Incandescent / Onslaught"],["MW","Cooling Efficiency"],["Mod","Backup Mag"]],note:"Equilibrium dungeon. Alt: Darkest Before (Prophecy)."},{slot:"Heavy",name:"Roar of the Bear",type:"High-Impact rocket (Solar)",roll:[["Barrel","Quick Launch"],["Mag","Impact Casing"],["Trait 1","Explosive Light / Reconstruction"],["Trait 2","Reaper's Tithe / Bipod"],["MW","Velocity"],["Mod","Backup Mag"]],note:"Iron Banner, or Hothead."}]},
+   mods:[["Helmet","Solar Siphon, Hands-On, Heavy Ammo Finder"],["Arms","Heavy Handed, Impact Induction, Focusing Strike"],["Chest","Melee Damage Resistance, Concussive Dampener"],["Legs","Recuperation, Absolution, Solar Weapon Surge"],["Class item","Time Dilation, Outreach, Powerful Attraction"]],
+   how:"Same loop as the Arc build: slam, Knockout heals, Inmost Light refunds. Pick it for add-dense content, and the Arc version for single-target bosses."},
+  {id:"cuirass", name:"Arc Striker Falling Star", el:"Arc", color:"--arc", exotic:"Cuirass of the Falling Star",
+   pitch:"The Thundercrash nuke build. Cuirass greatly boosts Thundercrash impact damage and gives you an overshield that lasts longer the farther you fly before you hit. Storm's Keep and Arc weapons build Bolt Charge between supers, the Luminopotent set and Tablet of Ruin feed you super energy, and Queenbreaker covers boss damage from behind your Barricade.",
+   src:{partial:false, text:"The kit, fragments, set, artifact, mods and weapons come from a Gamerant Monument of Triumph Arc Titan guide (July 2026). The exotic text is from Destinypedia. The weapon rolls and stat targets are my picks. I couldn't find current Thundercrash damage numbers, and the old 55% and 100% figures you'll see online are out of date."},
+   kit:[["Super","Thundercrash"],["Class","Rally Barricade"],["Jump","Catapult Lift"],["Melee","Thunderclap"],["Grenade","Pulse Grenade"]],
+   aspects:["Storm's Keep","Knockout"],
+   fragments:["Spark of Ions (Arc kills make Ionic Traces)","Spark of Discharge (Arc weapon kills drop Ionic Traces)","Spark of Frequency (melee hits speed up your reload)","Spark of Resistance (less damage taken while surrounded)"],
+   exoticNote:"Glorious Charge: greatly increases Thundercrash impact damage, and you get an overshield that lasts longer the farther you travel before impact. Fly in from as far away as you can.",
+   stats:"Super 150+ > Class 100 > Weapons. Super past 100 adds super damage. Class drives Barricade uptime and Bolt Charge.",
+   set:"Luminopotent, 4 pieces (Portal activities). 2-piece Ionic Overclock and 4-piece Shock and Clear work off jolt and Ionic Traces, and the 2-piece also boosts fusion and heat weapons. That's why Scatter Signal and Voltaic Shade are in the loadout. Cuirass takes the chest slot, so the set goes on helmet, arms, legs and class item.",
+   artifact:"Tablet of Ruin: Unraveling Orbs, Dielectric, Flashover, Gold From Lead, Elemental Siphon, Particle Reconstruction, Limit Break.",
+   weapons:[
+    {slot:"Heavy · Exotic",name:"The Queenbreaker",type:"Exotic linear fusion (Arc)",roll:[["Intrinsic","Wire Rifle (precision blasts)"],["Use","Bosses and champions"]],note:"Your one exotic weapon. Fire it from behind Rally Barricade after Thundercrash lands."},
+    {slot:"Energy · Primary",name:"Voltaic Shade",type:"Balanced Heat scout (Arc) · Equilibrium dungeon",roll:[["Barrel","Fluted Barrel"],["Mag","Overclocked Heatsink"],["Trait 1","Jolting Feedback / Trickle Charge"],["Trait 2","Meganeura / Voltshot"],["MW","Cooling Efficiency"],["Mod","Backup Mag"]],note:"Arc weapon kills feed Bolt Charge and Ionic Traces. It's a heat weapon, so it gets the Luminopotent 2-piece."},
+    {slot:"Kinetic · Special",name:"Scatter Signal",type:"Fusion rifle (Strand)",roll:[["Trait 1","Slice"],["Trait 2","Controlled Burst"],["MW","Charge Time"],["Mod","Backup Mag"]],note:"Fusion, so it gets the Luminopotent 2-piece. Gamerant lists it under Primary, but it's a special-ammo weapon in the Kinetic slot, which makes this loadout legal. Alt: Burden of Guilt (Stasis fusion, Trials)."}],
+   mods:[["Helmet","Super Font, Dynamo, Harmonic Siphon"],["Arms","Heavy Handed, Harmonic Loader, Harmonic Dexterity"],["Chest","Concussive Dampener, plus resistance mods for the activity's damage type"],["Legs","Elemental Charge, Arc Weapon Surge, Orbs of Restoration"],["Class item","Reaper, Time Dilation, Powerful Attraction"]],
+   how:"Build Bolt Charge between supers with Rally Barricade and Arc weapon kills. Storm's Keep fires it off, and Thunderclap with Knockout handles anything that rushes you. When the DPS phase opens, jump high, Thundercrash from as far as you can (more distance means more overshield), then drop Rally Barricade and fire Queenbreaker from behind it. Super Font, Dynamo and the artifact's orb perks get Thundercrash back for the next phase. Your Stoicism Titan is better at add-clear. Swap to this one for bosses."},
+  {id:"doomfang", name:"Void Doom Fang Sentinel", el:"Void", color:"--void", exotic:"Doom Fang Pauldron",
+   pitch:"Team support with a long-lasting super. Shield Throw kills extend Sentinel Shield, Controlled Demolition heals your team, and the Eutechnology set spawns Void Breaches.",
+   src:{partial:false, text:"The whole build comes from a July 2026 Monument of Triumph guide (games.gg)."},
+   kit:[["Super","Sentinel Shield"],["Class","Rally Barricade"],["Jump","Catapult Lift"],["Melee","Shield Throw"],["Grenade","Vortex (damage) or Suppressor (weaken)"]],
+   aspects:["Offensive Bulwark","Controlled Demolition"],
+   fragments:["Echo of Vigilance","Echo of Reprisal","Echo of Harvest","Echo of Persistence"],
+   exoticNote:"Void kills boost your Void weapon damage, Void melee kills give you super energy, and Shield Throw kills extend Sentinel Shield.",
+   stats:"Melee > Super (100+ on each boosts that ability's damage)",
+   set:"Eutechnology, 4 pieces. 2-piece: rapid Void kills spawn a Void Breach. 4-piece: after you grab a Breach, your next Void weapon kill detonates. Rank up Vanguard and focus the pieces at Zavala.",
+   artifact:"NPA Repulsion Regulator: Volatile Flow, Bricks from Beyond, Void Weapon Channeling, Unto the Breach, Protective Breach, Supernova, Overload Grenades",
+   weapons:[
+    {slot:"Primary",name:"Turncoat",type:"Exotic Void hand cannon",roll:[["Catalyst","Rewards Pass rank 90 + 700 kills"]],note:"Triumphant Rewards Pass only (premium rank 1, free around rank 35)."},
+    {slot:"Special",name:"Mint Retrograde",type:"Micro-missile pulse (Strand, Kinetic slot, special ammo)",roll:[["Barrel","Quick Launch"],["Mag","Extended Mag"],["Trait 1","Field Prep / Hatchling"],["Trait 2","Master of Arms / Frenzy"],["MW","Handling"]],note:"Pinnacle Ops. Attune before you queue."},
+    {slot:"Heavy",name:"The Hothead / Bad Omens",type:"Rocket launcher",roll:[["Barrel","Quick Launch"],["Mag","Impact Casing"],["Trait 1","Envious Arsenal / Reconstruction"],["Trait 2","Aggregate Charge / Bait and Switch"],["MW","Velocity"]],note:"Hothead: Pinnacle Ops or focus at Zavala. Bad Omens: Gambit."}],
+   mods:[["Helmet","Hands-On, Harmonic Siphon, Super Font"],["Arms","Melee Font, Heavy Handed, Impact Induction"],["Chest","Concussive Dampener, Melee Damage Resistance, Charged Up"],["Legs","Invigoration, Stacks on Stacks, Void Weapon Surge"],["Class item","Time Dilation, Outreach, Distribution"]],
+   how:"Clear adds with Turncoat and Shield Throw to build Void Breaches and super energy. Pop Sentinel Shield and chain Shield Throw kills to keep it running much longer than normal. Barricade your team during DPS phases."},
+  {id:"melas", name:"Solar Hammer Melas Panoplia", el:"Solar", color:"--solar", exotic:"Melas Panoplia",
+   pitch:"A sustain and add-clear build. Catch your Throwing Hammer to refill your melee, Sol Invictus Sunspots heal you and your team, and Forgemaster adds slag damage on clean catches.",
+   src:{partial:false, text:"The whole build comes from an August 2026 Monument of Triumph guide (games.gg)."},
+   kit:[["Super","Hammer of Sol"],["Class","Rally Barricade"],["Jump","Catapult Lift"],["Melee","Throwing Hammer"],["Grenade","Fusion or Solar Grenade"]],
+   aspects:["Roaring Flames","Sol Invictus"],
+   fragments:["Ember of Solace","Ember of Mercy","Ember of Empyrean","Ember of Torches"],
+   exoticNote:"Picking up Firesprites and getting Solar kills gives you Forgemaster. Perfect Throwing Hammer recalls deal forge slag damage.",
+   stats:"Melee 100+ first (a hammer catch fully refunds your melee), then Weapons or Super",
+   set:"Lustrous set (Tenet of Bravery, bought with Legendary Marks): healing gives your Solar weapons flinch resistance, handling, and reload. Alternative: Dark Age (Warlord's Ruin).",
+   artifact:"Queensfoil Censer (Solar plus grenade launcher and rocket synergies)",
+   weapons:[
+    {slot:"Primary",name:"Devil's Ruin",type:"Exotic Solar sidearm",roll:[["Kills","Spawn Firesprites"],["Alt fire","Laser that ignites targets"]],note:"Firesprites power Melas Panoplia, so this is the exotic to run here."},
+    {slot:"Special",name:"Gizmo Weft / The Mountaintop",type:"Micro-missile grenade launcher",roll:[["Trait 1","Auto-Loading Holster / Envious Assassin"],["Trait 2","Incandescent / Chain Reaction"],["MW","Reload"]],note:"Gizmo Weft is in the Tenet of Bravery engrams. The Mountaintop comes from Onslaught."},
+    {slot:"Heavy",name:"Ascendancy / Roar of the Bear / Hezen Vengeance",type:"Solar rocket launcher",roll:[["Barrel","Quick Launch"],["Trait 1","Envious Arsenal"],["Trait 2","Bait and Switch / Explosive Light"],["MW","Reload"]],note:"Solo Ops, Iron Banner, or Vault of Glass. Pair it with the Argent Ordnance artifact perk if you have it."}],
+   mods:[["Helmet","Hands-On x2, Harmonic Siphon"],["Arms","Heavy Handed, Impact Induction, Focusing Strike"],["Chest","Concussive Dampener, Melee Damage Resistance, Solar Ammo Generation"],["Legs","Absolution, Better Already, Solar Weapon Surge"],["Class item","Time Dilation x2, Proximity Ward"]],
+   how:"Throw the hammer, catch it, and repeat. Every catch refills your melee at 100 Melee. Stand in Sunspots during big fights. Devil's Ruin kills drop Firesprites that keep Forgemaster active for burst on tough enemies."}
+ ]
+};
+
+const el = (t,c,h)=>{const e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e;};
+const esc = s=>String(s).replace(/[&<>"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+
+function render(mode){
+  document.getElementById("rules").innerHTML = RULES[mode];
+  const jump = document.getElementById("jump"); jump.innerHTML="";
+  const main = document.getElementById("builds"); main.innerHTML="";
+  BUILDS[mode].forEach(b=>{
+    const a=el("a",null,esc(b.name)); a.href="#"+b.id; jump.appendChild(a);
+    const card=el("article","build"); card.id=b.id; card.style.setProperty("--el",`var(${b.color})`);
+    card.innerHTML = `
+      <div class="bhead"><h2>${esc(b.name)}</h2>
+        <span class="tag el">${esc(b.el)}</span><span class="tag">Exotic: ${esc(b.exotic)}</span></div>
+      <p class="pitch">${esc(b.pitch)}</p>
+      <div class="src ${b.src.partial?"partial":""}">${esc(b.src.text)}</div>`;
+    const grid=el("div","grid");
+    // Subclass
+    grid.appendChild(el("section","sec",`<h3>Subclass kit</h3><dl>${b.kit.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>`));
+    // Aspects/fragments
+    grid.appendChild(el("section","sec",`<h3>Aspects &amp; fragments</h3><dl><dt>Aspects</dt><dd>${b.aspects.map(esc).join(" · ")}</dd><dt>Fragments</dt><dd><ul class="plain">${b.fragments.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></dd></dl>`));
+    // Exotic + stats
+    let ex = `<h3>Exotic &amp; stats</h3><dl><dt>Exotic</dt><dd><b>${esc(b.exotic)}</b>: ${esc(b.exoticNote)}</dd><dt>Stats</dt><dd class="stat">${esc(b.stats)}</dd>`;
+    if(b.set) ex+=`<dt>Set</dt><dd>${esc(b.set)}</dd>`;
+    if(b.artifact) ex+=`<dt>Artifact</dt><dd>${esc(b.artifact)}</dd>`;
+    ex+="</dl>";
+    grid.appendChild(el("section","sec",ex));
+    // Mods
+    grid.appendChild(el("section","sec",`<h3>Armor mods</h3><dl>${b.mods.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>`));
+    card.appendChild(grid);
+    // Weapons full width
+    const w=el("section","sec"); w.style.borderRight="0";
+    w.innerHTML = `<h3>Weapons &amp; rolls</h3>` + b.weapons.map(x=>`
+      <div class="wpn"><div><span class="wn">${esc(x.name)}</span> <span class="ws">${esc(x.slot)} · ${esc(x.type)}</span></div>
+      <div class="roll">${x.roll.map(([k,v])=>`<span><i>${esc(k)}:</i> ${esc(v)}</span>`).join("")}</div>
+      <div class="ws" style="margin-top:6px">${esc(x.note)}</div></div>`).join("");
+    card.appendChild(w);
+    if(b.alt){ const aw=el("section","sec"); aw.style.borderRight="0"; aw.style.background="var(--chip)";
+      aw.innerHTML = `<h3>Alt weapons (no Praxic Blade)</h3><p class="ws" style="margin:0 0 10px">${esc(b.alt.note)}</p>` + b.alt.weapons.map(x=>`
+      <div class="wpn" style="background:var(--panel)"><div><span class="wn">${esc(x.name)}</span> <span class="ws">${esc(x.slot)} · ${esc(x.type)}</span></div>
+      <div class="roll">${x.roll.map(([k,v])=>`<span><i>${esc(k)}:</i> ${esc(v)}</span>`).join("")}</div>
+      <div class="ws" style="margin-top:6px">${esc(x.note)}</div></div>`).join("");
+      card.appendChild(aw); }
+    card.appendChild(el("div","how",`<h3>How it plays</h3><p>${esc(b.how)}</p>`));
+    main.appendChild(card);
+  });
+  document.querySelectorAll(".modes button").forEach(btn=>btn.setAttribute("aria-selected", btn.dataset.mode===mode ? "true":"false"));
+  try{ localStorage.setItem("titanMode", mode); }catch(e){}
+}
+document.querySelectorAll(".modes button").forEach(btn=>btn.addEventListener("click",()=>render(btn.dataset.mode)));
+let start="pvp";
+const h=location.hash.replace("#","");
+if(h==="pve"||BUILDS.pve.some(b=>b.id===h)) start="pve";
+else { try{ const s=localStorage.getItem("titanMode"); if(s==="pve"||s==="pvp") start=s; }catch(e){} }
+render(start);
+if(h && document.getElementById(h)) document.getElementById(h).scrollIntoView();
+</script>

@@ -1,0 +1,197 @@
+<title>Trials Loadout Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a field-manual loadout sheet — mode switch up top, one build per stacked dossier, slots in a dense grid */
+:root{
+  --bg:#eef0f2; --panel:#ffffff; --ink:#15191e; --muted:#5b6470; --line:#d5dae0; --accent:#b8621b;
+  --arc:#2f7fd1; --void:#7b4fc4; --solar:#d4661b; --prism:#c2448f; --stasis:#3a9bb8;
+  --chip:#f2f4f6; --warn:#8a6a12; --warnbg:#fbf3dc;
+  --display:"Saira Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101318; --panel:#171b21; --ink:#e7eaee; --muted:#9aa3ae; --line:#2a3039; --accent:#e08a3f;
+  --arc:#5aa3ef; --void:#a481e6; --solar:#f08a3e; --prism:#e46bb2; --stasis:#62bfd9;
+  --chip:#1f242c; --warn:#e6c35c; --warnbg:#2a2516; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101318; --panel:#171b21; --ink:#e7eaee; --muted:#9aa3ae; --line:#2a3039; --accent:#e08a3f;
+  --arc:#5aa3ef; --void:#a481e6; --solar:#f08a3e; --prism:#e46bb2; --stasis:#62bfd9;
+  --chip:#1f242c; --warn:#e6c35c; --warnbg:#2a2516; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+header h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,6vw,54px);letter-spacing:.01em;line-height:1;margin:0;text-transform:uppercase;text-wrap:balance}
+header p{color:var(--muted);max-width:68ch;margin:10px 0 0}
+.meta{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:6px}
+.modes{display:flex;gap:8px;margin:24px 0 8px;flex-wrap:wrap}
+.modes button{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 20px;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:4px;cursor:pointer}
+.modes button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.modes button:focus-visible,.jump a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.rules{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin:16px 0;color:var(--muted);font-size:14px}
+.rules b{color:var(--ink)}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 20px}
+.jump a{font-family:var(--mono);font-size:12px;color:var(--ink);text-decoration:none;padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+.build{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--el);border-radius:6px;margin:0 0 22px;overflow:hidden}
+.bhead{padding:18px 18px 12px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;border-bottom:1px solid var(--line)}
+.bhead h2{font-family:var(--display);font-weight:700;font-size:30px;line-height:1.05;margin:0;text-transform:uppercase;letter-spacing:.02em;flex:1 1 300px}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:var(--chip);color:var(--muted)}
+.tag.el{background:var(--el);color:#fff}
+.pitch{padding:12px 18px 0;margin:0;max-width:75ch}
+.src{margin:10px 18px 0;font-size:13px;padding:8px 10px;border-radius:4px;background:var(--chip);color:var(--muted)}
+.src.partial{background:var(--warnbg);color:var(--warn)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;margin-top:14px;border-top:1px solid var(--line)}
+.sec{padding:14px 18px;border-bottom:1px solid var(--line);min-width:0}
+.grid .sec:nth-child(odd){border-right:1px solid var(--line)}
+@media (max-width:660px){.grid .sec:nth-child(odd){border-right:0}}
+.sec h3{font-family:var(--display);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--el);margin:0 0 8px}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:0}
+dt{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:2px}
+dd{margin:0;min-width:0}
+ul.plain{margin:0;padding-left:18px}
+ul.plain li{margin:2px 0}
+.wpn{border:1px solid var(--line);border-radius:4px;padding:10px 12px;margin:0 0 10px}
+.wpn:last-child{margin-bottom:0}
+.wpn .wn{font-weight:600}
+.wpn .ws{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.roll{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.roll span{font-family:var(--mono);font-size:11.5px;background:var(--chip);padding:2px 6px;border-radius:3px}
+.roll span i{font-style:normal;color:var(--muted)}
+.how{padding:14px 18px 18px}
+.how h3{font-family:var(--display);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--el);margin:0 0 6px}
+.how p{margin:0;max-width:75ch}
+.stat{font-family:var(--mono);font-size:13px}
+footer{color:var(--muted);font-size:13px;margin-top:28px}
+footer a{color:var(--accent)}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Trials Loadout Sheet</h1>
+    <p>Trials of Osiris builds sorted by class and subclass. Every build uses current Trials weapons where they fit, so farming Trials also builds your loadout. Each card lists the full kit, aspects, fragments, exotic, stats, weapon rolls and armor mods.</p>
+    <div class="meta">Sandbox: Monument of Triumph (9.7.0) · Updated Oct 2026 · Controller-tuned</div>
+  </header>
+
+  <div class="modes" role="tablist" aria-label="Class" id="modes"></div>
+
+  <div class="rules" id="rules"></div>
+  <nav class="jump" id="jump" aria-label="Jump to build"></nav>
+  <main id="builds"></main>
+
+  <footer>
+    Stats use the Edge of Fate system (Weapons, Health, Class, Grenade, Super, Melee). Weapon rolls match the God Roll Codex Trials section. Trials guns rotate on a three-week cycle, so the swap listed on each weapon is what to run in weeks your first pick isn't dropping.<br>
+    Sources: <a href="https://kyberscorner.com/destiny-2-monument-of-triumph-sandbox-abilities-armor-preview/" target="_blank" rel="noopener">Kyber's Corner Monument of Triumph sandbox notes</a> ·
+    <a href="https://blueberries.gg/armor/warlock-solar-builds/" target="_blank" rel="noopener">Blueberries Solar Warlock (Aug 2026)</a> ·
+    <a href="https://boosting-ground.com/Destiny2/guides/pvp-guides/trials-of-osiris-pvp-builds" target="_blank" rel="noopener">Boosting-Ground Trials builds</a> ·
+    <a href="https://www.blueberries.gg/weapons/destiny-2-trials-loot/" target="_blank" rel="noopener">Blueberries Trials loot</a>
+  </footer>
+</div>
+
+<script>
+const CLASSES = [{key:"warlock",label:"Warlock"}];
+
+const RULES = {
+  warlock: "<b>Trials rules:</b> artifact mods are turned off, so these builds don't use them. Health first, then Class. You need Healing Rift up for every round. Multi-charge abilities start each round with one charge in PvP. In Trials you can't run two Kinetic or two Energy weapons: Kinetic, Stasis and Strand go in the Kinetic slot, and Arc, Solar and Void go in the Energy slot. <b>Solar Warlock change this season:</b> Icarus Dash went from two fragment slots to three, so Heat Rises plus Icarus Dash now gives you five fragments."
+};
+
+const W = {
+  corundum:{slot:"Kinetic · Primary",name:"Corundum Hammer",type:"Adaptive hand cannon (Strand) · Trials Week 1",roll:[["Barrel","Smallbore"],["Mag","Accurized Rounds"],["Trait 1","Slideshot / Fragile Focus"],["Trait 2","Opening Shot / Explosive Payload"],["MW","Stability"],["Origin","Roar of Battle"],["Mod","Targeting Adjuster"]],note:"Swap: Spare Rations (Stasis, Kinetic slot) in Weeks 2 and 3."},
+  auric:{slot:"Kinetic · Primary",name:"Auric Disabler",type:"Precision auto rifle (Strand) · Trials Week 3",roll:[["Barrel","Arrowhead Brake / Corkscrew"],["Mag","Ricochet Rounds"],["Trait 1","Dynamic Sway Reduction / Zen Moment"],["Trait 2","Target Lock / Tap the Trigger"],["MW","Range"],["Origin","Omolon Fluid Dynamics"],["Mod","Targeting Adjuster"]],note:"Very easy to use on controller. Swap: The Immortal (Strand SMG, Week 2) if you play close range."},
+  exile:{slot:"Energy · Special",name:"Exile's Curse",type:"High-Impact fusion rifle (Solar) · Trials Week 1",roll:[["Barrel","Arrowhead Brake"],["Mag","Projection Fuse"],["Trait 1","Slideshot / Under Pressure"],["Trait 2","Closing Time / Kickstart"],["MW","Range"],["Origin","Fleet Footed"],["Mod","Counterbalance Stock"]],note:"Solar in the Energy slot, which is why it pairs with a Strand primary. Swap: Burden of Guilt (Week 2) can't go here because it's Stasis, so use any Energy shotgun or fusion."},
+  answer:{slot:"Heavy",name:"Tomorrow's Answer",type:"High-Impact rocket (Void) · Trials Week 3",roll:[["Barrel","Quick Launch"],["Mag","High-Velocity Rounds"],["Trait 1","Impulse Amplifier / Tracking Module"],["Trait 2","Chain Reaction / Cluster Bomb"],["MW","Handling"],["Mod","Quick Access Sling"]],note:"Heavy is a once-per-round thing in Trials. Any tracking rocket works. Hothead is fine."}
+};
+
+const BUILDS = {
+ warlock: [
+  {id:"wl-solar-snap", sub:"Solar", name:"Solar Ophidian Snap Duelist", el:"Solar", color:"--solar", exotic:"Ophidian Aspect",
+   pitch:"Your main Trials build. Hand cannon at range, fusion up close, and an Incinerator Snap with extra range from Ophidian to finish anyone who's one-shot. Heat Rises plus Icarus Dash makes you hard to shotgun, and the new fifth fragment slot goes into more Restoration.",
+   src:{partial:true, text:"From guides: Ophidian on Dawnblade, Ember of Solace, Empyrean and Benevolence, and the Icarus Dash fragment buff (Monument of Triumph notes). The fifth fragment, the Trials weapons and the mods are my picks."},
+   kit:[["Super","Song of Flame"],["Class","Healing Rift"],["Jump","Burst Glide"],["Melee","Incinerator Snap"],["Grenade","Healing Grenade"]],
+   aspects:["Heat Rises","Icarus Dash"],
+   fragments:["Ember of Torches (powered melee gives you Radiant)","Ember of Solace (longer Restoration)","Ember of Empyrean (Solar kills extend Restoration and Radiant)","Ember of Benevolence (healing allies speeds up your abilities)","Ember of Singeing (scorching enemies charges your class ability)"],
+   exoticNote:"Faster ready, reload and handling on every weapon, plus more range on Snap. The fast weapon swap is what makes the hand cannon into fusion combo work.",
+   stats:"Health 100+ > Class 70+ > Melee",
+   weapons:[W.corundum, W.exile, W.answer],
+   mods:[["Helmet","Hand Cannon Targeting, Health stat mod"],["Arms","Hand Cannon Loader, Impact Induction"],["Chest","Unflinching Hand Cannon Aim, Concussive Dampener"],["Legs","Fusion Rifle Dexterity, Hand Cannon Dexterity, Recuperation"],["Class item","Outreach, Class stat mod"]],
+   how:"Open each round by putting Healing Rift behind cover, then hold the long angle with Corundum Hammer. If someone pushes, swap to Exile's Curse. Ophidian makes the swap almost instant, and Closing Time with Projection Fuse wins most pushes. If you hit someone with your hand cannon at range, chase them down with Snap. Eat your grenade with Heat Rises to stay in the air against shotgun rushes, or throw it at your feet to heal mid-fight. Treat Song of Flame as a round-closer, not an opener."},
+  {id:"wl-solar-rof", sub:"Solar", name:"Solar Rain of Fire Fusion Skater", el:"Solar", color:"--solar", exotic:"Rain of Fire",
+   pitch:"The aggressive fusion build. Fusion kills instantly reload your weapons and give you Radiant, so you can clear 2v1s back to back without reloading. Pair it with a laser auto and you have a full controller loadout.",
+   src:{partial:true, text:"From guides: Rain of Fire for Solar and fusion rifles (Blueberries, Aug 2026). The aspects, fragments, weapons and mods are my picks, not a published build. Run this when you want to push, and Ophidian when you want to play off your team."},
+   kit:[["Super","Song of Flame"],["Class","Healing Rift"],["Jump","Strafe Glide"],["Melee","Incinerator Snap"],["Grenade","Fusion Grenade"]],
+   aspects:["Heat Rises","Touch of Flame"],
+   fragments:["Ember of Torches (powered melee gives you Radiant)","Ember of Solace (longer Restoration)","Ember of Empyrean (Solar kills extend Restoration and Radiant)","Ember of Searing (ignition kills give melee energy)"],
+   exoticNote:"Fusion and linear fusion kills instantly reload your stowed weapons and give you Radiant, plus an air dodge. Run a fusion with a primary that needs time to reload.",
+   stats:"Health 100+ > Class 70+ > Grenade",
+   weapons:[W.auric, W.exile, W.answer],
+   mods:[["Helmet","Auto Rifle Targeting, Health stat mod"],["Arms","Fusion Rifle Loader, Grenade Kickstart"],["Chest","Unflinching Auto Rifle Aim, Concussive Dampener"],["Legs","Fusion Rifle Dexterity, Auto Rifle Dexterity, Recuperation"],["Class item","Bomber, Class stat mod"]],
+   how:"Get a fusion kill and your weapons reload, so you're already set for the next fight. Hold lanes with Auric Disabler at Target Lock range, then fusion anyone who gets close. Touch of Flame Fusion Grenades hit twice, which is enough to break someone's shield before you fire. Strafe Glide feels better than Burst Glide when you're firing a fusion in the air. Use the Rain of Fire air dodge to step out of a shotgun's range."},
+  {id:"wl-solar-icarus", sub:"Solar", name:"Solar Icarus Air Duelist", el:"Solar", color:"--solar", exotic:"Wings of Sacred Dawn",
+   pitch:"A build that fights from the air the whole round. Heat Rises lets you shoot while you glide, Icarus Dash gives you up to two air dodges to break other players' aim, and Wings of Sacred Dawn lets you hover while aiming down sights. Every gun is set up for airborne accuracy.",
+   src:{partial:true, text:"From guides: the Icarus Dash and Heat Rises behavior (Destinypedia, HGG) and the Icarus Dash fragment-slot buff (Monument of Triumph notes). The exotic, fragments, weapons and mods are my picks. This is the fun air build. Ophidian Snap is still the more consistent Trials pick."},
+   kit:[["Super","Song of Flame"],["Class","Healing Rift"],["Jump","Burst Glide"],["Melee","Incinerator Snap"],["Grenade","Healing Grenade (Heat Rises fuel)"]],
+   aspects:["Heat Rises","Icarus Dash"],
+   fragments:["Ember of Torches (powered melee gives you Radiant)","Ember of Solace (longer Restoration and Radiant)","Ember of Searing (killing scorched enemies gives melee energy)","Ember of Singeing (scorching enemies charges your class ability)","Ember of Benevolence (healing allies speeds up your abilities)"],
+   exoticNote:"Aiming down sights while airborne makes you hover in place. While hovering you take less damage and your precision hits extend the hover. That makes an airborne hand cannon reliable instead of a coin flip.",
+   stats:"Health 100+ > Class 70+ > Melee",
+   weapons:[
+    {slot:"Kinetic · Primary",name:"Corundum Hammer",type:"Adaptive hand cannon (Strand) · Trials Week 1",roll:[["Barrel","Smallbore"],["Mag","Accurized Rounds"],["Trait 1","Slideshot / Fragile Focus"],["Trait 2","Opening Shot / Explosive Payload"],["MW","Stability"],["Origin","Fleet Footed (airborne boost)"],["Mod","Icarus Grip"]],note:"Fleet Footed and Icarus Grip both boost airborne effectiveness. Run this one with Fleet Footed, not Roar of Battle. Swap: Crimil's Dagger (Iron Banner, Kinetic)."},
+    {slot:"Energy · Special",name:"Felwinter's Lie",type:"Aggressive shotgun (Solar) · Iron Banner",roll:[["Barrel","Rifled Barrel"],["Mag","Accurized Rounds"],["Trait 1","Slideshot / Slickdraw"],["Trait 2","Iron Reach / Opening Shot"],["MW","Range"],["Origin","Skulking Wolf"],["Mod","Quick Access Sling"]],note:"For diving on people from above. Swap: Keen Thistle (Solar sniper, Trials Week 2, Snapshot Sights) if you'd rather snipe while hovering."},
+    {slot:"Heavy",name:"Roar of the Bear",type:"High-Impact rocket (Solar) · Iron Banner",roll:[["Barrel","Quick Launch"],["Mag","High-Velocity Rounds"],["Trait 1","Impulse Amplifier / Tracking Module"],["Trait 2","Cluster Bomb"],["MW","Velocity"],["Mod","Quick Access Sling"]],note:"Any tracking rocket works."}
+   ],
+   mods:[["Helmet","Hand Cannon Targeting, Health stat mod"],["Arms","Hand Cannon Loader, Impact Induction"],["Chest","Unflinching Hand Cannon Aim, Concussive Dampener"],["Legs","Shotgun Dexterity, Hand Cannon Dexterity, Recuperation"],["Class item","Outreach, Class stat mod"]],
+   how:"Hold grenade to activate Heat Rises, which also heals any teammates near you. Then jump and glide. Aim down sights to hover with Wings and take your shots from above cover. When someone starts landing shots on you, Icarus Dash sideways to break their aim. You get one dodge normally, plus a second one while Heat Rises is active. Airborne kills extend Heat Rises and give you melee energy, so a hand cannon kill into a Snap on the next player keeps you flying. Rapid airborne kills also give you Cure. Don't hover in an open lane against a sniper. Dash, land behind cover and reset."}
+ ]
+};
+const el = (t,c,h)=>{const e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e;};
+const esc = s=>String(s).replace(/[&<>"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+
+function render(mode){
+  document.getElementById("rules").innerHTML = RULES[mode];
+  const jump = document.getElementById("jump"); jump.innerHTML="";
+  const main = document.getElementById("builds"); main.innerHTML="";
+  BUILDS[mode].forEach(b=>{
+    const a=el("a",null,esc(b.name)); a.href="#"+b.id; jump.appendChild(a);
+    const card=el("article","build"); card.id=b.id; card.style.setProperty("--el",`var(${b.color})`);
+    card.innerHTML = `
+      <div class="bhead"><h2>${esc(b.name)}</h2>
+        <span class="tag el">${esc(b.el)}</span><span class="tag">Exotic: ${esc(b.exotic)}</span></div>
+      <p class="pitch">${esc(b.pitch)}</p>
+      <div class="src ${b.src.partial?"partial":""}">${esc(b.src.text)}</div>`;
+    const grid=el("div","grid");
+    // Subclass
+    grid.appendChild(el("section","sec",`<h3>Subclass kit</h3><dl>${b.kit.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>`));
+    // Aspects/fragments
+    grid.appendChild(el("section","sec",`<h3>Aspects &amp; fragments</h3><dl><dt>Aspects</dt><dd>${b.aspects.map(esc).join(" · ")}</dd><dt>Fragments</dt><dd><ul class="plain">${b.fragments.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></dd></dl>`));
+    // Exotic + stats
+    let ex = `<h3>Exotic &amp; stats</h3><dl><dt>Exotic</dt><dd><b>${esc(b.exotic)}</b>: ${esc(b.exoticNote)}</dd><dt>Stats</dt><dd class="stat">${esc(b.stats)}</dd>`;
+    if(b.set) ex+=`<dt>Set</dt><dd>${esc(b.set)}</dd>`;
+    if(b.artifact) ex+=`<dt>Artifact</dt><dd>${esc(b.artifact)}</dd>`;
+    ex+="</dl>";
+    grid.appendChild(el("section","sec",ex));
+    // Mods
+    grid.appendChild(el("section","sec",`<h3>Armor mods</h3><dl>${b.mods.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>`));
+    card.appendChild(grid);
+    // Weapons full width
+    const w=el("section","sec"); w.style.borderRight="0";
+    w.innerHTML = `<h3>Weapons &amp; rolls</h3>` + b.weapons.map(x=>`
+      <div class="wpn"><div><span class="wn">${esc(x.name)}</span> <span class="ws">${esc(x.slot)} · ${esc(x.type)}</span></div>
+      <div class="roll">${x.roll.map(([k,v])=>`<span><i>${esc(k)}:</i> ${esc(v)}</span>`).join("")}</div>
+      <div class="ws" style="margin-top:6px">${esc(x.note)}</div></div>`).join("");
+    card.appendChild(w);
+    card.appendChild(el("div","how",`<h3>How it plays</h3><p>${esc(b.how)}</p>`));
+    main.appendChild(card);
+  });
+  document.querySelectorAll(".modes button").forEach(btn=>btn.setAttribute("aria-selected", btn.dataset.mode===mode ? "true":"false"));
+  try{ localStorage.setItem("trialsClass", mode); }catch(e){}
+}
+document.getElementById("modes").innerHTML = CLASSES.map(c=>`<button role="tab" aria-selected="false" data-mode="${c.key}">${c.label}</button>`).join("");
+document.querySelectorAll(".modes button").forEach(btn=>btn.addEventListener("click",()=>render(btn.dataset.mode)));
+let start=CLASSES[0].key;
+const h=location.hash.replace("#","");
+const hit=CLASSES.find(c=>c.key===h||BUILDS[c.key].some(b=>b.id===h));
+if(hit) start=hit.key;
+else { try{ const s=localStorage.getItem("trialsClass"); if(BUILDS[s]) start=s; }catch(e){} }
+render(start);
+if(h && document.getElementById(h)) document.getElementById(h).scrollIntoView();
+</script>
