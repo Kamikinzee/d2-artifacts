@@ -1,0 +1,3553 @@
+[
+ {
+  "id": "spinz-titan-pvp-striker",
+  "name": "Titan PVP · Arc Striker Duelist",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2932390016,
+    "socketOverrides": {
+     "2": 119041298,
+     "0": 489583098,
+     "1": 1698387812,
+     "3": 2708585277,
+     "4": 1713935764,
+     "5": 1656549674,
+     "6": 1656549672,
+     "7": 1727069364,
+     "8": 1727069375,
+     "9": 1727069366,
+     "10": 3277705907
+    }
+   },
+   {
+    "id": "0",
+    "hash": 347366834
+   },
+   {
+    "id": "0",
+    "hash": 1518956169
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 3918600864
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 3918600864,
+   "mods": [
+    2467203039,
+    1180408010,
+    2586562813,
+    377010989,
+    1262438062,
+    3719981603,
+    1180408010,
+    2059068466,
+    2076329105,
+    4204488676,
+    4160037471,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The easiest Titan to win gunfights with. Thruster lets you peek and dodge back out, One-Eyed Mask gives you an overshield after every kill, and Knockout heals you after melee kills.\nStats: Health > Class > Weapons\nWeapons:\n- Primary: Ace of Spades\n- Special: Matador 64 (Smallbore / Smoothbore, Accurized Rounds / Light Mag, Threat Detector, Opening Shot, Range)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nHold an angle. Thruster around a corner, shoot first, and finish low-health players with Seismic Strike. Each kill on your marked target gives you an overshield, so push into the next fight while it's up. Don't chase the mark into a bad spot.\n#spinz #titan #pvp"
+ },
+ {
+  "id": "spinz-titan-pvp-sentinel",
+  "name": "Titan PVP · Void Sentinel Anchor",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2842471112,
+    "socketOverrides": {
+     "2": 4260353953,
+     "0": 2722641741,
+     "1": 1380268164,
+     "3": 4220332374,
+     "4": 2265076177,
+     "5": 1602994569,
+     "6": 1602994570,
+     "7": 2272984670,
+     "8": 2272984656,
+     "9": 2272984671
+    }
+   },
+   {
+    "id": "0",
+    "hash": 810474119
+   },
+   {
+    "id": "0",
+    "hash": 218787950
+   },
+   {
+    "id": "0",
+    "hash": 1996201272
+   },
+   {
+    "id": "0",
+    "hash": 1362342075
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 1362342075,
+   "mods": [
+    721001747,
+    1180408010,
+    2793548555,
+    3599522901,
+    2959504464,
+    3719981603,
+    1180408010,
+    3067648983,
+    193878019,
+    4204488676,
+    4188291233,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Built for Trials as a 3-stack. You hold lanes with Barricade and Bastion overshields, Suppressor grenades shut down enemy abilities, and Ward of Dawn wins revive fights.\nStats: Health > Class > Grenade\nWeapons:\n- Primary: Spare Rations (Corkscrew Rifling, Accurized Rounds, Slideshot, Eye of the Storm, Range)\n- Special: Felwinter's Lie (Rifled Barrel, Accurized Rounds, Slideshot / Threat Detector, Iron Reach / Opening Shot, Range)\n- Heavy: Bad Omens (Quick Launch, Impact Casing, Tracking Module, Cluster Bomb, Blast Radius)\nPut your Barricade on a lane and hold it with your team. Bastion keeps overshields on you, so you win evenly matched trades. Throw Suppressor at Hunters and Warlocks before they can use their abilities. Save Ward of Dawn for the final round or a clutch revive.\n#spinz #titan #pvp"
+ },
+ {
+  "id": "spinz-titan-pvp-sunbreaker",
+  "name": "Titan PVP · Solar Sunbreaker Brawler",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2550323932,
+    "socketOverrides": {
+     "2": 2747500761,
+     "0": 2495523341,
+     "1": 2225231094,
+     "3": 852252789,
+     "4": 1841016428,
+     "5": 2984351205,
+     "6": 2984351204,
+     "7": 362132300,
+     "8": 362132288,
+     "9": 362132292
+    }
+   },
+   {
+    "id": "0",
+    "hash": 1041028434
+   },
+   {
+    "id": "0",
+    "hash": 3460576091
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 3316517958
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 3316517958,
+   "mods": [
+    2467203039,
+    1180408010,
+    2586562813,
+    377010989,
+    1262438062,
+    3719981603,
+    1180408010,
+    3067648983,
+    2076329105,
+    4204488676,
+    4160037471,
+    4287799666
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The most forgiving PvP Titan. Fight on Sunspots, throw a Healing Grenade mid-fight, and Loreley keeps you alive when your health gets low.\nStats: Health > Class > Melee\nWeapons:\n- Primary: Rose (Corkscrew Rifling / Smallbore, Accurized Rounds, Slideshot, Opening Shot, Range)\n- Special: Duality\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nPick fights where you have a Sunspot or a Barricade to fall back to. Open with Rose, finish with a Throwing Hammer, then pick it back up to reset your melee. If a fight goes long, throw a Healing Grenade at your feet.\n#spinz #titan #pvp"
+ },
+ {
+  "id": "spinz-titan-pvp-autos",
+  "name": "Titan PVP · Stasis Behemoth Auto Anchor",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 613647804,
+    "socketOverrides": {
+     "2": 2021620139,
+     "0": 3260056808,
+     "1": 469281042,
+     "3": 2028772231,
+     "4": 1399217,
+     "5": 1563930741,
+     "6": 2031919264,
+     "7": 537774540,
+     "8": 537774543,
+     "9": 537774541,
+     "10": 3469412975
+    }
+   },
+   {
+    "id": "0",
+    "hash": 4129629253
+   },
+   {
+    "id": "0",
+    "hash": 4222913208
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 1322544481
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 1322544481,
+   "mods": [
+    2467203039,
+    1589556860,
+    2586562813,
+    3599522901,
+    1262438062,
+    3719981603,
+    1180408010,
+    2076329105,
+    467550918,
+    4204488676,
+    4188291233,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Built around automatic weapons. Run an auto rifle and an SMG together, and use Stasis walls and slows to keep fights at the ranges where they win. Glacier walls block sightlines so enemies have to come into your range, and frozen or slowed players can't strafe out of your sustained fire.\nStats: Health > Class > Weapons\nWeapons:\n- Kinetic: Khvostov 7G-0X\n- Energy: The Hero's Burden (Smallbore, Accurized Rounds, Zen Moment / Moving Target, Kill Clip / Iron Reach, Range)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nThe tradeoff: two primaries means no special ammo. You give up shotgun and sniper one-shots for weapons that win every mid- and close-range trade. Throw a Glacier Grenade to cut a lane, hold behind your Hoarfrost wall, and beam people with Khvostov as they come around it. Swap to Hero's Burden when someone rushes you. Howl of the Storm freezes rushers, and Whisper of Chains reduces your damage taken while you stand next to frozen targets. On controller, autos and SMGs get the most out of aim assist.\n#spinz #titan #pvp"
+ },
+ {
+  "id": "spinz-titan-pve-stoicism",
+  "name": "Titan PVE · Prismatic Stoicism: Arc Slam",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 1616346845,
+    "socketOverrides": {
+     "2": 2529942644,
+     "0": 2868073563,
+     "1": 266130437,
+     "3": 1980796563,
+     "4": 1323461861,
+     "7": 1262901520,
+     "8": 1262901523,
+     "9": 2626922120,
+     "10": 2626922114,
+     "11": 124726499,
+     "12": 124726498,
+     "13": 2626922124
+    }
+   },
+   {
+    "id": "0",
+    "hash": 71057630
+   },
+   {
+    "id": "0",
+    "hash": 3049715579
+   },
+   {
+    "id": "0",
+    "hash": 954563454
+   },
+   {
+    "id": "0",
+    "hash": 266021826
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 266021826,
+   "mods": [
+    2724068510,
+    3938489430,
+    554409585,
+    2447449706,
+    377010989,
+    3685945823,
+    1763668984,
+    3719981603,
+    4087056174,
+    2793473444,
+    1750845415,
+    1755737153,
+    4160037471,
+    11126525
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The S-tier Titan for Master raids and GM Ops, built around Arc. You sprint-slam with Consecration, Synthoceps boosts the hit when you're surrounded, Knockout heals you on melee kills, and Inmost Light means every ability you use speeds up the other two. Thundercrash and Pulse Grenade keep the whole kit Arc so the Arc artifact perks and Arc Siphon mods stack on top.\nStats: Melee 150-200 > Grenade 100+ > Health 70+. Over 100, the extra Melee boosts melee damage, so keep pushing it.\nWeapons:\n- Energy · Primary: Voltaic Shade (Fluted Barrel, Overclocked Heatsink, Jolting Feedback / Trickle Charge, Meganeura / Voltshot, Cooling Efficiency)\n- Kinetic · Special: Praxic Blade\n- Heavy: Bitter End (Fluted Barrel, Light Heatsink, Attrition Orbs / Trickle Charge, Jolting Feedback / Killing Tally, Cooling Efficiency)\nRun into a group, sprint and hit melee to Consecration slam (sweep, then the second slam), and get surrounded on purpose, because that's when Synthoceps and Facet of Protection both kick in. Every slam triggers Inmost Light, so your grenade and class ability come back faster. Throw Pulse at your feet, Thruster out, and get back into Consecration. Knockout heals you on every melee kill and Heavy Handed drops orbs. On bosses, pop Thundercrash, then swap to Praxic Blade.\n#spinz #titan #pve"
+ },
+ {
+  "id": "spinz-titan-pve-stoicism-alt",
+  "name": "Titan PVE · Prismatic Stoicism: Arc Slam (alt)",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 1616346845,
+    "socketOverrides": {
+     "2": 2529942644,
+     "0": 2868073563,
+     "1": 266130437,
+     "3": 1980796563,
+     "4": 1323461861,
+     "7": 1262901520,
+     "8": 1262901523,
+     "9": 2626922120,
+     "10": 2626922114,
+     "11": 124726499,
+     "12": 124726498,
+     "13": 2626922124
+    }
+   },
+   {
+    "id": "0",
+    "hash": 42435996
+   },
+   {
+    "id": "0",
+    "hash": 71057630
+   },
+   {
+    "id": "0",
+    "hash": 954563454
+   },
+   {
+    "id": "0",
+    "hash": 266021826
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 266021826,
+   "mods": [
+    2724068510,
+    3938489430,
+    554409585,
+    2447449706,
+    377010989,
+    3685945823,
+    1763668984,
+    3719981603,
+    4087056174,
+    2793473444,
+    1750845415,
+    1755737153,
+    4160037471,
+    11126525
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The S-tier Titan for Master raids and GM Ops, built around Arc. You sprint-slam with Consecration, Synthoceps boosts the hit when you're surrounded, Knockout heals you on melee kills, and Inmost Light means every ability you use speeds up the other two. Thundercrash and Pulse Grenade keep the whole kit Arc so the Arc artifact perks and Arc Siphon mods stack on top.\nStats: Melee 150-200 > Grenade 100+ > Health 70+. Over 100, the extra Melee boosts melee damage, so keep pushing it.\nWeapons:\n- Kinetic · Special: Mint Retrograde (Quick Launch, Extended Mag, Field Prep / Hatchling, Master of Arms / Frenzy, Handling)\n- Energy · Primary: Voltaic Shade (Fluted Barrel, Overclocked Heatsink, Jolting Feedback / Trickle Charge, Meganeura / Voltshot, Cooling Efficiency)\n- Heavy: Bitter End (Fluted Barrel, Light Heatsink, Attrition Orbs / Trickle Charge, Jolting Feedback / Killing Tally, Cooling Efficiency)\nRun into a group, sprint and hit melee to Consecration slam (sweep, then the second slam), and get surrounded on purpose, because that's when Synthoceps and Facet of Protection both kick in. Every slam triggers Inmost Light, so your grenade and class ability come back faster. Throw Pulse at your feet, Thruster out, and get back into Consecration. Knockout heals you on every melee kill and Heavy Handed drops orbs. On bosses, pop Thundercrash, then swap to Praxic Blade.\n#spinz #titan #pve"
+ },
+ {
+  "id": "spinz-titan-pve-stoicism-void",
+  "name": "Titan PVE · Prismatic Stoicism: Void Lean",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 1616346845,
+    "socketOverrides": {
+     "2": 2529942646,
+     "0": 2868073563,
+     "1": 266130437,
+     "3": 1980796563,
+     "4": 3923577992,
+     "7": 1262901520,
+     "8": 1262901523,
+     "9": 2626922120,
+     "10": 2626922114,
+     "11": 124726499,
+     "12": 124726498
+    }
+   },
+   {
+    "id": "0",
+    "hash": 3049715579
+   },
+   {
+    "id": "0",
+    "hash": 1940352487
+   },
+   {
+    "id": "0",
+    "hash": 266021826
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 266021826,
+   "mods": [
+    2773358872,
+    3938489430,
+    554409585,
+    2447449706,
+    377010989,
+    1781551382,
+    1763668984,
+    3719981603,
+    4087056174,
+    2793473444,
+    3467460423,
+    1755737153,
+    4160037471,
+    4188291233
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The same Consecration and Knockout core, aimed at team support. Twilight Arsenal gives your fireteam a damage buff, and Suppressor Grenade shuts down champions and bosses. Run this when the raid needs a support Titan more than a slammer.\nStats: Melee 150+ > Super 100 > Grenade\nWeapons:\n- Energy · Primary: Any Void legendary primary (your pick)\n- Kinetic · Special: Praxic Blade\n- Heavy: Tomorrow's Answer (Quick Launch, Impact Casing, Envious Arsenal / Withering Gaze, Bait and Switch / Cluster Bomb, Velocity)\nUse Suppressor on overload champions and dangerous adds, slam with Consecration to clear, and save Twilight Arsenal for the DPS phase so the whole team gets the buff.\n#spinz #titan #pve"
+ },
+ {
+  "id": "spinz-titan-pve-stoicism-void-alt",
+  "name": "Titan PVE · Prismatic Stoicism: Void Lean (alt)",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 1616346845,
+    "socketOverrides": {
+     "2": 2529942646,
+     "0": 2868073563,
+     "1": 266130437,
+     "3": 1980796563,
+     "4": 3923577992,
+     "7": 1262901520,
+     "8": 1262901523,
+     "9": 2626922120,
+     "10": 2626922114,
+     "11": 124726499,
+     "12": 124726498
+    }
+   },
+   {
+    "id": "0",
+    "hash": 42435996
+   },
+   {
+    "id": "0",
+    "hash": 2873508409
+   },
+   {
+    "id": "0",
+    "hash": 1940352487
+   },
+   {
+    "id": "0",
+    "hash": 266021826
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 266021826,
+   "mods": [
+    2773358872,
+    3938489430,
+    554409585,
+    2447449706,
+    377010989,
+    1781551382,
+    1763668984,
+    3719981603,
+    4087056174,
+    2793473444,
+    3467460423,
+    1755737153,
+    4160037471,
+    4188291233
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The same Consecration and Knockout core, aimed at team support. Twilight Arsenal gives your fireteam a damage buff, and Suppressor Grenade shuts down champions and bosses. Run this when the raid needs a support Titan more than a slammer.\nStats: Melee 150+ > Super 100 > Grenade\nWeapons:\n- Kinetic · Special: Mint Retrograde (Quick Launch, Extended Mag, Field Prep / Hatchling, Master of Arms / Frenzy, Handling)\n- Energy · Primary: High Tyrant (Fluted Barrel, Light Heatsink, Destabilizing Rounds / Repulsor Brace, Demoralize / Meganeura, Cooling Efficiency)\n- Heavy: Tomorrow's Answer (Quick Launch, Impact Casing, Envious Arsenal / Withering Gaze, Bait and Switch / Cluster Bomb, Velocity)\nUse Suppressor on overload champions and dangerous adds, slam with Consecration to clear, and save Twilight Arsenal for the DPS phase so the whole team gets the buff.\n#spinz #titan #pve"
+ },
+ {
+  "id": "spinz-titan-pve-stoicism-solar",
+  "name": "Titan PVE · Prismatic Stoicism: Solar Lean",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 1616346845,
+    "socketOverrides": {
+     "2": 2529942647,
+     "0": 2868073563,
+     "1": 266130437,
+     "3": 1980796563,
+     "4": 1323461861,
+     "7": 1262901520,
+     "8": 1262901523,
+     "9": 2626922120,
+     "10": 124726498,
+     "11": 124726499,
+     "12": 2626922126
+    }
+   },
+   {
+    "id": "0",
+    "hash": 3049715579
+   },
+   {
+    "id": "0",
+    "hash": 2881109029
+   },
+   {
+    "id": "0",
+    "hash": 266021826
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 266021826,
+   "mods": [
+    4255093903,
+    3938489430,
+    554409585,
+    2447449706,
+    377010989,
+    3685945823,
+    1763668984,
+    3719981603,
+    4087056174,
+    2793473444,
+    2319885414,
+    1755737153,
+    4160037471,
+    11126525
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Consecration's slam is already Solar damage, so leaning Solar makes the most of it. Hammer of Sol cleans up big waves, and Solar artifact perks plus Radiant keep your damage up. It's the most forgiving version for add-heavy content.\nStats: Melee 150-200 > Grenade > Health\nWeapons:\n- Energy · Primary: Any Solar legendary primary (your pick)\n- Kinetic · Special: Praxic Blade\n- Heavy: Roar of the Bear (Quick Launch, Impact Casing, Explosive Light / Reconstruction, Reaper's Tithe / Bipod, Velocity)\nSame loop as the Arc build: slam, Knockout heals, Inmost Light refunds. Pick it for add-dense content, and the Arc version for single-target bosses.\n#spinz #titan #pve"
+ },
+ {
+  "id": "spinz-titan-pve-stoicism-solar-alt",
+  "name": "Titan PVE · Prismatic Stoicism: Solar Lean (alt)",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 1616346845,
+    "socketOverrides": {
+     "2": 2529942647,
+     "0": 2868073563,
+     "1": 266130437,
+     "3": 1980796563,
+     "4": 1323461861,
+     "7": 1262901520,
+     "8": 1262901523,
+     "9": 2626922120,
+     "10": 124726498,
+     "11": 124726499,
+     "12": 2626922126
+    }
+   },
+   {
+    "id": "0",
+    "hash": 42435996
+   },
+   {
+    "id": "0",
+    "hash": 1863583117
+   },
+   {
+    "id": "0",
+    "hash": 2881109029
+   },
+   {
+    "id": "0",
+    "hash": 266021826
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 266021826,
+   "mods": [
+    4255093903,
+    3938489430,
+    554409585,
+    2447449706,
+    377010989,
+    3685945823,
+    1763668984,
+    3719981603,
+    4087056174,
+    2793473444,
+    2319885414,
+    1755737153,
+    4160037471,
+    11126525
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Consecration's slam is already Solar damage, so leaning Solar makes the most of it. Hammer of Sol cleans up big waves, and Solar artifact perks plus Radiant keep your damage up. It's the most forgiving version for add-heavy content.\nStats: Melee 150-200 > Grenade > Health\nWeapons:\n- Kinetic · Special: Mint Retrograde (Quick Launch, Extended Mag, Field Prep / Hatchling, Master of Arms / Frenzy, Handling)\n- Energy · Primary: Zealous Ideal (Fluted Barrel, Overclocked Heatsink, Heal Clip / Attrition Orbs, Incandescent / Onslaught, Cooling Efficiency)\n- Heavy: Roar of the Bear (Quick Launch, Impact Casing, Explosive Light / Reconstruction, Reaper's Tithe / Bipod, Velocity)\nSame loop as the Arc build: slam, Knockout heals, Inmost Light refunds. Pick it for add-dense content, and the Arc version for single-target bosses.\n#spinz #titan #pve"
+ },
+ {
+  "id": "spinz-titan-pve-cuirass",
+  "name": "Titan PVE · Arc Striker Falling Star",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2932390016,
+    "socketOverrides": {
+     "2": 119041298,
+     "0": 489583097,
+     "1": 1698387812,
+     "3": 2708585279,
+     "4": 1713935764,
+     "5": 1656549675,
+     "6": 1656549674,
+     "7": 1727069363,
+     "8": 1727069362,
+     "9": 1727069361,
+     "10": 1727069366
+    }
+   },
+   {
+    "id": "0",
+    "hash": 2044500762
+   },
+   {
+    "id": "0",
+    "hash": 71057630
+   },
+   {
+    "id": "0",
+    "hash": 2558925366
+   },
+   {
+    "id": "0",
+    "hash": 2321120637
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 2321120637,
+   "mods": [
+    1130820873,
+    2414626352,
+    3832366019,
+    2447449706,
+    2657604783,
+    1677180919,
+    3719981603,
+    3712696020,
+    1834163303,
+    1039115606,
+    40751621,
+    1755737153,
+    11126525
+   ],
+   "statConstraints": [
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The Thundercrash nuke build. Cuirass greatly boosts Thundercrash impact damage and gives you an overshield that lasts longer the farther you fly before you hit. Storm's Keep and Arc weapons build Bolt Charge between supers, the Luminopotent set and Tablet of Ruin feed you super energy, and Queenbreaker covers boss damage from behind your Barricade.\nStats: Super 150+ > Class 100 > Weapons. Super past 100 adds super damage. Class drives Barricade uptime and Bolt Charge.\nWeapons:\n- Heavy · Exotic: The Queenbreaker\n- Energy · Primary: Voltaic Shade (Fluted Barrel, Overclocked Heatsink, Jolting Feedback / Trickle Charge, Meganeura / Voltshot, Cooling Efficiency)\n- Kinetic · Special: Scatter Signal (Slice, Controlled Burst, Charge Time)\nBuild Bolt Charge between supers with Rally Barricade and Arc weapon kills. Storm's Keep fires it off, and Thunderclap with Knockout handles anything that rushes you. When the DPS phase opens, jump high, Thundercrash from as far as you can (more distance means more overshield), then drop Rally Barricade and fire Queenbreaker from behind it. Super Font, Dynamo and the artifact's orb perks get Thundercrash back for the next phase. Your Stoicism Titan is better at add-clear. Swap to this one for bosses.\n#spinz #titan #pve"
+ },
+ {
+  "id": "spinz-titan-pve-doomfang",
+  "name": "Titan PVE · Void Doom Fang Sentinel",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2842471112,
+    "socketOverrides": {
+     "2": 4260353952,
+     "0": 2722641741,
+     "1": 1380268164,
+     "3": 4220332374,
+     "4": 1016030582,
+     "5": 1602994570,
+     "6": 1602994568,
+     "7": 3854948621,
+     "8": 2272984669,
+     "9": 2661180601,
+     "10": 2272984671
+    }
+   },
+   {
+    "id": "0",
+    "hash": 253843484
+   },
+   {
+    "id": "0",
+    "hash": 42435996
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 1035680665
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 1035680665,
+   "mods": [
+    3938489430,
+    3832366019,
+    1130820873,
+    633101315,
+    2447449706,
+    377010989,
+    3719981603,
+    1763668984,
+    2577472338,
+    1848187513,
+    3994043492,
+    3467460423,
+    1755737153,
+    4160037471,
+    4039026690
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 1735777505
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Team support with a long-lasting super. Shield Throw kills extend Sentinel Shield, Controlled Demolition heals your team, and the Eutechnology set spawns Void Breaches.\nStats: Melee > Super (100+ on each boosts that ability's damage)\nWeapons:\n- Primary: Turncoat\n- Special: Mint Retrograde (Quick Launch, Extended Mag, Field Prep / Hatchling, Master of Arms / Frenzy, Handling)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Envious Arsenal / Reconstruction, Aggregate Charge / Bait and Switch, Velocity); or Bad Omens\nClear adds with Turncoat and Shield Throw to build Void Breaches and super energy. Pop Sentinel Shield and chain Shield Throw kills to keep it running much longer than normal. Barricade your team during DPS phases.\n#spinz #titan #pve"
+ },
+ {
+  "id": "spinz-titan-pve-melas",
+  "name": "Titan PVE · Solar Hammer Melas Panoplia",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2550323932,
+    "socketOverrides": {
+     "2": 2747500761,
+     "0": 2495523341,
+     "1": 2225231094,
+     "3": 852252789,
+     "4": 1013086087,
+     "5": 2984351204,
+     "6": 2984351205,
+     "7": 362132300,
+     "8": 4180586737,
+     "9": 362132294,
+     "10": 362132288
+    }
+   },
+   {
+    "id": "0",
+    "hash": 3824106094
+   },
+   {
+    "id": "0",
+    "hash": 1572604081
+   },
+   {
+    "id": "0",
+    "hash": 1713388226
+   },
+   {
+    "id": "0",
+    "hash": 2867399974
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 2867399974,
+   "mods": [
+    3938489430,
+    3938489430,
+    3832366019,
+    2447449706,
+    377010989,
+    3685945823,
+    3719981603,
+    1763668984,
+    2526773280,
+    2793473444,
+    2194294579,
+    2319885414,
+    1755737153,
+    1755737153,
+    4081595582
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 1735777505
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "A sustain and add-clear build. Catch your Throwing Hammer to refill your melee, Sol Invictus Sunspots heal you and your team, and Forgemaster adds slag damage on clean catches.\nStats: Melee 100+ first (a hammer catch fully refunds your melee), then Weapons or Super\nWeapons:\n- Primary: Devil's Ruin\n- Special: Gizmo Weft (Envious Arsenal, Chain Reaction, Reload Speed); or The Mountaintop\n- Heavy: Ascendancy (Quick Launch, Reconstruction / Impulse Amplifier, Explosive Light, Reload Speed); or Roar of the Bear, Hezen Vengeance\nThrow the hammer, catch it, and repeat. Every catch refills your melee at 100 Melee. Stand in Sunspots during big fights. Devil's Ruin kills drop Firesprites that keep Forgemaster active for burst on tough enemies.\n#spinz #titan #pve"
+ },
+ {
+  "id": "spinz-titan-no-cannon-pvp-striker",
+  "name": "Titan No-Cannon PVP · Arc Striker Duelist",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2932390016,
+    "socketOverrides": {
+     "2": 119041298,
+     "0": 489583098,
+     "1": 1698387812,
+     "3": 2708585277,
+     "4": 1713935764,
+     "5": 1656549674,
+     "6": 1656549672,
+     "7": 1727069364,
+     "8": 1727069375,
+     "9": 1727069366,
+     "10": 3277705907
+    }
+   },
+   {
+    "id": "0",
+    "hash": 4277548087
+   },
+   {
+    "id": "0",
+    "hash": 1518956169
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 3918600864
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 3918600864,
+   "mods": [
+    2467203039,
+    1180408010,
+    2586562813,
+    377010989,
+    1262438062,
+    3719981603,
+    1180408010,
+    2059068466,
+    2076329105,
+    4204488676,
+    4160037471,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The easiest Titan to win gunfights with. Thruster lets you peek and dodge back out, One-Eyed Mask gives you an overshield after every kill, and Knockout heals you after melee kills.\nStats: Health > Class > Weapons\nWeapons:\n- Kinetic: The Messenger (Arrowhead Brake, Ricochet Rounds, Rapid Hit, Desperado / Headseeker, Stability / Range)\n- Special: Matador 64 (Smallbore / Smoothbore, Accurized Rounds / Light Mag, Threat Detector, Opening Shot, Range)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nHold an angle with The Messenger. Thruster around a corner, burst first, and finish low-health players with Seismic Strike. Each kill on your marked target gives you an overshield, so push into the next fight while it's up. Don't chase the mark into a bad spot.\n#spinz #titannocannon #pvp"
+ },
+ {
+  "id": "spinz-titan-no-cannon-pvp-sentinel",
+  "name": "Titan No-Cannon PVP · Void Sentinel Anchor",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2842471112,
+    "socketOverrides": {
+     "2": 4260353953,
+     "0": 2722641741,
+     "1": 1380268164,
+     "3": 4220332374,
+     "4": 2265076177,
+     "5": 1602994569,
+     "6": 1602994570,
+     "7": 2272984670,
+     "8": 2272984656,
+     "9": 2272984671
+    }
+   },
+   {
+    "id": "0",
+    "hash": 877384
+   },
+   {
+    "id": "0",
+    "hash": 2499834165
+   },
+   {
+    "id": "0",
+    "hash": 1996201272
+   },
+   {
+    "id": "0",
+    "hash": 1362342075
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 1362342075,
+   "mods": [
+    1589556860,
+    2467203039,
+    3980769162,
+    3599522901,
+    1262438062,
+    3719981603,
+    1180408010,
+    2076329105,
+    467550918,
+    4204488676,
+    4188291233,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Built for Trials as a 3-stack. You hold lanes with Barricade and Bastion overshields, Suppressor grenades shut down enemy abilities, and Ward of Dawn wins revive fights.\nStats: Health > Class > Grenade\nWeapons:\n- Energy: The Martlet (Hammer-Forged Rifling, Accurized Rounds, Keep Away / Headseeker, Kill Clip / Zen Moment, Range)\n- Kinetic: Eye of Sol (Fluted Barrel, Ricochet Rounds, Moving Target, Opening Shot / Snapshot Sights, Handling)\n- Heavy: Bad Omens (Quick Launch, Impact Casing, Tracking Module, Cluster Bomb, Blast Radius)\nOpen each round with an Eye of Sol pick from behind cover, then hold the lane with The Martlet. Put your Barricade on a lane and hold it with your team. Bastion keeps overshields on you, so you win evenly matched trades. Throw Suppressor at Hunters and Warlocks before they can use their abilities. Save Ward of Dawn for the final round or a clutch revive.\n#spinz #titannocannon #pvp"
+ },
+ {
+  "id": "spinz-titan-no-cannon-pvp-sunbreaker",
+  "name": "Titan No-Cannon PVP · Solar Sunbreaker Brawler",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2550323932,
+    "socketOverrides": {
+     "2": 2747500761,
+     "0": 2495523341,
+     "1": 2225231094,
+     "3": 852252789,
+     "4": 1841016428,
+     "5": 2984351205,
+     "6": 2984351204,
+     "7": 362132300,
+     "8": 362132288,
+     "9": 362132292
+    }
+   },
+   {
+    "id": "0",
+    "hash": 2884908760
+   },
+   {
+    "id": "0",
+    "hash": 2269779982
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 3316517958
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 3316517958,
+   "mods": [
+    2719698929,
+    1180408010,
+    1079896271,
+    377010989,
+    1553790504,
+    3719981603,
+    1180408010,
+    2076329105,
+    3067648983,
+    4204488676,
+    4160037471,
+    4287799666
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The most forgiving PvP Titan. Fight on Sunspots, throw a Healing Grenade mid-fight, and Loreley keeps you alive when your health gets low.\nStats: Health > Class > Melee\nWeapons:\n- Energy: The Summoner (Hammer-Forged Rifling, Ricochet Rounds, Zen Moment / Dynamic Sway Reduction, Kill Clip / Onslaught, Range)\n- Kinetic: Astral Horizon (Smoothbore, Accurized Rounds, Slideshot / Threat Detector, Opening Shot / Closing Time, Range)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nPick fights where you have a Sunspot or a Barricade to fall back to. Open with The Summoner, finish with a Throwing Hammer, then pick it back up to reset your melee. If a fight goes long, throw a Healing Grenade at your feet.\n#spinz #titannocannon #pvp"
+ },
+ {
+  "id": "spinz-titan-no-cannon-pvp-autos",
+  "name": "Titan No-Cannon PVP · Stasis Behemoth Auto Anchor",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 613647804,
+    "socketOverrides": {
+     "2": 2021620139,
+     "0": 3260056808,
+     "1": 469281042,
+     "3": 2028772231,
+     "4": 1399217,
+     "5": 1563930741,
+     "6": 2031919264,
+     "7": 537774540,
+     "8": 537774543,
+     "9": 537774541,
+     "10": 3469412975
+    }
+   },
+   {
+    "id": "0",
+    "hash": 4129629253
+   },
+   {
+    "id": "0",
+    "hash": 3747667917
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 1322544481
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 1322544481,
+   "mods": [
+    2467203039,
+    1589556860,
+    2586562813,
+    3599522901,
+    1262438062,
+    3719981603,
+    1180408010,
+    2076329105,
+    467550918,
+    4204488676,
+    4188291233,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Built around automatic weapons. Run an auto rifle and an SMG together, and use Stasis walls and slows to keep fights at the ranges where they win. Glacier walls block sightlines so enemies have to come into your range, and frozen or slowed players can't strafe out of your sustained fire.\nStats: Health > Class > Weapons\nWeapons:\n- Kinetic: Khvostov 7G-0X\n- Energy: Shayura's Wrath (Hammer-Forged Rifling, Ricochet Rounds, Dynamic Sway Reduction / Zen Moment, Kill Clip / Tap the Trigger, Range)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nThe tradeoff: two primaries means no special ammo. You give up shotgun and sniper one-shots for weapons that win every mid- and close-range trade. Throw a Glacier Grenade to cut a lane, hold behind your Hoarfrost wall, and beam people with Khvostov as they come around it. Swap to Shayura's Wrath when someone rushes you. Howl of the Storm freezes rushers, and Whisper of Chains reduces your damage taken while you stand next to frozen targets. On controller, autos and SMGs get the most out of aim assist.\n#spinz #titannocannon #pvp"
+ },
+ {
+  "id": "spinz-titan-no-cannon-pvp-berserker",
+  "name": "Titan No-Cannon PVP · Strand Berserker Suspender",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 242419885,
+    "socketOverrides": {
+     "2": 3574662354,
+     "0": 2087010644,
+     "1": 3350493951,
+     "3": 4094417246,
+     "4": 2470512752,
+     "5": 988980152,
+     "6": 988980153,
+     "7": 4208512222,
+     "8": 3192552691,
+     "9": 3192552690,
+     "10": 4208512219
+    }
+   },
+   {
+    "id": "0",
+    "hash": 877384
+   },
+   {
+    "id": "0",
+    "hash": 2269779982
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 3717431477
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 3717431477,
+   "mods": [
+    1589556860,
+    1180408010,
+    3980769162,
+    3599522901,
+    3437323171,
+    3719981603,
+    1180408010,
+    2076329105,
+    467550918,
+    4204488676,
+    4160037471,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Movement and lockdown. Four Frenzied Blade charges let you dash in and out of fights, Drengr's Lash suspends anyone your Barricade wave hits, and Into the Fray gives you Woven Mail (damage resistance) every time you tangle or suspend someone.\nStats: Health > Class > Melee\nWeapons:\n- Energy: The Martlet (Hammer-Forged Rifling, Accurized Rounds, Keep Away / Headseeker, Kill Clip / Zen Moment, Range)\n- Kinetic: Astral Horizon (Smoothbore, Accurized Rounds, Slideshot / Threat Detector, Opening Shot / Closing Time, Range)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nHold mid range with The Martlet. When a fight turns, Frenzied Blade dash to cover or onto a weak target and finish with Astral Horizon. Grapple to high ground to take angles nobody expects. This is the most fun Titan on the sheet but not the strongest. Guides say Striker and Sentinel win more Trials games, so play this one in 6v6 first.\n#spinz #titannocannon #pvp"
+ },
+ {
+  "id": "spinz-titan-no-cannon-pve-stoicism",
+  "name": "Titan No-Cannon PVE · Prismatic Stoicism",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 1616346845,
+    "socketOverrides": {
+     "2": 2529942644,
+     "0": 2868073563,
+     "1": 266130437,
+     "3": 1980796563,
+     "4": 1323461861,
+     "7": 1262901520,
+     "8": 1262901523,
+     "9": 2626922120,
+     "10": 124726498,
+     "11": 2626922124,
+     "12": 2626922126,
+     "13": 124726499
+    }
+   },
+   {
+    "id": "0",
+    "hash": 3049715579
+   },
+   {
+    "id": "0",
+    "hash": 954563454
+   },
+   {
+    "id": "0",
+    "hash": 266021826
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 266021826,
+   "mods": [
+    3832366019,
+    3938489430,
+    554409585,
+    2447449706,
+    377010989,
+    3685945823,
+    3719981603,
+    1763668984,
+    4087056174,
+    1848187513,
+    2194294579,
+    1755737153,
+    4160037471,
+    40751621
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The S-tier Titan build for Master raids and GM Ops. Consecration clears waves, Knockout healing keeps you alive, and Inmost Light keeps your abilities coming back.\nStats: Melee > Grenade > Health\nWeapons:\n- Primary: Legendary Energy primary (your pick)\n- Kinetic · Special: Praxic Blade\n- Heavy: Bitter End (Fluted Barrel, Light Heatsink, Attrition Orbs / Trickle Charge, Jolting Feedback / Killing Tally, Cooling Efficiency)\nSlam Consecration into groups. Synthoceps boosts the damage, Knockout heals you on melee kills, and Inmost Light refunds your other abilities when you use one. In DPS phases, swap to Praxic Blade and swing.\n#spinz #titannocannon #pve"
+ },
+ {
+  "id": "spinz-titan-no-cannon-pve-stoicism-alt",
+  "name": "Titan No-Cannon PVE · Prismatic Stoicism (alt)",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 1616346845,
+    "socketOverrides": {
+     "2": 2529942644,
+     "0": 2868073563,
+     "1": 266130437,
+     "3": 1980796563,
+     "4": 1323461861,
+     "7": 1262901520,
+     "8": 1262901523,
+     "9": 2626922120,
+     "10": 124726498,
+     "11": 2626922124,
+     "12": 2626922126,
+     "13": 124726499
+    }
+   },
+   {
+    "id": "0",
+    "hash": 42435996
+   },
+   {
+    "id": "0",
+    "hash": 71057630
+   },
+   {
+    "id": "0",
+    "hash": 954563454
+   },
+   {
+    "id": "0",
+    "hash": 266021826
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 266021826,
+   "mods": [
+    3832366019,
+    3938489430,
+    554409585,
+    2447449706,
+    377010989,
+    3685945823,
+    3719981603,
+    1763668984,
+    4087056174,
+    1848187513,
+    2194294579,
+    1755737153,
+    4160037471,
+    40751621
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The S-tier Titan build for Master raids and GM Ops. Consecration clears waves, Knockout healing keeps you alive, and Inmost Light keeps your abilities coming back.\nStats: Melee > Grenade > Health\nWeapons:\n- Kinetic · Special: Mint Retrograde (Quick Launch, Extended Mag, Field Prep / Hatchling, Master of Arms / Frenzy, Handling)\n- Energy · Primary: Voltaic Shade (Fluted Barrel, Overclocked Heatsink, Jolting Feedback / Trickle Charge, Meganeura / Voltshot, Cooling Efficiency)\n- Heavy: Bitter End (Fluted Barrel, Light Heatsink, Attrition Orbs / Trickle Charge, Jolting Feedback / Killing Tally, Cooling Efficiency)\nSlam Consecration into groups. Synthoceps boosts the damage, Knockout heals you on melee kills, and Inmost Light refunds your other abilities when you use one. In DPS phases, swap to Praxic Blade and swing.\n#spinz #titannocannon #pve"
+ },
+ {
+  "id": "spinz-titan-no-cannon-pve-doomfang",
+  "name": "Titan No-Cannon PVE · Void Doom Fang Sentinel",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2842471112,
+    "socketOverrides": {
+     "2": 4260353952,
+     "0": 2722641741,
+     "1": 1380268164,
+     "3": 4220332374,
+     "4": 1016030582,
+     "5": 1602994570,
+     "6": 1602994568,
+     "7": 3854948621,
+     "8": 2272984669,
+     "9": 2661180601,
+     "10": 2272984671
+    }
+   },
+   {
+    "id": "0",
+    "hash": 214545213
+   },
+   {
+    "id": "0",
+    "hash": 42435996
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 1035680665
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 1035680665,
+   "mods": [
+    3938489430,
+    3832366019,
+    1130820873,
+    633101315,
+    2447449706,
+    377010989,
+    3719981603,
+    1763668984,
+    2577472338,
+    1848187513,
+    3994043492,
+    3467460423,
+    1755737153,
+    4160037471,
+    4039026690
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 1735777505
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Team support with a long-lasting super. Shield Throw kills extend Sentinel Shield, Controlled Demolition heals your team, and the Eutechnology set spawns Void Breaches.\nStats: Melee > Super (100+ on each boosts that ability's damage)\nWeapons:\n- Energy: Gnawing Hunger (Fluted Barrel, Flared Magwell, Repulsor Brace / Demolitionist, Destabilizing Rounds / Rampage, Reload Speed)\n- Special: Mint Retrograde (Quick Launch, Extended Mag, Field Prep / Hatchling, Master of Arms / Frenzy, Handling)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Envious Arsenal / Reconstruction, Aggregate Charge / Bait and Switch, Velocity); or Bad Omens\nClear adds with Gnawing Hunger and Shield Throw to build Void Breaches and super energy. Pop Sentinel Shield and chain Shield Throw kills to keep it running much longer than normal. Barricade your team during DPS phases.\n#spinz #titannocannon #pve"
+ },
+ {
+  "id": "spinz-titan-no-cannon-pve-melas",
+  "name": "Titan No-Cannon PVE · Solar Hammer Melas Panoplia",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2550323932,
+    "socketOverrides": {
+     "2": 2747500761,
+     "0": 2495523341,
+     "1": 2225231094,
+     "3": 852252789,
+     "4": 1013086087,
+     "5": 2984351204,
+     "6": 2984351205,
+     "7": 362132300,
+     "8": 4180586737,
+     "9": 362132294,
+     "10": 362132288
+    }
+   },
+   {
+    "id": "0",
+    "hash": 3824106094
+   },
+   {
+    "id": "0",
+    "hash": 1572604081
+   },
+   {
+    "id": "0",
+    "hash": 1713388226
+   },
+   {
+    "id": "0",
+    "hash": 2867399974
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 2867399974,
+   "mods": [
+    3938489430,
+    3938489430,
+    3832366019,
+    2447449706,
+    377010989,
+    3685945823,
+    3719981603,
+    1763668984,
+    2526773280,
+    2793473444,
+    2194294579,
+    2319885414,
+    1755737153,
+    1755737153,
+    4081595582
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 1735777505
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "A sustain and add-clear build. Catch your Throwing Hammer to refill your melee, Sol Invictus Sunspots heal you and your team, and Forgemaster adds slag damage on clean catches.\nStats: Melee 100+ first (a hammer catch fully refunds your melee), then Weapons or Super\nWeapons:\n- Primary: Devil's Ruin\n- Special: Gizmo Weft (Envious Arsenal, Chain Reaction, Reload Speed); or The Mountaintop\n- Heavy: Ascendancy (Quick Launch, Reconstruction / Impulse Amplifier, Explosive Light, Reload Speed); or Roar of the Bear, Hezen Vengeance\nThrow the hammer, catch it, and repeat. Every catch refills your melee at 100 Melee. Stand in Sunspots during big fights. Devil's Ruin kills drop Firesprites that keep Forgemaster active for burst on tough enemies.\n#spinz #titannocannon #pve"
+ },
+ {
+  "id": "spinz-titan-no-cannon-pve-bannerofwar",
+  "name": "Titan No-Cannon PVE · Strand Banner of War",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 242419885,
+    "socketOverrides": {
+     "2": 3574662354,
+     "0": 2087010644,
+     "1": 3350493951,
+     "3": 4094417246,
+     "4": 2470512752,
+     "5": 988980154,
+     "6": 988980155,
+     "7": 4208512222,
+     "8": 3192552691,
+     "9": 3192552689,
+     "10": 4208512219
+    }
+   },
+   {
+    "id": "0",
+    "hash": 3049715579
+   },
+   {
+    "id": "0",
+    "hash": 214545213
+   },
+   {
+    "id": "0",
+    "hash": 337893613
+   },
+   {
+    "id": "0",
+    "hash": 3717431477
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 3717431477,
+   "mods": [
+    1388734897,
+    3938489430,
+    2447449706,
+    633101315,
+    633101315,
+    3719981603,
+    1750845415,
+    2793473444,
+    40751621,
+    1755737153,
+    4188291233
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Melee sustain and team healing. Every melee kill pulses healing to you and your team through Banner of War, Flechette Storm turns your dashes into damage, and Wishful Ignorance's fourth Frenzied Blade charge keeps the loop going.\nStats: Melee first (up to 200), then Grenade\nWeapons:\n- Kinetic · Special: Praxic Blade\n- Energy: Gnawing Hunger (Fluted Barrel, Flared Magwell, Repulsor Brace / Demolitionist, Destabilizing Rounds / Rampage, Reload Speed)\n- Heavy: Qua Vinctus IV (Arrowhead Brake, Tactical Mag, Hatchling / Demolitionist, Killing Tally / Meganeura, Stability)\nMelee kills start Banner of War, which heals you and nearby allies and boosts melee and sword damage. Frenzied Blade into groups, since Flechette Storm adds damage on every dash. During DPS phases, swap to Praxic Blade with Banner up. Banner buffs sword damage, so this is one of the best Praxic Blade builds in the game.\n#spinz #titannocannon #pve"
+ },
+ {
+  "id": "spinz-titan-no-cannon-pve-bannerofwar-alt",
+  "name": "Titan No-Cannon PVE · Strand Banner of War (alt)",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 242419885,
+    "socketOverrides": {
+     "2": 3574662354,
+     "0": 2087010644,
+     "1": 3350493951,
+     "3": 4094417246,
+     "4": 2470512752,
+     "5": 988980154,
+     "6": 988980155,
+     "7": 4208512222,
+     "8": 3192552691,
+     "9": 3192552689,
+     "10": 4208512219
+    }
+   },
+   {
+    "id": "0",
+    "hash": 42435996
+   },
+   {
+    "id": "0",
+    "hash": 214545213
+   },
+   {
+    "id": "0",
+    "hash": 2344383760
+   },
+   {
+    "id": "0",
+    "hash": 3717431477
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 3717431477,
+   "mods": [
+    1388734897,
+    3938489430,
+    2447449706,
+    633101315,
+    633101315,
+    3719981603,
+    1750845415,
+    2793473444,
+    40751621,
+    1755737153,
+    4188291233
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Melee sustain and team healing. Every melee kill pulses healing to you and your team through Banner of War, Flechette Storm turns your dashes into damage, and Wishful Ignorance's fourth Frenzied Blade charge keeps the loop going.\nStats: Melee first (up to 200), then Grenade\nWeapons:\n- Kinetic · Special: Mint Retrograde (Quick Launch, Extended Mag, Field Prep / Hatchling, Master of Arms / Frenzy, Handling)\n- Energy · Primary: Gnawing Hunger (Fluted Barrel, Flared Magwell, Repulsor Brace / Demolitionist, Destabilizing Rounds / Rampage, Reload Speed)\n- Heavy: Eighty-Six (Jagged Edge, Swordmaster's Guard, Relentless Strikes / Tireless Blade, Elemental Honing / Redirection, Impact)\nMelee kills start Banner of War, which heals you and nearby allies and boosts melee and sword damage. Frenzied Blade into groups, since Flechette Storm adds damage on every dash. During DPS phases, swap to Praxic Blade with Banner up. Banner buffs sword damage, so this is one of the best Praxic Blade builds in the game.\n#spinz #titannocannon #pve"
+ },
+ {
+  "id": "spinz-warlock-pvp-dawnblade",
+  "name": "Warlock PVP · Solar Dawnblade Ophidian",
+  "classType": 2,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 3941205951,
+    "socketOverrides": {
+     "2": 2274196886,
+     "0": 2979486803,
+     "1": 3686638442,
+     "3": 1470370538,
+     "4": 1841016428,
+     "5": 83039194,
+     "6": 83039195,
+     "7": 362132300,
+     "8": 362132294,
+     "9": 362132292,
+     "10": 362132288
+    }
+   },
+   {
+    "id": "0",
+    "hash": 347366834
+   },
+   {
+    "id": "0",
+    "hash": 1518956169
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 68357813
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 68357813,
+   "mods": [
+    2467203039,
+    1180408010,
+    2586562813,
+    377010989,
+    1262438062,
+    3719981603,
+    1180408010,
+    2059068466,
+    2076329105,
+    4204488676,
+    4160037471,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The all-rounder. Ophidian makes every gun ready, reload and handle faster and gives your melee more range. Icarus Dash and Heat Rises let you fight from the air.\nStats: Health > Class > Weapons\nWeapons:\n- Primary: Ace of Spades\n- Special: Matador 64 (Smallbore / Smoothbore, Accurized Rounds / Light Mag, Threat Detector, Opening Shot, Range)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nPeek with Ace and swap to Matador when someone pushes you. Ophidian makes the swap almost instant. Throw a Healing Grenade at your feet mid-fight, or eat your grenade with Heat Rises to stay in the air and dodge shotgun rushes. Rift on cover after a trade.\n#spinz #warlock #pvp"
+ },
+ {
+  "id": "spinz-warlock-pvp-stormcaller",
+  "name": "Warlock PVP · Arc Stormcaller Skater",
+  "classType": 2,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 3168997075,
+    "socketOverrides": {
+     "2": 1081893460,
+     "0": 25156515,
+     "1": 4154539168,
+     "3": 1232050831,
+     "4": 1713935764,
+     "5": 1293395730,
+     "6": 1293395731,
+     "7": 1727069366,
+     "8": 1727069375,
+     "9": 1727069374,
+     "10": 1727069364
+    }
+   },
+   {
+    "id": "0",
+    "hash": 1041028434
+   },
+   {
+    "id": "0",
+    "hash": 218787950
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 2954558333
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 2954558333,
+   "mods": [
+    2467203039,
+    1180408010,
+    2586562813,
+    3599522901,
+    1262438062,
+    3719981603,
+    1180408010,
+    3067648983,
+    2076329105,
+    4204488676,
+    4160037471,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The mobility build. Lightning Surge slides you through people, Arc Soul adds a turret to every fight, and Transversive Steps auto-reloads your guns and speeds up your sprint.\nStats: Health > Class > Melee\nWeapons:\n- Primary: Rose (Corkscrew Rifling / Smallbore, Accurized Rounds, Slideshot, Opening Shot, Range)\n- Special: Felwinter's Lie (Rifled Barrel, Accurized Rounds, Slideshot / Threat Detector, Iron Reach / Opening Shot, Range)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nRift for an Arc Soul before a fight, then take an angle with Rose. Close the gap with Lightning Surge (melee while sliding) and finish with Felwinter's. Burst Glide gets you on and off angles fast. Blink is Voidwalker-only now, so it's not an option here.\n#spinz #warlock #pvp"
+ },
+ {
+  "id": "spinz-warlock-pvp-shadebinder",
+  "name": "Warlock PVP · Stasis Shadebinder Lockdown",
+  "classType": 2,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 3291545503,
+    "socketOverrides": {
+     "2": 3683904166,
+     "0": 3492047641,
+     "1": 890263312,
+     "3": 2543177538,
+     "4": 1399219,
+     "5": 668903196,
+     "6": 668903197,
+     "7": 3469412970,
+     "8": 537774540,
+     "9": 2483898430
+    }
+   },
+   {
+    "id": "0",
+    "hash": 810474119
+   },
+   {
+    "id": "0",
+    "hash": 1518956169
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 3259193988
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 3259193988,
+   "mods": [
+    721001747,
+    1180408010,
+    2793548555,
+    377010989,
+    2959504464,
+    3719981603,
+    1180408010,
+    2059068466,
+    193878019,
+    1435557120,
+    4188291233,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The control build. Two Coldsnap grenades seek players out and slow them, so anyone you engage is already crippled. It's especially strong in Trials, where slowing one player breaks their team's push.\nStats: Health > Grenade > Class\nWeapons:\n- Primary: Spare Rations (Corkscrew Rifling, Accurized Rounds, Slideshot, Eye of the Storm, Range)\n- Special: Matador 64 (Smallbore / Smoothbore, Accurized Rounds / Light Mag, Threat Detector, Opening Shot, Range)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nThrow Coldsnap at whoever you're about to fight. A slowed target can't strafe or jump, so your hand cannon headshots land. Rift behind cover to fire a Frostpulse that slows anyone pushing you. Whisper of Chains reduces your damage taken while you're near frozen or slowed targets.\n#spinz #warlock #pvp"
+ },
+ {
+  "id": "spinz-warlock-pvp-autos",
+  "name": "Warlock PVP · Void Voidwalker Auto Anchor",
+  "classType": 2,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2849050827,
+    "socketOverrides": {
+     "2": 1656118682,
+     "0": 2209081649,
+     "1": 1237488984,
+     "3": 2299867342,
+     "4": 1016030582,
+     "5": 2321824284,
+     "6": 2321824285,
+     "7": 2272984668,
+     "8": 2272984671,
+     "9": 2661180600,
+     "10": 2661180603
+    }
+   },
+   {
+    "id": "0",
+    "hash": 4129629253
+   },
+   {
+    "id": "0",
+    "hash": 4222913208
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 2389062558
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 2389062558,
+   "mods": [
+    2467203039,
+    1589556860,
+    2586562813,
+    377010989,
+    1262438062,
+    3719981603,
+    1180408010,
+    2076329105,
+    467550918,
+    1435557120,
+    4188291233,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Built around automatic weapons. Run an auto rifle and an SMG with no special ammo, and use Void grenades to weaken players so you win every sustained-fire fight. Feed the Void heals you on kills.\nStats: Health > Grenade > Weapons\nWeapons:\n- Kinetic: Khvostov 7G-0X\n- Energy: The Hero's Burden (Smallbore, Accurized Rounds, Zen Moment / Moving Target, Kill Clip / Iron Reach, Range)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nThe tradeoff: two primaries means no special ammo. You give up shotgun and sniper one-shots for weapons that win every mid- and close-range fight. Hit people with Vortex or Pocket Singularity first, because Echo of Undermining weakens them so they take more damage. Then beam them with Khvostov, and switch to Hero's Burden when they rush you. Feed the Void heals you between fights. On controller, autos and SMGs get the most out of aim assist.\n#spinz #warlock #pvp"
+ },
+ {
+  "id": "spinz-warlock-pve-getaway",
+  "name": "Warlock PVE · Prismatic Getaway Artist",
+  "classType": 2,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 3893112950,
+    "socketOverrides": {
+     "2": 1869939001,
+     "0": 1444664838,
+     "1": 5333293,
+     "3": 3644045871,
+     "4": 4241856103,
+     "7": 790664815,
+     "8": 790664814,
+     "9": 2626922124,
+     "10": 124726504,
+     "11": 2626922120,
+     "12": 124726498
+    }
+   },
+   {
+    "id": "0",
+    "hash": 3049715579
+   },
+   {
+    "id": "0",
+    "hash": 954563454
+   },
+   {
+    "id": "0",
+    "hash": 3070357340
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 3070357340,
+   "mods": [
+    856936828,
+    3832366019,
+    554409585,
+    2485657760,
+    1781551382,
+    377010989,
+    2194294579,
+    2793473444,
+    1834163303,
+    4039026690,
+    40751621
+   ],
+   "statConstraints": [
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The S-tier roaming Warlock. Getaway Artist turns your grenade into a self-sustaining Arc turret, Feed the Void heals you, and Hellion keeps damage on everything while you play.\nStats: Grenade > Weapons > Super\nWeapons:\n- Primary: Legendary Arc primary (your pick)\n- Kinetic · Special: Praxic Blade\n- Heavy: Bitter End (Fluted Barrel, Light Heatsink, Attrition Orbs / Trickle Charge, Jolting Feedback / Killing Tally, Cooling Efficiency)\nThrow your grenade to get an Arc Buddy, then clear adds while it follows you. Hellion adds damage, and Feed the Void heals you on kills. Firepower and Grenade Font keep grenades coming back. Healing Rift and Facet of Protection are your fallback when things go bad.\n#spinz #warlock #pve"
+ },
+ {
+  "id": "spinz-warlock-pve-getaway-alt",
+  "name": "Warlock PVE · Prismatic Getaway Artist (alt)",
+  "classType": 2,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 3893112950,
+    "socketOverrides": {
+     "2": 1869939001,
+     "0": 1444664838,
+     "1": 5333293,
+     "3": 3644045871,
+     "4": 4241856103,
+     "7": 790664815,
+     "8": 790664814,
+     "9": 2626922124,
+     "10": 124726504,
+     "11": 2626922120,
+     "12": 124726498
+    }
+   },
+   {
+    "id": "0",
+    "hash": 42435996
+   },
+   {
+    "id": "0",
+    "hash": 954563454
+   },
+   {
+    "id": "0",
+    "hash": 3070357340
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 3070357340,
+   "mods": [
+    856936828,
+    3832366019,
+    554409585,
+    2485657760,
+    1781551382,
+    377010989,
+    2194294579,
+    2793473444,
+    1834163303,
+    4039026690,
+    40751621
+   ],
+   "statConstraints": [
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The S-tier roaming Warlock. Getaway Artist turns your grenade into a self-sustaining Arc turret, Feed the Void heals you, and Hellion keeps damage on everything while you play.\nStats: Grenade > Weapons > Super\nWeapons:\n- Kinetic · Special: Mint Retrograde (Quick Launch, Extended Mag, Field Prep / Hatchling, Master of Arms / Frenzy, Handling)\n- Energy · Primary: Legendary Arc primary (your pick)\n- Heavy: Bitter End (Fluted Barrel, Light Heatsink, Attrition Orbs / Trickle Charge, Jolting Feedback / Killing Tally, Cooling Efficiency)\nThrow your grenade to get an Arc Buddy, then clear adds while it follows you. Hellion adds damage, and Feed the Void heals you on kills. Firepower and Grenade Font keep grenades coming back. Healing Rift and Facet of Protection are your fallback when things go bad.\n#spinz #warlock #pve"
+ },
+ {
+  "id": "spinz-warlock-pve-well",
+  "name": "Warlock PVE · Solar Well Swap Eunoia",
+  "classType": 2,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 3941205951,
+    "socketOverrides": {
+     "2": 2274196887,
+     "0": 2979486801,
+     "1": 3686638442,
+     "3": 1470370538,
+     "4": 1841016428,
+     "5": 83039192,
+     "6": 83039193,
+     "7": 1051276349,
+     "8": 362132291,
+     "9": 1051276348,
+     "10": 362132293
+    }
+   },
+   {
+    "id": "0",
+    "hash": 42435996
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 3481695565
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 3481695565,
+   "mods": [
+    3832366019,
+    554409585,
+    1781551382,
+    3685945823,
+    2194294579,
+    2793473444,
+    1834163303,
+    4188291233,
+    11126525,
+    40751621
+   ],
+   "statConstraints": [
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The raid DPS-phase support build. Drop Well of Radiance so your team can stand and fire without dying. Eunoia and Touch of Flame keep your grenades busy between phases.\nStats: Grenade > Weapons > Super (100) > Class\nWeapons:\n- Primary: Legendary Solar primary (your pick)\n- Special: Mint Retrograde (Quick Launch, Extended Mag, Field Prep, Master of Arms, Handling)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Envious Arsenal, Aggregate Charge / Bait and Switch, Velocity)\nHold Well for DPS phases. Drop it on the damage plate the moment the boss is vulnerable so your team can stand still and shoot. Between phases, Touch of Flame and Eunoia keep grenades busy while Hellion adds damage. Phoenix Dive is your emergency heal.\n#spinz #warlock #pve"
+ },
+ {
+  "id": "spinz-warlock-pve-chaos",
+  "name": "Warlock PVE · Arc Infinite Chaos Reach",
+  "classType": 2,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 3168997075,
+    "socketOverrides": {
+     "2": 1081893461,
+     "0": 25156515,
+     "1": 4154539168,
+     "3": 1232050831,
+     "4": 2481624867,
+     "5": 1293395728,
+     "6": 1293395729,
+     "7": 1727069366,
+     "8": 3478354816,
+     "9": 1727069363,
+     "10": 3277705905,
+     "11": 1727069362
+    }
+   },
+   {
+    "id": "0",
+    "hash": 374573733
+   },
+   {
+    "id": "0",
+    "hash": 2808445048
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 2808445048,
+   "mods": [
+    3938489430,
+    3938489430,
+    3832366019,
+    554409585,
+    2447449706,
+    2447449706,
+    2194294579,
+    2793473444,
+    2793473444,
+    4039026690,
+    40751621
+   ],
+   "statConstraints": [
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 1735777505
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Super uptime. Geomag Stabilizers extends Chaos Reach, Ionic Sentry and Electrostatic Mind feed super energy back, and the Luminopotent set helps you cast it again and again.\nStats: Super > Melee > Weapons\nWeapons:\n- Special: Delicate Tomb\n- Primary: Legendary Kinetic primary (your pick)\n- Heavy: Any legendary heavy (your pick)\nFire Chaos Reach, cancel it early to save energy, and cast it again. Delicate Tomb and Ionic Sentry kills keep feeding your super between casts. In boss phases, hold it the whole time on the crit spot.\n#spinz #warlock #pve"
+ },
+ {
+  "id": "spinz-hunter-pvp-gunslinger",
+  "name": "Hunter PVP · Solar Gunslinger Wormhusk",
+  "classType": 1,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2240888816,
+    "socketOverrides": {
+     "2": 375052469,
+     "0": 3636300852,
+     "1": 1128768652,
+     "3": 4016776973,
+     "4": 1841016428,
+     "5": 3066103999,
+     "6": 3066103998,
+     "7": 362132300,
+     "8": 362132294,
+     "9": 362132292,
+     "10": 362132288
+    }
+   },
+   {
+    "id": "0",
+    "hash": 827835657
+   },
+   {
+    "id": "0",
+    "hash": 2269779982
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 2600992433
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 2600992433,
+   "mods": [
+    967052942,
+    1180408010,
+    1125523126,
+    377010989,
+    319908131,
+    3719981603,
+    1180408010,
+    2076329105,
+    2059068466,
+    4204488676,
+    4160037471,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The most consistent Hunter in a gunfight. Every dodge heals you through Wormhusk, so you can dodge mid-fight, reset, and win the next exchange. Golden Gun closes out rounds.\nStats: Health > Class > Weapons\nWeapons:\n- Primary: Horror's Least (Arrowhead Brake, Accurized Rounds, Zen Moment, Kill Clip / Rampage, Range)\n- Special: Astral Horizon (Smoothbore, Accurized Rounds, Slideshot / Threat Detector, Opening Shot / Closing Time, Range)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nHold a mid-range angle with Horror's Least. Zen Moment gets steadier the longer you fire. When someone pushes, dodge (which heals you) and swap to Astral Horizon. On Your Mark speeds up your handling right after the dodge, so the shotgun comes out fast. Horror's Least is an Arc Energy-slot gun, so the shotgun has to be a Kinetic one, which Astral Horizon is.\n#spinz #hunter #pvp"
+ },
+ {
+  "id": "spinz-hunter-pvp-arcstrider",
+  "name": "Hunter PVP · Arc Arcstrider Skater",
+  "classType": 1,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2328211300,
+    "socketOverrides": {
+     "2": 3769507633,
+     "0": 426473317,
+     "1": 95544331,
+     "3": 2716335210,
+     "4": 4198689901,
+     "5": 4194622036,
+     "6": 4194622038,
+     "7": 1727069364,
+     "8": 1727069366,
+     "9": 1727069375,
+     "10": 1727069361
+    }
+   },
+   {
+    "id": "0",
+    "hash": 3747667917
+   },
+   {
+    "id": "0",
+    "hash": 2269779982
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 1245809814
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 1245809814,
+   "mods": [
+    1589556860,
+    1180408010,
+    3980769162,
+    3599522901,
+    3437323171,
+    3719981603,
+    1180408010,
+    2076329105,
+    467550918,
+    4204488676,
+    4160037471,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Fast and aggressive. St0mp-EE5 makes you sprint faster, slide farther and jump higher, Disorienting Blow blinds people up close, and an SMG plus a slideshot shotgun covers every close fight.\nStats: Health > Class > Melee\nWeapons:\n- Primary: Shayura's Wrath (Hammer-Forged Rifling, Ricochet Rounds, Dynamic Sway Reduction / Zen Moment, Kill Clip / Tap the Trigger, Range)\n- Special: Astral Horizon (Smoothbore, Accurized Rounds, Slideshot / Threat Detector, Opening Shot / Closing Time, Range)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nPush angles fast, then slide into Astral Horizon range. Slideshot gives the shotgun extra range out of a slide. If the shotgun doesn't kill, finish with Disorienting Blow, which blinds anyone near the target. Flow State reloads your weapons while you dodge.\n#spinz #hunter #pvp"
+ },
+ {
+  "id": "spinz-hunter-pvp-nightstalker",
+  "name": "Hunter PVP · Void Nightstalker Ranger",
+  "classType": 1,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2453351420,
+    "socketOverrides": {
+     "2": 2722573683,
+     "0": 2816982785,
+     "1": 20616658,
+     "3": 1139822081,
+     "4": 1016030582,
+     "5": 187655373,
+     "6": 187655372,
+     "7": 2272984671,
+     "8": 2661180602,
+     "9": 2661180603,
+     "10": 2272984668
+    }
+   },
+   {
+    "id": "0",
+    "hash": 3709368142
+   },
+   {
+    "id": "0",
+    "hash": 2499834165
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 1935198785
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 1935198785,
+   "mods": [
+    1589556860,
+    2467203039,
+    3980769162,
+    3599522901,
+    1262438062,
+    3719981603,
+    1180408010,
+    2076329105,
+    467550918,
+    4204488676,
+    4188291233,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The long-range team build. Hold lanes with a scout and sniper, go invisible to reposition or revive, and Omnioculus extends that invisibility to your teammates.\nStats: Health > Class > Weapons\nWeapons:\n- Primary: Aisha's Embrace (Polygonal Rifling, Steady Rounds, Rapid Hit / Eye of the Storm, Precision Instrument, Stability)\n- Special: Eye of Sol (Fluted Barrel, Ricochet Rounds, Moving Target, Opening Shot / Snapshot Sights, Handling)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nTake an early pick with Eye of Sol, then hold the lane with Aisha's Embrace. When you get pushed, dodge to go invisible with Vanishing Step and reposition. Use Smoke Bomb to cover a revive. Don't take close fights on purpose, since this build has no shotgun.\n#spinz #hunter #pvp"
+ },
+ {
+  "id": "spinz-hunter-pvp-autos",
+  "name": "Hunter PVP · Strand Threadrunner Autos",
+  "classType": 1,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 3785442599,
+    "socketOverrides": {
+     "2": 2463983862,
+     "0": 1282157890,
+     "1": 3721022585,
+     "3": 1680616210,
+     "4": 2470512752,
+     "5": 4249729127,
+     "6": 4249729126,
+     "7": 4208512222,
+     "8": 3192552691,
+     "9": 4208512216,
+     "10": 4208512219
+    }
+   },
+   {
+    "id": "0",
+    "hash": 4129629253
+   },
+   {
+    "id": "0",
+    "hash": 3747667917
+   },
+   {
+    "id": "0",
+    "hash": 1692372662
+   },
+   {
+    "id": "0",
+    "hash": 192896783
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 192896783,
+   "mods": [
+    2467203039,
+    1589556860,
+    2586562813,
+    377010989,
+    1262438062,
+    3719981603,
+    1180408010,
+    2076329105,
+    467550918,
+    1435557120,
+    4188291233,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Built around automatic weapons. Run an auto rifle and an SMG with no special ammo. Grapple onto off-angles and Cyrtarachne gives you Woven Mail (damage resistance) every time you land.\nStats: Health > Grenade > Weapons\nWeapons:\n- Kinetic: Khvostov 7G-0X\n- Energy: Shayura's Wrath (Hammer-Forged Rifling, Ricochet Rounds, Dynamic Sway Reduction / Zen Moment, Kill Clip / Tap the Trigger, Range)\n- Heavy: The Hothead (Quick Launch, Impact Casing, Reconstruction, Bait and Switch, Velocity)\nThe tradeoff: two primaries means no special ammo. You give up one-shot kills for weapons that win every mid- and close-range fight. Grapple to a high or flanking angle, land with Woven Mail up, and beam people with Khvostov. Switch to Shayura's Wrath when someone rushes you. On controller, autos and SMGs get the most out of aim assist.\n#spinz #hunter #pvp"
+ },
+ {
+  "id": "spinz-hunter-pve-tempest",
+  "name": "Hunter PVE · Arc Gift of the Tempest",
+  "classType": 1,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2328211300,
+    "socketOverrides": {
+     "2": 3769507632,
+     "0": 426473317,
+     "1": 95544328,
+     "3": 2716335211,
+     "4": 1713935764,
+     "5": 4194622037,
+     "6": 4194622039,
+     "7": 1727069366,
+     "8": 1727069364,
+     "9": 3277705906,
+     "10": 1727069361,
+     "11": 1727069363
+    }
+   },
+   {
+    "id": "0",
+    "hash": 827835657
+   },
+   {
+    "id": "0",
+    "hash": 3049715579
+   },
+   {
+    "id": "0",
+    "hash": 954563454
+   },
+   {
+    "id": "0",
+    "hash": 1627691271
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 1627691271,
+   "mods": [
+    2595839237,
+    3938489430,
+    3832366019,
+    2447449706,
+    2447449706,
+    633101315,
+    14520248,
+    2793473444,
+    4087056174,
+    11126525,
+    1755737153,
+    4004774872
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The top-ranked Hunter endgame build. Tempest Strike and Ascension chain Arc damage and jolts, Gambler's Dodge refunds your melee, and Gifted Conviction keeps you alive.\nStats: Melee > Class > Health / Super / Weapons\nWeapons:\n- Primary: Horror's Least (Fluted Barrel, Tactical Mag, Supercharged Magazine / Overflow, Jolting Feedback / Rolling Storm, Handling)\n- Kinetic · Special: Praxic Blade\n- Heavy: Bitter End (Fluted Barrel, Light Heatsink, Attrition Orbs / Trickle Charge, Jolting Feedback / Killing Tally, Cooling Efficiency)\nMelee into groups with Tempest Strike, dodge near enemies to get your melee back, and repeat. Ascension and the Arc fragments jolt and blind anything nearby. In boss phases, swap to Praxic Blade.\n#spinz #hunter #pve"
+ },
+ {
+  "id": "spinz-hunter-pve-tempest-alt",
+  "name": "Hunter PVE · Arc Gift of the Tempest (alt)",
+  "classType": 1,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2328211300,
+    "socketOverrides": {
+     "2": 3769507632,
+     "0": 426473317,
+     "1": 95544328,
+     "3": 2716335211,
+     "4": 1713935764,
+     "5": 4194622037,
+     "6": 4194622039,
+     "7": 1727069366,
+     "8": 1727069364,
+     "9": 3277705906,
+     "10": 1727069361,
+     "11": 1727069363
+    }
+   },
+   {
+    "id": "0",
+    "hash": 42435996
+   },
+   {
+    "id": "0",
+    "hash": 827835657
+   },
+   {
+    "id": "0",
+    "hash": 954563454
+   },
+   {
+    "id": "0",
+    "hash": 1627691271
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 1627691271,
+   "mods": [
+    2595839237,
+    3938489430,
+    3832366019,
+    2447449706,
+    2447449706,
+    633101315,
+    14520248,
+    2793473444,
+    4087056174,
+    11126525,
+    1755737153,
+    4004774872
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The top-ranked Hunter endgame build. Tempest Strike and Ascension chain Arc damage and jolts, Gambler's Dodge refunds your melee, and Gifted Conviction keeps you alive.\nStats: Melee > Class > Health / Super / Weapons\nWeapons:\n- Kinetic · Special: Mint Retrograde (Quick Launch, Extended Mag, Field Prep / Hatchling, Master of Arms / Frenzy, Handling)\n- Energy · Primary: Horror's Least (Fluted Barrel, Tactical Mag, Supercharged Magazine / Trickle Charge, Jolting Feedback / Frenzy, Handling)\n- Heavy: Bitter End (Fluted Barrel, Light Heatsink, Attrition Orbs / Trickle Charge, Jolting Feedback / Killing Tally, Cooling Efficiency)\nMelee into groups with Tempest Strike, dodge near enemies to get your melee back, and repeat. Ascension and the Arc fragments jolt and blind anything nearby. In boss phases, swap to Praxic Blade.\n#spinz #hunter #pve"
+ },
+ {
+  "id": "spinz-hunter-pve-gyrfalcon",
+  "name": "Hunter PVE · Void Stealthed Gyrfalcon",
+  "classType": 1,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2453351420,
+    "socketOverrides": {
+     "2": 2722573681,
+     "0": 2816982785,
+     "1": 20616656,
+     "3": 1139822081,
+     "4": 1016030582,
+     "5": 187655374,
+     "6": 187655373,
+     "7": 2661180603,
+     "8": 2272984671,
+     "9": 2272984666,
+     "10": 2661180602
+    }
+   },
+   {
+    "id": "0",
+    "hash": 214545213
+   },
+   {
+    "id": "0",
+    "hash": 3049715579
+   },
+   {
+    "id": "0",
+    "hash": 1940352487
+   },
+   {
+    "id": "0",
+    "hash": 461841403
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 461841403,
+   "mods": [
+    2773358872,
+    554409585,
+    1130820873,
+    1781551382,
+    2657604783,
+    3726719281,
+    3719981603,
+    4046357305,
+    4046357305,
+    3467460423,
+    40751621,
+    4188291233,
+    11126525
+   ],
+   "statConstraints": [
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Invisibility and Volatile Rounds. Go invisible, come out of it with Gyrfalcon's volatile boost, and shred groups with a Repulsor Brace Void weapon.\nStats: Weapons > Grenade > Class / Super\nWeapons:\n- Primary: Gnawing Hunger (Fluted Barrel, Flared Magwell, Repulsor Brace / Demolitionist, Destabilizing Rounds / Rampage, Reload Speed)\n- Kinetic · Special: Praxic Blade\n- Heavy: Tomorrow's Answer (Quick Launch, Impact Casing, Envious Arsenal / Withering Gaze, Bait and Switch / Cluster Bomb, Velocity)\nGet a finisher or dodge to go invisible, then come out firing Gnawing Hunger with Gyrfalcon's volatile boost. Repulsor Brace gives you overshields on kills, and Destabilizing Rounds chains volatile explosions through the group. Vortex grenades hold enemies in place.\n#spinz #hunter #pve"
+ },
+ {
+  "id": "spinz-hunter-pve-gyrfalcon-alt",
+  "name": "Hunter PVE · Void Stealthed Gyrfalcon (alt)",
+  "classType": 1,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2453351420,
+    "socketOverrides": {
+     "2": 2722573681,
+     "0": 2816982785,
+     "1": 20616656,
+     "3": 1139822081,
+     "4": 1016030582,
+     "5": 187655374,
+     "6": 187655373,
+     "7": 2661180603,
+     "8": 2272984671,
+     "9": 2272984666,
+     "10": 2661180602
+    }
+   },
+   {
+    "id": "0",
+    "hash": 42435996
+   },
+   {
+    "id": "0",
+    "hash": 214545213
+   },
+   {
+    "id": "0",
+    "hash": 1940352487
+   },
+   {
+    "id": "0",
+    "hash": 461841403
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 461841403,
+   "mods": [
+    2773358872,
+    554409585,
+    1130820873,
+    1781551382,
+    2657604783,
+    3726719281,
+    3719981603,
+    4046357305,
+    4046357305,
+    3467460423,
+    40751621,
+    4188291233,
+    11126525
+   ],
+   "statConstraints": [
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Invisibility and Volatile Rounds. Go invisible, come out of it with Gyrfalcon's volatile boost, and shred groups with a Repulsor Brace Void weapon.\nStats: Weapons > Grenade > Class / Super\nWeapons:\n- Kinetic · Special: Mint Retrograde (Quick Launch, Extended Mag, Field Prep / Hatchling, Master of Arms / Frenzy, Handling)\n- Energy · Primary: Gnawing Hunger (Fluted Barrel, Flared Magwell, Repulsor Brace / Demolitionist, Destabilizing Rounds / Rampage, Reload Speed)\n- Heavy: Tomorrow's Answer (Quick Launch, Impact Casing, Envious Arsenal / Withering Gaze, Bait and Switch / Cluster Bomb, Velocity)\nGet a finisher or dodge to go invisible, then come out firing Gnawing Hunger with Gyrfalcon's volatile boost. Repulsor Brace gives you overshields on kills, and Destabilizing Rounds chains volatile explosions through the group. Vortex grenades hold enemies in place.\n#spinz #hunter #pve"
+ },
+ {
+  "id": "spinz-hunter-pve-grapple",
+  "name": "Hunter PVE · Prismatic One-Two Grapple",
+  "classType": 1,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 4282591831,
+    "socketOverrides": {
+     "2": 2370269390,
+     "0": 2711519340,
+     "1": 1588878497,
+     "3": 2657901005,
+     "4": 1225978592,
+     "7": 2835214900,
+     "8": 2835214902,
+     "9": 124726498,
+     "10": 2626922120,
+     "11": 2626922122,
+     "12": 2626922124
+    }
+   },
+   {
+    "id": "0",
+    "hash": 1518956169
+   },
+   {
+    "id": "0",
+    "hash": 1441805468
+   },
+   {
+    "id": "0",
+    "hash": 3295711091
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 3295711091,
+   "mods": [
+    3938489430,
+    2414626352,
+    554409585,
+    1781551382,
+    1301391064,
+    4087056174,
+    2793473444,
+    11126525,
+    4188291233,
+    4004774872
+   ],
+   "statConstraints": [
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The melee one-shot build. Grapple in, one-shot with a One-Two Punch shotgun, then follow up with a buffed melee. Liar's Handshake heals you and multiplies the melee damage.\nStats: Grenade > Melee > Super\nWeapons:\n- Energy · Special: Matador 64 (Barrel Shroud, Assault Mag, Threat Detector, One-Two Punch, Handling)\n- Kinetic · Special: The Navigator\n- Heavy: Any legendary heavy (your pick)\nGrapple to the target, shotgun it once to activate One-Two Punch, then melee for a huge hit. Liar's Handshake heals you on the punch. Gambler's Dodge near enemies gets your melee back so you can do it again.\n#spinz #hunter #pve"
+ },
+ {
+  "id": "spinz-trials-warlock-pvp-wl-solar-snap",
+  "name": "Trials Warlock PVP · Solar Ophidian Snap Duelist",
+  "classType": 2,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 3941205951,
+    "socketOverrides": {
+     "2": 2274196884,
+     "0": 2979486803,
+     "1": 3686638442,
+     "3": 1470370538,
+     "4": 1841016428,
+     "5": 83039194,
+     "6": 83039195,
+     "7": 362132288,
+     "8": 362132300,
+     "9": 362132294,
+     "10": 362132292,
+     "11": 362132293
+    }
+   },
+   {
+    "id": "0",
+    "hash": 2263462407
+   },
+   {
+    "id": "0",
+    "hash": 1117787139
+   },
+   {
+    "id": "0",
+    "hash": 1940352487
+   },
+   {
+    "id": "0",
+    "hash": 68357813
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 68357813,
+   "mods": [
+    3000428062,
+    1180408010,
+    4244246940,
+    377010989,
+    3979621113,
+    3719981603,
+    3067648983,
+    3323910164,
+    4087056174,
+    4160037471,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Your main Trials build. Hand cannon at range, fusion up close, and an Incinerator Snap with extra range from Ophidian to finish anyone who's one-shot. Heat Rises plus Icarus Dash makes you hard to shotgun, and the new fifth fragment slot goes into more Restoration.\nStats: Health 100+ > Class 70+ > Melee\nWeapons:\n- Kinetic · Primary: Corundum Hammer (Smallbore, Accurized Rounds, Slideshot / Fragile Focus, Opening Shot / Explosive Payload, Stability)\n- Energy · Special: Exile's Curse (Arrowhead Brake, Projection Fuse, Slideshot / Under Pressure, Closing Time / Kickstart, Range)\n- Heavy: Tomorrow's Answer (Quick Launch, High-Velocity Rounds, Impulse Amplifier / Tracking Module, Chain Reaction / Cluster Bomb, Handling)\nOpen each round by putting Healing Rift behind cover, then hold the long angle with Corundum Hammer. If someone pushes, swap to Exile's Curse. Ophidian makes the swap almost instant, and Closing Time with Projection Fuse wins most pushes. If you hit someone with your hand cannon at range, chase them down with Snap. Eat your grenade with Heat Rises to stay in the air against shotgun rushes, or throw it at your feet to heal mid-fight. Treat Song of Flame as a round-closer, not an opener.\n#spinz #trialswarlock #pvp"
+ },
+ {
+  "id": "spinz-trials-warlock-pvp-wl-solar-rof",
+  "name": "Trials Warlock PVP · Solar Rain of Fire Fusion Skater",
+  "classType": 2,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 3941205951,
+    "socketOverrides": {
+     "2": 2274196884,
+     "0": 2979486803,
+     "1": 3686638443,
+     "3": 1470370538,
+     "4": 1013086087,
+     "5": 83039194,
+     "6": 83039193,
+     "7": 362132288,
+     "8": 362132300,
+     "9": 362132294,
+     "10": 1051276351
+    }
+   },
+   {
+    "id": "0",
+    "hash": 702001725
+   },
+   {
+    "id": "0",
+    "hash": 1117787139
+   },
+   {
+    "id": "0",
+    "hash": 1940352487
+   },
+   {
+    "id": "0",
+    "hash": 1624882687
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 1624882687,
+   "mods": [
+    3000428062,
+    1180408010,
+    1079896271,
+    4182064480,
+    3979621113,
+    3719981603,
+    3067648983,
+    3323910164,
+    4087056174,
+    4188291233,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The aggressive fusion build. Fusion kills instantly reload your weapons and give you Radiant, so you can clear 2v1s back to back without reloading. Pair it with a laser auto and you have a full controller loadout.\nStats: Health 100+ > Class 70+ > Grenade\nWeapons:\n- Kinetic · Primary: Auric Disabler (Arrowhead Brake / Corkscrew Rifling, Ricochet Rounds, Dynamic Sway Reduction / Zen Moment, Target Lock / Tap the Trigger, Range)\n- Energy · Special: Exile's Curse (Arrowhead Brake, Projection Fuse, Slideshot / Under Pressure, Closing Time / Kickstart, Range)\n- Heavy: Tomorrow's Answer (Quick Launch, High-Velocity Rounds, Impulse Amplifier / Tracking Module, Chain Reaction / Cluster Bomb, Handling)\nGet a fusion kill and your weapons reload, so you're already set for the next fight. Hold lanes with Auric Disabler at Target Lock range, then fusion anyone who gets close. Touch of Flame Fusion Grenades hit twice, which is enough to break someone's shield before you fire. Strafe Glide feels better than Burst Glide when you're firing a fusion in the air. Use the Rain of Fire air dodge to step out of a shotgun's range.\n#spinz #trialswarlock #pvp"
+ },
+ {
+  "id": "spinz-trials-warlock-pvp-wl-solar-icarus",
+  "name": "Trials Warlock PVP · Solar Icarus Air Duelist",
+  "classType": 2,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 3941205951,
+    "socketOverrides": {
+     "2": 2274196884,
+     "0": 2979486803,
+     "1": 3686638442,
+     "3": 1470370538,
+     "4": 1841016428,
+     "5": 83039194,
+     "6": 83039195,
+     "7": 362132288,
+     "8": 362132300,
+     "9": 1051276351,
+     "10": 362132293,
+     "11": 362132292
+    }
+   },
+   {
+    "id": "0",
+    "hash": 2263462407
+   },
+   {
+    "id": "0",
+    "hash": 218787950
+   },
+   {
+    "id": "0",
+    "hash": 2881109029
+   },
+   {
+    "id": "0",
+    "hash": 2782999716
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 2782999716,
+   "mods": [
+    3000428062,
+    1180408010,
+    4244246940,
+    377010989,
+    3979621113,
+    3719981603,
+    3067648983,
+    3323910164,
+    4087056174,
+    4160037471,
+    4204488676
+   ],
+   "statConstraints": [
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "A build that fights from the air the whole round. Heat Rises lets you shoot while you glide, Icarus Dash gives you up to two air dodges to break other players' aim, and Wings of Sacred Dawn lets you hover while aiming down sights. Every gun is set up for airborne accuracy.\nStats: Health 100+ > Class 70+ > Melee\nWeapons:\n- Kinetic · Primary: Corundum Hammer (Smallbore, Accurized Rounds, Slideshot / Fragile Focus, Opening Shot / Explosive Payload, Stability)\n- Energy · Special: Felwinter's Lie (Rifled Barrel, Accurized Rounds, Slideshot / Slickdraw, Iron Reach / Opening Shot, Range)\n- Heavy: Roar of the Bear (Quick Launch, High-Velocity Rounds, Impulse Amplifier / Tracking Module, Cluster Bomb, Velocity)\nHold grenade to activate Heat Rises, which also heals any teammates near you. Then jump and glide. Aim down sights to hover with Wings and take your shots from above cover. When someone starts landing shots on you, Icarus Dash sideways to break their aim. You get one dodge normally, plus a second one while Heat Rises is active. Airborne kills extend Heat Rises and give you melee energy, so a hand cannon kill into a Snap on the next player keeps you flying. Rapid airborne kills also give you Cure. Don't hover in an open lane against a sniper. Dash, land behind cover and reset.\n#spinz #trialswarlock #pvp"
+ }
+]

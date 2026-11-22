@@ -6467,19 +6467,19 @@
    "mods": [
     [
      "Helmet",
-     "Hand Cannon Targeting, Health stat mod"
+     "Kinetic Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "Hand Cannon Loader, Impact Induction"
+     "Kinetic Loader, Impact Induction"
     ],
     [
      "Chest",
-     "Unflinching Hand Cannon Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Kinetic Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Shotgun Dexterity, Hand Cannon Dexterity, Class stat mod"
+     "Arc Dexterity, Kinetic Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -6538,19 +6538,19 @@
    "mods": [
     [
      "Helmet",
-     "Hand Cannon Targeting, Health stat mod"
+     "Stasis Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "Hand Cannon Loader, Momentum Transfer"
+     "Stasis Loader, Momentum Transfer"
     ],
     [
      "Chest",
-     "Unflinching Hand Cannon Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Stasis Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Shotgun Dexterity, Hand Cannon Dexterity, Class stat mod"
+     "Solar Dexterity, Stasis Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -6612,19 +6612,19 @@
    "mods": [
     [
      "Helmet",
-     "Hand Cannon Targeting, Health stat mod"
+     "Kinetic Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "Hand Cannon Loader, Impact Induction"
+     "Kinetic Loader, Impact Induction"
     ],
     [
      "Chest",
-     "Unflinching Hand Cannon Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Kinetic Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Shotgun Dexterity, Hand Cannon Dexterity, Class stat mod"
+     "Solar Dexterity, Kinetic Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -6684,19 +6684,19 @@
    "mods": [
     [
      "Helmet",
-     "Auto Rifle Targeting, SMG Targeting"
+     "Kinetic Targeting, Void Targeting"
     ],
     [
      "Arms",
-     "Auto Rifle Loader, Momentum Transfer"
+     "Kinetic Loader, Momentum Transfer"
     ],
     [
      "Chest",
-     "Unflinching Auto Rifle Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Kinetic Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Auto Rifle Dexterity, SMG Dexterity, Class stat mod"
+     "Kinetic Dexterity, Void Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -7449,19 +7449,19 @@
    "mods": [
     [
      "Helmet",
-     "Pulse Rifle Targeting, Health stat mod"
+     "Kinetic Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "Pulse Rifle Loader, Impact Induction"
+     "Kinetic Loader, Impact Induction"
     ],
     [
      "Chest",
-     "Unflinching Pulse Rifle Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Kinetic Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Shotgun Dexterity, Pulse Rifle Dexterity, Class stat mod"
+     "Arc Dexterity, Kinetic Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -7525,19 +7525,19 @@
    "mods": [
     [
      "Helmet",
-     "Pulse Rifle Targeting, Sniper Targeting"
+     "Void Targeting, Kinetic Targeting"
     ],
     [
      "Arms",
-     "Pulse Rifle Loader, Momentum Transfer"
+     "Void Loader, Momentum Transfer"
     ],
     [
      "Chest",
-     "Unflinching Sniper Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Kinetic Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Sniper Dexterity, Pulse Rifle Dexterity, Class stat mod"
+     "Kinetic Dexterity, Void Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -7603,19 +7603,19 @@
    "mods": [
     [
      "Helmet",
-     "Auto Rifle Targeting, Health stat mod"
+     "Solar Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "Auto Rifle Loader, Impact Induction"
+     "Solar Loader, Impact Induction"
     ],
     [
      "Chest",
-     "Unflinching Auto Rifle Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Solar Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Shotgun Dexterity, Auto Rifle Dexterity, Class stat mod"
+     "Kinetic Dexterity, Solar Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -7681,19 +7681,19 @@
    "mods": [
     [
      "Helmet",
-     "Auto Rifle Targeting, SMG Targeting"
+     "Kinetic Targeting, Void Targeting"
     ],
     [
      "Arms",
-     "Auto Rifle Loader, Momentum Transfer"
+     "Kinetic Loader, Momentum Transfer"
     ],
     [
      "Chest",
-     "Unflinching Auto Rifle Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Kinetic Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Auto Rifle Dexterity, SMG Dexterity, Class stat mod"
+     "Kinetic Dexterity, Void Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -7752,19 +7752,19 @@
    "mods": [
     [
      "Helmet",
-     "Pulse Rifle Targeting, Health stat mod"
+     "Void Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "Pulse Rifle Loader, Momentum Transfer"
+     "Void Loader, Momentum Transfer"
     ],
     [
      "Chest",
-     "Unflinching Pulse Rifle Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Void Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Shotgun Dexterity, Pulse Rifle Dexterity, Class stat mod"
+     "Kinetic Dexterity, Void Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -7836,7 +7836,7 @@
     ],
     [
      "Chest",
-     "Concussive Dampener, Melee Damage Resistance, Heavy Reserves"
+     "Concussive Dampener, Melee Damage Resistance"
     ],
     [
      "Legs",
@@ -7905,7 +7905,7 @@
     ],
     [
      "Chest",
-     "Concussive Dampener, Melee Damage Resistance, Heavy Reserves"
+     "Concussive Dampener, Melee Damage Resistance"
     ],
     [
      "Legs",
@@ -8309,19 +8309,19 @@
    "mods": [
     [
      "Helmet",
-     "Hand Cannon Targeting, Health stat mod"
+     "Kinetic Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "Hand Cannon Loader, Impact Induction"
+     "Kinetic Loader, Impact Induction"
     ],
     [
      "Chest",
-     "Unflinching Hand Cannon Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Kinetic Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Shotgun Dexterity, Hand Cannon Dexterity, Class stat mod"
+     "Arc Dexterity, Kinetic Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -8380,19 +8380,19 @@
    "mods": [
     [
      "Helmet",
-     "Hand Cannon Targeting, Health stat mod"
+     "Kinetic Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "Hand Cannon Loader, Momentum Transfer"
+     "Kinetic Loader, Momentum Transfer"
     ],
     [
      "Chest",
-     "Unflinching Hand Cannon Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Kinetic Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Shotgun Dexterity, Hand Cannon Dexterity, Class stat mod"
+     "Solar Dexterity, Kinetic Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -8454,19 +8454,19 @@
    "mods": [
     [
      "Helmet",
-     "Hand Cannon Targeting, Health stat mod"
+     "Stasis Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "Hand Cannon Loader, Impact Induction"
+     "Stasis Loader, Impact Induction"
     ],
     [
      "Chest",
-     "Unflinching Hand Cannon Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Stasis Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Shotgun Dexterity, Hand Cannon Dexterity, Grenade stat mod"
+     "Arc Dexterity, Stasis Dexterity, Grenade stat mod"
     ],
     [
      "Class item",
@@ -8528,19 +8528,19 @@
    "mods": [
     [
      "Helmet",
-     "Auto Rifle Targeting, SMG Targeting"
+     "Kinetic Targeting, Void Targeting"
     ],
     [
      "Arms",
-     "Auto Rifle Loader, Impact Induction"
+     "Kinetic Loader, Impact Induction"
     ],
     [
      "Chest",
-     "Unflinching Auto Rifle Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Kinetic Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Auto Rifle Dexterity, SMG Dexterity, Grenade stat mod"
+     "Kinetic Dexterity, Void Dexterity, Grenade stat mod"
     ],
     [
      "Class item",
@@ -8600,7 +8600,7 @@
    "mods": [
     [
      "Helmet",
-     "Ashes to Assets, Harmonic Siphon, Ammo Finder / Scout"
+     "Ashes to Assets, Harmonic Siphon, Heavy Ammo Finder"
     ],
     [
      "Arms",
@@ -8612,7 +8612,7 @@
     ],
     [
      "Legs",
-     "Better Already, Absolution, Weapon Surge"
+     "Better Already, Absolution, Arc Weapon Surge"
     ],
     [
      "Class item",
@@ -8669,7 +8669,7 @@
    "mods": [
     [
      "Helmet",
-     "Ashes to Assets, Harmonic Siphon, Ammo Finder / Scout"
+     "Ashes to Assets, Harmonic Siphon, Heavy Ammo Finder"
     ],
     [
      "Arms",
@@ -8681,7 +8681,7 @@
     ],
     [
      "Legs",
-     "Better Already, Absolution, Weapon Surge"
+     "Better Already, Absolution, Arc Weapon Surge"
     ],
     [
      "Class item",
@@ -8742,7 +8742,7 @@
    "mods": [
     [
      "Helmet",
-     "Harmonic Siphon, Ammo Finder / Scout"
+     "Harmonic Siphon, Heavy Ammo Finder"
     ],
     [
      "Arms",
@@ -8754,7 +8754,7 @@
     ],
     [
      "Legs",
-     "Better Already, Absolution, Weapon Surge"
+     "Better Already, Absolution, Arc Weapon Surge"
     ],
     [
      "Class item",
@@ -8813,7 +8813,7 @@
    "mods": [
     [
      "Helmet",
-     "Hands-On x2, Harmonic Siphon, Ammo Finder / Scout"
+     "Hands-On x2, Harmonic Siphon, Heavy Ammo Finder"
     ],
     [
      "Arms",
@@ -8877,19 +8877,19 @@
    "mods": [
     [
      "Helmet",
-     "Pulse Rifle Targeting, Health stat mod"
+     "Arc Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "Pulse Rifle Loader, Impact Induction"
+     "Arc Loader, Impact Induction"
     ],
     [
      "Chest",
-     "Unflinching Pulse Rifle Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Arc Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Shotgun Dexterity, Pulse Rifle Dexterity, Class stat mod"
+     "Kinetic Dexterity, Arc Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -8953,19 +8953,19 @@
    "mods": [
     [
      "Helmet",
-     "SMG Targeting, Health stat mod"
+     "Void Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "SMG Loader, Momentum Transfer"
+     "Void Loader, Momentum Transfer"
     ],
     [
      "Chest",
-     "Unflinching SMG Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Void Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Shotgun Dexterity, SMG Dexterity, Class stat mod"
+     "Kinetic Dexterity, Void Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -9029,19 +9029,19 @@
    "mods": [
     [
      "Helmet",
-     "Scout Rifle Targeting, Sniper Targeting"
+     "Void Targeting, Kinetic Targeting"
     ],
     [
      "Arms",
-     "Scout Rifle Loader, Momentum Transfer"
+     "Void Loader, Momentum Transfer"
     ],
     [
      "Chest",
-     "Unflinching Sniper Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Kinetic Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Sniper Dexterity, Scout Rifle Dexterity, Class stat mod"
+     "Kinetic Dexterity, Void Dexterity, Class stat mod"
     ],
     [
      "Class item",
@@ -9105,19 +9105,19 @@
    "mods": [
     [
      "Helmet",
-     "Auto Rifle Targeting, SMG Targeting"
+     "Kinetic Targeting, Void Targeting"
     ],
     [
      "Arms",
-     "Auto Rifle Loader, Impact Induction"
+     "Kinetic Loader, Impact Induction"
     ],
     [
      "Chest",
-     "Unflinching Auto Rifle Aim, Concussive Dampener, Health stat mod"
+     "Unflinching Kinetic Aim, Concussive Dampener, Health stat mod"
     ],
     [
      "Legs",
-     "Auto Rifle Dexterity, SMG Dexterity, Grenade stat mod"
+     "Kinetic Dexterity, Void Dexterity, Grenade stat mod"
     ],
     [
      "Class item",
@@ -9188,7 +9188,7 @@
     ],
     [
      "Legs",
-     "Special Weapon Surge, Absolution, Recuperation"
+     "Kinetic Weapon Surge, Absolution, Recuperation"
     ],
     [
      "Class item",
@@ -9261,7 +9261,7 @@
     ],
     [
      "Legs",
-     "Special Weapon Surge, Absolution, Recuperation"
+     "Kinetic Weapon Surge, Absolution, Recuperation"
     ],
     [
      "Class item",
@@ -9330,7 +9330,7 @@
     ],
     [
      "Arms",
-     "Grenade Font, Harmonic Reloader, Bolstering Detonation"
+     "Grenade Font, Harmonic Loader, Bolstering Detonation"
     ],
     [
      "Chest",
@@ -9338,7 +9338,7 @@
     ],
     [
      "Legs",
-     "Weapon Font x2, Void Weapon Surge"
+     "Weapons Font x2, Void Weapon Surge"
     ],
     [
      "Class item",
@@ -9403,7 +9403,7 @@
     ],
     [
      "Arms",
-     "Grenade Font, Harmonic Reloader, Bolstering Detonation"
+     "Grenade Font, Harmonic Loader, Bolstering Detonation"
     ],
     [
      "Chest",
@@ -9411,7 +9411,7 @@
     ],
     [
      "Legs",
-     "Weapon Font x2, Void Weapon Surge"
+     "Weapons Font x2, Void Weapon Surge"
     ],
     [
      "Class item",
@@ -9543,19 +9543,19 @@
    "mods": [
     [
      "Helmet",
-     "Hand Cannon Targeting, Health stat mod"
+     "Strand Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "Hand Cannon Loader, Impact Induction"
+     "Strand Loader, Impact Induction"
     ],
     [
      "Chest",
-     "Unflinching Hand Cannon Aim, Concussive Dampener"
+     "Unflinching Strand Aim, Concussive Dampener"
     ],
     [
      "Legs",
-     "Fusion Rifle Dexterity, Hand Cannon Dexterity, Recuperation"
+     "Solar Dexterity, Strand Dexterity, Recuperation"
     ],
     [
      "Class item",
@@ -9622,19 +9622,19 @@
    "mods": [
     [
      "Helmet",
-     "Auto Rifle Targeting, Health stat mod"
+     "Strand Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "Fusion Rifle Loader, Grenade Kickstart"
+     "Solar Loader, Grenade Kickstart"
     ],
     [
      "Chest",
-     "Unflinching Auto Rifle Aim, Concussive Dampener"
+     "Unflinching Strand Aim, Concussive Dampener"
     ],
     [
      "Legs",
-     "Fusion Rifle Dexterity, Auto Rifle Dexterity, Recuperation"
+     "Solar Dexterity, Strand Dexterity, Recuperation"
     ],
     [
      "Class item",
@@ -9701,19 +9701,19 @@
    "mods": [
     [
      "Helmet",
-     "Hand Cannon Targeting, Health stat mod"
+     "Strand Targeting, Health stat mod"
     ],
     [
      "Arms",
-     "Hand Cannon Loader, Impact Induction"
+     "Strand Loader, Impact Induction"
     ],
     [
      "Chest",
-     "Unflinching Hand Cannon Aim, Concussive Dampener"
+     "Unflinching Strand Aim, Concussive Dampener"
     ],
     [
      "Legs",
-     "Shotgun Dexterity, Hand Cannon Dexterity, Recuperation"
+     "Solar Dexterity, Strand Dexterity, Recuperation"
     ],
     [
      "Class item",

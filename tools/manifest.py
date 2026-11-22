@@ -23,7 +23,7 @@ VERSION_FILE = CACHE / "version.txt"
 
 BUNGIE = "https://www.bungie.net"
 TABLES = ["DestinyInventoryItemDefinition", "DestinyPlugSetDefinition", "DestinySocketTypeDefinition"]
-SLIM_FORMAT = 2  # bump when _slim() output changes so caches rebuild
+SLIM_FORMAT = 3  # bump when _slim() output changes so caches rebuild
 UA = {"User-Agent": "d2-wishlist-pipeline/1.0", "Accept-Encoding": "gzip"}
 
 # Bucket hashes
@@ -63,7 +63,7 @@ def live_index() -> dict:
 
 
 def _slim(items: dict, plugsets: dict, sockettypes: dict, version: str) -> dict:
-    weapons, armor, plugs = {}, {}, {}
+    weapons, armor, plugs, subclasses = {}, {}, {}, {}
     for h, d in items.items():
         name = d.get("displayProperties", {}).get("name", "")
         if not name:
@@ -104,6 +104,19 @@ def _slim(items: dict, plugsets: dict, sockettypes: dict, version: str) -> dict:
                     for s in d["sockets"].get("socketEntries", [])
                 ],
             }
+        elif d.get("itemType") == 16 and d.get("sockets"):  # subclass: for DIM loadout socketOverrides
+            subclasses[h] = {
+                "n": name,
+                "class": d.get("classType"),
+                "dmg": d.get("talentGrid", {}).get("hudDamageType") or d.get("defaultDamageType"),
+                "cats": d["sockets"].get("socketCategories", []),
+                "sockets": [
+                    {"st": s.get("socketTypeHash"), "init": s.get("singleInitialItemHash"),
+                     "reuse": s.get("reusablePlugSetHash"),
+                     "items": [p["plugItemHash"] for p in s.get("reusablePlugItems", [])]}
+                    for s in d["sockets"].get("socketEntries", [])
+                ],
+            }
         elif d.get("itemType") == 2 and inv.get("tierTypeName") == "Exotic":
             armor.setdefault(name, []).append(
                 {"hash": int(h), "class": d.get("classType"), "slot": ARMOR_BUCKETS.get(inv.get("bucketTypeHash"), "?")}
@@ -113,7 +126,8 @@ def _slim(items: dict, plugsets: dict, sockettypes: dict, version: str) -> dict:
         for h, d in plugsets.items()
     }
     st = {h: [w.get("categoryIdentifier", "") for w in d.get("plugWhitelist", [])] for h, d in sockettypes.items()}
-    return {"version": version, "format": SLIM_FORMAT, "weapons": weapons, "armor": armor, "plugs": plugs, "plugsets": ps, "sockettypes": st}
+    return {"version": version, "format": SLIM_FORMAT, "weapons": weapons, "armor": armor, "plugs": plugs, "plugsets": ps, "sockettypes": st,
+            "subclasses": subclasses}
 
 
 def refresh(force: bool = False, quiet: bool = False) -> str:

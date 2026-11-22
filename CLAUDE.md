@@ -53,6 +53,7 @@ The full cross-game artifact index lives in the GAMING claude.ai project, in the
 - `python tools/validate.py --weapon "Name" --roll "Barrel; Mag; Trait 1; Trait 2; MW; Origin; Mod"` checks one roll. Leave a slot empty to skip it.
 - `python tools/resolve.py "Name" [--all]` lists versions (current = has the Gear Tier socket), slot, element, ammo and the real perk pools.
 - `python tools/sync_codex_pools.py` rewrites codex `p1`/`p2`/`o` and the element from the manifest when they've drifted.
+- `python tools/build_dim_loadouts.py` turns every sheet build into a DIM loadout link, covering the subclass (super, abilities, aspects, fragments), weapons, exotic armor, armor mods and stat order. It writes `data/dim_loadouts.json` and `reports/dim_loadouts.md`, and `build_wishlist.py` runs it too: any subclass pick or armor mod that isn't in the manifest counts as a FAIL. Add `--inventory destinyWeapons.csv destinyArmor.csv` (the DIM Settings > Spreadsheets exports) to match Spinz's real copies by instance id. That output goes to `.cache/dim_loadouts_mine.md`, which stays out of git. `--fix-sheets` rewrites sheet mod text to the current mod names.
 - Rolls that aren't on any sheet go in `data/manual_rolls.json`, which uses the same shape as a `rolls` entry in `data/rolls.json`. Don't hand-edit `data/rolls.json`, since it's generated.
 - The manifest cache lives in `.cache/` (gitignored, about 200 MB on first download). Python on this machine needs the relaxed X509 strict flag, which `tools/manifest.py` already handles.
 - Old versions get lines only where every perk is still legal on them, tagged "(old version)". Adept copies get their own lines.
@@ -72,6 +73,8 @@ The full cross-game artifact index lives in the GAMING claude.ai project, in the
   - **Praxic Blade is a Kinetic-slot exotic sword that uses special ammo, not heavy.** So it can't pair with Mint Retrograde or any other Kinetic weapon.
   - Mint Retrograde is a Strand micro-missile pulse in the Kinetic slot, using special ammo. It is not a grenade launcher.
 - **Spec mods** (Major Spec, Boss Spec) no longer exist on weapons. Use Backup Mag, Targeting Adjuster, Counterbalance Stock, Quick Access Sling and similar instead.
+- **Armor mods are element-based now.** Targeting, Loader, Dexterity, Scavenger, Holster and Unflinching Aim come as Kinetic, Arc, Solar, Void, Stasis, Strand or Harmonic. Weapon-type versions like "Hand Cannon Targeting" don't exist anymore, so pick the element of the gun the mod is for. Heavy Reserves is gone too.
+- **Blink** is Voidwalker only. Stormcaller doesn't get it.
 - **Trials and Competitive** turn artifact perks off.
 - **Exotic class item perks** (Stoicism and the like) only work on Prismatic.
 - **Stats** use Edge of Fate armor 3.0: Health, Weapons, Class, Grenade, Super, Melee. Values above 100 give bonus effects.

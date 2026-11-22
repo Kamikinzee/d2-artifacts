@@ -29,6 +29,7 @@ import extract_rolls  # noqa: E402
 import manifest  # noqa: E402
 from resolve import Resolver  # noqa: E402
 from validate import report, run_all  # noqa: E402
+import build_dim_loadouts  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "wishlists" / "spinz.txt"
@@ -143,8 +144,16 @@ def main():
         OUT.write_text("\n".join(header + body), encoding="utf-8", newline="\n")
         REPORT.parent.mkdir(exist_ok=True)
         REPORT.write_text(f"_Manifest {version}, {dt.date.today().isoformat()}_\n\n" + report(results), encoding="utf-8")
+    # DIM loadouts (subclass, mods, exotic armor) — catches illegal armor mods / subclass picks too
+    g = build_dim_loadouts.Gen([])
+    dim_items = g.run()
+    for prob in g.problems:
+        print("DIM LOADOUT FAIL:", prob)
+    if not a.check:
+        build_dim_loadouts.write(dim_items, g.problems, False)
+    lo_fail += len(g.problems)
     print(f"Rolls: {cnt['PASS']} PASS, {cnt['PARTIAL']} PARTIAL, {cnt['FAIL']} FAIL, {cnt['SKIP']} SKIP | "
-          f"Loadouts: {lo_fail} FAIL")
+          f"Loadouts: {lo_fail} FAIL | DIM loadouts: {len(dim_items)}")
     print(f"Wishlist: {stats['weapons']} weapons, {stats['items']} item versions, {stats['lines']} lines"
           + ("" if a.check else f" -> {OUT.relative_to(ROOT)} (report: {REPORT.relative_to(ROOT)})"))
     sys.exit(1 if cnt["FAIL"] or lo_fail else 0)
