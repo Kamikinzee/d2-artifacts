@@ -100,9 +100,9 @@ const RULES = {
 
 const SHARED_PVP_WEAPONS = {
   ace:{slot:"Primary",name:"Ace of Spades",type:"Exotic hand cannon",roll:[["Intrinsic","Memento Mori"],["Catalyst","Firefly"]],note:"Gives you radar the whole time. Buy it from the Monument kiosk."},
-  rose:{slot:"Primary",name:"Rose",type:"Hand cannon",roll:[["Barrel","Corkscrew / Smallbore"],["Mag","Accurized Rounds"],["Trait 1","Slideshot / Perpetual Motion"],["Trait 2","Opening Shot / Kill Clip"],["MW","Range"]],note:"Competitive Crucible. Focus it at Shaxx."},
+  rose:{slot:"Primary",name:"Rose",type:"Hand cannon",roll:[["Barrel","Corkscrew Rifling / Smallbore"],["Mag","Accurized Rounds"],["Trait 1","Slideshot"],["Trait 2","Opening Shot"],["MW","Range"]],note:"Competitive Crucible. Focus it at Shaxx. Manifest check (Nov 2026): Perpetual Motion, Kill Clip aren't legal on the current version."},
   spare:{slot:"Primary",name:"Spare Rations",type:"Hand cannon (Stasis)",roll:[["Barrel","Corkscrew Rifling"],["Mag","Accurized Rounds"],["Trait 1","Slideshot"],["Trait 2","Eye of the Storm"],["MW","Range"]],note:"Gambit Ops. Attune, then focus at the Drifter."},
-  matador:{slot:"Special",name:"Matador 64",type:"Precision shotgun",roll:[["Barrel","Smallbore / Smoothbore"],["Mag","Accurized Rounds / Light Mag"],["Trait 1","Perpetual Motion / Threat Detector"],["Trait 2","Opening Shot / Killing Wind"],["MW","Range"]],note:"Grasp of Avarice, first boss, checkpoint farm on featured weeks."},
+  matador:{slot:"Special",name:"Matador 64",type:"Precision shotgun",roll:[["Barrel","Smallbore / Smoothbore"],["Mag","Accurized Rounds / Light Mag"],["Trait 1","Threat Detector"],["Trait 2","Opening Shot"],["MW","Range"]],note:"Grasp of Avarice, first boss, checkpoint farm on featured weeks. Manifest check (Nov 2026): Perpetual Motion, Killing Wind aren't legal on the current version."},
   felwinter:{slot:"Special",name:"Felwinter's Lie",type:"Shotgun",roll:[["Barrel","Rifled Barrel"],["Mag","Accurized Rounds"],["Trait 1","Slideshot / Threat Detector"],["Trait 2","Iron Reach / Opening Shot"],["MW","Range"]],note:"Iron Banner only. Attune, clear event challenges, buy engrams in the reward shop."},
   cloud:{slot:"Special",name:"Cloudstrike",type:"Exotic sniper",roll:[["Perk","Precision kills call down lightning"]],note:"Monument / Exotic kiosk."},
   hothead:{slot:"Heavy",name:"The Hothead",type:"Rocket launcher",roll:[["Barrel","Quick Launch"],["Mag","Impact Casing"],["Trait 1","Reconstruction"],["Trait 2","Bait and Switch"],["MW","Velocity"]],note:"Heavy barely matters in PvP. Any legendary rocket works."}
@@ -242,12 +242,14 @@ function render(mode){
     w.innerHTML = `<h3>Weapons &amp; rolls</h3>` + b.weapons.map(x=>`
       <div class="wpn"><div><span class="wn">${esc(x.name)}</span> <span class="ws">${esc(x.slot)} · ${esc(x.type)}</span></div>
       <div class="roll">${x.roll.map(([k,v])=>`<span><i>${esc(k)}:</i> ${esc(v)}</span>`).join("")}</div>
+      ${(x.alts||[]).map(a=>`<div class="roll" style="margin-top:6px"><span><b>${esc(a.name)}:</b></span>${a.roll.map(([k,v])=>`<span><i>${esc(k)}:</i> ${esc(v)}</span>`).join("")}</div>`).join("")}
       <div class="ws" style="margin-top:6px">${esc(x.note)}</div></div>`).join("");
     card.appendChild(w);
     if(b.alt){ const aw=el("section","sec"); aw.style.borderRight="0"; aw.style.background="var(--chip)";
       aw.innerHTML = `<h3>Alt weapons (no Praxic Blade)</h3><p class="ws" style="margin:0 0 10px">${esc(b.alt.note)}</p>` + b.alt.weapons.map(x=>`
       <div class="wpn" style="background:var(--panel)"><div><span class="wn">${esc(x.name)}</span> <span class="ws">${esc(x.slot)} · ${esc(x.type)}</span></div>
       <div class="roll">${x.roll.map(([k,v])=>`<span><i>${esc(k)}:</i> ${esc(v)}</span>`).join("")}</div>
+      ${(x.alts||[]).map(a=>`<div class="roll" style="margin-top:6px"><span><b>${esc(a.name)}:</b></span>${a.roll.map(([k,v])=>`<span><i>${esc(k)}:</i> ${esc(v)}</span>`).join("")}</div>`).join("")}
       <div class="ws" style="margin-top:6px">${esc(x.note)}</div></div>`).join("");
       card.appendChild(aw); }
     card.appendChild(el("div","how",`<h3>How it plays</h3><p>${esc(b.how)}</p>`));

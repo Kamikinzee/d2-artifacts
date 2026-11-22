@@ -97,7 +97,7 @@ const RULES = {
 
 const W = {
   corundum:{slot:"Kinetic · Primary",name:"Corundum Hammer",type:"Adaptive hand cannon (Strand) · Trials Week 1",roll:[["Barrel","Smallbore"],["Mag","Accurized Rounds"],["Trait 1","Slideshot / Fragile Focus"],["Trait 2","Opening Shot / Explosive Payload"],["MW","Stability"],["Origin","Roar of Battle"],["Mod","Targeting Adjuster"]],note:"Swap: Spare Rations (Stasis, Kinetic slot) in Weeks 2 and 3."},
-  auric:{slot:"Kinetic · Primary",name:"Auric Disabler",type:"Precision auto rifle (Strand) · Trials Week 3",roll:[["Barrel","Arrowhead Brake / Corkscrew"],["Mag","Ricochet Rounds"],["Trait 1","Dynamic Sway Reduction / Zen Moment"],["Trait 2","Target Lock / Tap the Trigger"],["MW","Range"],["Origin","Omolon Fluid Dynamics"],["Mod","Targeting Adjuster"]],note:"Very easy to use on controller. Swap: The Immortal (Strand SMG, Week 2) if you play close range."},
+  auric:{slot:"Kinetic · Primary",name:"Auric Disabler",type:"Precision auto rifle (Strand) · Trials Week 3",roll:[["Barrel","Arrowhead Brake / Corkscrew Rifling"],["Mag","Ricochet Rounds"],["Trait 1","Dynamic Sway Reduction / Zen Moment"],["Trait 2","Target Lock / Tap the Trigger"],["MW","Range"],["Origin","Omolon Fluid Dynamics"],["Mod","Targeting Adjuster"]],note:"Very easy to use on controller. Swap: The Immortal (Strand SMG, Week 2) if you play close range."},
   exile:{slot:"Energy · Special",name:"Exile's Curse",type:"High-Impact fusion rifle (Solar) · Trials Week 1",roll:[["Barrel","Arrowhead Brake"],["Mag","Projection Fuse"],["Trait 1","Slideshot / Under Pressure"],["Trait 2","Closing Time / Kickstart"],["MW","Range"],["Origin","Fleet Footed"],["Mod","Counterbalance Stock"]],note:"Solar in the Energy slot, which is why it pairs with a Strand primary. Swap: Burden of Guilt (Week 2) can't go here because it's Stasis, so use any Energy shotgun or fusion."},
   answer:{slot:"Heavy",name:"Tomorrow's Answer",type:"High-Impact rocket (Void) · Trials Week 3",roll:[["Barrel","Quick Launch"],["Mag","High-Velocity Rounds"],["Trait 1","Impulse Amplifier / Tracking Module"],["Trait 2","Chain Reaction / Cluster Bomb"],["MW","Handling"],["Mod","Quick Access Sling"]],note:"Heavy is a once-per-round thing in Trials. Any tracking rocket works. Hothead is fine."}
 };
@@ -177,6 +177,7 @@ function render(mode){
     w.innerHTML = `<h3>Weapons &amp; rolls</h3>` + b.weapons.map(x=>`
       <div class="wpn"><div><span class="wn">${esc(x.name)}</span> <span class="ws">${esc(x.slot)} · ${esc(x.type)}</span></div>
       <div class="roll">${x.roll.map(([k,v])=>`<span><i>${esc(k)}:</i> ${esc(v)}</span>`).join("")}</div>
+      ${(x.alts||[]).map(a=>`<div class="roll" style="margin-top:6px"><span><b>${esc(a.name)}:</b></span>${a.roll.map(([k,v])=>`<span><i>${esc(k)}:</i> ${esc(v)}</span>`).join("")}</div>`).join("")}
       <div class="ws" style="margin-top:6px">${esc(x.note)}</div></div>`).join("");
     card.appendChild(w);
     card.appendChild(el("div","how",`<h3>How it plays</h3><p>${esc(b.how)}</p>`));

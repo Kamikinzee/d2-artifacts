@@ -39,10 +39,31 @@ The full cross-game artifact index lives in the GAMING claude.ai project, in the
 {id, name, el, color:"--arc|--void|--solar|--stasis|--prism|--strand", exotic, pitch,
  src:{partial:bool, text}, kit:[[Super],[Class],[Jump],[Melee],[Grenade]],
  aspects:[], fragments:[], exoticNote, stats, set?, artifact?,
- weapons:[{slot,name,type,roll:[[k,v]],note}], alt?:{note, weapons:[...]},
+ weapons:[{slot,name,type,roll:[[k,v]],alts?:[{name,roll}],note}], alt?:{note, weapons:[...]},
  mods:[[Helmet],[Arms],[Chest],[Legs],[Class item]], how}
 ```
-- The Warlock sheet also allows string keys into `SHARED_PVP_WEAPONS`.
+- The Warlock and Hunter sheets also allow string keys into `SHARED_PVP_WEAPONS`.
+- `alts` on a weapon means "or run this other gun in the same slot". Each one gets its own roll and renders under the main roll. Never write "Gun A / Gun B" in `name` with one shared roll, because two guns rarely share a perk pool.
+- Codex cards can carry `chk:"Manifest check (...): ..."`, which renders as an italic note under the card title. Use it to say what the manifest changed and which picks are yours.
+- Roll keys the wish-list extractor understands: Barrel/Blade/Bowstring/Haft/Launcher/Scope (col 1), Mag/Guard/Arrow/Battery (col 2), Trait 1, Trait 2, MW, Origin, Mod. Any other key (Catalyst, Intrinsic...) is treated as info only.
+
+## Wish-list pipeline (DIM)
+`wishlists/spinz.txt` is a DIM wish list built from every roll on every sheet plus the codex. DIM reads it from `https://raw.githubusercontent.com/Kamikinzee/d2-artifacts/main/wishlists/spinz.txt`.
+- `python tools/build_wishlist.py` runs the whole thing. It refreshes the manifest cache, extracts `src/*.html` into `data/rolls.json`, validates, and writes `wishlists/spinz.txt` and `reports/validation.md`. Add `--check` to validate without writing. The exit code is 1 on any FAIL.
+- `python tools/validate.py --weapon "Name" --roll "Barrel; Mag; Trait 1; Trait 2; MW; Origin; Mod"` checks one roll. Leave a slot empty to skip it.
+- `python tools/resolve.py "Name" [--all]` lists versions (current = has the Gear Tier socket), slot, element, ammo and the real perk pools.
+- `python tools/sync_codex_pools.py` rewrites codex `p1`/`p2`/`o` and the element from the manifest when they've drifted.
+- Rolls that aren't on any sheet go in `data/manual_rolls.json`, which uses the same shape as a `rolls` entry in `data/rolls.json`. Don't hand-edit `data/rolls.json`, since it's generated.
+- The manifest cache lives in `.cache/` (gitignored, about 200 MB on first download). Python on this machine needs the relaxed X509 strict flag, which `tools/manifest.py` already handles.
+- Old versions get lines only where every perk is still legal on them, tagged "(old version)". Adept copies get their own lines.
+
+## Standing workflow (every new build or god roll)
+1. Research current guides by web search, and check each guide's date.
+2. Resolve every gun against the manifest and run `validate.py`. Nothing reaches Spinz or an artifact until it passes, including slots, one exotic weapon and one exotic armor piece, and mod legality.
+3. Label what came from a guide and what's your pick.
+4. Update the artifact in place, using the map above.
+5. Run `python tools/build_wishlist.py`, then commit and push `src/`, `data/`, `wishlists/` and `reports/`.
+6. Tell Spinz in one line what was added.
 
 ## Hard rules (check every build)
 - **Exotics:** one exotic weapon and one exotic armor piece.
@@ -68,14 +89,19 @@ The full cross-game artifact index lives in the GAMING claude.ai project, in the
   - Zealous Ideal → Darkest Before
 - The Trials Loadout Sheet only has Solar Warlock so far, with 3 builds (Ophidian Snap, Rain of Fire, Icarus Air Duelist). Titan and Hunter are still to do, plus the other Warlock subclasses.
 - Unverified details:
-  - Origin traits on some Trials, Iron Banner and Renegades guns.
-  - Riiswalker's element.
-  - Finite Impactor's version.
-  - Whether The Epicurean got a tiered reissue.
   - Necrochasm's catalyst steps.
+- Settled by the manifest (Nov 2026):
+  - Trials, Iron Banner and Renegades origins are synced.
+  - Riiswalker is Kinetic.
+  - The current Finite Impactor is the Solar reissue (the older copies are Arc).
+  - The Epicurean has no tiered reissue (two untiered copies).
+  - Gunnora's Axe is Solar with Suros Synergy.
+  - The manifest spells the perk "Ancillary Ordinance", not "Ordnance". Use the manifest spelling.
 
 ## Verify a page before publishing
 ```
 NODE_PATH=$(npm root -g) node -e "const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:390,height:900}});const e=[];p.on('pageerror',x=>e.push(x.message));await p.setContent('<!doctype html><html><head><meta charset=utf-8></head><body>'+require('fs').readFileSync(process.argv[1],'utf8')+'</body></html>');console.log(await p.\$\$eval('article',a=>a.length),await p.evaluate(()=>document.documentElement.scrollWidth),e);await b.close()})()" src/titan-loadout.html
 ```
 Check that it shows no errors and a scroll width of 390 (no horizontal scroll).
+
+Playwright isn't installed globally on this machine, so that command fails. Instead, wrap the src file in a doctype shell under `.cache/preview/` and open it in the desktop app's Browser pane at 390×900. Check `document.querySelectorAll('article').length`, `document.documentElement.scrollWidth` and the console for errors.
