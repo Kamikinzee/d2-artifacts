@@ -166,6 +166,12 @@ class Gen:
                     self.problems.append(f"{ctx}: too many {kind}s ('{a}')")
                     continue
                 ov[str(slots.pop(0))] = m[0]
+        # Fragment slots come from the aspects' energy capacity; each fragment costs energy (1 today)
+        cap = sum(self.P[str(ov[str(i)])].get("cap", 0) for i in aspect_idx if str(i) in ov)
+        used = sum(self.P[str(ov[str(i)])].get("cost", 1) for i in fragment_idx if str(i) in ov)
+        if cap and used != cap:
+            self.problems.append(f"{ctx}: {used} fragments but the aspects give {cap} slots "
+                                 + ("(too many)" if used > cap else "(empty slots)"))
         return sh, ov
 
     # ---------- armor mods ----------

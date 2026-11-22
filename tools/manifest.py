@@ -23,7 +23,7 @@ VERSION_FILE = CACHE / "version.txt"
 
 BUNGIE = "https://www.bungie.net"
 TABLES = ["DestinyInventoryItemDefinition", "DestinyPlugSetDefinition", "DestinySocketTypeDefinition"]
-SLIM_FORMAT = 3  # bump when _slim() output changes so caches rebuild
+SLIM_FORMAT = 4  # bump when _slim() output changes so caches rebuild
 UA = {"User-Agent": "d2-wishlist-pipeline/1.0", "Accept-Encoding": "gzip"}
 
 # Bucket hashes
@@ -75,6 +75,12 @@ def _slim(items: dict, plugsets: dict, sockettypes: dict, version: str) -> dict:
                 "pci": d["plug"].get("plugCategoryIdentifier", ""),
                 "t": d.get("itemTypeDisplayName", ""),
             }
+            cap = ((d["plug"].get("energyCapacity") or {}).get("capacityValue"))
+            cost = ((d["plug"].get("energyCost") or {}).get("energyCost"))
+            if cap:
+                plugs[h]["cap"] = cap      # aspects: fragment slots granted
+            if cost:
+                plugs[h]["cost"] = cost    # fragments / armor mods: energy cost
             if plugs[h]["pci"].startswith("v400.plugs.weapons.masterworks.stat"):
                 inv_stats = [s["statTypeHash"] for s in d.get("investmentStats", []) if s.get("value")]
                 if inv_stats:

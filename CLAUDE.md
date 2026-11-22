@@ -74,6 +74,7 @@ The full cross-game artifact index lives in the GAMING claude.ai project, in the
   - Mint Retrograde is a Strand micro-missile pulse in the Kinetic slot, using special ammo. It is not a grenade launcher.
 - **Spec mods** (Major Spec, Boss Spec) no longer exist on weapons. Use Backup Mag, Targeting Adjuster, Counterbalance Stock, Quick Access Sling and similar instead.
 - **Armor mods are element-based now.** Targeting, Loader, Dexterity, Scavenger, Holster and Unflinching Aim come as Kinetic, Arc, Solar, Void, Stasis, Strand or Harmonic. Weapon-type versions like "Hand Cannon Targeting" don't exist anymore, so pick the element of the gun the mod is for. Heavy Reserves is gone too.
+- **Fragments:** the number of fragments has to equal the fragment slots the two aspects give (each aspect has 1 to 3), and the pipeline FAILs otherwise.
 - **Blink** is Voidwalker only. Stormcaller doesn't get it.
 - **Trials and Competitive** turn artifact perks off.
 - **Exotic class item perks** (Stoicism and the like) only work on Prismatic.
