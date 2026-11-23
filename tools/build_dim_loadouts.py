@@ -382,8 +382,9 @@ def write(items: list[dict], problems: list[str], have_inv: bool) -> None:
     for i in items:
         own = sum(1 for _, ok, _ in i["matched"] if ok)
         md.append(f"- [{i['loadout']['name']}]({i['link']}) ({own}/{len(i['matched'])} items owned)")
-    OUT_MD.parent.mkdir(exist_ok=True)
-    OUT_MD.write_text("\n".join(md) + "\n", encoding="utf-8")
+    out = MINE if have_inv else OUT_MD   # inventory-matched links carry instance ids: keep them out of git
+    out.parent.mkdir(exist_ok=True)
+    out.write_text("\n".join(md) + "\n", encoding="utf-8")
 
 
 def main() -> int:
