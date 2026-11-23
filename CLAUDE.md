@@ -38,11 +38,12 @@ The full cross-game artifact index lives in the GAMING claude.ai project, in the
 ```
 {id, name, el, color:"--arc|--void|--solar|--stasis|--prism|--strand", exotic, pitch,
  src:{partial:bool, text}, kit:[[Super],[Class],[Jump],[Melee],[Grenade]],
- aspects:[], fragments:[], exoticNote, stats, set?, artifact?,
+ aspects:[], fragments:[], exoticNote, stats, sets:[[setName, pieces]], set, artifact?,
  weapons:[{slot,name,type,roll:[[k,v]],alts?:[{name,roll}],note}], alt?:{note, weapons:[...]},
  mods:[[Helmet],[Arms],[Chest],[Legs],[Class item]], how}
 ```
 - The Warlock and Hunter sheets also allow string keys into `SHARED_PVP_WEAPONS`.
+- `sets` is the machine-readable armor set (manifest name and piece count: one 4-piece or two 2-pieces), and `set` is the text the sheet shows (label guide pick vs my pick). Every build needs both. The DIM generator turns `sets` into `parameters.setBonuses`, so Loadout Optimizer builds the legendary armor around it. A missing set, an unknown name, a piece count with no bonus, or more pieces than the legendary slots left after the exotic is a FAIL.
 - `alts` on a weapon means "or run this other gun in the same slot". Each one gets its own roll and renders under the main roll. Never write "Gun A / Gun B" in `name` with one shared roll, because two guns rarely share a perk pool.
 - Codex cards can carry `chk:"Manifest check (...): ..."`, which renders as an italic note under the card title. Use it to say what the manifest changed and which picks are yours.
 - Roll keys the wish-list extractor understands: Barrel/Blade/Bowstring/Haft/Launcher/Scope (col 1), Mag/Guard/Arrow/Battery (col 2), Trait 1, Trait 2, MW, Origin, Mod. Any other key (Catalyst, Intrinsic...) is treated as info only.

@@ -63,6 +63,7 @@ class Gen:
                 self.armor_mods.setdefault(norm(p["n"]), int(h))
         self.inv = self._load_inventory(inventory)
         self.problems: list[str] = []
+        self.sets = {norm(v["n"]): (int(h), v) for h, v in self.d.get("armorsets", {}).items()}
 
     # ---------- inventory (DIM CSV exports) ----------
     @staticmethod
@@ -226,6 +227,32 @@ class Gen:
             return []
         return [(m, h)] * n
 
+    # ---------- armor set bonuses ----------
+    def set_bonuses(self, b: dict, cls: str, exotic_slot: str | None, ctx: str) -> tuple[dict, str]:
+        """sets:[[name, pieces]] -> DIM parameters.setBonuses {setHash: pieces}, checked against the manifest."""
+        want = b.get("sets") or []
+        if not want:
+            self.problems.append(f"{ctx}: no armor set (add sets:[[name, pieces]])")
+            return {}, ""
+        free = 5 - (1 if exotic_slot else 0)
+        out, parts = {}, []
+        for name, n in want:
+            hit = self.sets.get(norm(name))
+            if not hit:
+                self.problems.append(f"{ctx}: armor set '{name}' not in the manifest")
+                continue
+            h, sd = hit
+            if n not in [c for c, _, _ in sd["perks"]]:
+                self.problems.append(f"{ctx}: {name} has no {n}-piece bonus")
+            slots = {pc["slot"] for pc in sd["pieces"] if pc["class"] == CLASS[cls]} - {exotic_slot}
+            if len(slots) < n:
+                self.problems.append(f"{ctx}: {name} only has {len(slots)} {cls} pieces outside the exotic slot")
+            out[h] = n
+            parts.append(f"{n}x {sd['n']} (" + ", ".join(pn for c, pn, _ in sd["perks"] if c <= n) + ")")
+        if sum(out.values()) > free:
+            self.problems.append(f"{ctx}: set pieces {sum(out.values())} > {free} legendary armor slots")
+        return out, ("Armor set: " + " + ".join(parts)) if parts else ""
+
     # ---------- build -> loadout ----------
     def loadout(self, b: dict, cls: str, sheet: str, mode: str, ws: list[dict], variant: str) -> dict:
         ctx = f"{sheet} {mode.upper()}: {b['name']}" + (" (alt)" if variant == "alt" else "")
@@ -259,6 +286,9 @@ class Gen:
             matched.append((ex, iid != "0", ""))
         else:
             self.problems.append(f"{ctx}: exotic armor '{b.get('exotic')}' not found for {cls}")
+        set_bonuses, set_line = self.set_bonuses(b, cls, arm[0]["slot"] if arm else None, ctx)
+        if set_bonuses:
+            params["setBonuses"] = set_bonuses
         mods, mod_names = [], []
         for slot, txt in b.get("mods", []):
             for raw in re.split(r",\s*", txt):
@@ -272,7 +302,7 @@ class Gen:
             params["statConstraints"] = [{"statHash": STATS[s]} for s in order + [s for s in STATS if s not in order]]
             params["assumeArmorMasterwork"] = 3
         notes = "\n".join(filter(None, [
-            b.get("pitch", ""), f"Stats: {b['stats']}" if b.get("stats") else "",
+            b.get("pitch", ""), f"Stats: {b['stats']}" if b.get("stats") else "", set_line,
             "Weapons:", *lines,
             f"Mods: {', '.join(n for n in mod_names if '(was' in n)}" if any("(was" in n for n in mod_names) else "",
             b.get("how", ""), f"#spinz #{slug(sheet).replace('-', '')} #{mode}",

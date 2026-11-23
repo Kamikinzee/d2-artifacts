@@ -22,8 +22,9 @@ SLIM = CACHE / "slim.json.gz"
 VERSION_FILE = CACHE / "version.txt"
 
 BUNGIE = "https://www.bungie.net"
-TABLES = ["DestinyInventoryItemDefinition", "DestinyPlugSetDefinition", "DestinySocketTypeDefinition"]
-SLIM_FORMAT = 4  # bump when _slim() output changes so caches rebuild
+TABLES = ["DestinyInventoryItemDefinition", "DestinyPlugSetDefinition", "DestinySocketTypeDefinition",
+          "DestinyEquipableItemSetDefinition", "DestinySandboxPerkDefinition"]
+SLIM_FORMAT = 5  # bump when _slim() output changes so caches rebuild
 UA = {"User-Agent": "d2-wishlist-pipeline/1.0", "Accept-Encoding": "gzip"}
 
 # Bucket hashes
@@ -62,8 +63,10 @@ def live_index() -> dict:
     return d["Response"]
 
 
-def _slim(items: dict, plugsets: dict, sockettypes: dict, version: str) -> dict:
+def _slim(items: dict, plugsets: dict, sockettypes: dict, version: str, itemsets: dict | None = None,
+          perks: dict | None = None) -> dict:
     weapons, armor, plugs, subclasses = {}, {}, {}, {}
+    setpieces = {}  # armor set hash -> [{hash, class, slot, tier}]
     for h, d in items.items():
         name = d.get("displayProperties", {}).get("name", "")
         if not name:
@@ -123,7 +126,10 @@ def _slim(items: dict, plugsets: dict, sockettypes: dict, version: str) -> dict:
                     for s in d["sockets"].get("socketEntries", [])
                 ],
             }
-        elif d.get("itemType") == 2 and inv.get("tierTypeName") == "Exotic":
+        if d.get("itemType") == 2 and (d.get("equippingBlock") or {}).get("equipableItemSetHash"):
+            setpieces.setdefault(str(d["equippingBlock"]["equipableItemSetHash"]), []).append(
+                {"hash": int(h), "class": d.get("classType"), "slot": ARMOR_BUCKETS.get(inv.get("bucketTypeHash"), "?")})
+        if d.get("itemType") == 2 and inv.get("tierTypeName") == "Exotic":
             armor.setdefault(name, []).append(
                 {"hash": int(h), "class": d.get("classType"), "slot": ARMOR_BUCKETS.get(inv.get("bucketTypeHash"), "?")}
             )
@@ -132,8 +138,18 @@ def _slim(items: dict, plugsets: dict, sockettypes: dict, version: str) -> dict:
         for h, d in plugsets.items()
     }
     st = {h: [w.get("categoryIdentifier", "") for w in d.get("plugWhitelist", [])] for h, d in sockettypes.items()}
+    armorsets = {}
+    for h, d in (itemsets or {}).items():
+        name = d.get("displayProperties", {}).get("name", "")
+        if not name:
+            continue
+        sp = []
+        for x in d.get("setPerks", []):
+            pk = (perks or {}).get(str(x.get("sandboxPerkHash")), {}).get("displayProperties", {})
+            sp.append([x.get("requiredSetCount"), pk.get("name", ""), pk.get("description", "")])
+        armorsets[h] = {"n": name, "perks": sp, "pieces": setpieces.get(h, [])}
     return {"version": version, "format": SLIM_FORMAT, "weapons": weapons, "armor": armor, "plugs": plugs, "plugsets": ps, "sockettypes": st,
-            "subclasses": subclasses}
+            "subclasses": subclasses, "armorsets": armorsets}
 
 
 def refresh(force: bool = False, quiet: bool = False) -> str:
@@ -159,7 +175,8 @@ def refresh(force: bool = False, quiet: bool = False) -> str:
         raw[t] = json.loads(_get(BUNGIE + paths[t]))
         log(f"[manifest]   {t}: {len(raw[t])} rows ({time.time() - t0:.1f}s)")
     slim = _slim(raw["DestinyInventoryItemDefinition"], raw["DestinyPlugSetDefinition"],
-                 raw["DestinySocketTypeDefinition"], version)
+                 raw["DestinySocketTypeDefinition"], version, raw["DestinyEquipableItemSetDefinition"],
+                 raw["DestinySandboxPerkDefinition"])
     CACHE.mkdir(parents=True, exist_ok=True)
     tmp = SLIM.with_suffix(".tmp")
     with gzip.open(tmp, "wt", encoding="utf-8") as f:
