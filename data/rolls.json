@@ -5007,6 +5007,164 @@
    "info": {}
   },
   {
+   "id": "titan:vault-wormgod:tractor-cannon",
+   "weapon": "Tractor Cannon",
+   "mode": "pve",
+   "file": "src/titan-loadout.html",
+   "context": "Titan sheet: Vault: Solar Wormgod's Roar",
+   "perks": {},
+   "info": {
+    "Intrinsic": "Repulsor Force: pushes targets back and makes them take more damage",
+    "Use": "Open with it on a champion or boss, then hammer it"
+   }
+  },
+  {
+   "id": "titan:vault-wormgod:last-man-standing",
+   "weapon": "Last Man Standing",
+   "mode": "pve",
+   "file": "src/titan-loadout.html",
+   "context": "Titan sheet: Vault: Solar Wormgod's Roar",
+   "perks": {
+    "col1": "Smoothbore",
+    "col2": "Assault Mag",
+    "trait1": "Opening Shot",
+    "trait2": "One-Two Punch"
+   },
+   "info": {}
+  },
+  {
+   "id": "titan:vault-wormgod:bygones",
+   "weapon": "Bygones",
+   "mode": "pve",
+   "file": "src/titan-loadout.html",
+   "context": "Titan sheet: Vault: Solar Wormgod's Roar",
+   "perks": {
+    "col1": "Smallbore",
+    "col2": "Armor-Piercing Rounds",
+    "trait1": "Zen Moment",
+    "trait2": "Firefly"
+   },
+   "info": {}
+  },
+  {
+   "id": "titan:vault-hallowfire:gjallarhorn",
+   "weapon": "Gjallarhorn",
+   "mode": "pve",
+   "file": "src/titan-loadout.html",
+   "context": "Titan sheet: Vault: Solar Shieldburst Hallowfire",
+   "perks": {},
+   "info": {
+    "Intrinsic": "Wolfpack Rounds; allies' legendary rockets get them too"
+   }
+  },
+  {
+   "id": "titan:vault-hallowfire:trust",
+   "weapon": "Trust",
+   "mode": "pve",
+   "file": "src/titan-loadout.html",
+   "context": "Titan sheet: Vault: Solar Shieldburst Hallowfire",
+   "perks": {
+    "col1": "Fluted Barrel",
+    "col2": "Extended Mag",
+    "trait1": "Rapid Hit",
+    "trait2": "Incandescent"
+   },
+   "info": {}
+  },
+  {
+   "id": "titan:vault-hallowfire:mint-retrograde",
+   "weapon": "Mint Retrograde",
+   "mode": "pve",
+   "file": "src/titan-loadout.html",
+   "context": "Titan sheet: Vault: Solar Shieldburst Hallowfire",
+   "perks": {
+    "col1": "Linear Compensator",
+    "col2": "Extended Mag",
+    "trait1": "Rewind Rounds",
+    "trait2": "Chain Reaction"
+   },
+   "info": {}
+  },
+  {
+   "id": "titan:vault-choir:choir-of-one",
+   "weapon": "Choir of One",
+   "mode": "pve",
+   "file": "src/titan-loadout.html",
+   "context": "Titan sheet: Vault: Void Choir of None",
+   "perks": {},
+   "info": {
+    "Intrinsic": "Kills build stacks that add damage and ammo generation (per the guide)",
+    "Tip": "Aim down sights; hip-fire wastes the bonus"
+   }
+  },
+  {
+   "id": "titan:vault-choir:survivor-s-epitaph",
+   "weapon": "Survivor's Epitaph",
+   "mode": "pve",
+   "file": "src/titan-loadout.html",
+   "context": "Titan sheet: Vault: Void Choir of None",
+   "perks": {
+    "col1": "Full Bore",
+    "col2": "Appended Mag",
+    "trait1": "Rapid Hit",
+    "trait2": "Multikill Clip"
+   },
+   "info": {}
+  },
+  {
+   "id": "titan:vault-choir:bad-omens",
+   "weapon": "Bad Omens",
+   "mode": "pve",
+   "file": "src/titan-loadout.html",
+   "context": "Titan sheet: Vault: Void Choir of None",
+   "perks": {
+    "col1": "Volatile Launch",
+    "col2": "Alloy Casing",
+    "trait1": "Destabilizing Rounds",
+    "trait2": "Cluster Bomb"
+   },
+   "info": {}
+  },
+  {
+   "id": "titan:vault-blastwave:deterministic-chaos",
+   "weapon": "Deterministic Chaos",
+   "mode": "pve",
+   "file": "src/titan-loadout.html",
+   "context": "Titan sheet: Vault: Stasis Shatter Behemoth",
+   "perks": {},
+   "info": {
+    "Intrinsic": "Every fourth shot is a heavier Void bolt that makes targets volatile and weakened"
+   }
+  },
+  {
+   "id": "titan:vault-blastwave:unending-tempest",
+   "weapon": "Unending Tempest",
+   "mode": "pve",
+   "file": "src/titan-loadout.html",
+   "context": "Titan sheet: Vault: Stasis Shatter Behemoth",
+   "perks": {
+    "col1": "Extended Barrel",
+    "col2": "Accurized Rounds",
+    "trait1": "Demolitionist",
+    "trait2": "Crystalline Corpsebloom"
+   },
+   "info": {}
+  },
+  {
+   "id": "titan:vault-blastwave:gunnora-s-axe",
+   "weapon": "Gunnora's Axe",
+   "mode": "pve",
+   "file": "src/titan-loadout.html",
+   "context": "Titan sheet: Vault: Stasis Shatter Behemoth",
+   "perks": {
+    "col1": "Corkscrew Rifling",
+    "col2": "Extended Mag",
+    "trait1": "Threat Detector",
+    "trait2": "Incandescent"
+   },
+   "info": {}
+  },
+  {
    "id": "titan-no-cannon:striker:the-messenger",
    "weapon": "The Messenger",
    "mode": "pvp",
@@ -7433,6 +7591,280 @@
        }
       }
      ]
+    }
+   ]
+  },
+  {
+   "id": "titan:vault-wormgod",
+   "file": "src/titan-loadout.html",
+   "sheet": "Titan",
+   "mode": "pve",
+   "build": "Vault: Solar Wormgod's Roar",
+   "variant": "main",
+   "element": "Solar",
+   "exotic_armor": "Wormgod Caress",
+   "has_artifact": true,
+   "mods": [
+    [
+     "Helmet",
+     "Hands-On, Harmonic Siphon, Ashes to Assets"
+    ],
+    [
+     "Arms",
+     "Melee Font, Heavy Handed, Impact Induction"
+    ],
+    [
+     "Chest",
+     "Concussive Dampener, Melee Damage Resistance, Charged Up"
+    ],
+    [
+     "Legs",
+     "Invigoration, Absolution, Solar Weapon Surge"
+    ],
+    [
+     "Class item",
+     "Time Dilation, Outreach, Powerful Attraction"
+    ]
+   ],
+   "weapons": [
+    {
+     "slot": "Heavy · Exotic",
+     "name": "Tractor Cannon",
+     "type": "Exotic heavy shotgun (Void)",
+     "perks": {},
+     "info": {
+      "Intrinsic": "Repulsor Force: pushes targets back and makes them take more damage",
+      "Use": "Open with it on a champion or boss, then hammer it"
+     }
+    },
+    {
+     "slot": "Energy · Special",
+     "name": "Last Man Standing",
+     "type": "Aggressive shotgun (Solar)",
+     "perks": {
+      "col1": "Smoothbore",
+      "col2": "Assault Mag",
+      "trait1": "Opening Shot",
+      "trait2": "One-Two Punch"
+     },
+     "info": {}
+    },
+    {
+     "slot": "Kinetic · Primary",
+     "name": "Bygones",
+     "type": "Adaptive pulse (Kinetic)",
+     "perks": {
+      "col1": "Smallbore",
+      "col2": "Armor-Piercing Rounds",
+      "trait1": "Zen Moment",
+      "trait2": "Firefly"
+     },
+     "info": {}
+    }
+   ]
+  },
+  {
+   "id": "titan:vault-hallowfire",
+   "file": "src/titan-loadout.html",
+   "sheet": "Titan",
+   "mode": "pve",
+   "build": "Vault: Solar Shieldburst Hallowfire",
+   "variant": "main",
+   "element": "Solar",
+   "exotic_armor": "Hallowfire Heart",
+   "has_artifact": true,
+   "mods": [
+    [
+     "Helmet",
+     "Hands-On, Harmonic Siphon, Ashes to Assets"
+    ],
+    [
+     "Arms",
+     "Grenade Font, Firepower, Bolstering Detonation"
+    ],
+    [
+     "Chest",
+     "Concussive Dampener, Charged Up, Solar Ammo Generation"
+    ],
+    [
+     "Legs",
+     "Invigoration, Better Already, Solar Weapon Surge"
+    ],
+    [
+     "Class item",
+     "Time Dilation, Bomber, Utility Kickstart"
+    ]
+   ],
+   "weapons": [
+    {
+     "slot": "Heavy · Exotic",
+     "name": "Gjallarhorn",
+     "type": "Exotic rocket launcher (Solar)",
+     "perks": {},
+     "info": {
+      "Intrinsic": "Wolfpack Rounds; allies' legendary rockets get them too"
+     }
+    },
+    {
+     "slot": "Energy · Primary",
+     "name": "Trust",
+     "type": "Precision hand cannon (Solar)",
+     "perks": {
+      "col1": "Fluted Barrel",
+      "col2": "Extended Mag",
+      "trait1": "Rapid Hit",
+      "trait2": "Incandescent"
+     },
+     "info": {}
+    },
+    {
+     "slot": "Kinetic · Special",
+     "name": "Mint Retrograde",
+     "type": "Micro-missile pulse (Strand, Kinetic slot, special ammo)",
+     "perks": {
+      "col1": "Linear Compensator",
+      "col2": "Extended Mag",
+      "trait1": "Rewind Rounds",
+      "trait2": "Chain Reaction"
+     },
+     "info": {}
+    }
+   ]
+  },
+  {
+   "id": "titan:vault-choir",
+   "file": "src/titan-loadout.html",
+   "sheet": "Titan",
+   "mode": "pve",
+   "build": "Vault: Void Choir of None",
+   "variant": "main",
+   "element": "Void",
+   "exotic_armor": "Actium War Rig",
+   "has_artifact": true,
+   "mods": [
+    [
+     "Helmet",
+     "Hands-On, Harmonic Siphon, Heavy Ammo Finder"
+    ],
+    [
+     "Arms",
+     "Heavy Handed, Firepower, Void Loader"
+    ],
+    [
+     "Chest",
+     "Concussive Dampener, Charged Up, Void Ammo Generation"
+    ],
+    [
+     "Legs",
+     "Invigoration, Stacks on Stacks, Void Weapon Surge"
+    ],
+    [
+     "Class item",
+     "Time Dilation, Distribution, Powerful Attraction"
+    ]
+   ],
+   "weapons": [
+    {
+     "slot": "Energy · Exotic",
+     "name": "Choir of One",
+     "type": "Exotic auto rifle (Void, special ammo)",
+     "perks": {},
+     "info": {
+      "Intrinsic": "Kills build stacks that add damage and ammo generation (per the guide)",
+      "Tip": "Aim down sights; hip-fire wastes the bonus"
+     }
+    },
+    {
+     "slot": "Kinetic · Primary",
+     "name": "Survivor's Epitaph",
+     "type": "Precision hand cannon (Kinetic)",
+     "perks": {
+      "col1": "Full Bore",
+      "col2": "Appended Mag",
+      "trait1": "Rapid Hit",
+      "trait2": "Multikill Clip"
+     },
+     "info": {}
+    },
+    {
+     "slot": "Heavy",
+     "name": "Bad Omens",
+     "type": "Aggressive rocket launcher (Void)",
+     "perks": {
+      "col1": "Volatile Launch",
+      "col2": "Alloy Casing",
+      "trait1": "Destabilizing Rounds",
+      "trait2": "Cluster Bomb"
+     },
+     "info": {}
+    }
+   ]
+  },
+  {
+   "id": "titan:vault-blastwave",
+   "file": "src/titan-loadout.html",
+   "sheet": "Titan",
+   "mode": "pve",
+   "build": "Vault: Stasis Shatter Behemoth",
+   "variant": "main",
+   "element": "Stasis",
+   "exotic_armor": "Blastwave Striders",
+   "has_artifact": true,
+   "mods": [
+    [
+     "Helmet",
+     "Hands-On, Harmonic Siphon, Ashes to Assets"
+    ],
+    [
+     "Arms",
+     "Melee Font, Grenade Font, Firepower"
+    ],
+    [
+     "Chest",
+     "Concussive Dampener, Melee Damage Resistance, Charged Up"
+    ],
+    [
+     "Legs",
+     "Invigoration, Stacks on Stacks, Stasis Weapon Surge"
+    ],
+    [
+     "Class item",
+     "Time Dilation, Bomber, Outreach"
+    ]
+   ],
+   "weapons": [
+    {
+     "slot": "Heavy · Exotic",
+     "name": "Deterministic Chaos",
+     "type": "Exotic machine gun (Void)",
+     "perks": {},
+     "info": {
+      "Intrinsic": "Every fourth shot is a heavier Void bolt that makes targets volatile and weakened"
+     }
+    },
+    {
+     "slot": "Kinetic · Primary",
+     "name": "Unending Tempest",
+     "type": "Precision SMG (Stasis)",
+     "perks": {
+      "col1": "Extended Barrel",
+      "col2": "Accurized Rounds",
+      "trait1": "Demolitionist",
+      "trait2": "Crystalline Corpsebloom"
+     },
+     "info": {}
+    },
+    {
+     "slot": "Energy · Special",
+     "name": "Gunnora's Axe",
+     "type": "Pinpoint slug shotgun (Solar)",
+     "perks": {
+      "col1": "Corkscrew Rifling",
+      "col2": "Extended Mag",
+      "trait1": "Threat Detector",
+      "trait2": "Incandescent"
+     },
+     "info": {}
     }
    ]
   },

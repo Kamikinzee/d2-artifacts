@@ -1105,6 +1105,356 @@
   "notes": "A sustain and add-clear build. Catch your Throwing Hammer to refill your melee, Sol Invictus Sunspots heal you and your team, and Forgemaster adds slag damage on clean catches.\nStats: Melee 100+ first (a hammer catch fully refunds your melee), then Weapons or Super\nArmor set: 4x Lustrous (Photogalvanic, Cauterize)\nWeapons:\n- Primary: Devil's Ruin\n- Special: Gizmo Weft (Envious Arsenal, Chain Reaction, Reload Speed); or The Mountaintop\n- Heavy: Ascendancy (Quick Launch, Reconstruction / Impulse Amplifier, Explosive Light, Reload Speed); or Roar of the Bear, Hezen Vengeance\nThrow the hammer, catch it, and repeat. Every catch refills your melee at 100 Melee. Stand in Sunspots during big fights. Devil's Ruin kills drop Firesprites that keep Forgemaster active for burst on tough enemies.\n#spinz #titan #pve"
  },
  {
+  "id": "spinz-titan-pve-vault-wormgod",
+  "name": "Titan PVE · Vault: Solar Wormgod's Roar",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2550323932,
+    "socketOverrides": {
+     "2": 2747500761,
+     "0": 2495523340,
+     "1": 2225231094,
+     "3": 852252789,
+     "4": 2202441959,
+     "5": 2984351204,
+     "6": 2984351205,
+     "7": 362132288,
+     "8": 362132300,
+     "9": 362132294,
+     "10": 362132293
+    }
+   },
+   {
+    "id": "0",
+    "hash": 3580904581
+   },
+   {
+    "id": "0",
+    "hash": 4276696963
+   },
+   {
+    "id": "0",
+    "hash": 767170345
+   },
+   {
+    "id": "0",
+    "hash": 809007411
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 809007411,
+   "setBonuses": {
+    "1777208707": 4
+   },
+   "mods": [
+    3938489430,
+    3832366019,
+    856936828,
+    633101315,
+    2447449706,
+    377010989,
+    3719981603,
+    1763668984,
+    2577472338,
+    1848187513,
+    2793473444,
+    2319885414,
+    1755737153,
+    4160037471,
+    11126525
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Built only from gear in your vault. A melee-damage brawler: stack Wormgod Caress with melee and finisher kills, then delete things with Throwing Hammer. Tractor Cannon makes everything you're punching take more damage, and Last Man Standing with One-Two Punch covers you when the hammer is out.\nStats: Melee 150+ > Health > Class. The guide says Melee around 200 adds about 30% more melee damage.\nArmor set: 4x Iron Battalion Set (Primary Honing, Supercyclical)\nWeapons:\n- Heavy · Exotic: Tractor Cannon\n- Energy · Special: Last Man Standing (Smoothbore, Assault Mag, Opening Shot, One-Two Punch)\n- Kinetic · Primary: Bygones (Smallbore, Armor-Piercing Rounds, Zen Moment, Firefly)\nGet melee kills to build Wormgod stacks (finishers count too). Throw the hammer at anything tough and pick it back up for a refund. When a champion shows, Tractor Cannon it, then hammer or One-Two Punch it while the debuff is up. Sol Invictus Sunspots keep you alive while you brawl.\n#spinz #titan #pve"
+ },
+ {
+  "id": "spinz-titan-pve-vault-hallowfire",
+  "name": "Titan PVE · Vault: Solar Shieldburst Hallowfire",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2550323932,
+    "socketOverrides": {
+     "2": 2747500761,
+     "0": 2495523341,
+     "1": 2225231094,
+     "3": 852252789,
+     "4": 2202441959,
+     "5": 2984351207,
+     "6": 2984351204,
+     "7": 362132291,
+     "8": 362132293,
+     "9": 362132294,
+     "10": 362132300,
+     "11": 4180586737
+    }
+   },
+   {
+    "id": "0",
+    "hash": 1363886209
+   },
+   {
+    "id": "0",
+    "hash": 810474118
+   },
+   {
+    "id": "0",
+    "hash": 42435996
+   },
+   {
+    "id": "0",
+    "hash": 458095282
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 458095282,
+   "setBonuses": {
+    "2151917545": 4
+   },
+   "mods": [
+    3938489430,
+    3832366019,
+    856936828,
+    1781551382,
+    2485657760,
+    3726719281,
+    3719981603,
+    2577472338,
+    2526773280,
+    1848187513,
+    2194294579,
+    2319885414,
+    1755737153,
+    4188291233,
+    3160387771
+   ],
+   "statConstraints": [
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Built only from gear in your vault. The new 9.7.0 Shieldburst aspect turns your Barricade into a Solar weapon, and the reworked Hallowfire Heart triggers ignitions from grenade and Shieldburst kills. Gjallarhorn gives your team wolfpack rounds. It's a support bruiser for dungeons and solo, not a top raid DPS pick.\nStats: Class 100+ > Grenade > Super. Class is your Barricade, so it's the main stat here.\nArmor set: 4x Thriving Survivor (Opening Act, Room Clearing)\nWeapons:\n- Heavy · Exotic: Gjallarhorn\n- Energy · Primary: Trust (Fluted Barrel, Extended Mag, Rapid Hit, Incandescent)\n- Kinetic · Special: Mint Retrograde (Linear Compensator, Extended Mag, Rewind Rounds, Chain Reaction)\nDrop Rally Barricade constantly. Shieldburst makes it a Solar threat and gives allies scorching rounds. Throw Firebolt into packs, and grenade or Shieldburst kills set off Hallowfire ignitions. Trust spreads scorch between abilities. For bosses, the team stands behind your barricade while you fire Gjallarhorn.\n#spinz #titan #pve"
+ },
+ {
+  "id": "spinz-titan-pve-vault-choir",
+  "name": "Titan PVE · Vault: Void Choir of None",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2842471112,
+    "socketOverrides": {
+     "2": 4260353955,
+     "0": 2722641741,
+     "1": 1380268164,
+     "3": 4220332374,
+     "4": 1016030582,
+     "5": 1602994568,
+     "6": 1602994570,
+     "7": 2272984671,
+     "8": 2661180603,
+     "9": 3854948620,
+     "10": 2272984667
+    }
+   },
+   {
+    "id": "0",
+    "hash": 3698448090
+   },
+   {
+    "id": "0",
+    "hash": 2152350211
+   },
+   {
+    "id": "0",
+    "hash": 1996201272
+   },
+   {
+    "id": "0",
+    "hash": 458095281
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 458095281,
+   "setBonuses": {
+    "2461275960": 4
+   },
+   "mods": [
+    3938489430,
+    3832366019,
+    554409585,
+    2447449706,
+    2485657760,
+    3980769162,
+    3719981603,
+    2577472338,
+    1669792723,
+    1848187513,
+    3994043492,
+    3467460423,
+    1755737153,
+    4039026690,
+    11126525
+   ],
+   "statConstraints": [
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Built only from gear in your vault. Actium War Rig keeps Choir of One reloading from reserves while you hold the trigger. Controlled Demolition and Bad Omens' Destabilizing Rounds heal you as things explode, and your Eutechnology set spawns Void Breaches off Choir's kill speed.\nStats: Weapons 100+ > Melee > Grenade (guide order).\nArmor set: 4x Eutechnology (Gift of the Ley Lines, Techeun's Foresight)\nWeapons:\n- Energy · Exotic: Choir of One\n- Kinetic · Primary: Survivor's Epitaph (Full Bore, Appended Mag, Rapid Hit, Multikill Clip)\n- Heavy: Bad Omens (Volatile Launch, Alloy Casing, Destabilizing Rounds, Cluster Bomb)\nHold the trigger on Choir of One and let Actium keep the mag full. Rapid Void kills spawn Eutechnology breaches, and the next Void kill detonates. Vortex and Bad Omens make packs volatile so Controlled Demolition keeps you healed. Shield Throw finishes stragglers for grenade energy through Echo of Exchange.\n#spinz #titan #pve"
+ },
+ {
+  "id": "spinz-titan-pve-vault-blastwave",
+  "name": "Titan PVE · Vault: Stasis Shatter Behemoth",
+  "classType": 0,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 613647804,
+    "socketOverrides": {
+     "2": 2021620139,
+     "0": 3260056808,
+     "1": 469281042,
+     "3": 2028772231,
+     "4": 1399217,
+     "5": 1563930741,
+     "6": 2031919264,
+     "7": 3469412975,
+     "8": 2483898431,
+     "9": 2483898430,
+     "10": 3469412971
+    }
+   },
+   {
+    "id": "0",
+    "hash": 449318888
+   },
+   {
+    "id": "0",
+    "hash": 673621062
+   },
+   {
+    "id": "0",
+    "hash": 218787951
+   },
+   {
+    "id": "0",
+    "hash": 1188437342
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 1188437342,
+   "setBonuses": {
+    "3090557911": 2,
+    "1777208707": 2
+   },
+   "mods": [
+    3938489430,
+    3832366019,
+    856936828,
+    633101315,
+    1781551382,
+    2485657760,
+    3719981603,
+    1763668984,
+    2577472338,
+    1848187513,
+    3994043492,
+    2921714558,
+    1755737153,
+    4188291233,
+    4160037471
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Built only from gear in your vault. A shatter-chain build: Glacier Grenade and Unending Tempest's Crystalline Corpsebloom fill the room with crystals, and Howl of the Storm plus Tectonic Harvest turn every shatter into shards that heal you and charge your melee. Blastwave Striders add a freezing blast on top.\nStats: Melee 100+ > Grenade > Health. Shards feed melee, and Glacier Grenade makes the crystals.\nArmor set: 2x Crystocrene (Resupply) + 2x Iron Battalion Set (Primary Honing)\nWeapons:\n- Heavy · Exotic: Deterministic Chaos\n- Kinetic · Primary: Unending Tempest (Extended Barrel, Accurized Rounds, Demolitionist, Crystalline Corpsebloom)\n- Energy · Special: Gunnora's Axe (Corkscrew Rifling, Extended Mag, Threat Detector, Incandescent)\nThrow Glacier Grenade into a pack and spray with Unending Tempest so the kills drop more crystals. Shatter everything with Shiver Strike or Howl. Each shatter makes shards that heal you and refill your melee and grenade. Use the Blastwave launch when you're surrounded. Deterministic Chaos covers champions and bosses.\n#spinz #titan #pve"
+ },
+ {
   "id": "spinz-titan-no-cannon-pvp-striker",
   "name": "Titan No-Cannon PVP · Arc Striker Duelist",
   "classType": 0,
