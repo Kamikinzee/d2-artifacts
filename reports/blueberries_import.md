@@ -1,0 +1,265 @@
+# blueberries.gg import
+
+752 rolls on 393 weapons from 407 god-roll pages.
+
+Perks that aren't legal on the weapon's current version were dropped (listed below). A roll is kept only if at least one trait column survives.
+
+## Dropped options
+
+- **1000 Yard Stare** (PVE God roll): Trait 1 (col 3): 'Triple Tap' isn't in the current pool (only on old version 4164201232). Current pool: Lone Wolf, Dimensional Shift, Collective Demolition, Light Touch, Discord, Vorpal Weapon
+- **1000 Yard Stare** (PVE God roll): Trait 2 (col 4): 'Golden Tricorn' isn't in the current pool (only on old version 4164201232). Current pool: Demoralize, Redirection, Mulligan, Closing Time, Snapshot Sights, Moving Target
+- **1000 Yard Stare** (PVE God roll): Trait 2 (col 4): 'Demolitionist' isn't in the current pool (only on old version 4164201232). Current pool: Demoralize, Redirection, Mulligan, Closing Time, Snapshot Sights, Moving Target
+- **1000 Yard Stare** (PVP God roll): Trait 1 (col 3): 'Quickdraw' isn't in the current pool (only on old version 4164201232). Current pool: Lone Wolf, Dimensional Shift, Collective Demolition, Light Touch, Discord, Vorpal Weapon
+- **1000 Yard Stare** (PVP God roll): Trait 1 (col 3): 'Perpetual Motion' isn't in the current pool (only on old version 4164201232). Current pool: Lone Wolf, Dimensional Shift, Collective Demolition, Light Touch, Discord, Vorpal Weapon
+- **Accrued Redemption** (PVP All-Around): Barrel (col 1): 'Straight Fletchling' isn't in the current pool. Current pool: Agile Bowstring, Tactile String, Elastic String, Flexible String, High Tension String, Natural String, Polymer String
+- **Accrued Redemption** (PVP All-Around): Magazine (col 2): 'Ricochet Rounds' isn't in the current pool. Current pool: Carbon Arrow Shaft, Compact Arrow Shaft, Helical Fletching, Natural Fletching, Straight Fletching
+- **Acosmic** (PVP God roll): Trait 1 (col 3): 'Quickdraw' isn't in the current pool (only on old version 413901114). Current pool: Clown Cartridge, Enlightened Action, Impulse Amplifier, Air Trigger, Slickdraw, Reverberation, Withering Gaze
+- **Acosmic** (PVP God roll): Trait 2 (col 4): 'Collective Action' isn't in the current pool (only on old version 413901114). Current pool: Cascade Point, Explosive Light, Destabilizing Rounds, Chain Reaction, Bait and Switch, Deconstruct, Frenzy
+- **Acosmic** (PVP God roll): Trait 2 (col 4): 'Wellspring' isn't in the current pool (only on old version 413901114). Current pool: Cascade Point, Explosive Light, Destabilizing Rounds, Chain Reaction, Bait and Switch, Deconstruct, Frenzy
+- **Action Item** (PVE All-Around): Origin: 'Hammer' isn't in the current pool. Current pool: Nail, Meet Hammer, Omolon Fluid Dynamics
+- **Action Item** (PVE All-Around): Origin: 'Meet Nail' isn't in the current pool. Current pool: Nail, Meet Hammer, Omolon Fluid Dynamics
+- **Adamantite** (PVE All-Around): Trait 2 (col 4): 'Attrition Orbs' isn't in the current pool (only on old version 2987244302). Current pool: Circle of Life, Tear, Kill Clip, Hatchling, Desperate Measures, Sword Logic, Aggregate Charge
+- **Adamantite** (PVE All-Around): Origin: 'Runneth Over' isn't in the current pool (only on old version 2987244302). Current pool: Heretical Behavior, Willing Vessel
+- **Adjudicator** (PVP God roll): Trait 2 (col 4): 'Fragile Focus' isn't in the current pool (only on old version 1013434963). Current pool: Target Lock, Kinetic Tremors, Onslaught, Rampage, Frenzy, All-Star, Swashbuckler
+- **Aisha's Care** (PVE All-Around): Trait 2 (col 4): 'Golden Tricorn' isn't in the current pool (only on old version 3969379530). Current pool: Hatchling, Desperado, Kill Clip, Moving Target, Headseeker, Elemental Honing, Sword Logic
+- **Aisha's Care** (PVE All-Around): Origin: 'One Quiet Moment' isn't in the current pool (only on old version 3969379530). Current pool: Fleet Footed, Roar of Battle, Omolon Fluid Dynamics
+- **Aisha's Care** (PVP All-Around): Trait 1 (col 3): 'To The Pain' isn't in the current pool (only on old version 3969379530). Current pool: Slice, Encore, Under Pressure, Keep Away, Zen Moment, Lone Wolf, Rapid Hit
+- **Anamnesis** (PVP All-Around): Masterwork: 'Accuracy' isn't a masterwork for this weapon. Options: Charge Time, Draw Time, Handling, Impact, Reload Speed, Stability, Target Acquisition
+- **Ancient Gospel** (PVP All-Around): Trait 2 (col 4): 'Kill Clip ( Explosive Payload' isn't in the current pool. Current pool: Kill Clip, Rangefinder, Dragonfly, Swashbuckler, Harmony, To the Pain, Closing Time, Explosive Payload, Demoralize, Precision Instrument
+- **Belisarius-D** (PVE God roll): Trait 1 (col 3): 'Vorpal Weapon' isn't in the current pool (only on old version 2313726158). Current pool: Keep Away, Elemental Capacitor, Rapid Hit, Slice, Tear, Dragonfly, Lone Wolf
+- **Boomslang-4FR** (PVE All-Around): Trait 1 (col 3): 'Rapid Hit OR Envious Arsenal' isn't in the current pool. Current pool: Rapid Hit, Heating Up, Field Prep, Rolling Storm, Envious Arsenal, Transcendent Moment
+- **Cataclysmic** (PVP God roll): Barrel (col 1): 'HitMark HCS' isn't in the current pool. Current pool: Arrowhead Brake, Chambered Compensator, Corkscrew Rifling, Extended Barrel, Fluted Barrel, Full Bore, Hammer-Forged Rifling, Polygonal Rifling, Smallbore, Full Choke, Rifled Barrel
+- **Cataclysmic** (PVP God roll): Magazine (col 2): 'High-Caliber Rounds' isn't in the current pool. Current pool: Accelerated Coils, Enhanced Battery, Ionized Battery, Liquid Coils, Particle Repeater, Projection Fuse
+- **Cataclysmic** (PVP God roll): Magazine (col 2): 'Ricochet Rounds' isn't in the current pool. Current pool: Accelerated Coils, Enhanced Battery, Ionized Battery, Liquid Coils, Particle Repeater, Projection Fuse
+- **Cataclysmic** (PVP God roll): Trait 1 (col 3): 'Rangefinder' isn't in the current pool. Current pool: Surplus, No Distractions, Compulsive Reloader, Sleight of Hand, Dragonfly, Fourth Time's the Charm, Successful Warm-Up, Burning Ambition, Slideshot
+- **Cataclysmic** (PVP God roll): Trait 1 (col 3): 'Perpetual Motion' isn't in the current pool. Current pool: Surplus, No Distractions, Compulsive Reloader, Sleight of Hand, Dragonfly, Fourth Time's the Charm, Successful Warm-Up, Burning Ambition, Slideshot
+- **Cataclysmic** (PVP God roll): Trait 2 (col 4): 'Moving Target' isn't in the current pool. Current pool: Adaptive Munitions, Turnabout, High-Impact Reserves, Box Breathing, Clown Cartridge, Bait and Switch, Focused Fury, Elemental Honing, Aggregate Charge
+- **Cataclysmic** (PVP God roll): Trait 2 (col 4): 'Kill Clip' isn't in the current pool. Current pool: Adaptive Munitions, Turnabout, High-Impact Reserves, Box Breathing, Clown Cartridge, Bait and Switch, Focused Fury, Elemental Honing, Aggregate Charge
+- **Cataphract GL3** (PVE God roll): Origin: 'One Quiet Moment' isn't in the current pool (only on old version 2738601016). Current pool: Fleet Footed, Roar of Battle, Omolon Fluid Dynamics
+- **Cataphract GL3** (PVP God roll): Origin: 'Alacrity' isn't in the current pool (only on old version 2738601016). Current pool: Fleet Footed, Roar of Battle, Omolon Fluid Dynamics
+- **Snipehunt Mk. 47** (PVE All-Around): Trait 1 (col 3): 'Bewildering Burst' isn't in the current pool. Current pool: Supercharged Magazine, Subsistence, Jolting Feedback, Killing Wind, Light Touch, Offhand Strike, Trickle Charge
+- **Snipehunt Mk. 47** (PVE All-Around): Trait 1 (col 3): 'Collective Demolition' isn't in the current pool. Current pool: Supercharged Magazine, Subsistence, Jolting Feedback, Killing Wind, Light Touch, Offhand Strike, Trickle Charge
+- **Snipehunt Mk. 47** (PVE All-Around): Trait 2 (col 4): 'Kinetic Tremors' isn't in the current pool. Current pool: Rolling Storm, Dynamic Sway Reduction, Voltshot, Gear Shift, Hip-Fire Grip, Attrition Orbs, Chaos Reshaped
+- **Snipehunt Mk. 47** (PVE All-Around): Origin: 'Elliptical Orbit' isn't in the current pool. Current pool: Featherweight, Tex Balanced Stock
+- **Snipehunt Mk. 47** (PVP All-Around): Trait 1 (col 3): 'Kill Clip' isn't in the current pool. Current pool: Supercharged Magazine, Subsistence, Jolting Feedback, Killing Wind, Light Touch, Offhand Strike, Trickle Charge
+- **Snipehunt Mk. 47** (PVP All-Around): Trait 1 (col 3): 'Rapid Hit' isn't in the current pool. Current pool: Supercharged Magazine, Subsistence, Jolting Feedback, Killing Wind, Light Touch, Offhand Strike, Trickle Charge
+- **Snipehunt Mk. 47** (PVP All-Around): Trait 2 (col 4): 'Headseeker' isn't in the current pool. Current pool: Rolling Storm, Dynamic Sway Reduction, Voltshot, Gear Shift, Hip-Fire Grip, Attrition Orbs, Chaos Reshaped
+- **Snipehunt Mk. 47** (PVP All-Around): Origin: 'Elliptical Orbit' isn't in the current pool. Current pool: Featherweight, Tex Balanced Stock
+- **Chroma Rush** (PVE All-Around): Trait 2 (col 4): 'Frenzy' isn't in the current pool (only on old version 2598420927). Current pool: Rampage, Target Lock, Kinetic Tremors, All-Star, Kill Clip, Ancillary Ordinance
+- **Chronophage** (PVE All-Around): Magazine (col 2): 'Tactical Mag' isn't in the current pool. Current pool: Enhanced Battery, Ionized Battery, Particle Repeater, Projection Fuse, Light Battery, Tactical Battery
+- **Circular Logic** (PVP God roll): Trait 1 (col 3): 'Keep Away' isn't in the current pool (only on old version 2187717691). Current pool: Ambitious Assassin, Firefly, Enlightened Action, Overflow, Demolitionist, Fourth Time's the Charm
+- **Circular Logic** (PVP God roll): Trait 2 (col 4): 'Vorpal Weapon' isn't in the current pool (only on old version 2187717691). Current pool: Elemental Honing, Killing Tally, Mega Kill Clip, Desperate Measures, Binary Orbit, Hatchling
+- **Circular Logic** (PVE God roll): Trait 1 (col 3): 'Feeding Frenzy' isn't in the current pool (only on old version 2187717691). Current pool: Ambitious Assassin, Firefly, Enlightened Action, Overflow, Demolitionist, Fourth Time's the Charm
+- **Cold Comfort** (PVE All-Around): Trait 1 (col 3): 'Envious Arsenal' isn't in the current pool (only on old version 291447487). Current pool: Chill Clip, Reconstruction, Impulse Amplifier, Vorpal Weapon, Envious Assassin, Tracking Module
+- **Cold Comfort** (PVE All-Around): Origin: 'Gravity Well' isn't in the current pool (only on old version 291447487). Current pool: Restoration Ritual
+- **Commemoration** (PVP God roll): Magazine (col 2): 'Projection Fuse' isn't in the current pool. Current pool: Accurized Rounds, Appended Mag, Tactical Mag, Extended Mag, Steady Rounds, Alloy Magazine, Flared Magwell, Ricochet Rounds, Light Mag, Armor-Piercing Rounds, Drop Mag, Assault Mag, High-Caliber Rounds
+- **Commemoration** (PVP God roll): Magazine (col 2): 'Particle Repeater' isn't in the current pool. Current pool: Accurized Rounds, Appended Mag, Tactical Mag, Extended Mag, Steady Rounds, Alloy Magazine, Flared Magwell, Ricochet Rounds, Light Mag, Armor-Piercing Rounds, Drop Mag, Assault Mag, High-Caliber Rounds
+- **Crowning Duologue** (PVE All-Around): Trait 1 (col 3): 'Reconstruction ( Auto-Loading Holster' isn't in the current pool. Current pool: Impulse Amplifier, Auto-Loading Holster, Demolitionist, Air Trigger, Hatchling, Grave Robber, Reconstruction
+- **Cruel Mercy** (PVE All-Around): Origin: 'Vanguard’s Vindication' isn't in the current pool (only on old version 233635202). Current pool: Problem Solver, Vanguard Determination, Omolon Fluid Dynamics
+- **Crux Termination IV** (PVE God roll): Barrel (col 1): 'Barrel: Hard Launch' isn't in the current pool. Current pool: Volatile Launch, Confined Launch, Countermass, Hard Launch, Linear Compensator, Quick Launch, Smart Drift Control
+- **Deadlock** (PVE All-Around): Trait 1 (col 3): 'Grave Robber' isn't in the current pool (only on old version 2035738085). Current pool: Lone Wolf, Slideshot, Threat Detector, Offhand Strike, Quickdraw, Perpetual Motion, Surplus
+- **Deadlock** (PVE All-Around): Trait 2 (col 4): 'Trench Barrel' isn't in the current pool (only on old version 2035738085). Current pool: Closing Time, Opening Shot, Snapshot Sights, One-Two Punch, Vorpal Weapon, Fragile Focus, Master of Arms
+- **Deadlock** (PVE All-Around): Trait 2 (col 4): 'Cascade Point' isn't in the current pool (only on old version 2035738085). Current pool: Closing Time, Opening Shot, Snapshot Sights, One-Two Punch, Vorpal Weapon, Fragile Focus, Master of Arms
+- **D.F.A.** (PVP All-Around): Barrel (col 1): 'Quick Launch' isn't in the current pool. Current pool: Arrowhead Brake, Chambered Compensator, Corkscrew Rifling, Extended Barrel, Fluted Barrel, Full Bore, Hammer-Forged Rifling, Polygonal Rifling, Smallbore, Full Choke, Rifled Barrel
+- **Dragoncult Sickle** (PVP God roll): Trait 2 (col 4): 'En Garde' isn't in the current pool. Current pool: Sword Logic, Attrition Orbs, Chain Reaction, Whirlwind Blade, Elemental Honing, Surrounded
+- **Edge Transit** (PVE Boss Damage): Trait 1 (col 3): 'Envious Assassin' isn't in the current pool (only on old version 568611923). Current pool: Envious Arsenal, Auto-Loading Holster, Repulsor Brace, Cascade Point, Demolitionist, Chain Reaction
+- **Edge Transit** (PVP All-Around): Trait 1 (col 3): 'Impulse Amplifier' isn't in the current pool (only on old version 568611923). Current pool: Envious Arsenal, Auto-Loading Holster, Repulsor Brace, Cascade Point, Demolitionist, Chain Reaction
+- **Elsie’s Rifle** (PVE Ad Clear): Trait 1 (col 3): 'Feeding Frenzy' isn't in the current pool (only on old version 2372514509). Current pool: Rewind Rounds, Dimensional Shift, Keep Away, Loose Change, Repulsor Brace, Zen Moment, Collective Demolition
+- **Exalted Truth** (PVE All-Around): Trait 2 (col 4): 'One for All' isn't in the current pool (only on old version 3436626079). Current pool: Opening Shot, Precision Instrument, Magnificent Howl, Demoralize, Repulsor Brace, Eye of the Storm, Sword Logic
+- **Exalted Truth** (PVE All-Around): Origin: 'Alacrity' isn't in the current pool (only on old version 548809020). Current pool: Fleet Footed, Roar of Battle, Suros Synergy
+- **Exalted Truth** (PVE All-Around): Origin: 'One Quiet Moment' isn't in the current pool (only on old version 548809020). Current pool: Fleet Footed, Roar of Battle, Suros Synergy
+- **Exalted Truth** (PVP All-Around): Origin: 'One Quiet Moment' isn't in the current pool (only on old version 548809020). Current pool: Fleet Footed, Roar of Battle, Suros Synergy
+- **Exalted Truth** (PVP All-Around): Origin: 'Alacrity' isn't in the current pool (only on old version 548809020). Current pool: Fleet Footed, Roar of Battle, Suros Synergy
+- **Eye of Sol** (PVE All-Around): Trait 1 (col 3): 'Air Trigger' isn't in the current pool (only on old version 627188188). Current pool: Moving Target, Slickdraw, Triple Tap, Demolitionist, No Distractions, Lone Wolf, Rewind Rounds
+- **Eye of Sol** (PVE All-Around): Trait 1 (col 3): 'Perpetual Motion' isn't in the current pool (only on old version 627188188). Current pool: Moving Target, Slickdraw, Triple Tap, Demolitionist, No Distractions, Lone Wolf, Rewind Rounds
+- **Eye of Sol** (PVE All-Around): Trait 2 (col 4): 'Precision Instrument' isn't in the current pool (only on old version 627188188). Current pool: Opening Shot, Snapshot Sights, Firing Line, Kinetic Tremors, Aggregate Charge, Closing Time, Adhesive Ordnance
+- **Eye of Sol** (PVE All-Around): Trait 2 (col 4): 'Vorpal Weapon' isn't in the current pool (only on old version 627188188). Current pool: Opening Shot, Snapshot Sights, Firing Line, Kinetic Tremors, Aggregate Charge, Closing Time, Adhesive Ordnance
+- **Eye of Sol** (PVP All-Around): Trait 1 (col 3): 'Perpetual Motion' isn't in the current pool (only on old version 627188188). Current pool: Moving Target, Slickdraw, Triple Tap, Demolitionist, No Distractions, Lone Wolf, Rewind Rounds
+- **Eye of Sol** (PVP All-Around): Trait 2 (col 4): 'Keep Away' isn't in the current pool (only on old version 627188188). Current pool: Opening Shot, Snapshot Sights, Firing Line, Kinetic Tremors, Aggregate Charge, Closing Time, Adhesive Ordnance
+- **Eye of Sol** (PVP All-Around): Origin: 'One Quiet Moment' isn't in the current pool (only on old version 627188188). Current pool: Fleet Footed, Roar of Battle, Wild Card
+- **Eyes Unveiled** (PVE All-Around): Trait 1 (col 3): 'Triple Tap' isn't in the current pool (only on old version 615373993). Current pool: Collective Demolition, Fourth Time's the Charm, Overflow, Successful Warm-Up, Demoralize, Mega Kill Clip, Butterfly
+- **Eyes Unveiled** (PVP All-Around): Trait 1 (col 3): 'Perfect Float' isn't in the current pool (only on old version 615373993). Current pool: Collective Demolition, Fourth Time's the Charm, Overflow, Successful Warm-Up, Demoralize, Mega Kill Clip, Butterfly
+- **Eyes Unveiled** (PVP All-Around): Trait 2 (col 4): 'Discord' isn't in the current pool (only on old version 615373993). Current pool: Reservoir Burst, Chain Reaction, Withering Gaze, Sword Logic, Precision Instrument, Frenzy, Elemental Honing
+- **Fair Judgment** (PVE All-Around): Origin: 'Vanguard’s Vindication' isn't in the current pool (only on old version 4176873718). Current pool: Vanguard Determination
+- **Fair Judgment** (PVP All-Around): Origin: 'Run and Gun' isn't in the current pool. Current pool: Vanguard Determination
+- **Forbearance** (PVE All-Around): Trait 1 (col 3): 'Disruption Break' isn't in the current pool (only on old version 568611921). Current pool: Overflow, Redirection, Air Trigger, Ambitious Assassin, Demolitionist, Stats for All, Unrelenting
+- **Forbearance** (PVE All-Around): Trait 1 (col 3): 'Surplus' isn't in the current pool (only on old version 568611921). Current pool: Overflow, Redirection, Air Trigger, Ambitious Assassin, Demolitionist, Stats for All, Unrelenting
+- **Forbearance** (PVE All-Around): Trait 2 (col 4): 'Golden Tricorn' isn't in the current pool (only on old version 568611921). Current pool: Desperate Measures, Chain Reaction, Voltshot, Bait and Switch, One for All, Frenzy, Wellspring
+- **Forthcoming Deviance** (PVE All-Around): Barrel (col 1): 'Fluted Barrel' isn't in the current pool. Current pool: Ballistic Tuning, Supercooled Accelerator, Tempered Truss Rod, Low-Impedance Windings, Auxiliary Reserves, Lightweight Emitter
+- **Forthcoming Deviance** (PVE All-Around): Masterwork: 'Shield Duration' isn't a masterwork for this weapon. Options: Charge Time, Handling, Impact, Range, Reload Speed
+- **Found Verdict** (PVE All-Around): Trait 2 (col 4): 'Handling' isn't in the current pool. Current pool: One-Two Punch, Trench Barrel, Opening Shot, Rolling Storm, Elemental Honing, Desperate Measures, Voltshot, Gear Shift, Binary Orbit, Demolitionist, Frenzy, Killing Wind, Vorpal Weapon
+- **Greasy Luck** (PVE All-Around): Trait 1 (col 3): 'Lead from Gold' isn't in the current pool (only on old version 1685406703). Current pool: Melee Momentum, Beacon Rounds, Reconstruction, Heal Clip, Chaos Reshaped, Butterfly
+- **Greasy Luck** (PVE All-Around): Trait 1 (col 3): 'Replenishing Aegis' isn't in the current pool (only on old version 1685406703). Current pool: Melee Momentum, Beacon Rounds, Reconstruction, Heal Clip, Chaos Reshaped, Butterfly
+- **Greasy Luck** (PVE All-Around): Trait 2 (col 4): 'Redirection' isn't in the current pool (only on old version 1685406703). Current pool: Unstoppable Force, Box Breathing, Chain Reaction, Mega Kill Clip, Close to Melee, Incandescent
+- **Greasy Luck** (PVE All-Around): Masterwork: 'Shield Duration' isn't a masterwork for this weapon. Options: Charge Time, Handling, Impact, Range, Reload Speed
+- **Greasy Luck** (PVE All-Around): Origin: 'Gravity Well' isn't in the current pool (only on old version 1685406703). Current pool: Restoration Ritual
+- **Gridskipper** (PVP All-Around): Trait 1 (col 3): 'Perpetual Motion' isn't in the current pool (only on old version 3433930495). Current pool: Killing Wind, Lone Wolf, Repulsor Brace, Zen Moment, Demoralize, Demolitionist
+- **Gridskipper** (PVP All-Around): Trait 2 (col 4): 'Elemetal Capacitor' isn't in the current pool. Current pool: Multikill Clip, Frenzy, Destabilizing Rounds, Headseeker, Aggregate Charge, Desperate Measures
+- **Hero of Ages** (PVE God roll): Trait 1 (col 3): 'Tireless Blade' isn't in the current pool (only on old version 2139640995). Current pool: Relentless Strikes, Sharp Harvest, Impromptu Ammunition, Flash Counter, Demolitionist, Collective Action
+- **Hero of Ages** (PVE God roll): Trait 2 (col 4): 'En Garde' isn't in the current pool (only on old version 2139640995). Current pool: One for All, Jolting Feedback, Assassin's Blade, Chain Reaction, Elemental Honing, Whirlwind Blade
+- **Hero of Ages** (PVP God roll): Trait 1 (col 3): 'Tireless Blade' isn't in the current pool (only on old version 2139640995). Current pool: Relentless Strikes, Sharp Harvest, Impromptu Ammunition, Flash Counter, Demolitionist, Collective Action
+- **Hung Jury SR4** (PVE GMs): Trait 2 (col 4): 'One for All' isn't in the current pool (only on old version 205225492). Current pool: Frenzy, Explosive Payload, Desperate Measures, Precision Instrument, Firefly, Box Breathing, Ancillary Ordinance
+- **Hung Jury SR4** (PVP God roll): Trait 2 (col 4): 'Cascade Point' isn't in the current pool (only on old version 205225492). Current pool: Frenzy, Explosive Payload, Desperate Measures, Precision Instrument, Firefly, Box Breathing, Ancillary Ordinance
+- **Hush** (PVP All-Around): Trait 1 (col 3): 'Offhand Strike' isn't in the current pool (only on old version 3962575203). Current pool: Archer's Tempo, Opening Shot, Successful Warm-Up, Hip-Fire Grip, Burning Ambition, Firefly, Rapid Hit
+- **Hush** (PVP All-Around): Masterwork: 'Accuracy' isn't a masterwork for this weapon. Options: Charge Time, Draw Time, Handling, Impact, Reload Speed, Stability, Target Acquisition
+- **Hushed Whisper** (PVE All-Around): Masterwork: 'Accuracy' isn't a masterwork for this weapon. Options: Charge Time, Draw Time, Handling, Impact, Reload Speed, Stability, Target Acquisition
+- **Ignition Code** (PVE All-Around): Magazine (col 2): 'Blinding Grenades' isn't in the current pool. Current pool: Disorienting Grenades, Proximity Grenades, Spike Grenades, High-Velocity Rounds, Implosion Rounds, Concussion Grenades, Black Powder
+- **Inbound Surveillance** (PVE All-Around): Origin: 'Meet Hammer' isn't in the current pool. Current pool: Nail, Meet Hammer, Häkke Breach Armaments
+- **Inbound Surveillance** (PVE All-Around): Trait 2 (col 4): 'Explosive Rounds' isn't in the current pool. Current pool: Explosive Payload, Frenzy, Adhesive Ordnance, Kinetic Tremors, Precision Instrument, Redirection
+- **Indebted Kindness** (PVP God roll): Trait 2 (col 4): 'Adagio' isn't in the current pool (only on old version 3381450498). Current pool: Attrition Orbs, Voltshot, Surrounded, Gear Shift, Chain Reaction, Rolling Storm
+- **Judgment** (PVE All-Around): Barrel (col 1): 'Fastdraw HCS' isn't in the current pool (only on old version 1476654960). Current pool: Arrowhead Brake, Chambered Compensator, Corkscrew Rifling, Extended Barrel, Fluted Barrel, Full Bore, Hammer-Forged Rifling, Polygonal Rifling, Smallbore, Full Choke, Rifled Barrel
+- **Judgment** (PVE All-Around): Origin: 'Gravity Well' isn't in the current pool (only on old version 1773934241). Current pool: Crossing Over
+- **Judgment** (PVP All-Around): Barrel (col 1): 'Hitmark HCS' isn't in the current pool (only on old version 1476654960). Current pool: Arrowhead Brake, Chambered Compensator, Corkscrew Rifling, Extended Barrel, Fluted Barrel, Full Bore, Hammer-Forged Rifling, Polygonal Rifling, Smallbore, Full Choke, Rifled Barrel
+- **Judgment** (PVP All-Around): Trait 1 (col 3): 'Slideshot' isn't in the current pool (only on old version 1476654960). Current pool: Headstone, Lone Wolf, Demolitionist, Rapid Hit, Keep Away, Crystalline Corpsebloom, Built to Blast
+- **Keen Thistle** (PVE All-Around): Origin: 'Alacrity' isn't in the current pool (only on old version 1893967086). Current pool: Fleet Footed, Roar of Battle, Häkke Breach Armaments
+- **Keen Thistle** (PVE All-Around): Origin: 'One Quiet Moment' isn't in the current pool (only on old version 1893967086). Current pool: Fleet Footed, Roar of Battle, Häkke Breach Armaments
+- **Keen Thistle** (PVP All-Around): Origin: 'One Quiet Moment' isn't in the current pool (only on old version 1893967086). Current pool: Fleet Footed, Roar of Battle, Häkke Breach Armaments
+- **Keen Thistle** (PVP All-Around): Origin: 'Alacrity' isn't in the current pool (only on old version 1893967086). Current pool: Fleet Footed, Roar of Battle, Häkke Breach Armaments
+- **Kept Confidence** (PVE God roll): Magazine (col 2): 'Chambered Compensator' is not in this column; it rolls in Barrel (col 1)
+- **King Orfeo** (PVE All-Around): Origin: 'Meet Hammer' isn't in the current pool. Current pool: Nail, Meet Hammer
+- **King Orfeo** (PVP All-Around): Origin: 'Meet Hammer' isn't in the current pool. Current pool: Nail, Meet Hammer
+- **Liminal Vigil** (PVE All-Around): Trait 1 (col 3): 'Enlightened Action' isn't in the current pool (only on old version 1460079227). Current pool: Zen Moment, Headstone, Crystalline Corpsebloom, Offhand Strike, Lone Wolf, Attrition Orbs
+- **Liminal Vigil** (PVE All-Around): Trait 2 (col 4): 'Desperate Measures' isn't in the current pool (only on old version 1460079227). Current pool: Frenzy, Kill Clip, Rimestealer, Desperado, Rangefinder, Headseeker
+- **Liminal Vigil** (PVP All-Around): Trait 1 (col 3): 'Tap the Trigger' isn't in the current pool (only on old version 1460079227). Current pool: Zen Moment, Headstone, Crystalline Corpsebloom, Offhand Strike, Lone Wolf, Attrition Orbs
+- **Liminal Vigil** (PVP All-Around): Trait 2 (col 4): 'Desperate Measures' isn't in the current pool (only on old version 1460079227). Current pool: Frenzy, Kill Clip, Rimestealer, Desperado, Rangefinder, Headseeker
+- **Line in the Sand** (PVE All-Around): Magazine (col 2): 'PERKS' isn't in the current pool. Current pool: Accelerated Coils, Enhanced Battery, Ionized Battery, Liquid Coils, Particle Repeater, Projection Fuse
+- **Long Arm** (PVE All-Around): Trait 2 (col 4): 'Dragonfly' isn't in the current pool (only on old version 8293111). Current pool: Chaos Reshaped, Meganeura, Redirection, Precision Instrument, Gear Shift, Explosive Payload
+- **Long Arm** (PVE All-Around): Origin: 'Gravity Well' isn't in the current pool (only on old version 14929251). Current pool: Tex Balanced Stock
+- **Long Arm** (PVP All-Around): Trait 1 (col 3): 'Lone Wolf' isn't in the current pool (only on old version 14929251). Current pool: Rapid Hit, Rolling Storm, Dual Loader, Supercharged Magazine, Hip-Fire Grip, Lucky Shot
+- **Lotus-Eater** (PVE All-Around): Trait 1 (col 3): 'Feeding Frenzy' isn't in the current pool (only on old version 3922217119). Current pool: Reconstruction, Repulsor Brace, Dimensional Shift, Air Trigger, Light Touch, Danger Zone
+- **Lotus-Eater** (PVE All-Around): Origin: 'Vanguard’s Vindication' isn't in the current pool (only on old version 3922217119). Current pool: Accelerated Assault, Problem Solver, Vanguard Determination
+- **Lubrae’s Ruin** (PVE God roll): Masterwork: 'Shield Duration' isn't a masterwork for this weapon. Options: Handling, Range, Reload Speed
+- **Luna's Howl** (PVE Ad Clear): Trait 1 (col 3): 'Enlightened Action' isn't in the current pool (only on old version 2763843899). Current pool: Subsistence, Heal Clip, Firefly, Slideshot, Encore, Keep Away, Eye of the Storm
+- **Luna's Howl** (PVP 3v3 (Trials)): Trait 2 (col 4): 'Precision Instrument' isn't in the current pool (only on old version 2763843899). Current pool: Closing Time, Chaos Reshaped, Desperate Measures, Opening Shot, Kill Clip, Magnificent Howl, Incandescent
+- **Matador 64** (PVP God roll): Trait 1 (col 3): 'Perpetual Motion' isn't in the current pool (only on old version 2563012876). Current pool: Lone Wolf, Light Touch, Slideways, Supercharged Magazine, Threat Detector, Lead from Gold
+- **Matador 64** (PVP God roll): Trait 2 (col 4): 'Killing Wind' isn't in the current pool (only on old version 2563012876). Current pool: Collective Action, Closing Time, Opening Shot, One-Two Punch, Gear Shift, Swashbuckler
+- **Matador 64** (PVE God roll): Trait 2 (col 4): 'Golden Tricorn' isn't in the current pool (only on old version 2563012876). Current pool: Collective Action, Closing Time, Opening Shot, One-Two Punch, Gear Shift, Swashbuckler
+- **Mechabre** (PVP All-Around): Barrel (col 1): 'Flared Magwell' is not in this column; it rolls in Magazine (col 2)
+- **Mercurial Overreach** (PVP God roll): Trait 1 (col 3): 'Firmly Planted' isn't in the current pool (only on old version 2073794990). Current pool: Snapshot Sights, Lone Wolf, Keep Away, Discord, Envious Assassin, No Distractions, Fragile Focus
+- **Mercurial Overreach** (PVE God roll): Trait 1 (col 3): 'Firmly Planted' isn't in the current pool (only on old version 2073794990). Current pool: Snapshot Sights, Lone Wolf, Keep Away, Discord, Envious Assassin, No Distractions, Fragile Focus
+- **Mercury-A** (PVP All-Around): Masterwork: 'Accuracy' isn't a masterwork for this weapon. Options: Charge Time, Draw Time, Handling, Impact, Reload Speed, Stability, Target Acquisition
+- **Micromort** (PVP All-Around): Origin: 'Meet Hammer' isn't in the current pool. Current pool: Nail, Meet Hammer, Häkke Breach Armaments
+- **Midnight Coup** (PVE All-Around): Trait 2 (col 4): 'Frenzy' isn't in the current pool (only on old version 2499720827). Current pool: Rampage, Kinetic Tremors, Zen Moment, One for All, Ancillary Ordinance, Opening Shot, Desperate Measures
+- **The Militia’s Birthright** (PVE God roll): Magazine (col 2): 'Blinding Grenades' isn't in the current pool. Current pool: Disorienting Grenades, Proximity Grenades, Spike Grenades, High-Velocity Rounds, Implosion Rounds, Concussion Grenades, Black Powder
+- **The Militia’s Birthright** (PVP God roll): Magazine (col 2): 'Blinding Grenades' isn't in the current pool. Current pool: Disorienting Grenades, Proximity Grenades, Spike Grenades, High-Velocity Rounds, Implosion Rounds, Concussion Grenades, Black Powder
+- **Mindbender’s Ambition** (PVE God roll): Trait 1 (col 3): 'Lead from Gold' isn't in the current pool (only on old version 1094005544). Current pool: Slideways, Snapshot Sights, Threat Detector, Pugilist, Perfect Float, Surplus
+- **Mindbender’s Ambition** (PVE God roll): Trait 1 (col 3): 'Auto-Loading Holster' isn't in the current pool (only on old version 1094005544). Current pool: Slideways, Snapshot Sights, Threat Detector, Pugilist, Perfect Float, Surplus
+- **Modified B-7 Pistol** (PVP All-Around): Origin: 'Air-Cooled Vents' isn't in the current pool. Current pool: Accelerated Assault, Air-Cooled Core
+- **The Mountaintop** (PVE All-Around): Trait 2 (col 4): 'Harmony' isn't in the current pool (only on old version 568611922). Current pool: Recombination, Vorpal Weapon, Frenzy, All-Star, Rampage, Ancillary Ordinance, Elemental Honing
+- **Mykel’s Reverence** (PVP God roll): Trait 2 (col 4): 'Hatching if strand subclass' isn't in the current pool. Current pool: Offhand Strike, Frenzy, Harmony, Tap the Trigger, Swashbuckler, Hatchling, Paracausal Affinity, Master of Arms, Binary Orbit
+- **Naeem’s Lance** (PVP God roll): Magazine (col 2): 'Ricochet Rounds' isn't in the current pool. Current pool: Accurized Rounds, Appended Mag, Tactical Mag, Extended Mag, Steady Rounds, Alloy Magazine, Flared Magwell
+- **Naeem’s Lance** (PVP God roll): Trait 1 (col 3): 'Keep Away' isn't in the current pool (only on old version 2806569825). Current pool: Hatchling, Deconstruct, Reconstruction, Rewind Rounds, Lucky Shot, Elemental Capacitor
+- **Naeem’s Lance** (PVP God roll): Trait 1 (col 3): 'Discord' isn't in the current pool (only on old version 2806569825). Current pool: Hatchling, Deconstruct, Reconstruction, Rewind Rounds, Lucky Shot, Elemental Capacitor
+- **Naeem’s Lance** (PVP God roll): Trait 2 (col 4): 'Demolitionist' isn't in the current pool (only on old version 2806569825). Current pool: Attrition Orbs, Mega Kill Clip, Elemental Honing, Opening Shot, Cascade Point, Precision Instrument
+- **New Pacific Epitaph** (PVE All-Around): Origin: 'Gravity Well' isn't in the current pool (only on old version 492673102). Current pool: Restoration Ritual
+- **New Pacific Epitaph** (PVP All-Around): Origin: 'Gravity Well' isn't in the current pool (only on old version 492673102). Current pool: Restoration Ritual
+- **No Survivors** (PVE All-Around): Origin: 'Gravity Well' isn't in the current pool (only on old version 4193602194). Current pool: Restoration Ritual
+- **No Survivors** (PVP All-Around): Origin: 'Gravity Well' isn't in the current pool (only on old version 4193602194). Current pool: Restoration Ritual
+- **Non-Denouement** (PVP All-Around): Masterwork: 'Accuracy' isn't a masterwork for this weapon. Options: Charge Time, Draw Time, Handling, Impact, Reload Speed, Stability, Target Acquisition
+- **Opaque Hourglass** (PVE All-Around): Trait 1 (col 3): 'Bolt Collector' isn't in the current pool. Current pool: Sympathetic Arsenal, Field Prep, Firefly, Rolling Storm, Bolt Scavenger, Wellspring, Impulse Amplifier
+- **Point of the Stag** (PVE God roll): Masterwork: 'Accuracy' isn't a masterwork for this weapon. Options: Charge Time, Draw Time, Handling, Impact, Reload Speed, Stability, Target Acquisition
+- **Point of the Stag** (PVP God roll): Trait 1 (col 3): 'Shot Swap' isn't in the current pool (only on old version 888872889). Current pool: No Distractions, Rangefinder, Archer's Tempo, Strategist, Dragonfly, Hip-Fire Grip, Successful Warm-Up
+- **Point of the Stag** (PVP God roll): Masterwork: 'Accuracy' isn't a masterwork for this weapon. Options: Charge Time, Draw Time, Handling, Impact, Reload Speed, Stability, Target Acquisition
+- **Pre Astyanax IV** (PVE God roll): Trait 1 (col 3): 'Archer’s Tempo' isn't in the current pool (only on old version 192784503). Current pool: Firefly, Successful Warm-Up, Impulse Amplifier, Rapid Hit, Incandescent, Transcendent Moment
+- **Pre Astyanax IV** (PVE God roll): Trait 2 (col 4): 'Precision Instrument' isn't in the current pool (only on old version 192784503). Current pool: Burning Ambition, Explosive Head, Binary Orbit, Elemental Honing, Swashbuckler, High Ground
+- **Pre Astyanax IV** (PVP God roll): Trait 1 (col 3): 'Perpetual Motion' isn't in the current pool (only on old version 192784503). Current pool: Firefly, Successful Warm-Up, Impulse Amplifier, Rapid Hit, Incandescent, Transcendent Moment
+- **Pre Astyanax IV** (PVP God roll): Trait 2 (col 4): 'Opening Shot' isn't in the current pool (only on old version 192784503). Current pool: Burning Ambition, Explosive Head, Binary Orbit, Elemental Honing, Swashbuckler, High Ground
+- **Pre Astyanax IV** (PVP God roll): Masterwork: 'Accuracy' isn't a masterwork for this weapon. Options: Charge Time, Draw Time, Handling, Impact, Reload Speed, Stability, Target Acquisition
+- **Prosecutor** (PVE All-Around): Trait 1 (col 3): 'Attrition Orbs' isn't in the current pool (only on old version 880829467). Current pool: Dragonfly, Eddy Current, Keep Away, Enlightened Action, Trickle Charge, Light Touch, Subsistence
+- **Prosecutor** (PVE All-Around): Origin: 'Gravity Well' isn't in the current pool (only on old version 880829467). Current pool: Crossing Over
+- **Prosecutor** (PVP All-Around): Trait 1 (col 3): 'Zen Moment' isn't in the current pool (only on old version 880829467). Current pool: Dragonfly, Eddy Current, Keep Away, Enlightened Action, Trickle Charge, Light Touch, Subsistence
+- **Prosecutor** (PVP All-Around): Trait 2 (col 4): 'Tap the Trigger' isn't in the current pool (only on old version 880829467). Current pool: Voltshot, Rolling Storm, Onslaught, Target Lock, Gear Shift, Sword Logic
+- **Psychopomp** (PVE All-Around): Trait 1 (col 3): 'Envious Arsenal' isn't in the current pool (only on old version 3840794631). Current pool: Envious Assassin, Demolitionist, Rolling Storm, Ambitious Assassin, Impromptu Ammunition, Blast Distributor, Auto-Loading Holster
+- **Psychopomp** (PVE All-Around): Trait 2 (col 4): 'Frenzy' isn't in the current pool (only on old version 3840794631). Current pool: Voltshot, Harmony, Attrition Orbs, Sword Logic, Gear Shift, Elemental Honing, Aggregate Charge
+- **Raconteur** (PVE God roll): Barrel (col 1): 'Elastic String Arrow : Fiberglass Arrow Shaft' isn't in the current pool. Current pool: Agile Bowstring, Tactile String, Elastic String, Flexible String, High Tension String, Natural String, Polymer String
+- **Rake Angle** (PVE All-Around): Origin: 'Stunning Recovery' isn't in the current pool (only on old version 2298039571). Current pool: Problem Solver, Vanguard Determination, Häkke Breach Armaments
+- **Redrix's Estoc** (PVE All-Around): Trait 2 (col 4): 'Desperate Measures' isn't in the current pool (only on old version 3218364298). Current pool: Sword Logic, Headseeker, Headstone, Kill Clip, Elemental Honing, Frenzy, Elemental Capacitor
+- **Refusal of the Call** (PVP All-Around): Trait 2 (col 4): 'Disruption Break' isn't in the current pool (only on old version 2671849376). Current pool: Unstoppable Force, Sword Logic, Replenishing Aegis, Aggregate Charge, Mega Kill Clip, Desperate Measures, Chaos Reshaped
+- **Relentless** (PVE All-Around): Origin: 'Gravity Well' isn't in the current pool (only on old version 3681280908). Current pool: Crossing Over
+- **Relentless** (PVP All-Around): Trait 1 (col 3): 'Lone Wolf' isn't in the current pool (only on old version 3681280908). Current pool: Firefly, Tear, Slice, Rapid Hit, Keep Away, Rewind Rounds, Built to Blast
+- **Sole Survivor** (PVE God roll): Trait 1 (col 3): 'Lead From Gold' isn't in the current pool (only on old version 1150492185). Current pool: Snapshot Sights, Rapid Hit, Outlaw, Eddy Current, Light Touch, Elemental Capacitor, Envious Arsenal
+- **Sole Survivor** (PVE God roll): Trait 1 (col 3): 'Field Prep' isn't in the current pool (only on old version 1115104187). Current pool: Snapshot Sights, Rapid Hit, Outlaw, Eddy Current, Light Touch, Elemental Capacitor, Envious Arsenal
+- **Sole Survivor** (PVP God roll): Trait 2 (col 4): 'Vorpal Weapon' isn't in the current pool (only on old version 1150492185). Current pool: Voltshot, Frenzy, Eye of the Storm, Firing Line, Gear Shift, Mega Kill Clip, Elemental Honing
+- **Something New** (PVE All-Around): Trait 2 (col 4): 'Frenzy' isn't in the current pool (only on old version 586671776). Current pool: Headstone, Kill Clip, Precision Instrument, Binary Orbit, Collective Demolition, Desperate Measures, Opening Shot
+- **The Spiteful Fang** (PVP All-Around): Masterwork: 'Accuracy' isn't a masterwork for this weapon. Options: Charge Time, Draw Time, Handling, Impact, Reload Speed, Stability, Target Acquisition
+- **A Sudden Death** (PVE All-Around): Trait 2 (col 4): 'Paracausal Affinity' isn't in the current pool (only on old version 1904170910). Current pool: Trench Barrel, Destabilizing Rounds, Opening Shot, Closing Time, Sword Logic, Elemental Honing, Collective Action
+- **DECATUR 02** (PVE All-Around): Magazine (col 2): 'Accelerated Coils' isn't in the current pool. Current pool: Accurized Rounds, Drop Mag, Appended Mag, Tactical Mag, Extended Mag, Steady Rounds, Alloy Magazine, Flared Magwell, High-Caliber Rounds, Light Mag, Ricochet Rounds
+- **DECATUR 02** (PVE All-Around): Trait 2 (col 4): 'Reservoir Burst' isn't in the current pool. Current pool: Redirection, Circle of Life, Reciprocity, Rimestealer, Master of Arms, Meganeura, Rampage
+- **DECATUR 02** (PVE All-Around): Trait 2 (col 4): 'Controlled Burst' isn't in the current pool. Current pool: Redirection, Circle of Life, Reciprocity, Rimestealer, Master of Arms, Meganeura, Rampage
+- **DECATUR 02** (PVE All-Around): Trait 2 (col 4): 'Aggregate Charge' isn't in the current pool. Current pool: Redirection, Circle of Life, Reciprocity, Rimestealer, Master of Arms, Meganeura, Rampage
+- **DECATUR 02** (PVE All-Around): Masterwork: 'Charge Time' isn't a masterwork for this weapon. Options: Handling, Impact, Range, Reload Speed, Stability
+- **Terciopelo-4BL** (PVE All-Around): Trait 1 (col 3): 'Relentless Strikes OR Eager Edge' isn't in the current pool. Current pool: Eager Edge, Wellspring, Duelist's Trance, Burning Ambition, Relentless Strikes, Assassin's Blade, Tilting at Windmills
+- **Terminus Horizon** (PVE All-Around): Trait 1 (col 3): 'Demolitionist' isn't in the current pool (only on old version 487205709). Current pool: Meganeura, Supercharged Magazine, Reconstruction, Fourth Time's the Charm, Trickle Charge, Feeding Frenzy
+- **Terminus Horizon** (PVE All-Around): Trait 1 (col 3): 'Dragonfly' isn't in the current pool (only on old version 487205709). Current pool: Meganeura, Supercharged Magazine, Reconstruction, Fourth Time's the Charm, Trickle Charge, Feeding Frenzy
+- **Terminus Horizon** (PVE All-Around): Trait 2 (col 4): 'Killing Tally' isn't in the current pool (only on old version 2730671571). Current pool: Gear Shift, Jolting Feedback, Precision Instrument, Rolling Storm, Mega Kill Clip, Target Lock
+- **Terminus Horizon** (PVE All-Around): Origin: 'Gravity Well' isn't in the current pool (only on old version 2730671571). Current pool: Tex Balanced Stock
+- **Terminus Horizon** (PVP All-Around): Trait 1 (col 3): 'Demolitionist' isn't in the current pool (only on old version 487205709). Current pool: Meganeura, Supercharged Magazine, Reconstruction, Fourth Time's the Charm, Trickle Charge, Feeding Frenzy
+- **Terminus Horizon** (PVP All-Around): Trait 2 (col 4): 'Killing Tally' isn't in the current pool (only on old version 2730671571). Current pool: Gear Shift, Jolting Feedback, Precision Instrument, Rolling Storm, Mega Kill Clip, Target Lock
+- **The Heron** (PVE All-Around): Masterwork: 'Shield Duration' isn't a masterwork for this weapon. Options: Charge Time, Handling, Impact, Range, Reload Speed
+- **The Heron** (PVE All-Around): Origin: 'Meet Hammer' isn't in the current pool. Current pool: Nail, Meet Hammer
+- **The Heron** (PVP All-Around): Origin: 'Meet Hammer' isn't in the current pool. Current pool: Nail, Meet Hammer
+- **The Inquisitor** (PVE All-Around): Trait 1 (col 3): 'Envious Assassin' isn't in the current pool (only on old version 51129316). Current pool: Lone Wolf, Offhand Strike, Perpetual Motion, Slideshot, Threat Detector, Pugilist, Grave Robber
+- **The Inquisitor** (PVE All-Around): Trait 2 (col 4): 'Bait and Switch' isn't in the current pool (only on old version 51129316). Current pool: Closing Time, Cascade Point, Opening Shot, Fragile Focus, Jolting Feedback, Vorpal Weapon, Snapshot Sights
+- **The Inquisitor** (PVE All-Around): Origin: 'One Quiet Moment' isn't in the current pool (only on old version 51129316). Current pool: Fleet Footed, Roar of Battle, Suros Synergy
+- **The Inquisitor** (PVP All-Around): Origin: 'One Quiet Moment' isn't in the current pool (only on old version 51129316). Current pool: Fleet Footed, Roar of Battle, Suros Synergy
+- **The Messenger** (PVE God roll): Trait 2 (col 4): 'Kill Clip' isn't in the current pool (only on old version 3658188704). Current pool: Headseeker, Kinetic Tremors, Desperado, Ancillary Ordinance, Sword Logic, Desperate Measures, Lone Wolf
+- **The Messenger** (PVP God roll): Origin: 'Alacrity' isn't in the current pool (only on old version 3658188704). Current pool: Fleet Footed, Roar of Battle, Wild Card
+- **The Recluse** (PVE Ad Clear): Trait 1 (col 3): 'Threat Detector' isn't in the current pool (only on old version 1050806815). Current pool: Dynamic Sway Reduction, Collective Pugilism, Repulsor Brace, Dimensional Shift, Subsistence, Enlightened Action, Feeding Frenzy
+- **The Recluse** (PVE Ad Clear): Trait 2 (col 4): 'Frenzy' isn't in the current pool (only on old version 1050806815). Current pool: Desperate Measures, Tap the Trigger, Collective Action, Destabilizing Rounds, Chaos Reshaped, Target Lock, Master of Arms
+- **The Recluse** (PVE Ad Clear): Trait 2 (col 4): 'Surrounded' isn't in the current pool (only on old version 1050806815). Current pool: Desperate Measures, Tap the Trigger, Collective Action, Destabilizing Rounds, Chaos Reshaped, Target Lock, Master of Arms
+- **The Summoner** (PVE God roll): Trait 1 (col 3): 'Overflow' isn't in the current pool (only on old version 1820994983). Current pool: Dynamic Sway Reduction, Subsistence, Zen Moment, Heal Clip, Lone Wolf, Perpetual Motion
+- **The Summoner** (PVE God roll): Trait 2 (col 4): 'Golden Tricorn' isn't in the current pool (only on old version 1820994983). Current pool: Onslaught, Kill Clip, Tap the Trigger, Target Lock, Incandescent, Burning Ambition, Desperate Measures
+- **The Summoner** (PVP God roll): Origin: 'Alacrity' isn't in the current pool (only on old version 1820994983). Current pool: Fleet Footed, Roar of Battle, Wild Card
+- **Theodolite** (PVE All-Around): Trait 1 (col 3): 'Perk 1: Reconstruction' isn't in the current pool. Current pool: Eddy Current, Reconstruction, Blast Distributor, Reverberation, Danger Zone, Transcendent Moment
+- **Threat Level** (PVE All-Around): Trait 1 (col 3): 'Graberobber' isn't in the current pool. Current pool: One-Two Punch, Bewildering Burst, Lead from Gold, Cascade Point, Ancillary Ordinance, Grave Robber, Proximity Power
+- **Tomorrow's Answer** (PVP All-Around): Trait 1 (col 3): 'Danger Zone' isn't in the current pool (only on old version 3009199534). Current pool: Withering Gaze, Envious Assassin, Impulse Amplifier, Envious Arsenal, Tracking Module, Reconstruction, Air Trigger
+- **Tomorrow's Answer** (PVP All-Around): Trait 2 (col 4): 'Vorpal Weapon' isn't in the current pool (only on old version 3009199534). Current pool: Bait and Switch, Chain Reaction, Cluster Bomb, Explosive Light, Bipod, Clown Cartridge, Reaper's Tithe
+- **Unloved** (PVE All-Around): Trait 2 (col 4): 'Kill Clip' isn't in the current pool (only on old version 2485881870). Current pool: Closing Time, Frenzy, Rampage, Tear, Elemental Honing, Paracausal Affinity
+- **Uzume RR4** (PVE All-Around): Origin: 'Stunning Recovery' isn't in the current pool (only on old version 42874240). Current pool: Problem Solver, Vanguard Determination, Omolon Fluid Dynamics
+- **Vengeful Whisper** (PVP God roll): Trait 2 (col 4): 'Successful Warmup and High Ground' isn't in the current pool. Current pool: Hatchling, Archer's Gambit, Meganeura, Precision Instrument, Successful Warm-Up, Collective Action
+- **VS Pyroelectric Propellant** (PVP All-Around): Trait 1 (col 3): 'To the Pain' isn't in the current pool (only on old version 4232480042). Current pool: Attrition Orbs, Rewind Rounds, Zen Moment, Killing Wind, Eddy Current, Strategist
+- **VS Pyroelectric Propellant** (PVP All-Around): Trait 1 (col 3): 'Fragile Focus' isn't in the current pool (only on old version 4232480042). Current pool: Attrition Orbs, Rewind Rounds, Zen Moment, Killing Wind, Eddy Current, Strategist
+- **VS Pyroelectric Propellant** (PVP All-Around): Trait 2 (col 4): 'Closing Time' isn't in the current pool (only on old version 4232480042). Current pool: Jolting Feedback, Tap the Trigger, Target Lock, Kill Clip, Gear Shift, Onslaught
+- **VS Velocity Baton** (PVP All-Around): Trait 1 (col 3): 'Slickdraw' isn't in the current pool (only on old version 1762785663). Current pool: Repulsor Brace, Dimensional Shift, Unrelenting, Reconstruction, Demolitionist, Envious Arsenal
+- **VS Velocity Baton** (PVP All-Around): Trait 2 (col 4): 'Harmony' isn't in the current pool (only on old version 1762785663). Current pool: Destabilizing Rounds, Frenzy, Chain Reaction, Bait and Switch, Elemental Honing, Attrition Orbs
+- **Warden's Law** (PVP All-Around): Trait 1 (col 3): 'Discord' isn't in the current pool (only on old version 1821529912). Current pool: Perpetual Motion, Moving Target, Fourth Time's the Charm, To the Pain, Enlightened Action, Demolitionist
+- **Wilderflight** (PVE All-Around): Origin: 'Gravity Well' isn't in the current pool (only on old version 1206729100). Current pool: Tex Balanced Stock
+- **Wilderflight** (PVP All-Around): Trait 1 (col 3): 'Slideshot' isn't in the current pool (only on old version 1206729100). Current pool: Auto-Loading Holster, Repulsor Brace, Blast Distributor, Ambitious Assassin, Envious Arsenal, Air Trigger
+- **Wilderflight** (PVP All-Around): Trait 1 (col 3): 'Demolitionist' isn't in the current pool (only on old version 1206729100). Current pool: Auto-Loading Holster, Repulsor Brace, Blast Distributor, Ambitious Assassin, Envious Arsenal, Air Trigger
+- **Wilderflight** (PVP All-Around): Trait 2 (col 4): 'Vorpal Weapon' isn't in the current pool (only on old version 1206729100). Current pool: Destabilizing Rounds, Reaper's Tithe, Aggregate Charge, Elemental Honing, Withering Gaze, Bait and Switch
+- **Willful Hamartia** (PVE All-Around): Trait 1 (col 3): 'Envious Arsenal' isn't in the current pool. Current pool: Lone Wolf, Tap the Trigger, Envious Assassin, Rapid Hit, Slideways, Successful Warm-Up, High-Impact Reserves
+- **Zephyr** (PVE All-Around): Trait 1 (col 3): 'Dragonfly' isn't in the current pool. Current pool: Duelist's Trance, Relentless Strikes, Tireless Blade, Rimestealer, Valiant Charge, Strategist, Attrition Orbs
+- **Zephyr** (PVE All-Around): Trait 1 (col 3): 'Subsistence' isn't in the current pool. Current pool: Duelist's Trance, Relentless Strikes, Tireless Blade, Rimestealer, Valiant Charge, Strategist, Attrition Orbs
+
+## Skipped pages / rolls
+
+- https://www.blueberries.gg/armor/relativism-god-rolls/: no roll tables
+- https://www.blueberries.gg/armor/solipsism-god-rolls/: no roll tables
+- https://www.blueberries.gg/armor/stoicism-god-rolls/: no roll tables
+- https://www.blueberries.gg/weapons/1000-yard-stare-god-rolls/: pve 'God roll': no valid trait perks
+- https://www.blueberries.gg/weapons/cataclysmic-god-rolls/: pvp 'God roll': no valid trait perks
+- https://www.blueberries.gg/weapons/chattering-bone-god-rolls/: pvp 'All-Around': no valid trait perks
+- https://www.blueberries.gg/weapons/choir-of-one-exotic-god-rolls/: pve 'All-Around': no valid trait perks
+- https://www.blueberries.gg/weapons/choir-of-one-exotic-god-rolls/: pvp 'All-Around': no valid trait perks
+- https://www.blueberries.gg/weapons/circular-logic-god-rolls/: pvp 'God roll': no valid trait perks
+- https://www.blueberries.gg/weapons/dawning-weapons-god-rolls/: no roll tables
+- https://www.blueberries.gg/weapons/eidolon-ally-god-rolls/: no roll tables
+- https://www.blueberries.gg/weapons/ergo-sum-god-rolls-catalyst/: pve 'DPS & Teamplay': no valid trait perks
+- https://www.blueberries.gg/weapons/ergo-sum-god-rolls-catalyst/: pve 'Ad Clear & Solo': no valid trait perks
+- https://www.blueberries.gg/weapons/ergo-sum-god-rolls-catalyst/: pvp 'All-Around': no valid trait perks
+- https://www.blueberries.gg/weapons/eyes-unveiled-god-rolls/: pvp 'All-Around': no valid trait perks
+- https://www.blueberries.gg/weapons/forbearance-god-rolls/: pve 'All-Around': no valid trait perks
+- https://www.blueberries.gg/weapons/hero-of-ages-god-rolls/: pve 'God roll': no valid trait perks
+- https://www.blueberries.gg/weapons/naeems-lance-god-rolls/: pvp 'God roll': no valid trait perks
+- https://www.blueberries.gg/weapons/praxic-blade-god-rolls-catalysts/: no roll tables
+- https://www.blueberries.gg/weapons/pre-astyanax-iv-god-rolls/: pvp 'God roll': no valid trait perks
+- https://www.blueberries.gg/weapons/slayers-fang-catalyst-god-rolls/: pve 'All-Around': no valid trait perks
+- https://www.blueberries.gg/weapons/slayers-fang-catalyst-god-rolls/: pvp 'All-Around': no valid trait perks
+- https://www.blueberries.gg/weapons/tahoma-01-god-rolls/: pve 'All-Around': no valid trait perks
+- https://www.blueberries.gg/weapons/terminus-horizon-god-rolls/: pvp 'All-Around': no valid trait perks
+- https://www.blueberries.gg/weapons/vexcalibur-god-rolls-catalyst/: pve 'God roll': no valid trait perks
+- https://www.blueberries.gg/weapons/vexcalibur-god-rolls-catalyst/: pvp 'God roll': no valid trait perks
+- https://www.blueberries.gg/weapons/vs-velocity-baton-god-rolls/: pvp 'All-Around': no valid trait perks
+- https://www.blueberries.gg/weapons/wendigo-gl3-god-rolls/: no roll tables
+- https://www.blueberries.gg/weapons/wilderflight-god-rolls/: pvp 'All-Around': no valid trait perks
+- https://www.blueberries.gg/weapons/wolfbane-god-rolls-catalyst/: pve 'All-Around': no valid trait perks

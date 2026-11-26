@@ -1,8 +1,8 @@
-_Manifest 245114.26.10.13.2000-1-bnet.66137, 2026-11-24_
+_Manifest 245114.26.10.13.2000-1-bnet.66137, 2026-11-26_
 
 # Validation report
 
-Rolls: 376 PASS, 0 PARTIAL, 0 FAIL, 34 SKIP  
+Rolls: 1128 PASS, 0 PARTIAL, 0 FAIL, 34 SKIP  
 Loadouts: 48 PASS, 0 FAIL
 
 PARTIAL = some ' / ' alternates are invalid; only the valid combinations are wishlisted.
@@ -10,34 +10,129 @@ PARTIAL = some ' / ' alternates are invalid; only the valid combinations are wis
 ## Weapons with more than one current version
 
 - A Good Shout: 2 current versions (649691506, 3615748501); each perk only needs to exist on one of them
+- Accelerando-42: 2 current versions (1540621132, 3610531207); each perk only needs to exist on one of them
+- Accrued Redemption: 2 current versions (3621336854, 4095896073); each perk only needs to exist on one of them
+- Action Item: 5 current versions (437854388, 437854389, 437854390, 437854391, 527989828); each perk only needs to exist on one of them
+- Adored: 2 current versions (891765152, 1405095983); each perk only needs to exist on one of them
+- Afterlight: 2 current versions (1834313033, 3228630258); each perk only needs to exist on one of them
 - All or Nothing: 2 current versions (2023002233, 3984776322); each perk only needs to exist on one of them
+- Alone as a God: 2 current versions (353884603, 4278664152); each perk only needs to exist on one of them
+- Anamnesis: 2 current versions (2291392465, 3417731926); each perk only needs to exist on one of them
+- Ancient Gospel: 2 current versions (48643186, 963574173); each perk only needs to exist on one of them
+- Apex Predator: 2 current versions (1851777734, 2545083870); each perk only needs to exist on one of them
+- Arcane Embrace: 2 current versions (1813474267, 3328019216); each perk only needs to exist on one of them
+- Autumn Wind: 2 current versions (2150012407, 2459087496); each perk only needs to exist on one of them
+- Avalanche: 4 current versions (66875353, 495940989, 1845978721, 4220529694); each perk only needs to exist on one of them
+- Bane of Sorrow: 2 current versions (2601084711, 3779290676); each perk only needs to exist on one of them
+- Bellowing Giant: 2 current versions (412265080, 1889005379); each perk only needs to exist on one of them
+- Better Devils: 2 current versions (2106353446, 4059111041); each perk only needs to exist on one of them
+- Blast Furnace: 2 current versions (52683113, 2631356658); each perk only needs to exist on one of them
+- Braytech Osprey: 2 current versions (1929278169, 3667553455); each perk only needs to exist on one of them
+- Braytech Werewolf: 3 current versions (528834068, 2869466318, 3558681245); each perk only needs to exist on one of them
+- Breachlight: 2 current versions (1289997971, 2328923181); each perk only needs to exist on one of them
+- CALUS Mini-Tool: 2 current versions (174192097, 2490988246); each perk only needs to exist on one of them
 - Compact Defender: 2 current versions (2659286158, 2819552809); each perk only needs to exist on one of them
+- Convened Recurve: 2 current versions (2271714488, 3667861447); each perk only needs to exist on one of them
+- Corrective Measure: 2 current versions (471518543, 3654744298); each perk only needs to exist on one of them
+- Crux Celeritas IV: 2 current versions (391069235, 2846261712); each perk only needs to exist on one of them
+- Cynosure: 2 current versions (2511482352, 2827141087); each perk only needs to exist on one of them
+- D.F.A.: 2 current versions (739029153, 2920548486); each perk only needs to exist on one of them
+- Dawn Far Off: 2 current versions (1484294659, 2770617440); each perk only needs to exist on one of them
+- Dead Man's Tale: 2 current versions (2188764214, 3654674561); each perk only needs to exist on one of them
+- Dead Messenger: 2 current versions (46125926, 2812324401); each perk only needs to exist on one of them
+- Division: 2 current versions (2903168058, 2992463569); each perk only needs to exist on one of them
 - Duty Bound: 2 current versions (89693562, 260532765); each perk only needs to exist on one of them
 - Evening SI4: 2 current versions (1763361847, 3618823368); each perk only needs to exist on one of them
+- Fatebringer: 2 current versions (2171478765, 4184168210); each perk only needs to exist on one of them
+- Festival Flight: 2 current versions (3977654524, 4019651319); each perk only needs to exist on one of them
 - Fimbulwinter Stitch: 2 current versions (2645567209, 3685829362); each perk only needs to exist on one of them
 - Fixed Odds: 2 current versions (1642384931, 2194955522); each perk only needs to exist on one of them
+- Folded Root: 5 current versions (2725894221, 3184457500, 3184457501, 3184457502, 3184457503); each perk only needs to exist on one of them
+- Fortunate Star: 2 current versions (591672323, 2631466936); each perk only needs to exist on one of them
+- Found Verdict: 2 current versions (694500607, 3197270240); each perk only needs to exist on one of them
 - Gizmo Weft: 2 current versions (1572604081, 4069880346); each perk only needs to exist on one of them
+- Glacioclasm: 4 current versions (1030895163, 1183116657, 2728851518, 3573686365); each perk only needs to exist on one of them
+- Goldtusk: 2 current versions (569799275, 3371413057); each perk only needs to exist on one of them
+- Gunburn: 2 current versions (72775246, 3431536253); each perk only needs to exist on one of them
+- Hammerhead: 2 current versions (850999853, 1346714574); each perk only needs to exist on one of them
 - Hezen Vengeance: 2 current versions (2265407516, 4050645223); each perk only needs to exist on one of them
 - Horror's Least: 2 current versions (827835657, 1018012078); each perk only needs to exist on one of them
+- Hushed Whisper: 2 current versions (1175295126, 3574168117); each perk only needs to exist on one of them
+- Ignition Code: 2 current versions (304659313, 2761869150); each perk only needs to exist on one of them
+- Imperial Decree: 2 current versions (318443586, 2919334548); each perk only needs to exist on one of them
+- Incisor: 2 current versions (1711056134, 4248997900); each perk only needs to exist on one of them
+- Joxer's Longsword: 2 current versions (2150012406, 3538003989); each perk only needs to exist on one of them
+- Jurassic Green: 4 current versions (689294985, 2261046232, 2603335652, 3103255595); each perk only needs to exist on one of them
+- Keraunios: 2 current versions (981450701, 2386208942); each perk only needs to exist on one of them
+- Kindled Orchid: 2 current versions (334964261, 3961462214); each perk only needs to exist on one of them
+- King Orfeo: 5 current versions (784540300, 784540301, 784540302, 784540303, 3481382332); each perk only needs to exist on one of them
+- Line in the Sand: 2 current versions (946443267, 2450049485); each perk only needs to exist on one of them
+- Lotus-Eater: 2 current versions (837298567, 924095500); each perk only needs to exist on one of them
 - M-17 "Fast Talker": 2 current versions (1419158093, 2770035786); each perk only needs to exist on one of them
+- Martyr's Retribution: 2 current versions (2584830733, 3850168899); each perk only needs to exist on one of them
+- Micromort: 5 current versions (474671201, 602331464, 602331465, 602331466, 602331467); each perk only needs to exist on one of them
 - Mint Retrograde: 3 current versions (42435996, 1715391576, 3285784871); each perk only needs to exist on one of them
+- Mirror Imago: 2 current versions (3234363830, 3877448149); each perk only needs to exist on one of them
 - Mistral Lift: 2 current versions (270610849, 766122634); each perk only needs to exist on one of them
 - Modified B-7 Pistol: 2 current versions (1872906663, 3146657388); each perk only needs to exist on one of them
 - Mos Athanor IV: 2 current versions (1288422452, 4118334987); each perk only needs to exist on one of them
+- Nation of Beasts: 2 current versions (70083888, 654370424); each perk only needs to exist on one of them
+- No Feelings: 2 current versions (1271275406, 2979764077); each perk only needs to exist on one of them
 - Nox Sidereal IV: 2 current versions (74733286, 2875763009); each perk only needs to exist on one of them
+- Omniscient Eye: 2 current versions (147444292, 3454326177); each perk only needs to exist on one of them
+- Ouster Engine: 2 current versions (2223968549, 3718184802); each perk only needs to exist on one of them
 - Oxygen SR3: 2 current versions (444627789, 4104613038); each perk only needs to exist on one of them
 - Permafrost: 2 current versions (2316331767, 2922964484); each perk only needs to exist on one of them
+- Phoneutria Fera: 5 current versions (3496887154, 3804242792, 3804242793, 3804242794, 3804242795); each perk only needs to exist on one of them
+- Praedyth's Revenge: 2 current versions (3653573172, 3844610113); each perk only needs to exist on one of them
+- Prolonged Engagement: 2 current versions (1066772626, 2624561525); each perk only needs to exist on one of them
+- Prophet of Doom: 2 current versions (2145441168, 4020742303); each perk only needs to exist on one of them
 - Psi Aeterna IV: 2 current versions (135971347, 3556730800); each perk only needs to exist on one of them
 - Qua Vinctus IV: 2 current versions (337893613, 4176551594); each perk only needs to exist on one of them
+- Rapid Growth: 2 current versions (3448712083, 3856342856); each perk only needs to exist on one of them
+- Reckless Oracle: 2 current versions (1802315656, 4158265643); each perk only needs to exist on one of them
 - Refurbished A499: 2 current versions (593808239, 3661051060); each perk only needs to exist on one of them
+- Ribbontail: 5 current versions (407150808, 407150809, 407150810, 407150811, 3576134513); each perk only needs to exist on one of them
 - Riptide: 2 current versions (1323862250, 2297554989); each perk only needs to exist on one of them
+- Romantic Death: 5 current versions (2979965244, 2979965245, 2979965246, 2979965247, 4169082039); each perk only needs to exist on one of them
+- Sacred Provenance: 2 current versions (2241507890, 2408405461); each perk only needs to exist on one of them
+- Salvager's Salvo: 2 current versions (1692109318, 2461640837); each perk only needs to exist on one of them
 - Sarpedon-D: 2 current versions (1242785638, 3318545829); each perk only needs to exist on one of them
+- Silicon Neuroma: 2 current versions (990416096, 3355385170); each perk only needs to exist on one of them
+- Snipehunt Mk. 47: 2 current versions (193009988, 2587567543); each perk only needs to exist on one of them
+- Sojourner's Tale: 2 current versions (599895591, 2130875369); each perk only needs to exist on one of them
+- Something New: 2 current versions (1705150753, 2877020298); each perk only needs to exist on one of them
 - Something Something: 2 current versions (690412397, 3421075982); each perk only needs to exist on one of them
+- Submersion: 2 current versions (1724104236, 3524386983); each perk only needs to exist on one of them
 - Survivor's Epitaph: 2 current versions (2152350211, 4059111040); each perk only needs to exist on one of them
+- Synanceia: 5 current versions (1823308496, 2765451288, 2765451289, 2765451290, 2765451291); each perk only needs to exist on one of them
+- THE SWARM: 2 current versions (47772649, 2759590322); each perk only needs to exist on one of them
+- Terciopelo-4BL: 2 current versions (393652859, 2775462168); each perk only needs to exist on one of them
+- The Beacon: 2 current versions (76739872, 2161618499); each perk only needs to exist on one of them
 - The Epicurean: 2 current versions (2263839058, 4124357815); each perk only needs to exist on one of them
+- The Helmsman: 2 current versions (2325078119, 3215649176); each perk only needs to exist on one of them
+- The Heron: 5 current versions (617566156, 617566157, 617566158, 617566159, 2246386812); each perk only needs to exist on one of them
 - The Hothead: 2 current versions (1692372662, 3960301269); each perk only needs to exist on one of them
+- The Militia’s Birthright: 3 current versions (40394833, 1854753405, 3745974521); each perk only needs to exist on one of them
+- The Palindrome: 2 current versions (739029152, 3303271523); each perk only needs to exist on one of them
+- The Ringing Nail: 2 current versions (3326135421, 4206550094); each perk only needs to exist on one of them
+- The Slammer: 2 current versions (189854537, 2466028274); each perk only needs to exist on one of them
+- The Spiteful Fang: 2 current versions (1094998581, 1704597062); each perk only needs to exist on one of them
+- The Supremacy: 2 current versions (686951703, 2884596447); each perk only needs to exist on one of them
+- Threat Level: 2 current versions (950894542, 1523151869); each perk only needs to exist on one of them
+- Trachinus: 5 current versions (2888021252, 2888021253, 2888021254, 2888021255, 3635232671); each perk only needs to exist on one of them
+- Triple Laureate: 2 current versions (1605599021, 2908653246); each perk only needs to exist on one of them
 - Uncivil Discourse: 2 current versions (2462965802, 3146657389); each perk only needs to exist on one of them
+- Undercurrent: 2 current versions (1151688091, 3686538757); each perk only needs to exist on one of them
 - Unending Tempest: 2 current versions (673621062, 2579239009); each perk only needs to exist on one of them
+- Veillantif-D: 2 current versions (406384293, 1361871430); each perk only needs to exist on one of them
+- Vikala SMG4: 2 current versions (1229624538, 3210792817); each perk only needs to exist on one of them
+- Vision of Confluence: 2 current versions (3186018373, 3444688218); each perk only needs to exist on one of them
+- Whatchamacallit: 2 current versions (149110926, 357669417); each perk only needs to exist on one of them
+- Wicked Sister: 2 current versions (2039776723, 2168486467); each perk only needs to exist on one of them
+- Yeartide Apex: 2 current versions (2965080304, 3293207827); each perk only needs to exist on one of them
+- Zaouli’s Bane: 2 current versions (3066945855, 3647341740); each perk only needs to exist on one of them
+- Zealot’s Reward: 2 current versions (2209003210, 2720651699); each perk only needs to exist on one of them
 
 ## Skipped (not wishlistable)
 
