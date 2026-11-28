@@ -144,6 +144,14 @@ def main():
         OUT.write_text("\n".join(header + body), encoding="utf-8", newline="\n")
         REPORT.parent.mkdir(exist_ok=True)
         REPORT.write_text(f"_Manifest {version}, {dt.date.today().isoformat()}_\n\n" + report(results), encoding="utf-8")
+        # Public blueberries.gg-only lists, for anyone to paste into DIM (no personal sheet rolls)
+        bb = ROOT / "data" / "imports" / "blueberries.json"
+        if bb.exists():
+            from import_blueberries import write_wishlist
+            bb_rolls = json.loads(bb.read_text(encoding="utf-8"))
+            for mode, fname in (("all", "blueberries.txt"), ("pve", "blueberries-pve.txt"), ("pvp", "blueberries-pvp.txt")):
+                st = write_wishlist(res, bb_rolls, OUT.parent / fname, mode)
+                print(f"Public list: {st['weapons']} weapons, {st['lines']} lines -> wishlists/{fname}")
     # DIM loadouts (subclass, mods, exotic armor) — catches illegal armor mods / subclass picks too
     g = build_dim_loadouts.Gen([])
     dim_items = g.run()

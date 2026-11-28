@@ -1,14 +1,21 @@
-"""Import blueberries.gg god rolls into data/imports/blueberries.json.
+"""Import blueberries.gg god rolls into a DIM wish list. Anyone can run this.
 
-Reads the cached god-roll pages in .cache/bb/pages/ (fetched politely, 10 s apart, per
-the site's robots.txt Crawl-delay) and turns every "PvE Roll: ..." / "PvP Roll: ..."
-table into a roll entry (same shape as a data/rolls.json "rolls" entry).
+    python tools/import_blueberries.py --fetch                       # download new/changed pages, then import
+    python tools/import_blueberries.py                               # import from the pages already downloaded
+    python tools/import_blueberries.py --fetch --wishlist my.txt     # also write a standalone DIM wish list
+    python tools/import_blueberries.py --wishlist pve.txt --mode pve # PvE rolls only (or --mode pvp)
 
-Every option is checked against the manifest. Perks that don't exist on the weapon's
-current version are dropped, and a roll is kept only if at least one trait column
-survives. Dropped options are listed in reports/blueberries_import.md.
+--fetch reads the site's sitemaps and downloads every god-roll page that's new or has a newer
+lastmod than the cached copy, waiting 10 s between requests (the site's robots.txt Crawl-delay).
+The first run downloads ~400 pages, so it takes about 70 minutes. Later runs only fetch what changed.
 
-    python tools/import_blueberries.py            # parse cache -> data/imports/blueberries.json
+Every "PvE Roll" / "PvP Roll" table (and the older list-style pages) becomes a roll. Each option is
+checked against the Bungie manifest: guide spellings are corrected, a trait listed under the wrong
+column is moved, and perks that aren't on the weapon's current version are dropped. A roll is kept
+only if at least one trait column survives. Output:
+  data/imports/blueberries.json    rolls (merged into the main pipeline by extract_rolls.py)
+  reports/blueberries_import.md    what was dropped or skipped, and why
+  --wishlist PATH                  a DIM wish list built from these rolls only
 """
 from __future__ import annotations
 
@@ -16,7 +23,10 @@ import difflib
 import html
 import json
 import re
+import argparse
 import sys
+import time
+import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -204,7 +214,80 @@ def resolve_name(res: Resolver, name: str) -> str | None:
     return None
 
 
+SITEMAPS = ["https://www.blueberries.gg/post-sitemap.xml", "https://www.blueberries.gg/page-sitemap.xml"]
+UA = "Mozilla/5.0 (compatible; d2-wishlist-importer)"
+DELAY = 10  # seconds, robots.txt Crawl-delay
+
+
+def _download(url: str) -> bytes:
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    from manifest import _SSL  # relaxed X509 strict flag (some Windows CA chains fail without it)
+    with urllib.request.urlopen(req, timeout=30, context=_SSL) as r:
+        return r.read()
+
+
+def fetch() -> None:
+    """Refresh the sitemap index and download new or updated god-roll pages, politely."""
+    (CACHE / "pages").mkdir(parents=True, exist_ok=True)
+    index = {}
+    for i, sm in enumerate(SITEMAPS):
+        if i:
+            time.sleep(DELAY)
+        x = _download(sm).decode("utf-8", "replace")
+        for loc, mod in re.findall(r"<loc>([^<]*god-roll[^<]*)</loc>\s*<lastmod>([^<]*)</lastmod>", x):
+            index[loc] = mod
+    (CACHE / "index.json").write_text(json.dumps(index, indent=1), encoding="utf-8")
+    got_f = CACHE / "fetched.json"
+    got = json.loads(got_f.read_text(encoding="utf-8")) if got_f.exists() else {}
+    for url, mod in index.items():   # pages downloaded before fetched.json existed count as current
+        if url not in got and (CACHE / "pages" / f"{url.rstrip('/').split('/')[-1]}.html").exists():
+            got[url] = mod
+    todo = [u for u, mod in index.items() if got.get(u) != mod]
+    mins = len(todo) * DELAY / 60
+    print(f"{len(index)} god-roll pages, {len(todo)} new or updated" + (f" (~{mins:.0f} min at {DELAY} s each)" if todo else ""), flush=True)
+    for i, url in enumerate(todo, 1):
+        time.sleep(DELAY)
+        try:
+            (CACHE / "pages" / f"{url.rstrip('/').split('/')[-1]}.html").write_bytes(_download(url))
+            got[url] = index[url]
+            got_f.write_text(json.dumps(got, indent=1), encoding="utf-8")
+        except Exception as e:  # keep going; it is retried next run
+            print(f"  failed {url}: {e}", flush=True)
+        if i % 25 == 0 or i == len(todo):
+            print(f"  {i}/{len(todo)}", flush=True)
+
+
+def write_wishlist(res: Resolver, rolls: list[dict], path: Path, mode: str) -> dict:
+    """Standalone DIM wish list from imported rolls (same line format as wishlists/spinz.txt)."""
+    import datetime as dt
+    from build_wishlist import build  # lazy: build_wishlist imports this module too
+    picked = [r for r in rolls if mode == "all" or r["mode"] == mode]
+    body, stats = build(res, {"rolls": [validate_roll(res, r) for r in picked]})
+    what = {"all": "PvE + PvP", "pve": "PvE", "pvp": "PvP"}[mode]
+    version = res.d.get("version", "")
+    head = [f"title:blueberries.gg god rolls ({what})",
+            f"description:Every {what} god roll from blueberries.gg, checked against the Bungie manifest "
+            f"{str(version).split('|')[0]} on {dt.date.today().isoformat()}. {stats['weapons']} weapons, {stats['lines']} rolls. "
+            "Notes show each page's last-updated date.",
+            "", "// GENERATED by tools/import_blueberries.py. Source: https://www.blueberries.gg",
+            "// '[full roll]' = barrel+mag+traits match, '[traits only]' = both traits match.", ""]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(head + body), encoding="utf-8", newline="\n")
+    return stats
+
+
 def main() -> int:
+    sys.stdout.reconfigure(encoding="utf-8")
+    ap = argparse.ArgumentParser(description="Import blueberries.gg god rolls into a DIM wish list.")
+    ap.add_argument("--fetch", action="store_true", help="download new/updated pages first (10 s between requests)")
+    ap.add_argument("--wishlist", type=Path, help="also write a standalone DIM wish list to this path")
+    ap.add_argument("--mode", choices=["all", "pve", "pvp"], default="all", help="which rolls go in --wishlist")
+    a = ap.parse_args()
+    if a.fetch:
+        fetch()
+    if not (CACHE / "index.json").exists():
+        print("No pages downloaded yet: run with --fetch first.")
+        return 1
     index = json.loads((CACHE / "index.json").read_text(encoding="utf-8"))
     res = Resolver()
     out, dropped, skipped = [], [], []
@@ -265,7 +348,10 @@ def main() -> int:
     L += ["", "## Skipped pages / rolls", ""]
     L += [f"- {u}: {why}" for u, why in skipped] or ["- none"]
     REPORT.write_text("\n".join(L) + "\n", encoding="utf-8")
-    print(f"{len(out)} rolls on {weapons} weapons; {len(dropped)} options dropped; {len(skipped)} skipped -> {OUT}")
+    print(f"{len(out)} rolls on {weapons} weapons; {len(dropped)} options dropped; {len(skipped)} skipped -> {OUT.relative_to(ROOT)}")
+    if a.wishlist:
+        st = write_wishlist(res, out, a.wishlist, a.mode)
+        print(f"Wish list ({a.mode}): {st['weapons']} weapons, {st['lines']} lines -> {a.wishlist}")
     return 0
 
 
