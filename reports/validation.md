@@ -2,8 +2,8 @@ _Manifest 245114.26.10.13.2000-1-bnet.66137, 2026-11-27_
 
 # Validation report
 
-Rolls: 1128 PASS, 0 PARTIAL, 0 FAIL, 34 SKIP  
-Loadouts: 48 PASS, 0 FAIL
+Rolls: 1136 PASS, 0 PARTIAL, 0 FAIL, 37 SKIP  
+Loadouts: 51 PASS, 0 FAIL
 
 PARTIAL = some ' / ' alternates are invalid; only the valid combinations are wishlisted.
 
@@ -151,6 +151,7 @@ PARTIAL = some ' / ' alternates are invalid; only the valid combinations are wis
 - Legendary Energy primary: 'Legendary Energy primary' is a placeholder, not a specific weapon
 - Legendary Kinetic primary: 'Legendary Kinetic primary' is a placeholder, not a specific weapon
 - Legendary Solar primary: 'Legendary Solar primary' is a placeholder, not a specific weapon
+- One Thousand Voices: No perk columns listed (exotic/fixed roll) — nothing to wishlist
 - Praxic Blade: No perk columns listed (exotic/fixed roll) — nothing to wishlist
 - The Navigator: No perk columns listed (exotic/fixed roll) — nothing to wishlist
 - The Queenbreaker: No perk columns listed (exotic/fixed roll) — nothing to wishlist

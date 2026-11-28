@@ -26,6 +26,7 @@ SHEETS = {
     "warlock-loadout.html": "Warlock",
     "hunter-loadout.html": "Hunter",
     "trials-loadout.html": "Trials",
+    "hunter-starter.html": "Hunter Starter",
 }
 ROLL_KEYS = {
     "barrel": "col1", "blade": "col1", "bowstring": "col1", "launcher": "col1", "launcher barrel": "col1",

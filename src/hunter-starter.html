@@ -1,0 +1,205 @@
+<title>Hunter Starter Builds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a field-manual loadout sheet — mode switch up top, one build per stacked dossier, slots in a dense grid */
+:root{
+  --bg:#eef0f2; --panel:#ffffff; --ink:#15191e; --muted:#5b6470; --line:#d5dae0; --accent:#b8621b;
+  --arc:#2f7fd1; --void:#7b4fc4; --solar:#d4661b; --prism:#c2448f; --stasis:#3a9bb8; --strand:#2f9e6e;
+  --chip:#f2f4f6; --warn:#8a6a12; --warnbg:#fbf3dc;
+  --display:"Saira Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101318; --panel:#171b21; --ink:#e7eaee; --muted:#9aa3ae; --line:#2a3039; --accent:#e08a3f;
+  --arc:#5aa3ef; --void:#a481e6; --solar:#f08a3e; --prism:#e46bb2; --stasis:#62bfd9; --strand:#4fc08d;
+  --chip:#1f242c; --warn:#e6c35c; --warnbg:#2a2516; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101318; --panel:#171b21; --ink:#e7eaee; --muted:#9aa3ae; --line:#2a3039; --accent:#e08a3f;
+  --arc:#5aa3ef; --void:#a481e6; --solar:#f08a3e; --prism:#e46bb2; --stasis:#62bfd9; --strand:#4fc08d;
+  --chip:#1f242c; --warn:#e6c35c; --warnbg:#2a2516; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+header h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,6vw,54px);letter-spacing:.01em;line-height:1;margin:0;text-transform:uppercase;text-wrap:balance}
+header p{color:var(--muted);max-width:68ch;margin:10px 0 0}
+.meta{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:6px}
+.modes{display:flex;gap:8px;margin:24px 0 8px;flex-wrap:wrap}
+.modes button{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 20px;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:4px;cursor:pointer}
+.modes button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.modes button:focus-visible,.jump a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.rules{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin:16px 0;color:var(--muted);font-size:14px}
+.rules b{color:var(--ink)}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 20px}
+.jump a{font-family:var(--mono);font-size:12px;color:var(--ink);text-decoration:none;padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+.build{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--el);border-radius:6px;margin:0 0 22px;overflow:hidden}
+.bhead{padding:18px 18px 12px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;border-bottom:1px solid var(--line)}
+.bhead h2{font-family:var(--display);font-weight:700;font-size:30px;line-height:1.05;margin:0;text-transform:uppercase;letter-spacing:.02em;flex:1 1 300px}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:var(--chip);color:var(--muted)}
+.tag.el{background:var(--el);color:#fff}
+.pitch{padding:12px 18px 0;margin:0;max-width:75ch}
+.src{margin:10px 18px 0;font-size:13px;padding:8px 10px;border-radius:4px;background:var(--chip);color:var(--muted)}
+.src.partial{background:var(--warnbg);color:var(--warn)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;margin-top:14px;border-top:1px solid var(--line)}
+.sec{padding:14px 18px;border-bottom:1px solid var(--line);min-width:0}
+.grid .sec:nth-child(odd){border-right:1px solid var(--line)}
+@media (max-width:660px){.grid .sec:nth-child(odd){border-right:0}}
+.sec h3{font-family:var(--display);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--el);margin:0 0 8px}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:0}
+dt{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:2px}
+dd{margin:0;min-width:0}
+ul.plain{margin:0;padding-left:18px}
+ul.plain li{margin:2px 0}
+.wpn{border:1px solid var(--line);border-radius:4px;padding:10px 12px;margin:0 0 10px}
+.wpn:last-child{margin-bottom:0}
+.wpn .wn{font-weight:600}
+.wpn .ws{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.roll{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.roll span{font-family:var(--mono);font-size:11.5px;background:var(--chip);padding:2px 6px;border-radius:3px}
+.roll span i{font-style:normal;color:var(--muted)}
+.how{padding:14px 18px 18px}
+.how h3{font-family:var(--display);font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--el);margin:0 0 6px}
+.how p{margin:0;max-width:75ch}
+.stat{font-family:var(--mono);font-size:13px}
+footer{color:var(--muted);font-size:13px;margin-top:28px}
+footer a{color:var(--accent)}
+.tips{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:14px}
+.tips h2{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+.tips ul{margin:0;padding-left:18px}
+.tips li{margin:3px 0}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Hunter Starter Builds</h1>
+    <p>Three PvE Hunter builds that are easy to play, for a newer player who already has One Thousand Voices with its catalyst. Each build uses One Thousand Voices as its heavy, so every other gun is a legendary you can farm. Nothing here needs a dungeon key.</p>
+    <div class="meta">Sandbox: Monument of Triumph (9.7.0) · Updated Nov 2026 · PvE only · No dungeon gear</div>
+  </header>
+
+  <section class="tips" aria-label="How to use this sheet">
+    <h2>Read this first</h2>
+    <ul>
+      <li><b>One Thousand Voices is your boss gun.</b> Hold the trigger and it fires a beam on its own once it charges. The beam explodes where it lands, and the catalyst adds extra explosions. Aim at the boss's body, since crits don't matter.</li>
+      <li><b>Every build uses Gambler's Dodge.</b> Dodging near enemies gives your melee back, so press dodge any time you're close to a fight.</li>
+      <li><b>Most of the guns come from the Tenet of Bravery</b> in the Tower. Spend Legendary Marks on the engram whose loot pool has the gun you want. The pools are listed in each gun's note.</li>
+      <li><b>You don't need the exact roll.</b> The two traits matter most. Barrel, magazine and masterwork are nice to have.</li>
+      <li><b>Mods and armor sets are my picks</b> unless a build says otherwise. The guides only list a few of them.</li>
+    </ul>
+  </section>
+
+  <div class="rules" id="rules"></div>
+  <nav class="jump" id="jump" aria-label="Jump to build"></nav>
+  <main id="builds"></main>
+
+  <footer>
+    Stats use the Edge of Fate system (Weapons, Health, Class, Grenade, Super, Melee). Every gun and perk was checked against Bungie's manifest (Nov 2026).<br>
+    Sources: <a href="https://www.blueberries.gg/armor/destiny-2-hunter-builds/" target="_blank" rel="noopener">Blueberries Hunter builds (Jan 2026, Renegades update)</a> ·
+    <a href="https://www.blueberries.gg/weapons/tenet-of-bravery-rewards/" target="_blank" rel="noopener">Blueberries Tenet of Bravery loot (Jun 2026)</a> ·
+    <a href="https://www.blueberries.gg/weapons/one-thousand-voices-exotic-catalyst/" target="_blank" rel="noopener">One Thousand Voices (Jul 2026)</a> ·
+    <a href="https://www.light.gg/armor/set-bonuses/" target="_blank" rel="noopener">light.gg set bonuses</a> ·
+    <a href="https://www.pcgamer.com/games/fps/destiny-2-armour-set-bonuses/" target="_blank" rel="noopener">PC Gamer set sources</a>
+  </footer>
+</div>
+
+<script>
+const RULES = {
+ pve: "<b>PvE rules:</b> you can only equip one exotic weapon and one exotic armor piece. One Thousand Voices is the exotic weapon in every build. Kinetic, Stasis and Strand guns go in the Kinetic slot, and Arc, Solar and Void guns go in the Energy slot. Armor set bonuses and artifact perks both work in PvE."
+};
+
+const OTV = {slot:"Heavy · Exotic",name:"One Thousand Voices",type:"Exotic heavy fusion (Solar)",roll:[["Catalyst","Done (end-of-beam explosion)"],["Intrinsic","Ahamkara's Eye"]],note:"You already have it. It's the boss gun in every build, which is why the other two guns are legendaries."};
+
+const BUILDS = {
+ pve: [
+  {id:"knives", name:"Solar Invisible Knife Thrower", el:"Solar", color:"--solar", exotic:"Assassin's Cowl",
+   pitch:"The easiest of the three. Throw knives and finish enemies. Assassin's Cowl makes you invisible and heals you on finishers and powered melee kills, so when things go wrong you vanish and recover. The healing grenade covers you too.",
+   src:{partial:true, text:"From the Blueberries 'Radiant Assassin' build (marked best for solo content): super, abilities, aspects, fragments, exotic and stat order. Weapons, armor set and mods are my picks, chosen because they're easy to get. The guide recommends a Solar primary and names Yeartide Apex."},
+   kit:[["Super","Blade Barrage"],["Class","Gambler's Dodge"],["Jump","Triple Jump"],["Melee","Knife Trick"],["Grenade","Healing Grenade"]],
+   aspects:["Knock 'em Down","On Your Mark"],
+   fragments:["Ember of Mercy","Ember of Torches","Ember of Empyrean","Ember of Singeing","Ember of Searing"],
+   exoticNote:"Powered melee kills and finishers make you invisible and heal you. Exotic helmet: it drops from exotic engrams and Lost Sector exotic rewards.",
+   stats:"Melee > Class > Weapons > Health",sets:[["Smoke Jumper Set",4]],set:"Smoke Jumper, 4 pieces (my pick). It drops from Solo Ops and Fireteam Ops. 2-piece: grabbing an Orb of Power gives brief damage reduction. 4-piece: finishing a powerful enemy heals you and gives special ammo. The Cowl already wants finishers, so the set stacks on the same habit.",
+   weapons:[
+    {slot:"Energy · Primary",name:"Stars in Shadow",type:"High-Impact pulse (Solar)",roll:[["Barrel","Arrowhead Brake / Corkscrew Rifling"],["Mag","Tactical Mag / Flared Magwell"],["Trait 1","Heal Clip / Rapid Hit"],["Trait 2","Incandescent"],["MW","Stability"]],
+     alts:[{name:"Yeartide Apex",roll:[["Barrel","Arrowhead Brake"],["Mag","Tactical Mag"],["Trait 1","Heal Clip / Recycled Energy"],["Trait 2","Incandescent"]]}],
+     note:"Crucible Ops engram at the Tenet of Bravery. Incandescent makes kills spread scorch, which counts as Solar damage for the fragments. Heal Clip heals you on reload. Yeartide Apex is the guide's pick. The listing I found put it in the Edge of Fate pool, but that's unverified."},
+    {slot:"Kinetic · Special",name:"Gizmo Weft",type:"Micro-missile grenade launcher (Strand)",roll:[["Launcher","Quick Launch / Hard Launch"],["Mag","Spike Grenades / Sticky Grenades"],["Trait 1","Envious Arsenal / Slice"],["Trait 2","Chain Reaction / Hatchling"],["MW","Blast Radius"]],
+     note:"Lawless engram at the Tenet of Bravery. Point it at a group and pull the trigger: it fires a missile, not an arcing grenade, so aiming is easy. Chain Reaction makes kills explode."},
+    OTV],
+   mods:[["Helmet","Heavy Ammo Finder, Hands-On, Solar Siphon"],["Arms","Heavy Handed, Focusing Strike, Melee Font"],["Chest","Concussive Dampener, resistance mods matching the enemies"],["Legs","Solar Weapon Surge x2, Recuperation"],["Class item","Time Dilation, Reaper, Powerful Attraction"]],
+   how:"Throw a knife at anything close, then finish it off with the pulse. When you see a finisher prompt over a big enemy, press it: you go invisible and heal. Dodge near enemies to get your knife back. At a boss, pop Blade Barrage, then swap to One Thousand Voices."},
+
+  {id:"gyrfalcon", name:"Void Stealth Shooter", el:"Void", color:"--void", exotic:"Gyrfalcon's Hauberk",
+   pitch:"Dodge to turn invisible, and when you come out of it your Void gun fires exploding rounds. The whole build is 'dodge, shoot, repeat', and being invisible means enemies stop shooting at you.",
+   src:{partial:true, text:"From the Blueberries 'Stealthed Gyrfalcon' build (#4 PvE): super, abilities, aspects, fragments, exotic, stat order and mods, plus the rule that the gun should roll Repulsor Brace. The guide's guns are exotics, which won't fit next to One Thousand Voices, so The Title, Gizmo Weft and the armor set are my picks."},
+   kit:[["Super","Shadowshot: Moebius Quiver"],["Class","Gambler's Dodge"],["Jump","Triple Jump"],["Melee","Snare Bomb"],["Grenade","Vortex Grenade"]],
+   aspects:["Stylish Executioner","Vanishing Step"],
+   fragments:["Echo of Starvation","Echo of Persistence","Echo of Remnants","Echo of Obscurity"],
+   exoticNote:"When you come out of invisibility, your Void weapons get Volatile Rounds, which make enemies explode. Volatile kills while you're invisible extend it. Exotic chest: it drops from exotic engrams and Lost Sector exotic rewards.",
+   stats:"Weapons > Grenade > Class > Super",sets:[["Last Discipline",4]],set:"Last Discipline, 4 pieces (my pick). It drops from Portal activities. 2-piece: primary weapon kills speed up primary reloads. 4-piece: picking up an Orb of Power gives special ammo, so the grenade launcher stays fed.",
+   weapons:[
+    {slot:"Energy · Primary",name:"The Title",type:"Aggressive SMG (Void)",roll:[["Barrel","Arrowhead Brake / Corkscrew Rifling"],["Mag","Tactical Mag / Flared Magwell"],["Trait 1","Repulsor Brace"],["Trait 2","Destabilizing Rounds"],["MW","Range"]],
+     alts:[{name:"Gnawing Hunger",roll:[["Barrel","Arrowhead Brake"],["Mag","Tactical Mag"],["Trait 1","Repulsor Brace / Demolitionist"],["Trait 2","Destabilizing Rounds / Rampage"]]}],
+     note:"Guardian Games engram at the Tenet of Bravery. Repulsor Brace gives you an overshield when you kill a Void-debuffed enemy, and Destabilizing Rounds makes kills spread volatile, so the two feed each other. Gnawing Hunger is the same idea from Gambit."},
+    {slot:"Kinetic · Special",name:"Gizmo Weft",type:"Micro-missile grenade launcher (Strand)",roll:[["Launcher","Quick Launch / Hard Launch"],["Mag","Spike Grenades / Sticky Grenades"],["Trait 1","Envious Arsenal / Slice"],["Trait 2","Chain Reaction / Hatchling"],["MW","Blast Radius"]],
+     note:"Lawless engram at the Tenet of Bravery. It's the same gun as in the Solar build, so one good copy covers both."},
+    OTV],
+   mods:[["Helmet","Void Siphon, Heavy Ammo Finder, Super Font"],["Arms","Grenade Font, Harmonic Loader, Bolstering Detonation"],["Chest","Concussive Dampener, resistance mods matching the enemies"],["Legs","Weapons Font x2, Void Weapon Surge"],["Class item","Reaper, Bomber, Powerful Attraction"]],
+   how:"Dodge to go invisible, then start shooting with The Title. Enemies pop with Void explosions. When a group shows up, throw your Vortex Grenade into it. At a boss, fire your super (it makes the boss take more damage from everyone), then swap to One Thousand Voices."},
+
+  {id:"tempest", name:"Arc Lightning Punch", el:"Arc", color:"--arc", exotic:"Gifted Conviction",
+   pitch:"Hunter's top-ranked PvE build. Your melee lunges forward and chains lightning, dodging gives it back, and Gifted Conviction makes you tanky while you do it. Press melee, press dodge, repeat.",
+   src:{partial:true, text:"From the Blueberries 'Gift of the Tempest' build (#1 PvE, Renegades update): super, abilities, aspects, fragments, exotic, stat order and mods. The guide's gun is Praxic Blade, an exotic that can't pair with One Thousand Voices, so Qua Nilus II, Psi Aeterna IV and the armor sets are my picks."},
+   kit:[["Super","Gathering Storm"],["Class","Gambler's Dodge"],["Jump","Triple Jump"],["Melee","Combination Blow"],["Grenade","Pulse Grenade"]],
+   aspects:["Tempest Strike","Ascension"],
+   fragments:["Spark of Resistance","Spark of Shock","Spark of Amplitude","Spark of Frequency","Spark of Ions"],
+   exoticNote:"Damage resistance while you're amplified, and dodging jolts nearby enemies. Exotic chest: it drops from exotic engrams and Lost Sector exotic rewards.",
+   stats:"Melee > Class > Health > Super",sets:[["Smoke Jumper Set",2],["Bushido",2]],set:"Smoke Jumper 2 + Bushido 2 (my pick), for staying alive while you punch. Smoke Jumper drops from Solo and Fireteam Ops, and Bushido from Pinnacle and Arena Ops. Smoke Jumper 2-piece: grabbing an Orb of Power gives brief damage reduction. Bushido 2-piece: kills with a freshly drawn or reloaded weapon heal you.",
+   weapons:[
+    {slot:"Energy · Special",name:"Psi Aeterna IV",type:"Micro-missile pulse (Arc, special ammo)",roll:[["Launcher","Quick Launch / Confined Launch"],["Mag","Implosion Rounds / High-Explosive Ordnance"],["Trait 1","Trickle Charge / Eddy Current"],["Trait 2","Jolting Feedback / Rolling Storm"],["MW","Handling"]],
+     note:"Fireteam Ops engram at the Tenet of Bravery. It's a pulse rifle that fires mini missiles. Jolting Feedback makes your hits jolt enemies, which feeds the Arc fragments."},
+    {slot:"Kinetic · Primary",name:"Qua Nilus II",type:"Adaptive SMG (Strand)",roll:[["Barrel","Arrowhead Brake / Corkscrew Rifling"],["Mag","Tactical Mag / Flared Magwell"],["Trait 1","Slice / Encore"],["Trait 2","Hatchling / Surrounded"],["MW","Range"]],
+     note:"Fireteam Ops engram at the Tenet of Bravery. A close-range SMG that fits a punch build: Hatchling spawns little Strand helpers on kills."},
+    OTV],
+   mods:[["Helmet","Special Ammo Finder, Hands-On, Harmonic Siphon"],["Arms","Heavy Handed x2, Melee Font"],["Chest","Resistance mods matching the enemies"],["Legs","Arc Weapon Surge, Absolution, Recuperation"],["Class item","Powerful Attraction, Time Dilation, Special Finisher"]],
+   how:"Run up to a group and melee: Tempest Strike lunges and sends lightning through them. Dodge right away to get your melee back, then do it again. Against anything tough, shoot it with Psi Aeterna to jolt it. At a boss, swap to One Thousand Voices."}
+ ]
+};
+
+const el = (t,c,h)=>{const e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e;};
+const esc = s=>String(s).replace(/[&<>"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+const wpn = x=>`
+      <div class="wpn"><div><span class="wn">${esc(x.name)}</span> <span class="ws">${esc(x.slot)} · ${esc(x.type)}</span></div>
+      <div class="roll">${x.roll.map(([k,v])=>`<span><i>${esc(k)}:</i> ${esc(v)}</span>`).join("")}</div>
+      ${(x.alts||[]).map(a=>`<div class="roll" style="margin-top:6px"><span><b>Or ${esc(a.name)}:</b></span>${a.roll.map(([k,v])=>`<span><i>${esc(k)}:</i> ${esc(v)}</span>`).join("")}</div>`).join("")}
+      <div class="ws" style="margin-top:6px">${esc(x.note)}</div></div>`;
+
+function render(){
+  document.getElementById("rules").innerHTML = RULES.pve;
+  const jump = document.getElementById("jump");
+  const main = document.getElementById("builds");
+  BUILDS.pve.forEach(b=>{
+    const a=el("a",null,esc(b.name)); a.href="#"+b.id; jump.appendChild(a);
+    const card=el("article","build"); card.id=b.id; card.style.setProperty("--el",`var(${b.color})`);
+    card.innerHTML = `
+      <div class="bhead"><h2>${esc(b.name)}</h2>
+        <span class="tag el">${esc(b.el)}</span><span class="tag">Exotic: ${esc(b.exotic)}</span></div>
+      <p class="pitch">${esc(b.pitch)}</p>
+      <div class="src ${b.src.partial?"partial":""}">${esc(b.src.text)}</div>`;
+    const grid=el("div","grid");
+    grid.appendChild(el("section","sec",`<h3>Subclass kit</h3><dl>${b.kit.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>`));
+    grid.appendChild(el("section","sec",`<h3>Aspects &amp; fragments</h3><dl><dt>Aspects</dt><dd>${b.aspects.map(esc).join(" · ")}</dd><dt>Fragments</dt><dd><ul class="plain">${b.fragments.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></dd></dl>`));
+    grid.appendChild(el("section","sec",`<h3>Exotic &amp; stats</h3><dl><dt>Exotic</dt><dd><b>${esc(b.exotic)}</b>: ${esc(b.exoticNote)}</dd><dt>Stats</dt><dd class="stat">${esc(b.stats)}</dd><dt>Set</dt><dd>${esc(b.set)}</dd></dl>`));
+    grid.appendChild(el("section","sec",`<h3>Armor mods</h3><dl>${b.mods.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>`));
+    card.appendChild(grid);
+    const w=el("section","sec"); w.style.borderRight="0";
+    w.innerHTML = `<h3>Weapons &amp; rolls</h3>` + b.weapons.map(wpn).join("");
+    card.appendChild(w);
+    card.appendChild(el("div","how",`<h3>How it plays</h3><p>${esc(b.how)}</p>`));
+    main.appendChild(card);
+  });
+}
+render();
+const h=location.hash.replace("#","");
+if(h && document.getElementById(h)) document.getElementById(h).scrollIntoView();
+</script>

@@ -15,6 +15,7 @@ This repo holds the source for Spinz's Destiny 2 reference pages, which are publ
 | src/titan-nocannon-loadout.html | https://claude.ai/artifact/McpihPg82DnvtXq4hRNtd2 |
 | src/warlock-loadout.html | https://claude.ai/artifact/XS2AG67bYVBCB23jBsFgjC |
 | src/hunter-loadout.html | https://claude.ai/artifact/ELj9R2Z2A6oUKxkrzw4MeX |
+| src/hunter-starter.html (Spinz's friend: newer player, PvE, has One Thousand Voices, no dungeon-key gear) | https://claude.ai/artifact/DmNBdf1vH7ycCfXeYmM8GG |
 
 To publish, use the Artifact tool with `file_path` set to the src file and `url` set to the URL above. If the live version might have changed, run Artifact `read` on the URL first and merge.
 

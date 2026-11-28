@@ -4045,5 +4045,262 @@
    "assumeArmorMasterwork": 3
   },
   "notes": "A build that fights from the air the whole round. Heat Rises lets you shoot while you glide, Icarus Dash gives you up to two air dodges to break other players' aim, and Wings of Sacred Dawn lets you hover while aiming down sights. Every gun is set up for airborne accuracy.\nStats: Health 100+ > Class 70+ > Melee\nArmor set: 4x Shrewd Survivor (Reflex Action, Hotshot)\nWeapons:\n- Kinetic · Primary: Corundum Hammer (Smallbore, Accurized Rounds, Slideshot / Fragile Focus, Opening Shot / Explosive Payload, Stability)\n- Energy · Special: Felwinter's Lie (Rifled Barrel, Accurized Rounds, Slideshot / Slickdraw, Iron Reach / Opening Shot, Range)\n- Heavy: Roar of the Bear (Quick Launch, High-Velocity Rounds, Impulse Amplifier / Tracking Module, Cluster Bomb, Velocity)\nHold grenade to activate Heat Rises, which also heals any teammates near you. Then jump and glide. Aim down sights to hover with Wings and take your shots from above cover. When someone starts landing shots on you, Icarus Dash sideways to break their aim. You get one dodge normally, plus a second one while Heat Rises is active. Airborne kills extend Heat Rises and give you melee energy, so a hand cannon kill into a Snap on the next player keeps you flying. Rapid airborne kills also give you Cure. Don't hover in an open lane against a sniper. Dash, land behind cover and reset.\n#spinz #trialswarlock #pvp"
+ },
+ {
+  "id": "spinz-hunter-starter-pve-knives",
+  "name": "Hunter Starter PVE · Solar Invisible Knife Thrower",
+  "classType": 1,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2240888816,
+    "socketOverrides": {
+     "2": 375052471,
+     "0": 3636300855,
+     "1": 1128768652,
+     "3": 4016776972,
+     "4": 1841016428,
+     "5": 3066103998,
+     "6": 3066103999,
+     "7": 4180586737,
+     "8": 362132288,
+     "9": 362132294,
+     "10": 362132293,
+     "11": 1051276351
+    }
+   },
+   {
+    "id": "0",
+    "hash": 3602242905
+   },
+   {
+    "id": "0",
+    "hash": 1572604081
+   },
+   {
+    "id": "0",
+    "hash": 2069224589
+   },
+   {
+    "id": "0",
+    "hash": 2203146422
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 2203146422,
+   "setBonuses": {
+    "2751989785": 4
+   },
+   "mods": [
+    554409585,
+    3938489430,
+    4255093903,
+    2447449706,
+    3685945823,
+    633101315,
+    3719981603,
+    2319885414,
+    2319885414,
+    4087056174,
+    1755737153,
+    40751621,
+    11126525
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 144602215
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "The easiest of the three. Throw knives and finish enemies. Assassin's Cowl makes you invisible and heals you on finishers and powered melee kills, so when things go wrong you vanish and recover. The healing grenade covers you too.\nStats: Melee > Class > Weapons > Health\nArmor set: 4x Smoke Jumper Set (Ride Together, Die Together, Too Old for This)\nWeapons:\n- Energy · Primary: Stars in Shadow (Arrowhead Brake / Corkscrew Rifling, Tactical Mag / Flared Magwell, Heal Clip / Rapid Hit, Incandescent, Stability); or Yeartide Apex\n- Kinetic · Special: Gizmo Weft (Quick Launch / Hard Launch, Spike Grenades / Sticky Grenades, Envious Arsenal / Slice, Chain Reaction / Hatchling, Blast Radius)\n- Heavy · Exotic: One Thousand Voices\nThrow a knife at anything close, then finish it off with the pulse. When you see a finisher prompt over a big enemy, press it: you go invisible and heal. Dodge near enemies to get your knife back. At a boss, pop Blade Barrage, then swap to One Thousand Voices.\n#spinz #hunterstarter #pve"
+ },
+ {
+  "id": "spinz-hunter-starter-pve-gyrfalcon",
+  "name": "Hunter Starter PVE · Void Stealth Shooter",
+  "classType": 1,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2453351420,
+    "socketOverrides": {
+     "2": 2722573681,
+     "0": 2816982785,
+     "1": 20616656,
+     "3": 1139822081,
+     "4": 1016030582,
+     "5": 187655374,
+     "6": 187655373,
+     "7": 2661180603,
+     "8": 2272984671,
+     "9": 2272984666,
+     "10": 2661180602
+    }
+   },
+   {
+    "id": "0",
+    "hash": 4106258882
+   },
+   {
+    "id": "0",
+    "hash": 1572604081
+   },
+   {
+    "id": "0",
+    "hash": 2069224589
+   },
+   {
+    "id": "0",
+    "hash": 461841403
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 461841403,
+   "setBonuses": {
+    "3252452908": 4
+   },
+   "mods": [
+    2773358872,
+    554409585,
+    1130820873,
+    1781551382,
+    2657604783,
+    3726719281,
+    3719981603,
+    4046357305,
+    4046357305,
+    3467460423,
+    40751621,
+    4188291233,
+    11126525
+   ],
+   "statConstraints": [
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 4244567218
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Dodge to turn invisible, and when you come out of it your Void gun fires exploding rounds. The whole build is 'dodge, shoot, repeat', and being invisible means enemies stop shooting at you.\nStats: Weapons > Grenade > Class > Super\nArmor set: 4x Last Discipline (Terminal Velocity, Power Loader)\nWeapons:\n- Energy · Primary: The Title (Arrowhead Brake / Corkscrew Rifling, Tactical Mag / Flared Magwell, Repulsor Brace, Destabilizing Rounds, Range); or Gnawing Hunger\n- Kinetic · Special: Gizmo Weft (Quick Launch / Hard Launch, Spike Grenades / Sticky Grenades, Envious Arsenal / Slice, Chain Reaction / Hatchling, Blast Radius)\n- Heavy · Exotic: One Thousand Voices\nDodge to go invisible, then start shooting with The Title. Enemies pop with Void explosions. When a group shows up, throw your Vortex Grenade into it. At a boss, fire your super (it makes the boss take more damage from everyone), then swap to One Thousand Voices.\n#spinz #hunterstarter #pve"
+ },
+ {
+  "id": "spinz-hunter-starter-pve-tempest",
+  "name": "Hunter Starter PVE · Arc Lightning Punch",
+  "classType": 1,
+  "clearSpace": false,
+  "equipped": [
+   {
+    "id": "0",
+    "hash": 2328211300,
+    "socketOverrides": {
+     "2": 3769507632,
+     "0": 426473317,
+     "1": 95544328,
+     "3": 2716335211,
+     "4": 1713935764,
+     "5": 4194622037,
+     "6": 4194622039,
+     "7": 1727069366,
+     "8": 1727069364,
+     "9": 3277705906,
+     "10": 1727069361,
+     "11": 1727069363
+    }
+   },
+   {
+    "id": "0",
+    "hash": 135971347
+   },
+   {
+    "id": "0",
+    "hash": 190747610
+   },
+   {
+    "id": "0",
+    "hash": 2069224589
+   },
+   {
+    "id": "0",
+    "hash": 1627691271
+   }
+  ],
+  "unequipped": [],
+  "parameters": {
+   "exoticArmorHash": 1627691271,
+   "setBonuses": {
+    "2751989785": 2,
+    "1083114430": 2
+   },
+   "mods": [
+    2595839237,
+    3938489430,
+    3832366019,
+    2447449706,
+    2447449706,
+    633101315,
+    1834163303,
+    2793473444,
+    4087056174,
+    11126525,
+    1755737153,
+    4004774872
+   ],
+   "statConstraints": [
+    {
+     "statHash": 4244567218
+    },
+    {
+     "statHash": 1943323491
+    },
+    {
+     "statHash": 392767087
+    },
+    {
+     "statHash": 144602215
+    },
+    {
+     "statHash": 2996146975
+    },
+    {
+     "statHash": 1735777505
+    }
+   ],
+   "assumeArmorMasterwork": 3
+  },
+  "notes": "Hunter's top-ranked PvE build. Your melee lunges forward and chains lightning, dodging gives it back, and Gifted Conviction makes you tanky while you do it. Press melee, press dodge, repeat.\nStats: Melee > Class > Health > Super\nArmor set: 2x Smoke Jumper Set (Ride Together, Die Together) + 2x Bushido (Iaido)\nWeapons:\n- Energy · Special: Psi Aeterna IV (Quick Launch / Confined Launch, Implosion Rounds / High-Explosive Ordnance, Trickle Charge / Eddy Current, Jolting Feedback / Rolling Storm, Handling)\n- Kinetic · Primary: Qua Nilus II (Arrowhead Brake / Corkscrew Rifling, Tactical Mag / Flared Magwell, Slice / Encore, Hatchling / Surrounded, Range)\n- Heavy · Exotic: One Thousand Voices\nRun up to a group and melee: Tempest Strike lunges and sends lightning through them. Dodge right away to get your melee back, then do it again. Against anything tough, shoot it with Psi Aeterna to jolt it. At a boss, swap to One Thousand Voices.\n#spinz #hunterstarter #pve"
  }
 ]

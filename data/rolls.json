@@ -6611,6 +6611,160 @@
    "info": {}
   },
   {
+   "id": "hunter-starter:knives:stars-in-shadow",
+   "weapon": "Stars in Shadow",
+   "mode": "pve",
+   "file": "src/hunter-starter.html",
+   "context": "Hunter Starter sheet: Solar Invisible Knife Thrower",
+   "perks": {
+    "col1": "Arrowhead Brake / Corkscrew Rifling",
+    "col2": "Tactical Mag / Flared Magwell",
+    "trait1": "Heal Clip / Rapid Hit",
+    "trait2": "Incandescent",
+    "masterwork": "Stability"
+   },
+   "info": {}
+  },
+  {
+   "id": "hunter-starter:knives:yeartide-apex",
+   "weapon": "Yeartide Apex",
+   "mode": "pve",
+   "file": "src/hunter-starter.html",
+   "context": "Hunter Starter sheet: Solar Invisible Knife Thrower",
+   "perks": {
+    "col1": "Arrowhead Brake",
+    "col2": "Tactical Mag",
+    "trait1": "Heal Clip / Recycled Energy",
+    "trait2": "Incandescent"
+   },
+   "info": {}
+  },
+  {
+   "id": "hunter-starter:knives:gizmo-weft",
+   "weapon": "Gizmo Weft",
+   "mode": "pve",
+   "file": "src/hunter-starter.html",
+   "context": "Hunter Starter sheet: Solar Invisible Knife Thrower",
+   "perks": {
+    "col1": "Quick Launch / Hard Launch",
+    "col2": "Spike Grenades / Sticky Grenades",
+    "trait1": "Envious Arsenal / Slice",
+    "trait2": "Chain Reaction / Hatchling",
+    "masterwork": "Blast Radius"
+   },
+   "info": {}
+  },
+  {
+   "id": "hunter-starter:knives:one-thousand-voices",
+   "weapon": "One Thousand Voices",
+   "mode": "pve",
+   "file": "src/hunter-starter.html",
+   "context": "Hunter Starter sheet: Solar Invisible Knife Thrower",
+   "perks": {},
+   "info": {
+    "Catalyst": "Done (end-of-beam explosion)",
+    "Intrinsic": "Ahamkara's Eye"
+   }
+  },
+  {
+   "id": "hunter-starter:gyrfalcon:the-title",
+   "weapon": "The Title",
+   "mode": "pve",
+   "file": "src/hunter-starter.html",
+   "context": "Hunter Starter sheet: Void Stealth Shooter",
+   "perks": {
+    "col1": "Arrowhead Brake / Corkscrew Rifling",
+    "col2": "Tactical Mag / Flared Magwell",
+    "trait1": "Repulsor Brace",
+    "trait2": "Destabilizing Rounds",
+    "masterwork": "Range"
+   },
+   "info": {}
+  },
+  {
+   "id": "hunter-starter:gyrfalcon:gnawing-hunger",
+   "weapon": "Gnawing Hunger",
+   "mode": "pve",
+   "file": "src/hunter-starter.html",
+   "context": "Hunter Starter sheet: Void Stealth Shooter",
+   "perks": {
+    "col1": "Arrowhead Brake",
+    "col2": "Tactical Mag",
+    "trait1": "Repulsor Brace / Demolitionist",
+    "trait2": "Destabilizing Rounds / Rampage"
+   },
+   "info": {}
+  },
+  {
+   "id": "hunter-starter:gyrfalcon:gizmo-weft",
+   "weapon": "Gizmo Weft",
+   "mode": "pve",
+   "file": "src/hunter-starter.html",
+   "context": "Hunter Starter sheet: Void Stealth Shooter",
+   "perks": {
+    "col1": "Quick Launch / Hard Launch",
+    "col2": "Spike Grenades / Sticky Grenades",
+    "trait1": "Envious Arsenal / Slice",
+    "trait2": "Chain Reaction / Hatchling",
+    "masterwork": "Blast Radius"
+   },
+   "info": {}
+  },
+  {
+   "id": "hunter-starter:gyrfalcon:one-thousand-voices",
+   "weapon": "One Thousand Voices",
+   "mode": "pve",
+   "file": "src/hunter-starter.html",
+   "context": "Hunter Starter sheet: Void Stealth Shooter",
+   "perks": {},
+   "info": {
+    "Catalyst": "Done (end-of-beam explosion)",
+    "Intrinsic": "Ahamkara's Eye"
+   }
+  },
+  {
+   "id": "hunter-starter:tempest:psi-aeterna-iv",
+   "weapon": "Psi Aeterna IV",
+   "mode": "pve",
+   "file": "src/hunter-starter.html",
+   "context": "Hunter Starter sheet: Arc Lightning Punch",
+   "perks": {
+    "col1": "Quick Launch / Confined Launch",
+    "col2": "Implosion Rounds / High-Explosive Ordnance",
+    "trait1": "Trickle Charge / Eddy Current",
+    "trait2": "Jolting Feedback / Rolling Storm",
+    "masterwork": "Handling"
+   },
+   "info": {}
+  },
+  {
+   "id": "hunter-starter:tempest:qua-nilus-ii",
+   "weapon": "Qua Nilus II",
+   "mode": "pve",
+   "file": "src/hunter-starter.html",
+   "context": "Hunter Starter sheet: Arc Lightning Punch",
+   "perks": {
+    "col1": "Arrowhead Brake / Corkscrew Rifling",
+    "col2": "Tactical Mag / Flared Magwell",
+    "trait1": "Slice / Encore",
+    "trait2": "Hatchling / Surrounded",
+    "masterwork": "Range"
+   },
+   "info": {}
+  },
+  {
+   "id": "hunter-starter:tempest:one-thousand-voices",
+   "weapon": "One Thousand Voices",
+   "mode": "pve",
+   "file": "src/hunter-starter.html",
+   "context": "Hunter Starter sheet: Arc Lightning Punch",
+   "perks": {},
+   "info": {
+    "Catalyst": "Done (end-of-beam explosion)",
+    "Intrinsic": "Ahamkara's Eye"
+   }
+  },
+  {
    "id": "blueberries:swordbreaker-god-rolls:pve:0",
    "weapon": "Swordbreaker",
    "mode": "pve",
@@ -23150,6 +23304,241 @@
       "mod": "Quick Access Sling"
      },
      "info": {}
+    }
+   ]
+  },
+  {
+   "id": "hunter-starter:knives",
+   "file": "src/hunter-starter.html",
+   "sheet": "Hunter Starter",
+   "mode": "pve",
+   "build": "Solar Invisible Knife Thrower",
+   "variant": "main",
+   "element": "Solar",
+   "exotic_armor": "Assassin's Cowl",
+   "has_artifact": false,
+   "mods": [
+    [
+     "Helmet",
+     "Heavy Ammo Finder, Hands-On, Solar Siphon"
+    ],
+    [
+     "Arms",
+     "Heavy Handed, Focusing Strike, Melee Font"
+    ],
+    [
+     "Chest",
+     "Concussive Dampener, resistance mods matching the enemies"
+    ],
+    [
+     "Legs",
+     "Solar Weapon Surge x2, Recuperation"
+    ],
+    [
+     "Class item",
+     "Time Dilation, Reaper, Powerful Attraction"
+    ]
+   ],
+   "weapons": [
+    {
+     "slot": "Energy · Primary",
+     "name": "Stars in Shadow",
+     "type": "High-Impact pulse (Solar)",
+     "perks": {
+      "col1": "Arrowhead Brake / Corkscrew Rifling",
+      "col2": "Tactical Mag / Flared Magwell",
+      "trait1": "Heal Clip / Rapid Hit",
+      "trait2": "Incandescent",
+      "masterwork": "Stability"
+     },
+     "info": {},
+     "alts": [
+      {
+       "name": "Yeartide Apex",
+       "perks": {
+        "col1": "Arrowhead Brake",
+        "col2": "Tactical Mag",
+        "trait1": "Heal Clip / Recycled Energy",
+        "trait2": "Incandescent"
+       }
+      }
+     ]
+    },
+    {
+     "slot": "Kinetic · Special",
+     "name": "Gizmo Weft",
+     "type": "Micro-missile grenade launcher (Strand)",
+     "perks": {
+      "col1": "Quick Launch / Hard Launch",
+      "col2": "Spike Grenades / Sticky Grenades",
+      "trait1": "Envious Arsenal / Slice",
+      "trait2": "Chain Reaction / Hatchling",
+      "masterwork": "Blast Radius"
+     },
+     "info": {}
+    },
+    {
+     "slot": "Heavy · Exotic",
+     "name": "One Thousand Voices",
+     "type": "Exotic heavy fusion (Solar)",
+     "perks": {},
+     "info": {
+      "Catalyst": "Done (end-of-beam explosion)",
+      "Intrinsic": "Ahamkara's Eye"
+     }
+    }
+   ]
+  },
+  {
+   "id": "hunter-starter:gyrfalcon",
+   "file": "src/hunter-starter.html",
+   "sheet": "Hunter Starter",
+   "mode": "pve",
+   "build": "Void Stealth Shooter",
+   "variant": "main",
+   "element": "Void",
+   "exotic_armor": "Gyrfalcon's Hauberk",
+   "has_artifact": false,
+   "mods": [
+    [
+     "Helmet",
+     "Void Siphon, Heavy Ammo Finder, Super Font"
+    ],
+    [
+     "Arms",
+     "Grenade Font, Harmonic Loader, Bolstering Detonation"
+    ],
+    [
+     "Chest",
+     "Concussive Dampener, resistance mods matching the enemies"
+    ],
+    [
+     "Legs",
+     "Weapons Font x2, Void Weapon Surge"
+    ],
+    [
+     "Class item",
+     "Reaper, Bomber, Powerful Attraction"
+    ]
+   ],
+   "weapons": [
+    {
+     "slot": "Energy · Primary",
+     "name": "The Title",
+     "type": "Aggressive SMG (Void)",
+     "perks": {
+      "col1": "Arrowhead Brake / Corkscrew Rifling",
+      "col2": "Tactical Mag / Flared Magwell",
+      "trait1": "Repulsor Brace",
+      "trait2": "Destabilizing Rounds",
+      "masterwork": "Range"
+     },
+     "info": {},
+     "alts": [
+      {
+       "name": "Gnawing Hunger",
+       "perks": {
+        "col1": "Arrowhead Brake",
+        "col2": "Tactical Mag",
+        "trait1": "Repulsor Brace / Demolitionist",
+        "trait2": "Destabilizing Rounds / Rampage"
+       }
+      }
+     ]
+    },
+    {
+     "slot": "Kinetic · Special",
+     "name": "Gizmo Weft",
+     "type": "Micro-missile grenade launcher (Strand)",
+     "perks": {
+      "col1": "Quick Launch / Hard Launch",
+      "col2": "Spike Grenades / Sticky Grenades",
+      "trait1": "Envious Arsenal / Slice",
+      "trait2": "Chain Reaction / Hatchling",
+      "masterwork": "Blast Radius"
+     },
+     "info": {}
+    },
+    {
+     "slot": "Heavy · Exotic",
+     "name": "One Thousand Voices",
+     "type": "Exotic heavy fusion (Solar)",
+     "perks": {},
+     "info": {
+      "Catalyst": "Done (end-of-beam explosion)",
+      "Intrinsic": "Ahamkara's Eye"
+     }
+    }
+   ]
+  },
+  {
+   "id": "hunter-starter:tempest",
+   "file": "src/hunter-starter.html",
+   "sheet": "Hunter Starter",
+   "mode": "pve",
+   "build": "Arc Lightning Punch",
+   "variant": "main",
+   "element": "Arc",
+   "exotic_armor": "Gifted Conviction",
+   "has_artifact": false,
+   "mods": [
+    [
+     "Helmet",
+     "Special Ammo Finder, Hands-On, Harmonic Siphon"
+    ],
+    [
+     "Arms",
+     "Heavy Handed x2, Melee Font"
+    ],
+    [
+     "Chest",
+     "Resistance mods matching the enemies"
+    ],
+    [
+     "Legs",
+     "Arc Weapon Surge, Absolution, Recuperation"
+    ],
+    [
+     "Class item",
+     "Powerful Attraction, Time Dilation, Special Finisher"
+    ]
+   ],
+   "weapons": [
+    {
+     "slot": "Energy · Special",
+     "name": "Psi Aeterna IV",
+     "type": "Micro-missile pulse (Arc, special ammo)",
+     "perks": {
+      "col1": "Quick Launch / Confined Launch",
+      "col2": "Implosion Rounds / High-Explosive Ordnance",
+      "trait1": "Trickle Charge / Eddy Current",
+      "trait2": "Jolting Feedback / Rolling Storm",
+      "masterwork": "Handling"
+     },
+     "info": {}
+    },
+    {
+     "slot": "Kinetic · Primary",
+     "name": "Qua Nilus II",
+     "type": "Adaptive SMG (Strand)",
+     "perks": {
+      "col1": "Arrowhead Brake / Corkscrew Rifling",
+      "col2": "Tactical Mag / Flared Magwell",
+      "trait1": "Slice / Encore",
+      "trait2": "Hatchling / Surrounded",
+      "masterwork": "Range"
+     },
+     "info": {}
+    },
+    {
+     "slot": "Heavy · Exotic",
+     "name": "One Thousand Voices",
+     "type": "Exotic heavy fusion (Solar)",
+     "perks": {},
+     "info": {
+      "Catalyst": "Done (end-of-beam explosion)",
+      "Intrinsic": "Ahamkara's Eye"
+     }
     }
    ]
   }
